@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+}
+
+header .img-container {
+    max-width: 100%;
+    width: 100%;
+}
+
+header .img-container img {
+    max-width: 100%;
+}
