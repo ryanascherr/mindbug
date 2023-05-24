@@ -26,10 +26,11 @@ header .img-container img {
 }
 
 .card {
-    max-width: 250px;
+    /* max-width: 250px; */
     margin: 15px;
     transition: all .5s;
     border-radius: 15px;
+    width: 16%;
 }
 
 .card:hover {
@@ -39,6 +40,7 @@ header .img-container img {
 .filter {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     flex-wrap: wrap;
 }
@@ -52,6 +54,7 @@ header .img-container img {
     justify-content: center;
     list-style-type: none;
     margin-top: 0;
+    padding-left: 0;
 }
 
 .filter ul li {
@@ -62,9 +65,46 @@ body {
     background-color: gray;
 }
 
-@media only screen and (max-width: 560px){
+/* @media only screen and (max-width: 560px){
     .card {
         max-width: 175px;
+    }
+} */
+
+@media only screen and (max-width: 790px){
+    .filter {
+        flex-direction: column;
+    }
+    .filter div {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .card {
+        width: 22%;
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 999px){
+    .card {
+        width: 28%;
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .card {
+        width: 42%;
+        max-width: none;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .card {
+        width: 80%;
+        max-width: none;
     }
 }
 
