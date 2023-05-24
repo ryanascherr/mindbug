@@ -9,4 +9,53 @@ header .img-container {
 
 header .img-container img {
     max-width: 100%;
+    width: 100%;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -100px;
+}
+
+.card {
+    max-width: 250px;
+    margin: 15px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+/* main {
+    background-image: url(./img/wallpaper/mindbug-wp-1.jpeg);
+    background-size: contain;
+} */
+
+body {
+    background-color: gray;
+}
+
+@media only screen and (max-width: 560px){
+    .card {
+        max-width: 175px;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul > * {
+    margin: 0 10px;
 }

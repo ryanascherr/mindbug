@@ -186,13 +186,13 @@ let creatures = [
         pack: "First Contact"
     },
     {
-        name: "Urchin Hunter",
+        name: "Urchin Hurler",
         keywords: "Hunter",
         triggers: "",
         pack: "First Contact"
     },
     {
-        name: "Bugzerker",
+        name: "Bugserker",
         keywords: "Tough",
         triggers: "",
         pack: "First Contact: Add-On"
@@ -222,7 +222,7 @@ let creatures = [
         pack: "First Contact: Add-On"
     },
     {
-        name: "Goreagle Aplha",
+        name: "Goreagle Alpha",
         keywords: "Frenzy, Hunter, Tough",
         triggers: "Play",
         pack: "First Contact: Add-On"
@@ -264,3 +264,56 @@ let creatures = [
         pack: "First Contact: Add-On"
     }
 ]
+
+initialize();
+function initialize() {
+    placeFirstContact();
+    placeFirstContactAddOn();
+}
+
+function placeFirstContact() {
+    $(creatures).each(function() {
+        if (this.pack != "First Contact") return;
+        let name = this.name;
+        name = name.split(" ");
+        if (name.length == 2) {
+            name = name[0] + "_" + name[1];
+        } else if (name.length == 3) {
+            name = name[0] + "_" + name[1] + "_" + name[2];
+        } else if (name.length == 4) {
+            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+        }
+        $(".card-container").append(`<img data-keywords="${this.keywords}" class="card" src="./img/first-contact/${name}.png">`)
+    });
+}
+
+function placeFirstContactAddOn() {
+    $(creatures).each(function() {
+        if (this.pack != "First Contact: Add-On") return;
+        let name = this.name;
+        name = name.split(" ");
+        if (name.length == 2) {
+            name = name[0] + "_" + name[1];
+        } else if (name.length == 3) {
+            name = name[0] + "_" + name[1] + "_" + name[2];
+        } else if (name.length == 4) {
+            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+        }
+        $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
+    });
+}
+
+$(".card").mouseenter(function() {
+    if ($(this).attr("data-keywords") != "") {
+        let card = this;
+        let keywords = $(this).attr("data-keywords");
+        keywords = keywords.split(", ");
+        showKeywords(card, keywords);
+    }
+})
+
+function showKeywords(card, keywords) {
+    if (keywords.includes("Poisonous")) {
+        console.log("POISONOUS: In addition to normal combat resolution, this creature always defeats the enemy creature, even if its power value is less than the enemy's power value.")
+    }
+}
