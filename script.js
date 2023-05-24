@@ -1,274 +1,776 @@
-let creatures = [
+const creatures = [
     {
         name: "Axolotl Healer",
-        keywords: "Poisonous",
-        triggers: "Play",
+        power: 4,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Bee Bear",
-        keywords: "",
-        triggers: "",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Brain Fly",
-        keywords: "",
-        triggers: "Play",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Chameleon Sniper",
-        keywords: "Sneaky",
-        triggers: "Attack",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Compost Dragon",
-        keywords: "Hunter",
-        triggers: "Play",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Deathweaver",
-        keywords: "Poisonous",
-        triggers: "",
+        power: 2,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Elephantopus",
-        keywords: "Tough",
-        triggers: "",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Explosive Toad",
-        keywords: "Frenzy",
-        triggers: "Defeated",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
         pack: "First Contact"
     },
     {
         name: "Ferret Bomber",
-        keywords: "Sneaky",
-        triggers: "Play",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Giraffodile",
-        keywords: "",
-        triggers: "Play",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Goblin Werewolf",
-        keywords: "Hunter",
-        triggers: "",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Gorillion",
-        keywords: "",
-        triggers: "",
+        power: 10,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Grave Robber",
-        keywords: "Tough",
-        triggers: "Play",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Harpy Mother",
-        keywords: "",
-        triggers: "Defeated",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
         pack: "First Contact"
     },
     {
         name: "Kangasaurus Rex",
-        keywords: "",
-        triggers: "Play",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Killer Bee",
-        keywords: "Hunter",
-        triggers: "Play",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Lone Yeti",
-        keywords: "Tough, Frenzy",
-        triggers: "",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Luchataur",
-        keywords: "Frenzy",
-        triggers: "",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Mysterious Mermaid",
-        keywords: "",
-        triggers: "Play",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Plated Scorpion",
-        keywords: "Tough, Poisonous",
-        triggers: "",
+        power: 2,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Rhino Turtle",
-        keywords: "Frenzy, Tough",
-        triggers: "",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Shark Dog",
-        keywords: "Hunter",
-        triggers: "Attack",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Sharky Crab-Dog-Mummypus",
-        keywords: "Hunter, Sneaky, Frenzy, Poisonous",
-        triggers: "",
+        power: 5,
+        keywords: {
+            poisonous: true,
+            frenzy: true,
+            tough: false,
+            sneaky: true,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Shield Bugs",
-        keywords: "Tough",
-        triggers: "",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Snail Hydra",
-        keywords: "",
-        triggers: "Attack",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Snail Thrower",
-        keywords: "Poisonous, Hunter",
-        triggers: "",
+        power: 1,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Spider Owl",
-        keywords: "Sneaky, Poisonous",
-        triggers: "",
+        power: 3,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Strange Barrel",
-        keywords: "Defeated",
-        triggers: "",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
         pack: "First Contact"
     },
     {
         name: "Tiger Squirrel",
-        keywords: "Sneaky",
-        triggers: "Play",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Turbo Bug",
-        keywords: "",
-        triggers: "Attack",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Tusked Extorter",
-        keywords: "",
-        triggers: "Attack",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Urchin Hurler",
-        keywords: "Hunter",
-        triggers: "",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact"
     },
     {
         name: "Bugserker",
-        keywords: "Tough",
-        triggers: "",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Count Draculeech",
-        keywords: "",
-        triggers: "Attack",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Creep from the Deep",
-        keywords: "Poisonous, Hunter",
-        triggers: "",
+        power: 4,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Ferret Pacifier",
-        keywords: "",
-        triggers: "",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Froblin Instigator",
-        keywords: "Hunter",
-        triggers: "",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Goreagle Alpha",
-        keywords: "Frenzy, Hunter, Tough",
-        triggers: "Play",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Hamster Lion",
-        keywords: "Frenzy",
-        triggers: "",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Hungry Hungry Hamster",
-        keywords: "Sneaky",
-        triggers: "Play",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Hyenix",
-        keywords: "Frenzy",
-        triggers: "",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Majestic Manticore",
-        keywords: "Poisonous",
-        triggers: "Attack",
+        power: 6,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "The Lurker",
-        keywords: "Tough, Sneaky",
-        triggers: "Attack",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
     },
     {
         name: "Turf the Surfer",
-        keywords: "",
-        triggers: "Attack",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
         pack: "First Contact: Add-On"
-    }
+    },
+    // {
+    //     name: "Bigroot",
+    //     power: 4,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: false,
+    //         tough: false,
+    //         sneaky: false,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false
+    //     },
+    //     pack: "Beyond Evolution"
+    // }
 ]
 
 initialize();
 function initialize() {
-    placeFirstContact();
-    placeFirstContactAddOn();
+    // placeFirstContact();
+    // placeFirstContactAddOn();
+    sortByAlph();
 }
 
 function placeFirstContact() {
@@ -303,17 +805,148 @@ function placeFirstContactAddOn() {
     });
 }
 
-$(".card").mouseenter(function() {
-    if ($(this).attr("data-keywords") != "") {
-        let card = this;
-        let keywords = $(this).attr("data-keywords");
-        keywords = keywords.split(", ");
-        showKeywords(card, keywords);
-    }
+$(".order").click(function() {
+    $('.order').prop('checked', false);
+    $(this).prop('checked', true);
+    // $('.order').attr('checked', false);
+    // sortByPower();
+});
+
+function sortByPower() {
+    let creaturesByPowerBiggest = creatures.sort((a, b) => b.power - a.power);
+    $(".card-container").empty();
+    placeNewArray(creaturesByPowerBiggest);
+};
+
+$(".rev-power").click(function() {
+    // sortByReversePower();
+});
+
+function sortByReversePower() {
+    let creaturesByPowerBiggest = creatures.sort((a, b) => a.power - b.power);
+    $(".card-container").empty();
+    placeNewArray(creaturesByPowerBiggest);
+};
+
+$(".alph").click(function() {
+    // sortByAlph();
 })
 
-function showKeywords(card, keywords) {
-    if (keywords.includes("Poisonous")) {
-        console.log("POISONOUS: In addition to normal combat resolution, this creature always defeats the enemy creature, even if its power value is less than the enemy's power value.")
+function sortByAlph() {
+    let creaturesByAlph = creatures.sort(function(a, b) {
+        return a === b ? 0 : a.name < b.name ? -1 : 1;
+    });
+    $(".card-container").empty();
+    placeNewArray(creaturesByAlph);
+};
+
+function placeNewArray(array) {
+    $(array).each(function() {
+        let name = this.name;
+        name = name.split(" ");
+        if (name.length == 2) {
+            name = name[0] + "_" + name[1];
+        } else if (name.length == 3) {
+            name = name[0] + "_" + name[1] + "_" + name[2];
+        } else if (name.length == 4) {
+            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+        }
+        if (this.pack == "First Contact") {
+            $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
+        } else if (this.pack == "First Contact: Add-On") {
+            $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
+        } else if (this.pack == "Beyond Evolution") {
+            $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
+        }
+    });
+}
+
+$(".filter-btn").click(function() {
+    let array = creatures;
+    let firstContact;
+    let addOn;
+    let alph;
+    let power;
+    let revPower;
+    let poisonous;
+    let hunter;
+    let frenzy;
+    let tough;
+    let sneaky;
+    if($('.first-contact').is(':checked')){
+        firstContact = true;
     }
+    if($('.add-on').is(':checked')){
+        addOn = true;
+    }
+    if($('.poisonous').is(':checked')){
+        poisonous = true;
+    }
+    if($('.hunter').is(':checked')){
+        hunter = true;
+    }
+    if($('.frenzy').is(':checked')){
+        frenzy = true;
+    }
+    if($('.tough').is(':checked')){
+        tough = true;
+    }
+    if($('.sneaky').is(':checked')){
+        sneaky = true;
+    }
+    if($('.alph').is(':checked')){
+        alph = true;
+    }
+    if($('.power').is(':checked')){
+        power = true;
+    }
+    if($('.rev-power').is(':checked')){
+        revPower = true;
+    }
+    array = getPack(array, firstContact, addOn);
+    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
+    getOrder(array, alph, power, revPower);
+})
+
+function getPack(array, firstContact, addOn) {
+    if (!firstContact) {
+        array = array.filter(creature => creature.pack != "First Contact");
+    }
+    if (!addOn) {
+        array = array.filter(creature => creature.pack != "First Contact: Add-On");
+    }
+    return array;
+}
+
+function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
+    if (poisonous) {
+        array = array.filter(creature => creature.keywords.poisonous == true);
+    }
+    if (hunter) {
+        array = array.filter(creature => creature.keywords.hunter == true);
+    }
+    if (frenzy) {
+        array = array.filter(creature => creature.keywords.frenzy == true);
+    }
+    if (tough) {
+        array = array.filter(creature => creature.keywords.tough == true);
+    }
+    if (sneaky) {
+        array = array.filter(creature => creature.keywords.sneaky == true);
+    }
+    return array;
+}
+
+function getOrder(array, alph, power, revPower) {
+    if (alph) {
+        array = array.sort(function(a, b) {
+            return a === b ? 0 : a.name < b.name ? -1 : 1;
+        });
+    } else if (power) {
+        array = array.sort((a, b) => b.power - a.power);
+    } else if (revPower) {
+        array = array.sort((a, b) => a.power - b.power);
+    }
+    $(".card-container").empty();
+    placeNewArray(array);
 }

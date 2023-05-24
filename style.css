@@ -16,22 +16,29 @@ header .img-container img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: -100px;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .card {
     max-width: 250px;
     margin: 15px;
+    transition: all .5s;
 }
 
 .card:hover {
     cursor: pointer;
 }
 
-/* main {
-    background-image: url(./img/wallpaper/mindbug-wp-1.jpeg);
-    background-size: contain;
-} */
+.filter ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.filter ul li {
+    margin: 10px;
+}
 
 body {
     background-color: gray;
@@ -58,4 +65,13 @@ nav ul {
 
 nav ul > * {
     margin: 0 10px;
+}
+
+.alph:hover, .power:hover {
+    cursor: pointer;
+}
+
+.filter-btn-container {
+    display: flex;
+    justify-content: center;
 }
