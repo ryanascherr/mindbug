@@ -766,6 +766,7 @@ function placeFirstContact() {
         } else if (name.length == 4) {
             name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
         }
+        console.log(name)
         $(".card-container").append(`<img data-keywords="${this.keywords}" class="card" src="./img/first-contact/${name}.png">`)
     });
 }
@@ -829,6 +830,7 @@ function placeNewArray(array) {
         } else if (name.length == 4) {
             name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
         }
+        console.log(name)
         if (this.pack == "First Contact") {
             $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
         } else if (this.pack == "First Contact: Add-On") {

@@ -29,6 +29,7 @@ header .img-container img {
     max-width: 250px;
     margin: 15px;
     transition: all .5s;
+    border-radius: 15px;
 }
 
 .card:hover {
