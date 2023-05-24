@@ -746,30 +746,11 @@ const creatures = [
             defeated: false
         },
         pack: "First Contact: Add-On"
-    },
-    // {
-    //     name: "Bigroot",
-    //     power: 4,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: false,
-    //         tough: false,
-    //         sneaky: false,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false
-    //     },
-    //     pack: "Beyond Evolution"
-    // }
+    }
 ]
 
 initialize();
 function initialize() {
-    // placeFirstContact();
-    // placeFirstContactAddOn();
     sortByAlph();
 }
 
@@ -808,8 +789,13 @@ function placeFirstContactAddOn() {
 $(".order").click(function() {
     $('.order').prop('checked', false);
     $(this).prop('checked', true);
-    // $('.order').attr('checked', false);
-    // sortByPower();
+});
+
+$(".trigger").click(function(e) {
+    if ($(this).is(':checked')) {
+        $('.trigger').prop('checked', false);
+        $(this).prop('checked', true);
+    }
 });
 
 function sortByPower() {
@@ -818,19 +804,11 @@ function sortByPower() {
     placeNewArray(creaturesByPowerBiggest);
 };
 
-$(".rev-power").click(function() {
-    // sortByReversePower();
-});
-
 function sortByReversePower() {
     let creaturesByPowerBiggest = creatures.sort((a, b) => a.power - b.power);
     $(".card-container").empty();
     placeNewArray(creaturesByPowerBiggest);
 };
-
-$(".alph").click(function() {
-    // sortByAlph();
-})
 
 function sortByAlph() {
     let creaturesByAlph = creatures.sort(function(a, b) {
@@ -873,6 +851,9 @@ $(".filter-btn").click(function() {
     let frenzy;
     let tough;
     let sneaky;
+    let play;
+    let attack;
+    let defeated;
     if($('.first-contact').is(':checked')){
         firstContact = true;
     }
@@ -903,8 +884,18 @@ $(".filter-btn").click(function() {
     if($('.rev-power').is(':checked')){
         revPower = true;
     }
+    if($('.play').is(':checked')){
+        play = true;
+    }
+    if($('.attack').is(':checked')){
+        attack = true;
+    }
+    if($('.defeated').is(':checked')){
+        defeated = true;
+    }
     array = getPack(array, firstContact, addOn);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
+    array = getTriggers(array, play, attack, defeated)
     getOrder(array, alph, power, revPower);
 })
 
@@ -933,6 +924,18 @@ function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
     }
     if (sneaky) {
         array = array.filter(creature => creature.keywords.sneaky == true);
+    }
+    return array;
+}
+
+function getTriggers(array, play, attack, defeated) {
+    if (play) {
+        array = array.filter(creature => creature.triggers.play == true);
+    } else if (attack) {
+        array = array.filter(creature => creature.triggers.attack == true);
+    }
+    else if (defeated) {
+        array = array.filter(creature => creature.triggers.defeated == true);
     }
     return array;
 }

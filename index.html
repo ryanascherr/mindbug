@@ -10,62 +10,84 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li>First Contact</li>
-                <li>First Contact: Add On</li>
-                <li>Beyond Evolution</li>
-                <li>Beyond Eternity</li>
-            </ul>
-        </nav>
         <div class="img-container">
             <img src="./img/wallpaper/mindbug-wp-1.jpeg" alt="">
         </div>
     </header>
     <main>
         <div class="filter">
-            <ul>
-                <li>
-                    <input class="order alph" checked type="checkbox" id="alph" name="checkbox" value="1">
-                    <label for="alph">Alphabetically</label>
-                </li>
-                <li>
-                    <input class="order power" type="checkbox" id="power" name="checkbox" value="1">
-                    <label for="power">Power</label>
-                </li>
-                <li>
-                    <input class="order rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
-                    <label for="rev-power">Reverse Power</label>
-                </li>
-                <li>
-                    <input class="first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
-                    <label for="first-contact">First Contact</label>
-                </li>
-                <li>
-                    <input class="add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
-                    <label for="add-on">First Contact: Add On</label>
-                </li>
-                <li>
-                    <input class="poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
-                    <label for="poisonous">Poisonous</label>
-                </li>
-                <li>
-                    <input class="hunter" type="checkbox" id="hunter" name="checkbox" value="1">
-                    <label for="hunter">Hunter</label>
-                </li>
-                <li>
-                    <input class="frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
-                    <label for="frenzy">Frenzy</label>
-                </li>
-                <li>
-                    <input class="tough" type="checkbox" id="tough" name="checkbox" value="1">
-                    <label for="tough">Tough</label>
-                </li>
-                <li>
-                    <input class="sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
-                    <label for="sneaky">Sneaky</label>
-                </li>
-            </ul>
+            <div>
+                <h2>Order...</h2>
+                <ul>
+                    <li>
+                        <input class="order alph" checked type="checkbox" id="alph" name="checkbox" value="1">
+                        <label for="alph">Alphabetically</label>
+                    </li>
+                    <li>
+                        <input class="order power" type="checkbox" id="power" name="checkbox" value="1">
+                        <label for="power">By Power</label>
+                    </li>
+                    <li>
+                        <input class="order rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
+                        <label for="rev-power">By Reverse Power</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>Only include cards from...</h2>
+                <ul>
+                    <li>
+                        <input class="first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
+                        <label for="first-contact">First Contact</label>
+                    </li>
+                    <li>
+                        <input class="add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
+                        <label for="add-on">First Contact: Add On</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>Only include cards with the keyword(s)...</h2>
+                <ul>
+                    <li>
+                        <input class="poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
+                        <label for="poisonous">Poisonous</label>
+                    </li>
+                    <li>
+                        <input class="hunter" type="checkbox" id="hunter" name="checkbox" value="1">
+                        <label for="hunter">Hunter</label>
+                    </li>
+                    <li>
+                        <input class="frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
+                        <label for="frenzy">Frenzy</label>
+                    </li>
+                    <li>
+                        <input class="tough" type="checkbox" id="tough" name="checkbox" value="1">
+                        <label for="tough">Tough</label>
+                    </li>
+                    <li>
+                        <input class="sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
+                        <label for="sneaky">Sneaky</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>Only include cards with the trigger...</h2>
+                <ul>
+                    <li>
+                        <input class="trigger play" type="checkbox" id="play" name="checkbox" value="1">
+                        <label for="play">Play</label>
+                    </li>
+                    <li>
+                        <input class="trigger attack" type="checkbox" id="attack" name="checkbox" value="1">
+                        <label for="attack">Attack</label>
+                    </li>
+                    <li>
+                        <input class="trigger defeated" type="checkbox" id="defeated" name="checkbox" value="1">
+                        <label for="defeated">Defeated</label>
+                    </li>
+                </ul>
+            </div>
             <div class="filter-btn-container">
                 <button class="filter-btn">Search with Filters</button>
             </div>

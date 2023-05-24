@@ -2,6 +2,11 @@ body {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
 header .img-container {
     max-width: 100%;
     width: 100%;
@@ -30,10 +35,22 @@ header .img-container img {
     cursor: pointer;
 }
 
+.filter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.filter div {
+    width: 45%;
+}
+
 .filter ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    margin-top: 0;
 }
 
 .filter ul li {
