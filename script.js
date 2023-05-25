@@ -1770,8 +1770,8 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "",
-        power: "",
+        name: "Sweet Fighter",
+        power: 9,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1782,7 +1782,7 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false,
+            defeated: true,
             action: false
         },
         evolutution: false,
@@ -2078,7 +2078,7 @@ function placeNewArray(array, pageLoad) {
             } else if (this.pack == "Beyond Evolution") {
                 $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
             } else if (this.pack == "Beyond Eternity") {
-                $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.png">`)
+                $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
             }
         });
     } else {
