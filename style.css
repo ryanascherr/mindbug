@@ -1,10 +1,20 @@
+html, body {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
+    color: #411928;
+}
+
+h2, h3 {
+    text-align: center;
     margin: 0;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 0;
+h3 {
+    margin-bottom: 15px;
+    padding: 0 10px 10px 10px;
 }
 
 header .img-container {
@@ -26,15 +36,10 @@ header .img-container img {
 }
 
 .card {
-    /* max-width: 250px; */
     margin: 15px;
     transition: all .5s;
     border-radius: 15px;
     width: 16%;
-}
-
-.card:hover {
-    cursor: pointer;
 }
 
 .filter {
@@ -46,19 +51,36 @@ header .img-container img {
 }
 
 .filter div {
-    width: 45%;
+    margin: 15px;
 }
 
 .filter ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    margin-top: 0;
+    margin: 0;
     padding-left: 0;
+    flex-wrap: wrap;
 }
 
 .filter ul li {
     margin: 10px;
+}
+
+.filter-btn {
+    padding: 10px;
+    background-color: #411928;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #411928;
+    transition: all .35s;
+    margin-bottom: 15px;
+}
+
+.filter-btn:hover {
+    color: #411928;
+    background-color: white;
+    cursor: pointer;
 }
 
 body {
@@ -71,16 +93,25 @@ body {
     }
 } */
 
-@media only screen and (max-width: 790px){
+@media only screen and (max-width: 768px){
     .filter {
         flex-direction: column;
     }
     .filter div {
-        width: 100%;
+        /* width: 100%; */
     }
 }
 
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 896px){
+    .filter {
+        flex-direction: column;
+    }
+    .filter div {
+        margin: 0 10px 10px 10px;
+    }
+}
+
+@media only screen and (max-width: 1500px){
     .card {
         width: 22%;
         max-width: none;
@@ -94,7 +125,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 650px){
+@media only screen and (max-width: 700px){
     .card {
         width: 42%;
         max-width: none;

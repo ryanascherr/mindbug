@@ -746,45 +746,1284 @@ const creatures = [
             defeated: false
         },
         pack: "First Contact: Add-On"
-    }
+    },
+    {
+        name: "Agile Rooster",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Ant Zombie Horde",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Berserker Rabbit",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Blessed Killer Bee",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Blessed Pegasus",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Blessed Shield Bugs",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Blessed Tiger Squirrel",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Catalisk",
+        power: 2,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Cave Lizard",
+        power: 10,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Cursed Gorillion",
+        power: 10,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: true,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Duckdra",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Fire Antler",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Goat Dragon",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: true,
+            defeated: false
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Hiss Holiness",
+        power: 5,
+        keywords: {
+            poisonous: true,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Hypnotic Mouse",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Koibra",
+        power: 2,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: true,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Radioactive Pest",
+        power: 1,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Rockswapper",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Sea-Rex",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Soul Manipulator",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: true,
+            defeated: false
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Spirit Cheetah",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Spirit Maki",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Tailbeak",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Tiger Wasp",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Tornado Dragon",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Urchin Teacher",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Water Antler",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        boost: true,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Wingsnout",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Bigroot",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Blastfish",
+        power: 1,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Bullet Train",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Cake Trickster",
+        power: 6,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Captain Hippo",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Cheeky Chimpborg",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Cheery Chimpborg",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Chuckling Chimpborg",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Cloud Lady",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Coach Panda",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Curious Tadpole",
+        power: 1,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Dr Orange U Tan",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Dragon Inn",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Earwig Assassin",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Frog Prophet",
+        power: 3,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Infernostrich",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Kitsunsei",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Mole Machine",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Oakenmaster",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Octocopter",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Puffermech",
+        power: 2,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Radioactive Rabbit",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: true,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Robopup",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Sawn",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Spiky Shinobi",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Steelhorn",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "",
+        power: "",
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolutution: false,
+        pack: "Beyond Evolution"
+    },
 ]
+
+//todo GOAT DRAGON
 
 initialize();
 function initialize() {
-    sortByAlph();
-}
-
-function placeFirstContact() {
-    $(creatures).each(function() {
-        if (this.pack != "First Contact") return;
-        let name = this.name;
-        name = name.split(" ");
-        if (name.length == 2) {
-            name = name[0] + "_" + name[1];
-        } else if (name.length == 3) {
-            name = name[0] + "_" + name[1] + "_" + name[2];
-        } else if (name.length == 4) {
-            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-        }
-        console.log(name)
-        $(".card-container").append(`<img data-keywords="${this.keywords}" class="card" src="./img/first-contact/${name}.png">`)
-    });
-}
-
-function placeFirstContactAddOn() {
-    $(creatures).each(function() {
-        if (this.pack != "First Contact: Add-On") return;
-        let name = this.name;
-        name = name.split(" ");
-        if (name.length == 2) {
-            name = name[0] + "_" + name[1];
-        } else if (name.length == 3) {
-            name = name[0] + "_" + name[1] + "_" + name[2];
-        } else if (name.length == 4) {
-            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-        }
-        $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
-    });
+    let pageLoad = true;
+    sortByAlph(pageLoad);
 }
 
 $(".order").click(function() {
@@ -811,33 +2050,47 @@ function sortByReversePower() {
     placeNewArray(creaturesByPowerBiggest);
 };
 
-function sortByAlph() {
+function sortByAlph(pageLoad) {
     let creaturesByAlph = creatures.sort(function(a, b) {
         return a === b ? 0 : a.name < b.name ? -1 : 1;
     });
     $(".card-container").empty();
-    placeNewArray(creaturesByAlph);
+    placeNewArray(creaturesByAlph, pageLoad);
 };
 
-function placeNewArray(array) {
-    $(array).each(function() {
-        let name = this.name;
-        name = name.split(" ");
-        if (name.length == 2) {
-            name = name[0] + "_" + name[1];
-        } else if (name.length == 3) {
-            name = name[0] + "_" + name[1] + "_" + name[2];
-        } else if (name.length == 4) {
-            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-        }
-        console.log(name)
-        if (this.pack == "First Contact") {
-            $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
-        } else if (this.pack == "First Contact: Add-On") {
-            $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
-        } else if (this.pack == "Beyond Evolution") {
-            $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
-        }
+function placeNewArray(array, pageLoad) {
+    if (array.length > 0) {
+        $(array).each(function() {
+            let name = this.name;
+            if (name == "") return;
+            name = name.split(" ");
+            if (name.length == 2) {
+                name = name[0] + "_" + name[1];
+            } else if (name.length == 3) {
+                name = name[0] + "_" + name[1] + "_" + name[2];
+            } else if (name.length == 4) {
+                name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+            }
+            if (this.pack == "First Contact") {
+                $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
+            } else if (this.pack == "First Contact: Add-On") {
+                $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
+            } else if (this.pack == "Beyond Evolution") {
+                $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
+            } else if (this.pack == "Beyond Eternity") {
+                $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.png">`)
+            }
+        });
+    } else {
+        $(".card-container").append(`<h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div>`)
+    }
+    if (pageLoad == true) return;
+    scrollToResults();
+}
+
+function scrollToResults() {
+    $('html, body').animate({
+        scrollTop: $(".card-container").offset().top
     });
 }
 
@@ -845,6 +2098,8 @@ $(".filter-btn").click(function() {
     let array = creatures;
     let firstContact;
     let addOn;
+    let eternity;
+    let evolution;
     let alph;
     let power;
     let revPower;
@@ -861,6 +2116,12 @@ $(".filter-btn").click(function() {
     }
     if($('.add-on').is(':checked')){
         addOn = true;
+    }
+    if($('.eternity').is(':checked')){
+        eternity = true;
+    }
+    if($('.evolution').is(':checked')){
+        evolution = true;
     }
     if($('.poisonous').is(':checked')){
         poisonous = true;
@@ -895,18 +2156,24 @@ $(".filter-btn").click(function() {
     if($('.defeated').is(':checked')){
         defeated = true;
     }
-    array = getPack(array, firstContact, addOn);
+    array = getPack(array, firstContact, addOn, eternity, evolution);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated)
     getOrder(array, alph, power, revPower);
 })
 
-function getPack(array, firstContact, addOn) {
+function getPack(array, firstContact, addOn, eternity, evolution) {
     if (!firstContact) {
         array = array.filter(creature => creature.pack != "First Contact");
     }
     if (!addOn) {
         array = array.filter(creature => creature.pack != "First Contact: Add-On");
+    }
+    if (!eternity) {
+        array = array.filter(creature => creature.pack != "Beyond Eternity");
+    }
+    if (!evolution) {
+        array = array.filter(creature => creature.pack != "Beyond Evolution");
     }
     return array;
 }
