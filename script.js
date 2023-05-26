@@ -578,7 +578,7 @@ const creatures = [
         pack: "First Contact: Add-On"
     },
     {
-        name: "Creep from the Deep",
+        name: "Creep From The Deep",
         power: 4,
         keywords: {
             poisonous: true,
@@ -731,7 +731,7 @@ const creatures = [
         pack: "First Contact: Add-On"
     },
     {
-        name: "Turf the Surfer",
+        name: "Turf The Surfer",
         power: 8,
         keywords: {
             poisonous: false,
