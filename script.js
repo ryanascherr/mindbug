@@ -1291,7 +1291,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: true,
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1310,7 +1310,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1329,7 +1329,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1348,7 +1348,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1367,7 +1367,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1386,7 +1386,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1405,7 +1405,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1424,7 +1424,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1443,7 +1443,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: true,
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1462,7 +1462,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1481,7 +1481,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: true,
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1500,7 +1500,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1519,7 +1519,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1538,7 +1538,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1557,7 +1557,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: true,
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1576,7 +1576,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1595,7 +1595,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1614,7 +1614,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1633,7 +1633,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: true,
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1652,7 +1652,7 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1671,7 +1671,7 @@ const creatures = [
             defeated: true,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1690,7 +1690,7 @@ const creatures = [
             defeated: true,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1709,7 +1709,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1728,7 +1728,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1747,7 +1747,7 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1766,7 +1766,7 @@ const creatures = [
             defeated: true,
             action: false
         },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
     {
@@ -1785,7 +1785,216 @@ const creatures = [
             defeated: true,
             action: false
         },
-        evolutution: false,
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Swiss Army Bug",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "The Experiment",
+        power: 6,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Thunder Queen",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Turtle Toaster",
+        power: 4,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Typhoon Princess",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Veteran Penguin",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Waddling Recruit",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "War Machine",
+        power: 10,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Westside Monster",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Wildsprout",
+        power: 1,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "World Eater",
+        power: 8,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1804,239 +2013,283 @@ const creatures = [
             defeated: false,
             action: false
         },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolutution: false,
+        evolution: false,
         pack: "Beyond Evolution"
     },
 ]
 
-//todo GOAT DRAGON
 
 initialize();
 function initialize() {
     let pageLoad = true;
+    updateCriteria();
     sortByAlph(pageLoad);
+}
+
+function updateCriteria() {
+    getKeyWordCriteria();
+    getTriggerCriteria();
+    getPackCriteria();
+    getOtherCriteria();
+    getOrderCriteria();
+}
+
+function getKeyWordCriteria() {
+    let poisonous;
+    let hunter;
+    let frenzy;
+    let tough;
+    let sneaky;
+    if($('.poisonous').is(':checked')){
+        poisonous = true;
+    }
+    if($('.hunter').is(':checked')){
+        hunter = true;
+    }
+    if($('.frenzy').is(':checked')){
+        frenzy = true;
+    }
+    if($('.tough').is(':checked')){
+        tough = true;
+    }
+    if($('.sneaky').is(':checked')){
+        sneaky = true;
+    }
+    let message = "";
+    let notTheFirst = false;
+    if (poisonous || hunter || frenzy || tough || sneaky) {
+        message = "with the keyword(s) "
+    }
+    if (poisonous) {
+        message += "Poisonous";
+        notTheFirst = true;
+    }
+    if (hunter) {
+        if (notTheFirst) {
+            message += " & Hunter";
+        } else {
+            message += "Hunter"
+        }
+        notTheFirst = true;
+    }
+    if (frenzy) {
+        if (notTheFirst) {
+            message += " & Frenzy";
+        } else {
+            message += "Frenzy"
+        }
+        notTheFirst = true;
+    }
+    if (tough) {
+        if (notTheFirst) {
+            message += " & Tough";
+        } else {
+            message += "Tough"
+        }
+        notTheFirst = true;
+    }
+    if (sneaky) {
+        if (notTheFirst) {
+            message += " & Sneaky";
+        } else {
+            message += "Sneaky"
+        }
+    }
+    $(".criteria-keywords").text(message);
+}
+
+function getTriggerCriteria() {
+    let play;
+    let attack;
+    let defeated;
+    let action;
+    let discard;
+    if($('.play').is(':checked')){
+        play = true;
+    }
+    if($('.attack').is(':checked')){
+        attack = true;
+    }
+    if($('.defeated').is(':checked')){
+        defeated = true;
+    }
+    if($('.action').is(':checked')){
+        action = true;
+    }
+    if($('.discard').is(':checked')){
+        discard = true;
+    }
+    let message = "";
+    let notTheFirst = false;
+    if (play || attack || defeated || action || discard) {
+        message = "with the trigger(s) "
+    }
+    if (play) {
+        message += "Play";
+        notTheFirst = true;
+    }
+    if (attack) {
+        if (notTheFirst) {
+            message += " & Attack";
+        } else {
+            message += "Attack"
+        }
+        notTheFirst = true;
+    }
+    if (defeated) {
+        if (notTheFirst) {
+            message += " & Defeated";
+        } else {
+            message += "Defeated"
+        }
+        notTheFirst = true;
+    }
+    if (action) {
+        if (notTheFirst) {
+            message += " & Action";
+        } else {
+            message += "Action"
+        }
+        notTheFirst = true;
+    }
+    if (discard) {
+        if (notTheFirst) {
+            message += " & In Discard Pile";
+        } else {
+            message += "In Discard Pile"
+        }
+    }
+    $(".criteria-triggers").text(message);
+}
+
+function getPackCriteria() {
+    let firstContact;
+    let addOn;
+    let eternity;
+    let evolution;
+    if($('.first-contact').is(':checked')){
+        firstContact = true;
+    }
+    if($('.add-on').is(':checked')){
+        addOn = true;
+    }
+    if($('.eternity').is(':checked')){
+        eternity = true;
+    }
+    if($('.evolution').is(':checked')){
+        evolution = true;
+    }
+    let message = "";
+    let notTheFirst = false;
+    if (firstContact && addOn && eternity && evolution) {
+        message = "all packs";
+        $(".criteria-packs").text(message);
+        return;
+    }
+    if (firstContact) {
+        message += "First Contact";
+        notTheFirst = true;
+    }
+    if (addOn) {
+        if (notTheFirst) {
+            message += " & First Contact: Add On";
+        } else {
+            message += "First Contact: Add On"
+        }
+        notTheFirst = true;
+    }
+    if (eternity) {
+        if (notTheFirst) {
+            message += " & Beyond Eternity";
+        } else {
+            message += "Beyond Eternity"
+        }
+        notTheFirst = true;
+    }
+    if (evolution) {
+        if (notTheFirst) {
+            message += " & Beyond Evolution";
+        } else {
+            message += "Beyond Evolution"
+        }
+        notTheFirst = true;
+    }
+    $(".criteria-packs").text(message);
+}
+
+function getOtherCriteria() {
+    let boost;
+    let evolved;
+    if($('.boost').is(':checked')){
+        boost = true;
+    }
+    if($('.evolved').is(':checked')){
+        evolved = true;
+    }
+    let message = "";
+    let notTheFirst = false;
+    if (!boost && !evolved) {
+        message = "";
+        $(".criteria-others").text(message);
+        return;
+    }
+    if (boost) {
+        message += "that interact with Boost";
+        notTheFirst = true;
+    }
+    if (evolved) {
+        if (notTheFirst) {
+            message += " & Evolution";
+        } else {
+            message += "that interact with Boost"
+        }
+    }
+    $(".criteria-others").text(message);
+}
+
+function getOrderCriteria() {
+    let alph;
+    let power;
+    let revPower;
+    if($('.alph').is(':checked')){
+        alph = true;
+    } else if ($('.power').is(':checked')){
+        power = true;
+    } else if($('.rev-power').is(':checked')){
+        revPower = true;
+    }
+    let message = "";
+    if (alph) {
+        message = "Name";
+    } else if (power) {
+        message = "Power";
+    } else if (revPower) {
+        message = "Reverse Power";
+    }
+    $(".criteria-order").text(message);
 }
 
 $(".order").click(function() {
     $('.order').prop('checked', false);
     $(this).prop('checked', true);
+    updateCriteria();
 });
 
-$(".trigger").click(function(e) {
-    if ($(this).is(':checked')) {
-        $('.trigger').prop('checked', false);
-        $(this).prop('checked', true);
-    }
+$(".keyword, .pack, .trigger, .other").click(function() {
+    updateCriteria();
 });
+
+// $(".pack").click(function() {
+//     updateCriteria();
+// });
+
+// $(".trigger").click(function() {
+//     updateCriteria();
+// });
+
+// $(".other").click(function() {
+//     updateCriteria();
+// });
 
 function sortByPower() {
     let creaturesByPowerBiggest = creatures.sort((a, b) => b.power - a.power);
@@ -2082,7 +2335,7 @@ function placeNewArray(array, pageLoad) {
             }
         });
     } else {
-        $(".card-container").append(`<h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div>`)
+        $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`)
     }
     if (pageLoad == true) return;
     scrollToResults();
@@ -2090,7 +2343,7 @@ function placeNewArray(array, pageLoad) {
 
 function scrollToResults() {
     $('html, body').animate({
-        scrollTop: $(".card-container").offset().top
+        scrollTop: $(".results").offset().top
     });
 }
 
@@ -2111,7 +2364,10 @@ $(".filter-btn").click(function() {
     let play;
     let attack;
     let defeated;
+    let action;
     let discard;
+    let boost;
+    let evolved;
     if($('.first-contact').is(':checked')){
         firstContact = true;
     }
@@ -2157,12 +2413,22 @@ $(".filter-btn").click(function() {
     if($('.defeated').is(':checked')){
         defeated = true;
     }
+    if($('.action').is(':checked')){
+        action = true;
+    }
     if($('.discard').is(':checked')){
         discard = true;
     }
+    if($('.boost').is(':checked')){
+        boost = true;
+    }
+    if($('.evolved').is(':checked')){
+        evolved = true;
+    }
     array = getPack(array, firstContact, addOn, eternity, evolution);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
-    array = getTriggers(array, play, attack, defeated, discard)
+    array = getTriggers(array, play, attack, defeated, action, discard);
+    array = getOther(array, boost, evolved);
     getOrder(array, alph, power, revPower);
 })
 
@@ -2201,15 +2467,31 @@ function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
     return array;
 }
 
-function getTriggers(array, play, attack, defeated, discard) {
+function getTriggers(array, play, attack, defeated, action, discard) {
     if (play) {
         array = array.filter(creature => creature.triggers.play == true);
-    } else if (attack) {
+    }
+    if (attack) {
         array = array.filter(creature => creature.triggers.attack == true);
-    } else if (defeated) {
+    }
+    if (defeated) {
         array = array.filter(creature => creature.triggers.defeated == true);
-    } else if (discard) {
+    }
+    if (action) {
+        array = array.filter(creature => creature.triggers.action == true);
+    }
+    if (discard) {
         array = array.filter(creature => creature.triggers.discard == true);
+    }
+    return array;
+}
+
+function getOther(array, boost, evolved) {
+    if (boost) {
+        array = array.filter(creature => creature.boost == true);
+    }
+    if (evolved) {
+        array = array.filter(creature => creature.evolution == true);
     }
     return array;
 }
@@ -2226,4 +2508,5 @@ function getOrder(array, alph, power, revPower) {
     }
     $(".card-container").empty();
     placeNewArray(array);
+    $(".results").text(`${array.length} results found`)
 }

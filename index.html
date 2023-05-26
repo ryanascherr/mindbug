@@ -38,19 +38,19 @@
                 <h2>Only cards from...</h2>
                 <ul>
                     <li>
-                        <input class="first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
+                        <input class="pack first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
                         <label for="first-contact">First Contact</label>
                     </li>
                     <li>
-                        <input class="add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
+                        <input class="pack add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
                         <label for="add-on">First Contact: Add On</label>
                     </li>
                     <li>
-                        <input class="eternity" checked type="checkbox" id="eternity" name="checkbox" value="1">
+                        <input class="pack eternity" checked type="checkbox" id="eternity" name="checkbox" value="1">
                         <label for="eternity">Beyond Eternity</label>
                     </li>
                     <li>
-                        <input class="evolution" checked type="checkbox" id="evolution" name="checkbox" value="1">
+                        <input class="pack evolution" checked type="checkbox" id="evolution" name="checkbox" value="1">
                         <label for="evolution">Beyond Evolution</label>
                     </li>
                 </ul>
@@ -61,23 +61,23 @@
                 <h2>Only cards with the keyword(s)...</h2>
                 <ul>
                     <li>
-                        <input class="poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
+                        <input class="keyword poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
                         <label for="poisonous">Poisonous</label>
                     </li>
                     <li>
-                        <input class="hunter" type="checkbox" id="hunter" name="checkbox" value="1">
+                        <input class="keyword hunter" type="checkbox" id="hunter" name="checkbox" value="1">
                         <label for="hunter">Hunter</label>
                     </li>
                     <li>
-                        <input class="frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
+                        <input class="keyword frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
                         <label for="frenzy">Frenzy</label>
                     </li>
                     <li>
-                        <input class="tough" type="checkbox" id="tough" name="checkbox" value="1">
+                        <input class="keyword tough" type="checkbox" id="tough" name="checkbox" value="1">
                         <label for="tough">Tough</label>
                     </li>
                     <li>
-                        <input class="sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
+                        <input class="keyword sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
                         <label for="sneaky">Sneaky</label>
                     </li>
                 </ul>
@@ -98,17 +98,38 @@
                         <label for="defeated">Defeated</label>
                     </li>
                     <li>
+                        <input class="trigger action" type="checkbox" id="action" name="checkbox" value="1">
+                        <label for="action">Action</label>
+                    </li>
+                    <li>
                         <input class="trigger discard" type="checkbox" id="discard" name="checkbox" value="1">
                         <label for="discard">In Discard Pile</label>
                     </li>
                 </ul>
             </div>
             </div>
+            <div>
+                <div>
+                    <h2>Cards that interact with...</h2>
+                    <ul>
+                        <li>
+                            <input class="other boost" type="checkbox" id="boost" name="checkbox" value="1">
+                            <label for="boost">Boost</label>
+                        </li>
+                        <li>
+                            <input class="other evolved" type="checkbox" id="evolved" name="checkbox" value="1">
+                            <label for="evolved">Evolution</label>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <h3>Select criteria above, then click below to see your results!</h3>
+        <h3>Your criteria will show cards from <span class="criteria-packs"></span> <span class="criteria-keywords"></span> <span class="criteria-triggers"></span> <span class="criteria-others"></span> sorted by <span class="criteria-order"></span></h3>
         <div class="filter-btn-container">
             <button class="filter-btn">Search with Filters</button>
         </div>
+        <div class="results"></div>
         <div class="card-container"></div>
     </main>
 
