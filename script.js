@@ -813,10 +813,10 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false
+            defeated: false,
+            discard: true
         },
         boost: false,
-        discard: true,
         pack: "Beyond Eternity"
     },
     {
@@ -832,10 +832,10 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false
+            defeated: false,
+            discard: true
         },
         boost: false,
-        discard: true,
         pack: "Beyond Eternity"
     },
     {
@@ -851,10 +851,10 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false
+            defeated: false,
+            discard: true
         },
         boost: false,
-        discard: true,
         pack: "Beyond Eternity"
     },
     {
@@ -870,10 +870,10 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false
+            defeated: false,
+            discard: true
         },
         boost: false,
-        discard: true,
         pack: "Beyond Eternity"
     },
     {
@@ -927,10 +927,10 @@ const creatures = [
         triggers: {
             play: false,
             attack: false,
-            defeated: false
+            defeated: false,
+            discard: true
         },
         boost: false,
-        discard: true,
         pack: "Beyond Eternity"
     },
     {
@@ -2111,6 +2111,7 @@ $(".filter-btn").click(function() {
     let play;
     let attack;
     let defeated;
+    let discard;
     if($('.first-contact').is(':checked')){
         firstContact = true;
     }
@@ -2156,9 +2157,12 @@ $(".filter-btn").click(function() {
     if($('.defeated').is(':checked')){
         defeated = true;
     }
+    if($('.discard').is(':checked')){
+        discard = true;
+    }
     array = getPack(array, firstContact, addOn, eternity, evolution);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
-    array = getTriggers(array, play, attack, defeated)
+    array = getTriggers(array, play, attack, defeated, discard)
     getOrder(array, alph, power, revPower);
 })
 
@@ -2197,14 +2201,15 @@ function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
     return array;
 }
 
-function getTriggers(array, play, attack, defeated) {
+function getTriggers(array, play, attack, defeated, discard) {
     if (play) {
         array = array.filter(creature => creature.triggers.play == true);
     } else if (attack) {
         array = array.filter(creature => creature.triggers.attack == true);
-    }
-    else if (defeated) {
+    } else if (defeated) {
         array = array.filter(creature => creature.triggers.defeated == true);
+    } else if (discard) {
+        array = array.filter(creature => creature.triggers.discard == true);
     }
     return array;
 }
