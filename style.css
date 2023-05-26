@@ -48,6 +48,7 @@ header .img-container img {
     align-items: center;
     width: 100%;
     flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 .filter div {
@@ -84,7 +85,7 @@ header .img-container img {
 }
 
 body {
-    background-color: gray;
+    background-color: lightgray;
 }
 
 /* @media only screen and (max-width: 560px){

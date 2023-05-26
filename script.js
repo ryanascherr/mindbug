@@ -2182,7 +2182,7 @@ function getPackCriteria() {
     let message = "";
     let notTheFirst = false;
     if (firstContact && addOn && eternity && evolution) {
-        message = "all packs";
+        message = "All Sets";
         $(".criteria-packs").text(message);
         return;
     }
