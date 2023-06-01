@@ -2362,6 +2362,8 @@ const creatures = [
     }
 ]
 
+//TODO do not allow user to uncheck all sets boxes
+
 let animationDuration = 3000;
 
 initialize();
@@ -2376,7 +2378,7 @@ function initialize() {
 function updateCriteria(pageLoad) {
     getKeyWordCriteria(pageLoad);
     getTriggerCriteria(pageLoad);
-    getPackCriteria(pageLoad);
+    // getPackCriteria(pageLoad);
     getOtherCriteria(pageLoad);
     getOrderCriteria(pageLoad);
 }
@@ -2639,6 +2641,30 @@ $(".order").click(function() {
     $(this).prop('checked', true);
 });
 
+$(".pack").click(function(e) {
+    let numberChecked = 0;
+    if ($(".first-contact").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".add-on").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".eternity").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".evolution").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".promo").is(':checked')) {
+        numberChecked++;
+    }
+    if (numberChecked == 0) {
+        e.preventDefault();
+    } else {
+        getPackCriteria();
+    }
+})
+
 $(".criteria").click(function() {
     updateCriteria();
 });
@@ -2869,5 +2895,5 @@ function getOrder(array, alph, power, revPower) {
     }
     $(".card-container").empty();
     placeNewArray(array);
-    $(".results").text(`${array.length} results found`)
+    $(".results").text(`- ${array.length} results found -`)
 }

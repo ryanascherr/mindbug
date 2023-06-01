@@ -177,6 +177,8 @@ nav ul > * {
 
 .results {
     text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
 }
 
 .filter li:hover, .filter label:hover, .filter input:hover {
