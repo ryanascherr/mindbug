@@ -2362,7 +2362,11 @@ const creatures = [
     }
 ]
 
-//TODO do not allow user to uncheck all sets boxes
+//TODO shuffle animation
+//TODO highlight on change
+//TODO clear results
+//TODO stack cards on mobile
+//TODO button appears when user goes below card threshold that brings them back to filter criteria
 
 let animationDuration = 3000;
 
