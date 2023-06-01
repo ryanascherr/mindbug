@@ -2443,12 +2443,12 @@ function getKeyWordCriteria(pageLoad) {
         }
     }
     $(".criteria-keywords").text(message);
-    if (!pageLoad) {
-        $(".criteria-keywords").addClass("alert");
-        setTimeout(function(){
-            $(".criteria-keywords").removeClass("alert");
-       }, animationDuration);
-    }
+    // if (!pageLoad) {
+    //     $(".criteria-keywords").addClass("alert");
+    //     setTimeout(function(){
+    //         $(".criteria-keywords").removeClass("alert");
+    //    }, animationDuration);
+    // }
 }
 
 function getTriggerCriteria() {
