@@ -1998,6 +1998,350 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
+        name: "Boar-Zooka",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Chuck",
+        power: 3,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Jazz Dog",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Macaw Dagon",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Mindbug Bug",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Ram Hopper",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Ratomancer",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Slugapult",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Sluggernaut",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Unigon",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Blessed Axolotl",
+        power: 6,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: true
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Bug Catcher",
+        power: 9,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Cursed Werewolf",
+        power: 8,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: true
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Ghost Hand",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Kitten Crewmate",
+        power: 2,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Promo"
+    },
+    {
+        name: "One-Eye Felix",
+        power: 7,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Promo"
+    },
+    {
+        name: "Silver Whiskers",
+        power: 6,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Promo"
+    },
+    {
+        name: "Watts Dog",
+        power: 5,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
         name: "",
         power: "",
         keywords: {
@@ -2014,27 +2358,30 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Beyond Evolution"
-    },
+        pack: ""
+    }
 ]
 
+let animationDuration = 3000;
 
 initialize();
 function initialize() {
     let pageLoad = true;
-    updateCriteria();
-    sortByAlph(pageLoad);
+    //updateCriteria(pageLoad);
+    //sortByAlph(pageLoad);
+    getOrderCriteria(pageLoad);
+    getPackCriteria(pageLoad);
 }
 
-function updateCriteria() {
-    getKeyWordCriteria();
-    getTriggerCriteria();
-    getPackCriteria();
-    getOtherCriteria();
-    getOrderCriteria();
+function updateCriteria(pageLoad) {
+    getKeyWordCriteria(pageLoad);
+    getTriggerCriteria(pageLoad);
+    getPackCriteria(pageLoad);
+    getOtherCriteria(pageLoad);
+    getOrderCriteria(pageLoad);
 }
 
-function getKeyWordCriteria() {
+function getKeyWordCriteria(pageLoad) {
     let poisonous;
     let hunter;
     let frenzy;
@@ -2096,6 +2443,12 @@ function getKeyWordCriteria() {
         }
     }
     $(".criteria-keywords").text(message);
+    if (!pageLoad) {
+        $(".criteria-keywords").addClass("alert");
+        setTimeout(function(){
+            $(".criteria-keywords").removeClass("alert");
+       }, animationDuration);
+    }
 }
 
 function getTriggerCriteria() {
@@ -2167,6 +2520,7 @@ function getPackCriteria() {
     let addOn;
     let eternity;
     let evolution;
+    let promo;
     if($('.first-contact').is(':checked')){
         firstContact = true;
     }
@@ -2179,9 +2533,12 @@ function getPackCriteria() {
     if($('.evolution').is(':checked')){
         evolution = true;
     }
+    if($('.promo').is(':checked')){
+        promo = true;
+    }
     let message = "";
     let notTheFirst = false;
-    if (firstContact && addOn && eternity && evolution) {
+    if (firstContact && addOn && eternity && evolution && promo) {
         message = "All Sets";
         $(".criteria-packs").text(message);
         return;
@@ -2211,6 +2568,14 @@ function getPackCriteria() {
             message += " & Beyond Evolution";
         } else {
             message += "Beyond Evolution"
+        }
+        notTheFirst = true;
+    }
+    if (promo) {
+        if (notTheFirst) {
+            message += " & Promo";
+        } else {
+            message += "Promo"
         }
         notTheFirst = true;
     }
@@ -2272,24 +2637,11 @@ function getOrderCriteria() {
 $(".order").click(function() {
     $('.order').prop('checked', false);
     $(this).prop('checked', true);
-    updateCriteria();
 });
 
-$(".keyword, .pack, .trigger, .other").click(function() {
+$(".criteria").click(function() {
     updateCriteria();
 });
-
-// $(".pack").click(function() {
-//     updateCriteria();
-// });
-
-// $(".trigger").click(function() {
-//     updateCriteria();
-// });
-
-// $(".other").click(function() {
-//     updateCriteria();
-// });
 
 function sortByPower() {
     let creaturesByPowerBiggest = creatures.sort((a, b) => b.power - a.power);
@@ -2332,6 +2684,8 @@ function placeNewArray(array, pageLoad) {
                 $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
             } else if (this.pack == "Beyond Eternity") {
                 $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
+            } else if (this.pack == "Promo") {
+                $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
             }
         });
     } else {
@@ -2353,6 +2707,7 @@ $(".filter-btn").click(function() {
     let addOn;
     let eternity;
     let evolution;
+    let promo;
     let alph;
     let power;
     let revPower;
@@ -2379,6 +2734,9 @@ $(".filter-btn").click(function() {
     }
     if($('.evolution').is(':checked')){
         evolution = true;
+    }
+    if($('.promo').is(':checked')){
+        promo = true;
     }
     if($('.poisonous').is(':checked')){
         poisonous = true;
@@ -2425,14 +2783,14 @@ $(".filter-btn").click(function() {
     if($('.evolved').is(':checked')){
         evolved = true;
     }
-    array = getPack(array, firstContact, addOn, eternity, evolution);
+    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
     array = getOther(array, boost, evolved);
     getOrder(array, alph, power, revPower);
 })
 
-function getPack(array, firstContact, addOn, eternity, evolution) {
+function getPack(array, firstContact, addOn, eternity, evolution, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.pack != "First Contact");
     }
@@ -2444,6 +2802,9 @@ function getPack(array, firstContact, addOn, eternity, evolution) {
     }
     if (!evolution) {
         array = array.filter(creature => creature.pack != "Beyond Evolution");
+    }
+    if (!promo) {
+        array = array.filter(creature => creature.pack != "Promo");
     }
     return array;
 }

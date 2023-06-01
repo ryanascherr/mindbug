@@ -5,16 +5,12 @@ html, body {
 body {
     margin: 0;
     color: #411928;
+    font-family: sans-serif;
 }
 
 h2, h3 {
     text-align: center;
     margin: 0;
-}
-
-h3 {
-    margin-bottom: 15px;
-    padding: 0 10px 10px 10px;
 }
 
 header .img-container {
@@ -45,14 +41,17 @@ header .img-container img {
 .filter {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
+    max-width: 1200px;
     flex-wrap: wrap;
-    margin-top: 15px;
+    margin: 0 auto;
 }
 
 .filter div {
     margin: 15px;
+    border: 2px solid #411928;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 .filter ul {
@@ -62,10 +61,16 @@ header .img-container img {
     margin: 0;
     padding-left: 0;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .filter ul li {
-    margin: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.filter h2 {
+    margin-bottom: 15px;
 }
 
 .filter-btn {
@@ -75,7 +80,7 @@ header .img-container img {
     border-radius: 10px;
     border: 2px solid #411928;
     transition: all .35s;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .filter-btn:hover {
@@ -94,20 +99,20 @@ body {
     }
 } */
 
-@media only screen and (max-width: 768px){
+/* @media only screen and (max-width: 768px){
     .filter {
         flex-direction: column;
     }
-}
+} */
 
-@media only screen and (max-width: 896px){
+/* @media only screen and (max-width: 896px){
     .filter {
         flex-direction: column;
     }
     .filter div {
         margin: 0 10px 10px 10px;
     }
-}
+} */
 
 @media only screen and (max-width: 1500px){
     .card {
@@ -127,6 +132,13 @@ body {
     .card {
         width: 42%;
         max-width: none;
+    }
+}
+
+@media only screen and (max-width: 525px){
+    .filter div {
+        width: 100%;
+        margin: 5px 10px;
     }
 }
 
@@ -165,4 +177,34 @@ nav ul > * {
 
 .results {
     text-align: center;
+}
+
+.filter li:hover, .filter label:hover, .filter input:hover {
+    cursor: pointer;
+}
+
+.alert {
+    animation: alert 3s 1 forwards;
+}
+
+@keyframes alert{
+    0%{
+        background-color: none;
+        color: #411928;
+        padding: 0;
+    }
+    50%{
+      background-color: #411928;
+      color: white;
+      /* padding: 2px; */
+    }
+    100%{
+        background-color: none;
+        color: #411928;
+        padding: 0;
+    }
+  }
+
+label {
+    padding: 5px;
 }
