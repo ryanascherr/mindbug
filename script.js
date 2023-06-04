@@ -2368,26 +2368,58 @@ const creatures = [
 //TODO stack cards on mobile
 //TODO button appears when user goes below card threshold that brings them back to filter criteria
 
+let cardsOut = false;
+let isStacked = false;
 let animationDuration = 3000;
 
 initialize();
 function initialize() {
     let pageLoad = true;
-    //updateCriteria(pageLoad);
-    //sortByAlph(pageLoad);
     getOrderCriteria(pageLoad);
     getPackCriteria(pageLoad);
 }
 
+$(".order").click(function() {
+    $('.order').prop('checked', false);
+    $(this).prop('checked', true);
+});
+
+$(".pack").click(function(e) {
+    let numberChecked = 0;
+    if ($(".first-contact").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".add-on").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".eternity").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".evolution").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".promo").is(':checked')) {
+        numberChecked++;
+    }
+    if (numberChecked == 0) {
+        e.preventDefault();
+    } else {
+        getPackCriteria();
+    }
+})
+
+$(".criteria").click(function() {
+    updateCriteria();
+});
+
 function updateCriteria(pageLoad) {
     getKeyWordCriteria(pageLoad);
     getTriggerCriteria(pageLoad);
-    // getPackCriteria(pageLoad);
     getOtherCriteria(pageLoad);
     getOrderCriteria(pageLoad);
 }
 
-function getKeyWordCriteria(pageLoad) {
+function getKeyWordCriteria() {
     let poisonous;
     let hunter;
     let frenzy;
@@ -2449,12 +2481,6 @@ function getKeyWordCriteria(pageLoad) {
         }
     }
     $(".criteria-keywords").text(message);
-    // if (!pageLoad) {
-    //     $(".criteria-keywords").addClass("alert");
-    //     setTimeout(function(){
-    //         $(".criteria-keywords").removeClass("alert");
-    //    }, animationDuration);
-    // }
 }
 
 function getTriggerCriteria() {
@@ -2612,7 +2638,7 @@ function getOtherCriteria() {
         if (notTheFirst) {
             message += " & Evolution";
         } else {
-            message += "that interact with Boost"
+            message += "that interact with Evolution"
         }
     }
     $(".criteria-others").text(message);
@@ -2640,119 +2666,31 @@ function getOrderCriteria() {
     $(".criteria-order").text(message);
 }
 
-$(".order").click(function() {
-    $('.order').prop('checked', false);
-    $(this).prop('checked', true);
-});
-
-$(".pack").click(function(e) {
-    let numberChecked = 0;
-    if ($(".first-contact").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".add-on").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".eternity").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".evolution").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".promo").is(':checked')) {
-        numberChecked++;
-    }
-    if (numberChecked == 0) {
-        e.preventDefault();
-    } else {
-        getPackCriteria();
-    }
-})
-
-$(".criteria").click(function() {
-    updateCriteria();
-});
-
-function sortByPower() {
-    let creaturesByPowerBiggest = creatures.sort((a, b) => b.power - a.power);
-    $(".card-container").empty();
-    placeNewArray(creaturesByPowerBiggest);
-};
-
-function sortByReversePower() {
-    let creaturesByPowerBiggest = creatures.sort((a, b) => a.power - b.power);
-    $(".card-container").empty();
-    placeNewArray(creaturesByPowerBiggest);
-};
-
-function sortByAlph(pageLoad) {
-    let creaturesByAlph = creatures.sort(function(a, b) {
-        return a === b ? 0 : a.name < b.name ? -1 : 1;
-    });
-    $(".card-container").empty();
-    placeNewArray(creaturesByAlph, pageLoad);
-};
-
-function placeNewArray(array, pageLoad) {
-    if (array.length > 0) {
-        $(array).each(function() {
-            let name = this.name;
-            if (name == "") return;
-            name = name.split(" ");
-            if (name.length == 2) {
-                name = name[0] + "_" + name[1];
-            } else if (name.length == 3) {
-                name = name[0] + "_" + name[1] + "_" + name[2];
-            } else if (name.length == 4) {
-                name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-            }
-            if (this.pack == "First Contact") {
-                $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
-            } else if (this.pack == "First Contact: Add-On") {
-                $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
-            } else if (this.pack == "Beyond Evolution") {
-                $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
-            } else if (this.pack == "Beyond Eternity") {
-                $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
-            } else if (this.pack == "Promo") {
-                $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
-            }
-        });
-    } else {
-        $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`)
-    }
-    if (pageLoad == true) return;
-    scrollToResults();
-}
-
-function scrollToResults() {
-    $('html, body').animate({
-        scrollTop: $(".results").offset().top
-    });
-}
-
 $(".filter-btn").click(function() {
     let array = creatures;
+
+    let [firstContact, addOn, eternity, evolution, promo] = checkSets();
+    let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
+    let [play, attack, defeated, action, discard] = checkTriggers();
+    let [boost, evolved] = checkOther();
+    let [alph, power, revPower] = checkOrder();
+    
+    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
+    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
+    array = getTriggers(array, play, attack, defeated, action, discard);
+    array = getOther(array, boost, evolved);
+    array = getOrder(array, alph, power, revPower);
+
+    prepareForCards(array);
+    placeCards(array);
+})
+
+function checkSets() {
     let firstContact;
     let addOn;
     let eternity;
     let evolution;
     let promo;
-    let alph;
-    let power;
-    let revPower;
-    let poisonous;
-    let hunter;
-    let frenzy;
-    let tough;
-    let sneaky;
-    let play;
-    let attack;
-    let defeated;
-    let action;
-    let discard;
-    let boost;
-    let evolved;
     if($('.first-contact').is(':checked')){
         firstContact = true;
     }
@@ -2768,6 +2706,15 @@ $(".filter-btn").click(function() {
     if($('.promo').is(':checked')){
         promo = true;
     }
+    return [firstContact, addOn, eternity, evolution, promo];
+}
+
+function checkKeywords() {
+    let poisonous;
+    let hunter;
+    let frenzy;
+    let tough;
+    let sneaky;
     if($('.poisonous').is(':checked')){
         poisonous = true;
     }
@@ -2783,15 +2730,15 @@ $(".filter-btn").click(function() {
     if($('.sneaky').is(':checked')){
         sneaky = true;
     }
-    if($('.alph').is(':checked')){
-        alph = true;
-    }
-    if($('.power').is(':checked')){
-        power = true;
-    }
-    if($('.rev-power').is(':checked')){
-        revPower = true;
-    }
+    return [poisonous, hunter, frenzy, tough, sneaky];
+}
+
+function checkTriggers() {
+    let play;
+    let attack;
+    let defeated;
+    let action;
+    let discard;
     if($('.play').is(':checked')){
         play = true;
     }
@@ -2807,18 +2754,36 @@ $(".filter-btn").click(function() {
     if($('.discard').is(':checked')){
         discard = true;
     }
+    return [play, attack, defeated, action, discard];
+}
+
+function checkOther() {
+    let boost;
+    let evolved;
     if($('.boost').is(':checked')){
         boost = true;
     }
     if($('.evolved').is(':checked')){
         evolved = true;
     }
-    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
-    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
-    array = getTriggers(array, play, attack, defeated, action, discard);
-    array = getOther(array, boost, evolved);
-    getOrder(array, alph, power, revPower);
-})
+    return [boost, evolved];
+}
+
+function checkOrder() {
+    let alph;
+    let power;
+    let revPower;
+    if($('.alph').is(':checked')){
+        alph = true;
+    }
+    if($('.power').is(':checked')){
+        power = true;
+    }
+    if($('.rev-power').is(':checked')){
+        revPower = true;
+    }
+    return [alph, power, revPower];
+}
 
 function getPack(array, firstContact, addOn, eternity, evolution, promo) {
     if (!firstContact) {
@@ -2897,7 +2862,93 @@ function getOrder(array, alph, power, revPower) {
     } else if (revPower) {
         array = array.sort((a, b) => a.power - b.power);
     }
+    return array;
+}
+
+function prepareForCards(array) {
     $(".card-container").empty();
-    placeNewArray(array);
-    $(".results").text(`- ${array.length} results found -`)
+    $(".results").text(`- ${array.length} results found -`);
+}
+
+function placeCards(array, pageLoad) {
+    if (array.length > 0) {
+        $(array).each(function() {
+            let name = this.name;
+            if (name == "") return;
+            name = name.split(" ");
+            if (name.length == 2) {
+                name = name[0] + "_" + name[1];
+            } else if (name.length == 3) {
+                name = name[0] + "_" + name[1] + "_" + name[2];
+            } else if (name.length == 4) {
+                name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+            }
+            if (this.pack == "First Contact") {
+                $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
+            } else if (this.pack == "First Contact: Add-On") {
+                $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
+            } else if (this.pack == "Beyond Evolution") {
+                $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
+            } else if (this.pack == "Beyond Eternity") {
+                $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
+            } else if (this.pack == "Promo") {
+                $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
+            }
+        });
+        if (isStacked) {
+            stackCards();
+        }
+        if ($(window).width() <= 400) {
+            $(".stack-container-parent").removeClass("d-none");
+        }
+    } else {
+        $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
+    }
+    if (pageLoad == true) return;
+    scrollToResults();
+}
+
+$(".stack").click(function() {
+    if($('#stack-yes').is(':checked')) {
+        stackCards();
+    } else {
+        unstackCards();
+    }
+    scrollToResults();
+})
+
+function stackCards() {
+    let allCards = $(".card");
+    let fromTop = 0;
+    $(allCards).each(function() {
+        $(this).css({"position":"absolute", "top":`${fromTop}px`});
+        fromTop += 80;
+    })
+    isStacked = true;
+}
+
+function unstackCards() {
+    let allCards = $(".card");
+    $(allCards).each(function() {
+        $(this).css({"position":"relative", "top":`0`});
+    })
+    isStacked = false;
+}
+
+$(window).on('resize', function(){
+    if ($(window).width() <= 400) {
+        $(".stack-container-parent").removeClass("d-none");
+        if($('#stack-yes').is(':checked')) {
+            stackCards();
+        }
+    } else {
+        $(".stack-container-parent").addClass("d-none");
+        unstackCards();
+    }
+});
+
+function scrollToResults() {
+    $('html, body').animate({
+        scrollTop: $(".results").offset().top
+    });
 }

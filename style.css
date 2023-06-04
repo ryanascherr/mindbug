@@ -29,6 +29,7 @@ header .img-container img {
     flex-wrap: wrap;
     max-width: 1500px;
     margin: 0 auto;
+    position: relative;
 }
 
 .card {
@@ -181,7 +182,7 @@ nav ul > * {
     padding-top: 15px;
 }
 
-.filter li:hover, .filter label:hover, .filter input:hover {
+.filter li:hover, label:hover, input:hover {
     cursor: pointer;
 }
 
@@ -209,4 +210,31 @@ nav ul > * {
 
 label {
     padding: 5px;
+}
+
+.d-none {
+    display: none;
+}
+
+.stack-container, .stack-container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stack-container {
+    margin: 15px 10px 10px 10px;
+}
+
+.stack-container h3 {
+    margin-right: 10px;
+}
+
+.stack {
+    margin: 0;
+    padding: 5px;
+}
+
+.card:hover {
+    z-index: 100;
 }
