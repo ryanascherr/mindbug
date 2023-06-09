@@ -2365,7 +2365,6 @@ const creatures = [
 //TODO shuffle animation
 //TODO highlight on change
 //TODO clear results
-//TODO stack cards on mobile
 //TODO button appears when user goes below card threshold that brings them back to filter criteria
 
 let cardsOut = false;
@@ -2382,6 +2381,41 @@ function initialize() {
 $(".order").click(function() {
     $('.order').prop('checked', false);
     $(this).prop('checked', true);
+});
+
+$('select').on('change', function() {
+    let power = parseInt($(this).val());
+    let parent = $(this).parent();
+    let relatedInput = $(parent).children('input');
+    console.log(relatedInput);
+    console.log(power);
+    if($(relatedInput).is(':checked')){
+        getPowerCriteria(power);
+    }
+});
+
+$(".power-c").click(function(e) {
+    let parent;
+    let numberChecked = 0;
+    if ($(".power-at-least").is(':checked')) {
+        parent = $(".power-at-least").parent();
+        numberChecked++;
+    }
+    if ($(".power-at-most").is(':checked')) {
+        parent = $(".power-at-most").parent();
+        numberChecked++;
+    }
+    if ($(".power-exactly").is(':checked')) {
+        parent = $(".power-exactly").parent();
+        numberChecked++;
+    }
+    if (numberChecked > 1) {
+        $('.power-c').prop('checked', false);
+        $(this).prop('checked', true);
+    }
+    let select = $(parent).children('select');
+    let power = parseInt($(select).val());
+    getPowerCriteria(power);
 });
 
 $(".pack").click(function(e) {
@@ -2666,6 +2700,28 @@ function getOrderCriteria() {
     $(".criteria-order").text(message);
 }
 
+function getPowerCriteria(power) {
+    let atLeast;
+    let atMost;
+    let exactly;
+    if ($('.power-at-least').is(':checked')){
+        atLeast = true;
+    } else if ($('.power-at-most').is(':checked')){
+        atMost = true;
+    } else if($('.power-exactly').is(':checked')){
+        exactly = true;
+    }
+    let message = "";
+    if (atLeast) {
+        message = `with at least ${power} Power`;
+    } else if (atMost) {
+        message = `with at most ${power} Power`;
+    } else if (exactly) {
+        message = `with exactly ${power} Power`;
+    }
+    $(".criteria-power").text(message);
+}
+
 $(".filter-btn").click(function() {
     let array = creatures;
 
@@ -2673,12 +2729,14 @@ $(".filter-btn").click(function() {
     let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
     let [play, attack, defeated, action, discard] = checkTriggers();
     let [boost, evolved] = checkOther();
+    let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
     array = getPack(array, firstContact, addOn, eternity, evolution, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
     array = getOther(array, boost, evolved);
+    array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower);
 
     prepareForCards(array);
@@ -2769,6 +2827,26 @@ function checkOther() {
     return [boost, evolved];
 }
 
+function checkPower() {
+    let atLeast;
+    let atMost;
+    let exactly;
+    let parent;
+    if($('.power-at-least').is(':checked')){
+        atLeast = true;
+        parent = $('.power-at-least').parent();
+    } else if($('.power-at-most').is(':checked')){
+        atMost = true;
+        parent = $('.power-at-most').parent();
+    } else if($('.power-exactly').is(':checked')){
+        exactly = true;
+        parent = $('.power-exactly').parent();
+    }
+    let select = $(parent).children('select');
+    let powerNumber = parseInt($(select).val());
+    return [atLeast, atMost, exactly, powerNumber];
+}
+
 function checkOrder() {
     let alph;
     let power;
@@ -2848,6 +2926,17 @@ function getOther(array, boost, evolved) {
     }
     if (evolved) {
         array = array.filter(creature => creature.evolution == true);
+    }
+    return array;
+}
+
+function getPower(array, atLeast, atMost, exactly, powerNumber) {
+    if (atLeast) {
+        array = array.filter(creature => creature.power >= powerNumber);
+    } else if (atMost) {
+        array = array.filter(creature => creature.power <= powerNumber);
+    } else if (exactly) {
+        array = array.filter(creature => creature.power == powerNumber);
     }
     return array;
 }
