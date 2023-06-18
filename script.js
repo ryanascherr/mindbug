@@ -2,6 +2,7 @@ const creatures = [
     {
         name: "Axolotl Healer",
         power: 4,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -19,6 +20,7 @@ const creatures = [
     {
         name: "Bee Bear",
         power: 8,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -36,6 +38,7 @@ const creatures = [
     {
         name: "Brain Fly",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -53,6 +56,7 @@ const creatures = [
     {
         name: "Chameleon Sniper",
         power: 1,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -70,6 +74,7 @@ const creatures = [
     {
         name: "Compost Dragon",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -87,6 +92,7 @@ const creatures = [
     {
         name: "Deathweaver",
         power: 2,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -104,6 +110,7 @@ const creatures = [
     {
         name: "Elephantopus",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -121,6 +128,7 @@ const creatures = [
     {
         name: "Explosive Toad",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -138,6 +146,7 @@ const creatures = [
     {
         name: "Ferret Bomber",
         power: 2,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -155,6 +164,7 @@ const creatures = [
     {
         name: "Giraffodile",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -172,6 +182,7 @@ const creatures = [
     {
         name: "Goblin Werewolf",
         power: 2,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -189,6 +200,7 @@ const creatures = [
     {
         name: "Gorillion",
         power: 10,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -206,6 +218,7 @@ const creatures = [
     {
         name: "Grave Robber",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -223,6 +236,7 @@ const creatures = [
     {
         name: "Harpy Mother",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -240,6 +254,7 @@ const creatures = [
     {
         name: "Kangasaurus Rex",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -257,6 +272,7 @@ const creatures = [
     {
         name: "Killer Bee",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -274,6 +290,7 @@ const creatures = [
     {
         name: "Lone Yeti",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -291,6 +308,7 @@ const creatures = [
     {
         name: "Luchataur",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -308,6 +326,7 @@ const creatures = [
     {
         name: "Mysterious Mermaid",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -325,6 +344,7 @@ const creatures = [
     {
         name: "Plated Scorpion",
         power: 2,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -342,6 +362,7 @@ const creatures = [
     {
         name: "Rhino Turtle",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -359,6 +380,7 @@ const creatures = [
     {
         name: "Shark Dog",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -376,6 +398,7 @@ const creatures = [
     {
         name: "Sharky Crab-Dog-Mummypus",
         power: 5,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: true,
@@ -393,6 +416,7 @@ const creatures = [
     {
         name: "Shield Bugs",
         power: 4,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -410,6 +434,7 @@ const creatures = [
     {
         name: "Snail Hydra",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -427,6 +452,7 @@ const creatures = [
     {
         name: "Snail Thrower",
         power: 1,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -444,6 +470,7 @@ const creatures = [
     {
         name: "Spider Owl",
         power: 3,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -461,6 +488,7 @@ const creatures = [
     {
         name: "Strange Barrel",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -478,6 +506,7 @@ const creatures = [
     {
         name: "Tiger Squirrel",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -495,6 +524,7 @@ const creatures = [
     {
         name: "Turbo Bug",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -512,6 +542,7 @@ const creatures = [
     {
         name: "Tusked Extorter",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -529,6 +560,7 @@ const creatures = [
     {
         name: "Urchin Hurler",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -546,6 +578,7 @@ const creatures = [
     {
         name: "Bugserker",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -563,6 +596,7 @@ const creatures = [
     {
         name: "Count Draculeech",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -580,6 +614,7 @@ const creatures = [
     {
         name: "Creep From The Deep",
         power: 4,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -597,6 +632,7 @@ const creatures = [
     {
         name: "Ferret Pacifier",
         power: 4,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -614,6 +650,7 @@ const creatures = [
     {
         name: "Froblin Instigator",
         power: 1,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -631,6 +668,7 @@ const creatures = [
     {
         name: "Goreagle Alpha",
         power: 6,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -648,6 +686,7 @@ const creatures = [
     {
         name: "Hamster Lion",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -665,6 +704,7 @@ const creatures = [
     {
         name: "Hungry Hungry Hamster",
         power: 2,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -682,6 +722,7 @@ const creatures = [
     {
         name: "Hyenix",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -699,6 +740,7 @@ const creatures = [
     {
         name: "Majestic Manticore",
         power: 6,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -716,6 +758,7 @@ const creatures = [
     {
         name: "The Lurker",
         power: 4,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -733,6 +776,7 @@ const creatures = [
     {
         name: "Turf The Surfer",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -750,6 +794,7 @@ const creatures = [
     {
         name: "Agile Rooster",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -762,11 +807,13 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Ant Zombie Horde",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -779,12 +826,14 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: true,
         pack: "Beyond Eternity"
     },
     {
         name: "Berserker Rabbit",
         power: 6,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -797,12 +846,14 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Blessed Killer Bee",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -816,12 +867,14 @@ const creatures = [
             defeated: false,
             discard: true
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Blessed Pegasus",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -835,12 +888,14 @@ const creatures = [
             defeated: false,
             discard: true
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Blessed Shield Bugs",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -854,12 +909,14 @@ const creatures = [
             defeated: false,
             discard: true
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Blessed Tiger Squirrel",
         power: 3,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -873,12 +930,14 @@ const creatures = [
             defeated: false,
             discard: true
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Catalisk",
         power: 2,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -891,6 +950,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -898,6 +958,7 @@ const creatures = [
     {
         name: "Cave Lizard",
         power: 10,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -910,6 +971,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -917,6 +979,7 @@ const creatures = [
     {
         name: "Cursed Gorillion",
         power: 10,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -930,12 +993,14 @@ const creatures = [
             defeated: false,
             discard: true
         },
+        evolved: false,
         boost: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Duckdra",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -948,6 +1013,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -955,6 +1021,7 @@ const creatures = [
     {
         name: "Fire Antler",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -967,6 +1034,7 @@ const creatures = [
             attack: false,
             defeated: true
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -974,6 +1042,7 @@ const creatures = [
     {
         name: "Goat Dragon",
         power: 7,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -986,6 +1055,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -993,6 +1063,7 @@ const creatures = [
     {
         name: "Hiss Holiness",
         power: 5,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: true,
@@ -1005,12 +1076,14 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Hypnotic Mouse",
+        double: false,
         power: 1,
         keywords: {
             poisonous: false,
@@ -1024,6 +1097,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1031,6 +1105,7 @@ const creatures = [
     {
         name: "Koibra",
         power: 2,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1043,6 +1118,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1050,6 +1126,7 @@ const creatures = [
     {
         name: "Radioactive Pest",
         power: 1,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1062,6 +1139,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1069,6 +1147,7 @@ const creatures = [
     {
         name: "Rockswapper",
         power: 8,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1081,6 +1160,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1088,6 +1168,7 @@ const creatures = [
     {
         name: "Sea-Rex",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1100,6 +1181,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -1107,6 +1189,7 @@ const creatures = [
     {
         name: "Soul Manipulator",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1119,6 +1202,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -1126,6 +1210,7 @@ const creatures = [
     {
         name: "Spirit Cheetah",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1138,6 +1223,7 @@ const creatures = [
             attack: false,
             defeated: true
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -1145,6 +1231,7 @@ const creatures = [
     {
         name: "Spirit Maki",
         power: 3,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1157,6 +1244,7 @@ const creatures = [
             attack: false,
             defeated: true
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -1164,6 +1252,7 @@ const creatures = [
     {
         name: "Tailbeak",
         power: 2,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1176,6 +1265,7 @@ const creatures = [
             attack: false,
             defeated: true
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1183,6 +1273,7 @@ const creatures = [
     {
         name: "Tiger Wasp",
         power: 3,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -1195,6 +1286,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1202,6 +1294,7 @@ const creatures = [
     {
         name: "Tornado Dragon",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1214,6 +1307,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1221,6 +1315,7 @@ const creatures = [
     {
         name: "Urchin Teacher",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1233,6 +1328,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1240,6 +1336,7 @@ const creatures = [
     {
         name: "Water Antler",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1252,6 +1349,7 @@ const creatures = [
             attack: false,
             defeated: false
         },
+        evolved: false,
         boost: true,
         discard: false,
         pack: "Beyond Eternity"
@@ -1259,6 +1357,7 @@ const creatures = [
     {
         name: "Wingsnout",
         power: 2,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1271,6 +1370,7 @@ const creatures = [
             attack: true,
             defeated: false
         },
+        evolved: false,
         boost: false,
         discard: false,
         pack: "Beyond Eternity"
@@ -1278,6 +1378,7 @@ const creatures = [
     {
         name: "Bigroot",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1291,12 +1392,15 @@ const creatures = [
             defeated: false,
             action: true
         },
+        evolved: false,
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Blastfish",
         power: 1,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1316,6 +1420,7 @@ const creatures = [
     {
         name: "Bullet Train",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1335,6 +1440,7 @@ const creatures = [
     {
         name: "Cake Trickster",
         power: 6,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1354,6 +1460,7 @@ const creatures = [
     {
         name: "Captain Hippo",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -1373,6 +1480,7 @@ const creatures = [
     {
         name: "Cheeky Chimpborg",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1392,6 +1500,7 @@ const creatures = [
     {
         name: "Cheery Chimpborg",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1411,6 +1520,7 @@ const creatures = [
     {
         name: "Chuckling Chimpborg",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1430,6 +1540,7 @@ const creatures = [
     {
         name: "Cloud Lady",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1449,6 +1560,7 @@ const creatures = [
     {
         name: "Coach Panda",
         power: 6,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1468,6 +1580,7 @@ const creatures = [
     {
         name: "Curious Tadpole",
         power: 1,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1487,6 +1600,7 @@ const creatures = [
     {
         name: "Dr Orange U Tan",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1506,6 +1620,7 @@ const creatures = [
     {
         name: "Dragon Inn",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1525,6 +1640,7 @@ const creatures = [
     {
         name: "Earwig Assassin",
         power: 1,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1544,6 +1660,7 @@ const creatures = [
     {
         name: "Frog Prophet",
         power: 3,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1558,11 +1675,13 @@ const creatures = [
             action: true
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Infernostrich",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1582,6 +1701,7 @@ const creatures = [
     {
         name: "Kitsunsei",
         power: 4,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1601,6 +1721,7 @@ const creatures = [
     {
         name: "Mole Machine",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1620,6 +1741,7 @@ const creatures = [
     {
         name: "Oakenmaster",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1634,11 +1756,13 @@ const creatures = [
             action: false
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Octocopter",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1658,6 +1782,7 @@ const creatures = [
     {
         name: "Puffermech",
         power: 2,
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1677,6 +1802,7 @@ const creatures = [
     {
         name: "Radioactive Rabbit",
         power: 3,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -1696,6 +1822,7 @@ const creatures = [
     {
         name: "Robopup",
         power: 1,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1715,6 +1842,7 @@ const creatures = [
     {
         name: "Sawn",
         power: 5,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1734,6 +1862,7 @@ const creatures = [
     {
         name: "Spiky Shinobi",
         power: 3,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1753,6 +1882,7 @@ const creatures = [
     {
         name: "Steelhorn",
         power: 7,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1772,6 +1902,7 @@ const creatures = [
     {
         name: "Sweet Fighter",
         power: 9,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1791,6 +1922,7 @@ const creatures = [
     {
         name: "Swiss Army Bug",
         power: 4,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1810,6 +1942,7 @@ const creatures = [
     {
         name: "The Experiment",
         power: 6,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1829,6 +1962,7 @@ const creatures = [
     {
         name: "Thunder Queen",
         power: 9,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1843,11 +1977,13 @@ const creatures = [
             action: false
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Turtle Toaster",
         power: 4,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1867,6 +2003,7 @@ const creatures = [
     {
         name: "Typhoon Princess",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1881,11 +2018,13 @@ const creatures = [
             action: true
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Veteran Penguin",
         power: 5,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1900,11 +2039,13 @@ const creatures = [
             action: true
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Waddling Recruit",
         power: 3,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1924,6 +2065,7 @@ const creatures = [
     {
         name: "War Machine",
         power: 10,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1938,11 +2080,13 @@ const creatures = [
             action: false
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
         name: "Westside Monster",
         power: 8,
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -1962,6 +2106,7 @@ const creatures = [
     {
         name: "Wildsprout",
         power: 1,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1981,6 +2126,7 @@ const creatures = [
     {
         name: "World Eater",
         power: 8,
+        double: false,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -1995,6 +2141,7 @@ const creatures = [
             action: false
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -2340,25 +2487,6 @@ const creatures = [
         },
         evolution: false,
         pack: "Promo"
-    },
-    {
-        name: "",
-        power: "",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: ""
     }
 ]
 
@@ -2398,14 +2526,17 @@ $(".power-c").click(function(e) {
     let parent;
     let numberChecked = 0;
     if ($(".power-at-least").is(':checked')) {
+        $('.select-power-at-least').prop('disabled', false);
         parent = $(".power-at-least").parent();
         numberChecked++;
-    }
+    } 
     if ($(".power-at-most").is(':checked')) {
+        $('.select-power-at-most').prop('disabled', false);
         parent = $(".power-at-most").parent();
         numberChecked++;
     }
     if ($(".power-exactly").is(':checked')) {
+        $('.select-power-exactly').prop('disabled', false);
         parent = $(".power-exactly").parent();
         numberChecked++;
     }
@@ -2413,6 +2544,17 @@ $(".power-c").click(function(e) {
         $('.power-c').prop('checked', false);
         $(this).prop('checked', true);
     }
+
+    if (!$(".power-at-least").is(':checked')) {
+        $('.select-power-at-least').prop('disabled', true);
+    }
+    if (!$(".power-at-most").is(':checked')) {
+        $('.select-power-at-most').prop('disabled', true);
+    }
+    if (!$(".power-exactly").is(':checked')) {
+        $('.select-power-exactly').prop('disabled', true);
+    }
+
     let select = $(parent).children('select');
     let power = parseInt($(select).val());
     getPowerCriteria(power);
@@ -2960,6 +3102,7 @@ function prepareForCards(array) {
 }
 
 function placeCards(array, pageLoad) {
+    console.log(array);
     if (array.length > 0) {
         $(array).each(function() {
             let name = this.name;
@@ -2984,27 +3127,37 @@ function placeCards(array, pageLoad) {
                 $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
             }
         });
-        if (isStacked) {
-            stackCards();
-        }
-        if ($(window).width() <= 400) {
-            $(".stack-container-parent").removeClass("d-none");
-        }
+        // if (isStacked) {
+        //     stackCards();
+        // }
+        // if ($(window).width() <= 400) {
+        //     $(".stack-container-parent").removeClass("d-none");
+        // }
     } else {
         $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
     }
     if (pageLoad == true) return;
-    scrollToResults();
+    if (!$(".results").hasClass("d-none")) {
+        scrollToResults();
+    } else if (!$(".deal-hand-container").hasClass("d-none")) {
+        $('html, body').animate({
+            scrollTop: $(".test").offset().top
+        });
+    } else if (!$(".auto-fill-parent-container").hasClass("d-none")) {
+        $('html, body').animate({
+            scrollTop: $(".auto-fill-container").offset().top
+        });
+    }
 }
 
-$(".stack").click(function() {
-    if($('#stack-yes').is(':checked')) {
-        stackCards();
-    } else {
-        unstackCards();
-    }
-    scrollToResults();
-})
+// $(".stack").click(function() {
+//     if($('#stack-yes').is(':checked')) {
+//         stackCards();
+//     } else {
+//         unstackCards();
+//     }
+//     scrollToResults();
+// })
 
 function stackCards() {
     let allCards = $(".card");
@@ -3024,20 +3177,311 @@ function unstackCards() {
     isStacked = false;
 }
 
-$(window).on('resize', function(){
-    if ($(window).width() <= 400) {
-        $(".stack-container-parent").removeClass("d-none");
-        if($('#stack-yes').is(':checked')) {
-            stackCards();
-        }
-    } else {
-        $(".stack-container-parent").addClass("d-none");
-        unstackCards();
-    }
-});
+// $(window).on('resize', function(){
+//     if ($(window).width() <= 400) {
+//         $(".stack-container-parent").removeClass("d-none");
+//         if($('#stack-yes').is(':checked')) {
+//             stackCards();
+//         }
+//     } else {
+//         $(".stack-container-parent").addClass("d-none");
+//         unstackCards();
+//     }
+// });
 
 function scrollToResults() {
     $('html, body').animate({
         scrollTop: $(".results").offset().top
     });
+}
+
+let creatureNames = [];
+$(creatures).each(function() {
+    creatureNames.push(this.name);
+})
+
+function autocomplete(inp, arr) {
+    /*the autocomplete function takes two arguments,
+    the text field element and an array of possible autocompleted values:*/
+    var currentFocus;
+    /*execute a function when someone writes in the text field:*/
+    inp.addEventListener("input", function(e) {
+        var a, b, i, val = this.value;
+        /*close any already open lists of autocompleted values*/
+        closeAllLists();
+        if (!val) { return false;}
+        currentFocus = -1;
+        /*create a DIV element that will contain the items (values):*/
+        a = document.createElement("DIV");
+        a.setAttribute("id", this.id + "autocomplete-list");
+        a.setAttribute("class", "autocomplete-items");
+        /*append the DIV element as a child of the autocomplete container:*/
+        this.parentNode.appendChild(a);
+        /*for each item in the array...*/
+        for (i = 0; i < arr.length; i++) {
+          /*check if the item starts with the same letters as the text field value:*/
+          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            /*create a DIV element for each matching element:*/
+            b = document.createElement("DIV");
+            /*make the matching letters bold:*/
+            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML += arr[i].substr(val.length);
+            /*insert a input field that will hold the current array item's value:*/
+            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+            /*execute a function when someone clicks on the item value (DIV element):*/
+            b.addEventListener("click", function(e) {
+                /*insert the value for the autocomplete text field:*/
+                inp.value = this.getElementsByTagName("input")[0].value;
+                /*close the list of autocompleted values,
+                (or any other open lists of autocompleted values:*/
+                closeAllLists();
+            });
+            a.appendChild(b);
+          }
+        }
+    });
+    /*execute a function presses a key on the keyboard:*/
+    inp.addEventListener("keydown", function(e) {
+        var x = document.getElementById(this.id + "autocomplete-list");
+        if (x) x = x.getElementsByTagName("div");
+        if (e.keyCode == 40) {
+          /*If the arrow DOWN key is pressed,
+          increase the currentFocus variable:*/
+          currentFocus++;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 38) { //up
+          /*If the arrow UP key is pressed,
+          decrease the currentFocus variable:*/
+          currentFocus--;
+          /*and and make the current item more visible:*/
+          addActive(x);
+        } else if (e.keyCode == 13) {
+          /*If the ENTER key is pressed, prevent the form from being submitted,*/
+          e.preventDefault();
+          if (currentFocus > -1) {
+            /*and simulate a click on the "active" item:*/
+            if (x) x[currentFocus].click();
+          }
+        }
+    });
+    function addActive(x) {
+      /*a function to classify an item as "active":*/
+      if (!x) return false;
+      /*start by removing the "active" class on all items:*/
+      removeActive(x);
+      if (currentFocus >= x.length) currentFocus = 0;
+      if (currentFocus < 0) currentFocus = (x.length - 1);
+      /*add class "autocomplete-active":*/
+      x[currentFocus].classList.add("autocomplete-active");
+    }
+    function removeActive(x) {
+      /*a function to remove the "active" class from all autocomplete items:*/
+      for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("autocomplete-active");
+      }
+    }
+    function closeAllLists(elmnt) {
+      /*close all autocomplete lists in the document,
+      except the one passed as an argument:*/
+      var x = document.getElementsByClassName("autocomplete-items");
+      for (var i = 0; i < x.length; i++) {
+        if (elmnt != x[i] && elmnt != inp) {
+          x[i].parentNode.removeChild(x[i]);
+        }
+      }
+    }
+    /*execute a function when someone clicks in the document:*/
+    document.addEventListener("click", function (e) {
+        closeAllLists(e.target);
+    });
+}
+
+autocomplete(document.getElementById("myInput"), creatureNames);
+
+$(".auto-fill-submit").click(function() {
+    let lonelyArray = []
+    let cardName = $("#myInput").val();
+    $(creatures).each(function() {
+        if (this.name == cardName) {
+            lonelyArray.push(this);
+            return;
+        }
+    })
+    prepareForCards(lonelyArray);
+    placeCards(lonelyArray);
+})
+
+$(".flip-switch").click(function() {
+    switchModes();
+})
+
+function switchModes() {
+    $(".auto-fill-container").toggle("slow");
+    $(".filter").toggle("slow");
+    if ($(".flip-switch").hasClass("name")) {
+        $(".auto-fill-container").removeClass("d-none");
+        $(".auto-fill-container").css({"display":"flex", "flex-direction":"column", "justify-content":"center", "align-items":"center"})
+        $(".flip-switch").text("Want to search using parameters instead?");
+        $(".flip-switch").removeClass("name");
+        $(".flip-switch").addClass("parameters");
+        $(".criteria").addClass("d-none");
+        $(".filter-btn-container").addClass("d-none");
+        $(".instructions").text(`Enter a creature name below, then click "Submit" to see your result!`)
+    } else {
+        $(".flip-switch").text("Want to search by name instead?");
+        $(".flip-switch").removeClass("parameters");
+        $(".flip-switch").addClass("name");
+        $(".criteria").removeClass("d-none");
+        $(".filter-btn-container").removeClass("d-none");
+        $(".instructions").text(`Select your search criteria below, then click "Search with Filters" to see your results!`)
+    }
+}
+
+$(".deal-hand").click(function() {
+    dealHand();
+})
+
+//todo factor in cards that have doubles
+function dealHand() {
+    let array = creatures;
+    let [firstContact, addOn, eternity, evolution, promo] = checkSets2();
+    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
+    let handOfCards = [];
+    let usedNumbersArray = [];
+    addCardToHand();
+    function addCardToHand() {
+        let randomNumber = Math.floor(Math.random()*(array.length));
+        let howMany = 0;
+        $(usedNumbersArray).each(function() {
+            if (this == randomNumber) {
+                howMany++;
+            }
+        })
+        console.log(randomNumber + " appeared " + howMany + " times");
+        if (array[randomNumber].evolved == true) {
+            console.log(array[randomNumber].name + " is an evolution, abort!");
+            addCardToHand();
+            return;
+        }
+        if (howMany == 0) {
+            console.log("first time, all good!")
+            usedNumbersArray.push(randomNumber);
+            handOfCards.push(array[randomNumber]);
+        } else if (howMany == 1) {
+            if (!array[randomNumber].double) {
+                console.log(array[randomNumber].name + " is a single, abort!");
+            } else {
+                console.log(array[randomNumber].name + " is a double, all good!");
+                usedNumbersArray.push(randomNumber);
+                handOfCards.push(array[randomNumber]);
+            }
+        } else if (howMany == 2) {
+            console.log(array[randomNumber].name + " is already here twice, abort!")
+        }
+        
+        if (handOfCards.length >= 5) {
+            console.log(handOfCards);
+            prepareForCards(handOfCards);
+            placeCards(handOfCards);
+        } else {
+            addCardToHand();
+        }
+    }
+
+}
+
+$(".open").click(function(e) {
+    e.preventDefault();
+    $(".card-container").empty();
+    $(".results").text(``);
+    if ($(this).hasClass("open-filter")) {
+        highlightTab(this);
+        openFilter();
+    } else if ($(this).hasClass("open-name")) {
+        highlightTab(this);
+        openName();
+    } else if ($(this).hasClass("open-hand")) {
+        highlightTab(this);
+        openHand();
+    }
+})
+
+function highlightTab(tab) {
+    $(".open").removeClass("gray");
+    $(".open").addClass("dark-gray");
+    $(tab).removeClass("dark-gray")
+    $(tab).addClass("gray")
+}
+
+function openFilter() {
+    console.log("opening filter!");
+    $(".auto-fill-parent-container").addClass("d-none");
+    $(".deal-hand-container").addClass("d-none");
+    $(".filter-container").removeClass("d-none");
+    $(".results").removeClass("d-none");
+}
+
+function openName() {
+    console.log("opening name!");
+    $(".filter-container").addClass("d-none");
+    $(".deal-hand-container").addClass("d-none");
+    $(".auto-fill-parent-container").removeClass("d-none");
+    $(".results").addClass("d-none");
+}
+
+function openHand() {
+    console.log("opening hand!");
+    $(".filter-container").addClass("d-none");
+    $(".auto-fill-parent-container").addClass("d-none");
+    $(".deal-hand-container").removeClass("d-none");
+    $(".results").addClass("d-none");
+}
+
+$(".pack2").click(function(e) {
+    let numberChecked = 0;
+    if ($(".first-contact2").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".add-on2").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".eternity2").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".evolution2").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".promo2").is(':checked')) {
+        numberChecked++;
+    }
+    if (numberChecked == 0) {
+        e.preventDefault();
+    } else {
+        getPackCriteria();
+    }
+})
+
+function checkSets2() {
+    let firstContact;
+    let addOn;
+    let eternity;
+    let evolution;
+    let promo;
+    if($('.first-contact2').is(':checked')){
+        firstContact = true;
+    }
+    if($('.add-on2').is(':checked')){
+        addOn = true;
+    }
+    if($('.eternity2').is(':checked')){
+        eternity = true;
+    }
+    if($('.evolution2').is(':checked')){
+        evolution = true;
+    }
+    if($('.promo2').is(':checked')){
+        promo = true;
+    }
+    return [firstContact, addOn, eternity, evolution, promo];
 }

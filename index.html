@@ -14,8 +14,62 @@
             <img src="./img/wallpaper/mindbug-wp-1.jpeg" alt="">
         </div>
     </header>
+    <nav>
+        <h3 style="margin-bottom: 30px;">Choose a tab below to search for cards using filters, search for a card by name, or to be dealt a starting hand of 5 cards</h3>
+        <div class="tab-container">
+            <div class="tab open open-filter">Filters</div>
+            <div class="tab open open-name">Name</div>
+            <div class="tab open open-hand">Starting Hand</div>
+        </div>
+    </nav>
     <main>
-        <h3 style="margin: 30px 10px 15px 10px;">Select your search criteria below, then click "Search with Filters" to see your results!</h3>
+        <!-- <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Do you want to <a href="" class=" open open-filter">search for cards using filters</a>, <a href="" class="open open-name">search for a card by its name</a>, <a href="" class="open open-hand">or be dealt a starting hand of 5 cards</a>?</h3> -->
+        <!-- <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Select your search criteria below, then click "Search with Filters" to see your results!</h3> -->
+        <!-- <h4 class="flip-switch name">Want to search by name instead?</h4>
+        <h4 class="flip-switch hand">Want to draw a starting hand of cards?</h4> -->
+        <div class="auto-fill-parent-container d-none">
+            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Begin typing a name below and then click "Submit" to see the card!</h3>
+            <div class="auto-fill-container">
+                <!-- <form autocomplete="off"> -->
+                    <div class="autocomplete">
+                    <input id="myInput" type="text" name="myCreature" placeholder="Creature Name">
+                    </div>
+                <!-- </form> -->
+                <button class="auto-fill-submit">Submit</button>
+            </div>
+        </div>
+        <div class="deal-hand-container d-none">
+            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Choose what card sets you want to include, then click below to get a starting hand!</h3>
+            <div>
+                <ul>
+                    <li>
+                        <input class="criteria2 pack2 first-contact2" checked type="checkbox" id="first-contact2" name="checkbox" value="1">
+                        <label for="first-contact2">First Contact</label>
+                    </li>
+                    <li>
+                        <input class="criteria2 pack2 add-on2" checked type="checkbox" id="add-on2" name="checkbox" value="1">
+                        <label for="add-on2">First Contact: Add On</label>
+                    </li>
+                    <li>
+                        <input class="criteria2 pack2 eternity2" checked type="checkbox" id="eternity2" name="checkbox" value="1">
+                        <label for="eternity2">Beyond Eternity</label>
+                    </li>
+                    <li>
+                        <input class="criteria2 pack2 evolution2" checked type="checkbox" id="evolution2" name="checkbox" value="1">
+                        <label for="evolution2">Beyond Evolution</label>
+                    </li>
+                    <li>
+                        <input class="criteria2 pack2 promo2" checked type="checkbox" id="promo2" name="checkbox" value="1">
+                        <label for="promo2">Promo</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="test" style="display: flex; justify-content: center; align-items: center; margin: 0; border: none; padding: 0; border-radius: 0;">
+                <button class="deal-hand">Deal 5 random cards</button>
+            </div>
+        </div>
+        <div class="filter-container d-none">
+            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Select your search criteria below, then click "Search with Filters" to see your results!</h3>
         <div class="filter">
             <div>
                 <h2>Order</h2>
@@ -65,7 +119,7 @@
                     <li>
                         <input class="criteria power-c power-at-least" type="checkbox" id="power-at-least" name="checkbox" value="1">
                         <label for="power-at-least">Power At Least</label>
-                        <select class="select-power-at-least">
+                        <select class="select-power-at-least" disabled>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -81,7 +135,7 @@
                     <li>
                         <input class="criteria power-c power-at-most" type="checkbox" id="power-at-most" name="checkbox" value="1">
                         <label for="power-at-most">Power At Most</label>
-                        <select class="select-power-at-most">
+                        <select class="select-power-at-most" disabled>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -97,7 +151,7 @@
                     <li>
                         <input class="criteria power-c power-exactly" type="checkbox" id="power-exactly" name="checkbox" value="1">
                         <label for="power-exactly">Power Exactly</label>
-                        <select class="select-power-exactly">
+                        <select class="select-power-exactly" disabled>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -174,13 +228,14 @@
                         <label for="evolved">Evolution</label>
                     </li>
                 </ul>
-        </div>
+            </div>
         </div>
         <h3 style="margin: 15px 10px 30px 10px;" class="criteria">Your search will show cards from <span class="criteria-packs"></span> <span class="criteria-keywords"></span> <span class="criteria-triggers"></span> <span class="criteria-others"></span> <span class="criteria-power"></span> sorted by <span class="criteria-order"></span></h3>
         <div class="filter-btn-container">
             <button class="filter-btn">Search with Filters</button>
         </div>
-        <div class="results"></div>
+        </div>
+        <div class="results d-none"></div>
         <div class="stack-container-parent d-none">
             <div class="stack-container">
                 <h3>Stacked View?</h3>
