@@ -2490,11 +2490,6 @@ const creatures = [
     }
 ]
 
-//TODO shuffle animation
-//TODO highlight on change
-//TODO clear results
-//TODO button appears when user goes below card threshold that brings them back to filter criteria
-
 let cardsOut = false;
 let isStacked = false;
 let animationDuration = 3000;
