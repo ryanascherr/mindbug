@@ -49,6 +49,10 @@ input[type=submit] {
     cursor: pointer;
 }
 
+ul {
+    list-style-type: none;
+}
+
 /* END GENERAL */
 /* BEGIN HEADER */
 
@@ -425,3 +429,20 @@ select:hover {
 }
 
 /* END DEAL */
+
+.autocomplete ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.autocomplete li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.autocomplete input {
+    margin: 10px 0 10px 5px;
+}

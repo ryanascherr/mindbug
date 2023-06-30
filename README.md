@@ -1,7 +1,7 @@
 # Mindbug 
 
 ## What is Mindbug?
-Taken from the [game's website] (https://mindbug.me/):
+Taken from the [game's website](https://mindbug.me/):
 
 >Mindbug combines the accessibility and fairness of a simple card game with the strategic depth of a complex Strategy Card Game. The result is a skill-based dueling card game that feels utterly different from all the other card games you have played before.
 

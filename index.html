@@ -194,9 +194,18 @@
             <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Begin typing a name below and then click "Submit" to see the card!</h3>
             <div class="auto-fill-container">
                 <div class="autocomplete">
+                    <ul>
+                        <li>
+                            <input checked class="live live-name" type="checkbox" id="live-name" name="checkbox" value="1">
+                            <label for="live-name">Name</label>
+                        </li>
+                        <li>
+                            <input class="live live-ability" type="checkbox" id="live-ability" name="checkbox" value="1">
+                            <label for="live-ability">Ability</label>
+                        </li>
+                    </ul>
                     <input id="myInput" type="text" name="myCreature" placeholder="Creature Name">
                 </div>
-                <button class="auto-fill-submit">Submit</button>
             </div>
         </div>
         <div class="deal-hand-container d-none">

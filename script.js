@@ -2,6 +2,7 @@ const creatures = [
     {
         name: "Axolotl Healer",
         power: 4,
+        ability: "Gain 2 life points",
         double: true,
         keywords: {
             poisonous: true,
@@ -20,6 +21,7 @@ const creatures = [
     {
         name: "Bee Bear",
         power: 8,
+        ability: "Cannot be blocked by creatures with power 6 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -38,6 +40,7 @@ const creatures = [
     {
         name: "Brain Fly",
         power: 4,
+        ability: "Take control of a creature with power 6 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -56,6 +59,7 @@ const creatures = [
     {
         name: "Chameleon Sniper",
         power: 1,
+        ability: "The opponent loses a life point",
         double: false,
         keywords: {
             poisonous: false,
@@ -74,6 +78,7 @@ const creatures = [
     {
         name: "Compost Dragon",
         power: 3,
+        ability: "Play a card from your discard pile",
         double: true,
         keywords: {
             poisonous: false,
@@ -92,6 +97,7 @@ const creatures = [
     {
         name: "Deathweaver",
         power: 2,
+        ability: "The opponent cannot activate play effects",
         double: false,
         keywords: {
             poisonous: true,
@@ -110,6 +116,7 @@ const creatures = [
     {
         name: "Elephantopus",
         power: 7,
+        ability: "The opponent cannot block with creatures with power 4 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -128,6 +135,7 @@ const creatures = [
     {
         name: "Explosive Toad",
         power: 5,
+        ability: "Defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -146,6 +154,7 @@ const creatures = [
     {
         name: "Ferret Bomber",
         power: 2,
+        ability: "The opponent discards 2 cards",
         double: true,
         keywords: {
             poisonous: false,
@@ -164,6 +173,7 @@ const creatures = [
     {
         name: "Giraffodile",
         power: 7,
+        ability: "Draw your entire discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -182,6 +192,7 @@ const creatures = [
     {
         name: "Goblin Werewolf",
         power: 2,
+        ability: "Has +6 power while it is your turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -218,6 +229,7 @@ const creatures = [
     {
         name: "Grave Robber",
         power: 7,
+        ability: "Play a card from the opponent's discard pile",
         double: true,
         keywords: {
             poisonous: false,
@@ -236,6 +248,7 @@ const creatures = [
     {
         name: "Harpy Mother",
         power: 5,
+        ability: "Take control of up to 2 creatures with power 5 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -254,6 +267,7 @@ const creatures = [
     {
         name: "Kangasaurus Rex",
         power: 7,
+        ability: "Defeat all enemy creatures with power 4 or less",
         double: true,
         keywords: {
             poisonous: false,
@@ -272,6 +286,7 @@ const creatures = [
     {
         name: "Killer Bee",
         power: 5,
+        ability: "The opponent loses a life point",
         double: true,
         keywords: {
             poisonous: false,
@@ -290,6 +305,7 @@ const creatures = [
     {
         name: "Lone Yeti",
         power: 5,
+        ability: "While this is your only allied creature, it has +5 power and frenzy",
         double: false,
         keywords: {
             poisonous: false,
@@ -326,6 +342,7 @@ const creatures = [
     {
         name: "Mysterious Mermaid",
         power: 7,
+        ability: "Set your life points equal to the opponent's",
         double: false,
         keywords: {
             poisonous: false,
@@ -380,6 +397,7 @@ const creatures = [
     {
         name: "Shark Dog",
         power: 4,
+        ability: "Defeat an enemy creature with power 6 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -398,6 +416,7 @@ const creatures = [
     {
         name: "Sharky Crab-Dog-Mummypus",
         power: 5,
+        ability: "Has hunter while an enemy creature does. Repeat for sneaky, frenzy, and poisonous",
         double: false,
         keywords: {
             poisonous: true,
@@ -416,6 +435,7 @@ const creatures = [
     {
         name: "Shield Bugs",
         power: 4,
+        ability: "Other allied creatures have +1 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -434,6 +454,7 @@ const creatures = [
     {
         name: "Snail Hydra",
         power: 9,
+        ability: "If you control fewer creatures than the opponent, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -452,6 +473,7 @@ const creatures = [
     {
         name: "Snail Thrower",
         power: 1,
+        ability: "Other allied creatures with power 4 or less have hunter and poisonous",
         double: false,
         keywords: {
             poisonous: true,
@@ -488,6 +510,7 @@ const creatures = [
     {
         name: "Strange Barrel",
         power: 6,
+        ability: "Steal 2 random cards from the opponent's hand",
         double: false,
         keywords: {
             poisonous: false,
@@ -506,6 +529,7 @@ const creatures = [
     {
         name: "Tiger Squirrel",
         power: 3,
+        ability: "Defeat an enemy creature with power 7 or more",
         double: true,
         keywords: {
             poisonous: false,
@@ -524,6 +548,7 @@ const creatures = [
     {
         name: "Turbo Bug",
         power: 4,
+        ability: "The opponent loses all life points except one",
         double: false,
         keywords: {
             poisonous: false,
@@ -542,6 +567,7 @@ const creatures = [
     {
         name: "Tusked Extorter",
         power: 8,
+        ability: "The opponent discards a card",
         double: true,
         keywords: {
             poisonous: false,
@@ -560,6 +586,7 @@ const creatures = [
     {
         name: "Urchin Hurler",
         power: 5,
+        ability: "Other allied creatures have +2 power while it is your turn",
         double: false,
         keywords: {
             poisonous: false,
@@ -578,6 +605,7 @@ const creatures = [
     {
         name: "Bugserker",
         power: 3,
+        ability: "Has +8 power while you have 1 life point left",
         double: true,
         keywords: {
             poisonous: false,
@@ -596,6 +624,7 @@ const creatures = [
     {
         name: "Count Draculeech",
         power: 7,
+        ability: "You lose 1 life point. Defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -632,6 +661,7 @@ const creatures = [
     {
         name: "Ferret Pacifier",
         power: 4,
+        ability: "The enemy creature(s) with the highest power can't block",
         double: true,
         keywords: {
             poisonous: false,
@@ -650,6 +680,7 @@ const creatures = [
     {
         name: "Froblin Instigator",
         power: 1,
+        ability: "Has +2 power for each other allied creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -668,6 +699,7 @@ const creatures = [
     {
         name: "Goreagle Alpha",
         power: 6,
+        ability: "You lose 1 life point",
         double: true,
         keywords: {
             poisonous: false,
@@ -686,6 +718,7 @@ const creatures = [
     {
         name: "Hamster Lion",
         power: 8,
+        ability: "The enemy creature(s) with the lowest power can't attack",
         double: true,
         keywords: {
             poisonous: false,
@@ -704,6 +737,7 @@ const creatures = [
     {
         name: "Hungry Hungry Hamster",
         power: 2,
+        ability: "The opponent gives you a card from their hand. Play it or put it into your hand",
         double: true,
         keywords: {
             poisonous: false,
@@ -722,6 +756,7 @@ const creatures = [
     {
         name: "Hyenix",
         power: 7,
+        ability: "When you lose 1 or more life points while this is in your discard pile, you may play this",
         double: true,
         keywords: {
             poisonous: false,
@@ -740,6 +775,7 @@ const creatures = [
     {
         name: "Majestic Manticore",
         power: 6,
+        ability: "Defeat the creature(s) with the lowest power",
         double: true,
         keywords: {
             poisonous: true,
@@ -758,6 +794,7 @@ const creatures = [
     {
         name: "The Lurker",
         power: 4,
+        ability: "If you control more creatures than the opponent, this has sneaky this turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -776,6 +813,7 @@ const creatures = [
     {
         name: "Turf The Surfer",
         power: 8,
+        ability: "Choose a creature. It cannot block this turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -794,6 +832,7 @@ const creatures = [
     {
         name: "Agile Rooster",
         power: 5,
+        ability: "Can only be blocked by creatures with power within 1 of this creature's power",
         double: true,
         keywords: {
             poisonous: false,
@@ -813,6 +852,7 @@ const creatures = [
     {
         name: "Ant Zombie Horde",
         power: 7,
+        ability: "Boost 2 to this",
         double: true,
         keywords: {
             poisonous: false,
@@ -833,6 +873,7 @@ const creatures = [
     {
         name: "Berserker Rabbit",
         power: 6,
+        ability: "While your discard pile is empty, this has +3 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -853,6 +894,7 @@ const creatures = [
     {
         name: "Blessed Killer Bee",
         power: 5,
+        ability: "When the opponent loses life, they lose 2 additional life",
         double: false,
         keywords: {
             poisonous: false,
@@ -874,6 +916,7 @@ const creatures = [
     {
         name: "Blessed Pegasus",
         power: 3,
+        ability: "When this card is put into your discard pile from anywhere, gain 1 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -895,6 +938,7 @@ const creatures = [
     {
         name: "Blessed Shield Bugs",
         power: 6,
+        ability: "Allied creatures have +1 power",
         double: false,
         keywords: {
             poisonous: false,
@@ -916,6 +960,7 @@ const creatures = [
     {
         name: "Blessed Tiger Squirrel",
         power: 3,
+        ability: "Enemy creatures with power 7 or more cannot attack and/or block",
         double: false,
         keywords: {
             poisonous: false,
@@ -937,6 +982,7 @@ const creatures = [
     {
         name: "Catalisk",
         power: 2,
+        ability: "The opponent discards their draw pile",
         double: false,
         keywords: {
             poisonous: true,
@@ -958,6 +1004,7 @@ const creatures = [
     {
         name: "Cave Lizard",
         power: 10,
+        ability: "Cannot attack",
         double: false,
         keywords: {
             poisonous: false,
@@ -979,6 +1026,7 @@ const creatures = [
     {
         name: "Cursed Gorillion",
         power: 10,
+        ability: "Allied creatures have -2 power (to a minimum of 1)",
         double: false,
         keywords: {
             poisonous: false,
@@ -1000,6 +1048,7 @@ const creatures = [
     {
         name: "Duckdra",
         power: 5,
+        ability: "You may defeat a creature with poisonous",
         double: true,
         keywords: {
             poisonous: false,
@@ -1021,6 +1070,7 @@ const creatures = [
     {
         name: "Fire Antler",
         power: 9,
+        ability: "The opponent loses 1 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -1042,6 +1092,7 @@ const creatures = [
     {
         name: "Goat Dragon",
         power: 7,
+        ability: "Boost 1 to any creature. You may defeat a boosted creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1063,6 +1114,7 @@ const creatures = [
     {
         name: "Hiss Holiness",
         power: 5,
+        ability: "Boost 4 to any creature(s)",
         double: true,
         keywords: {
             poisonous: true,
@@ -1084,6 +1136,7 @@ const creatures = [
     {
         name: "Hypnotic Mouse",
         double: false,
+        ability: "While 2 or more creatures have equal power, they cannot attack",
         power: 1,
         keywords: {
             poisonous: false,
@@ -1105,6 +1158,7 @@ const creatures = [
     {
         name: "Koibra",
         power: 2,
+        ability: "Reveal a random card from the opponent's hand. Put it into any player's discard pile",
         double: true,
         keywords: {
             poisonous: true,
@@ -1126,6 +1180,7 @@ const creatures = [
     {
         name: "Radioactive Pest",
         power: 1,
+        ability: "Defeat an enemy creature with power 7 or more",
         double: true,
         keywords: {
             poisonous: true,
@@ -1147,6 +1202,7 @@ const creatures = [
     {
         name: "Rockswapper",
         power: 8,
+        ability: "You may swap discard pile with the opponent",
         double: false,
         keywords: {
             poisonous: false,
@@ -1167,6 +1223,7 @@ const creatures = [
     },
     {
         name: "Sea-Rex",
+        ability: "Boost 1 to this",
         power: 5,
         double: true,
         keywords: {
@@ -1189,6 +1246,7 @@ const creatures = [
     {
         name: "Soul Manipulator",
         power: 5,
+        ability: "Boost 1 to any creature or return a boost card to your hand",
         double: true,
         keywords: {
             poisonous: false,
@@ -1210,6 +1268,7 @@ const creatures = [
     {
         name: "Spirit Cheetah",
         power: 6,
+        ability: "Boost this to any creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -1231,6 +1290,7 @@ const creatures = [
     {
         name: "Spirit Maki",
         power: 3,
+        ability: "Boost this to any creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -1252,6 +1312,7 @@ const creatures = [
     {
         name: "Tailbeak",
         power: 2,
+        ability: "Play a card from the opponent's discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -1273,6 +1334,7 @@ const creatures = [
     {
         name: "Tiger Wasp",
         power: 3,
+        ability: "Discard a random card",
         double: false,
         keywords: {
             poisonous: false,
@@ -1294,6 +1356,7 @@ const creatures = [
     {
         name: "Tornado Dragon",
         power: 8,
+        ability: "Discard up to 2 cards. For each card discarded this way, defeat an enemy creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1315,6 +1378,7 @@ const creatures = [
     {
         name: "Urchin Teacher",
         power: 4,
+        ability: "Other allied creatures have poisonous",
         double: false,
         keywords: {
             poisonous: false,
@@ -1336,6 +1400,7 @@ const creatures = [
     {
         name: "Water Antler",
         power: 9,
+        ability: "Gain 1 life. Boost 1 to any creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1357,6 +1422,7 @@ const creatures = [
     {
         name: "Wingsnout",
         power: 2,
+        ability: "Draw 2 cards from the opponent's discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -1378,6 +1444,7 @@ const creatures = [
     {
         name: "Bigroot",
         power: 4,
+        ability: "Play a card from your discard pile. Evolve to Oakenmaster",
         double: false,
         keywords: {
             poisonous: false,
@@ -1400,6 +1467,7 @@ const creatures = [
     {
         name: "Blastfish",
         power: 1,
+        ability: "This cannot be defeated this turn",
         double: false,
         keywords: {
             poisonous: true,
@@ -1420,6 +1488,7 @@ const creatures = [
     {
         name: "Bullet Train",
         power: 9,
+        ability: "Defeat an enemy creature with power 3 or less",
         double: true,
         keywords: {
             poisonous: false,
@@ -1440,6 +1509,7 @@ const creatures = [
     {
         name: "Cake Trickster",
         power: 6,
+        ability: "Choose an enemy creature. The opponent attacks with it if able",
         double: true,
         keywords: {
             poisonous: true,
@@ -1460,6 +1530,7 @@ const creatures = [
     {
         name: "Captain Hippo",
         power: 7,
+        ability: "During the opponent's turn, they must always attack this with a creature with hunter if able",
         double: false,
         keywords: {
             poisonous: false,
@@ -1480,6 +1551,7 @@ const creatures = [
     {
         name: "Cheeky Chimpborg",
         power: 5,
+        ability: "The opponent discards a card for each creature they control",
         double: false,
         keywords: {
             poisonous: false,
@@ -1500,6 +1572,7 @@ const creatures = [
     {
         name: "Cheery Chimpborg",
         power: 5,
+        ability: "While there are 3 or more enemy creatures, this has +5 power",
         double: false,
         keywords: {
             poisonous: false,
@@ -1520,6 +1593,7 @@ const creatures = [
     {
         name: "Chuckling Chimpborg",
         power: 5,
+        ability: "The opponent loses 1 life for each mindbug they have",
         double: false,
         keywords: {
             poisonous: false,
@@ -1540,6 +1614,7 @@ const creatures = [
     {
         name: "Cloud Lady",
         power: 4,
+        ability: "Defeat an enemy creature with power 4 or less. Evolve to Typhoon Princess",
         double: false,
         keywords: {
             poisonous: false,
@@ -1560,6 +1635,7 @@ const creatures = [
     {
         name: "Coach Panda",
         power: 6,
+        ability: "While there is exactly 1 other allied creature, that creature has +3 power and frenzy",
         double: true,
         keywords: {
             poisonous: false,
@@ -1580,6 +1656,7 @@ const creatures = [
     {
         name: "Curious Tadpole",
         power: 1,
+        ability: "Gain 1 life. Evolve to Frog Prophet",
         double: false,
         keywords: {
             poisonous: true,
@@ -1600,6 +1677,7 @@ const creatures = [
     {
         name: "Dr Orange U Tan",
         power: 6,
+        ability: "You may lose 1 life. If you do, return all enemy creatures to the opponent's hand",
         double: false,
         keywords: {
             poisonous: false,
@@ -1620,6 +1698,7 @@ const creatures = [
     {
         name: "Dragon Inn",
         power: 3,
+        ability: "If you control fewer creatures than the opponent, they lose 1 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -1640,6 +1719,7 @@ const creatures = [
     {
         name: "Earwig Assassin",
         power: 1,
+        ability: "You may discard a card. If you do, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1660,6 +1740,7 @@ const creatures = [
     {
         name: "Frog Prophet",
         power: 3,
+        ability: "Gain 1 life. Evolve to World Eater",
         double: false,
         keywords: {
             poisonous: true,
@@ -1681,6 +1762,7 @@ const creatures = [
     {
         name: "Infernostrich",
         power: 6,
+        ability: "Defeat an enemy creature with power 7 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -1701,6 +1783,7 @@ const creatures = [
     {
         name: "Kitsunsei",
         power: 4,
+        ability: "Other allied creatures have sneaky",
         double: false,
         keywords: {
             poisonous: false,
@@ -1721,6 +1804,7 @@ const creatures = [
     {
         name: "Mole Machine",
         power: 5,
+        ability: "The opponent cannot block with creatures with power 7 or more",
         double: true,
         keywords: {
             poisonous: false,
@@ -1741,6 +1825,7 @@ const creatures = [
     {
         name: "Oakenmaster",
         power: 7,
+        ability: "Other allied creatures have +5 power",
         double: false,
         keywords: {
             poisonous: false,
@@ -1762,6 +1847,7 @@ const creatures = [
     {
         name: "Octocopter",
         power: 5,
+        ability: "Defeat this. Take control of an enemy creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -1782,6 +1868,7 @@ const creatures = [
     {
         name: "Puffermech",
         power: 2,
+        ability: "Defeat all enemy creatures with power 8 or more",
         double: true,
         keywords: {
             poisonous: true,
@@ -1802,6 +1889,7 @@ const creatures = [
     {
         name: "Radioactive Rabbit",
         power: 3,
+        ability: "The opponent takes control of this. Defeat all other allied creatures",
         double: false,
         keywords: {
             poisonous: false,
@@ -1842,6 +1930,7 @@ const creatures = [
     {
         name: "Sawn",
         power: 5,
+        ability: "When this fights, the creature with the highest power is defeated instead of the lowest",
         double: true,
         keywords: {
             poisonous: false,
@@ -1862,6 +1951,7 @@ const creatures = [
     {
         name: "Spiky Shinobi",
         power: 3,
+        ability: "When you have no Mindbugs, this has +5 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -1882,6 +1972,7 @@ const creatures = [
     {
         name: "Steelhorn",
         power: 7,
+        ability: "The opponent discards 3 cards",
         double: false,
         keywords: {
             poisonous: false,
@@ -1902,6 +1993,7 @@ const creatures = [
     {
         name: "Sweet Fighter",
         power: 9,
+        ability: "Gain 2 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -1922,6 +2014,7 @@ const creatures = [
     {
         name: "Swiss Army Bug",
         power: 4,
+        ability: "You may copy the play effect of another creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1942,6 +2035,7 @@ const creatures = [
     {
         name: "The Experiment",
         power: 6,
+        ability: "The opponent takes control of this. Take control of an enemy creature",
         double: false,
         keywords: {
             poisonous: true,
@@ -1962,6 +2056,7 @@ const creatures = [
     {
         name: "Thunder Queen",
         power: 9,
+        ability: "Defeat an enemy creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -1983,6 +2078,7 @@ const creatures = [
     {
         name: "Turtle Toaster",
         power: 4,
+        ability: "Defeat up to 2 enemy creatures with power 4-6",
         double: true,
         keywords: {
             poisonous: false,
@@ -2003,6 +2099,7 @@ const creatures = [
     {
         name: "Typhoon Princess",
         power: 6,
+        ability: "Defeat an enemy creature with power 6 or less. Evolve to Thunder Queen",
         double: false,
         keywords: {
             poisonous: false,
@@ -2024,6 +2121,7 @@ const creatures = [
     {
         name: "Veteran Penguin",
         power: 5,
+        ability: "The opponent discards a card. Evolve to War Machine",
         double: false,
         keywords: {
             poisonous: false,
@@ -2045,6 +2143,7 @@ const creatures = [
     {
         name: "Waddling Recruit",
         power: 3,
+        ability: "The opponent discards a card. Evolve to Veteran Penguin",
         double: false,
         keywords: {
             poisonous: false,
@@ -2065,6 +2164,7 @@ const creatures = [
     {
         name: "War Machine",
         power: 10,
+        ability: "The opponent discards their hand and draw pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -2086,6 +2186,7 @@ const creatures = [
     {
         name: "Westside Monster",
         power: 8,
+        ability: "Enemy creatures with sneaky cannot attack and/or block",
         double: true,
         keywords: {
             poisonous: false,
@@ -2106,6 +2207,7 @@ const creatures = [
     {
         name: "Wildsprout",
         power: 1,
+        ability: "Play a card from your discard pile. Evolve to Bigroot",
         double: false,
         keywords: {
             poisonous: false,
@@ -2126,6 +2228,7 @@ const creatures = [
     {
         name: "World Eater",
         power: 8,
+        ability: "The opponent loses 1 life",
         double: false,
         keywords: {
             poisonous: true,
@@ -2147,6 +2250,7 @@ const creatures = [
     {
         name: "Boar-Zooka",
         power: 6,
+        ability: "Cannot block. Defeat all enemy creatures",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2166,6 +2270,7 @@ const creatures = [
     {
         name: "Chuck",
         power: 3,
+        ability: "Roll a 6-sided die. On 4 to 6 defeat an enemy creature and then repeat this effect",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2185,6 +2290,7 @@ const creatures = [
     {
         name: "Jazz Dog",
         power: 5,
+        ability: "At the end of your turn, if an enemy creature blocked this turn and is still in play, take control of it",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2204,6 +2310,7 @@ const creatures = [
     {
         name: "Macaw Dagon",
         power: 8,
+        ability: "Swap hands with the opponent",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2223,6 +2330,7 @@ const creatures = [
     {
         name: "Mindbug Bug",
         power: 7,
+        ability: "When the opponent uses a Mindbug, they first lose 1 life point",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2242,6 +2350,7 @@ const creatures = [
     {
         name: "Ram Hopper",
         power: 7,
+        ability: "Other allied creatures have frenzy",
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2261,6 +2370,7 @@ const creatures = [
     {
         name: "Ratomancer",
         power: 2,
+        ability: "Play any number of cards with power 4 or less from your discard pile without activating their play effects",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2280,6 +2390,7 @@ const creatures = [
     {
         name: "Slugapult",
         power: 5,
+        ability: "You may defeat another allied creature. If you do, defeat an enemy creature",
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2318,6 +2429,7 @@ const creatures = [
     {
         name: "Unigon",
         power: 9,
+        ability: "If your hand is empty, you win the game",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2337,6 +2449,7 @@ const creatures = [
     {
         name: "Blessed Axolotl",
         power: 6,
+        ability: `Allied creatures have "Attack: Gain 1 life"`,
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -2357,6 +2470,7 @@ const creatures = [
     {
         name: "Bug Catcher",
         power: 9,
+        ability: "Players cannot use Mindbugs",
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2376,6 +2490,7 @@ const creatures = [
     {
         name: "Cursed Werewolf",
         power: 8,
+        ability: "Allied creatures with frenzy and/or hunter cannot attack",
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2396,6 +2511,7 @@ const creatures = [
     {
         name: "Ghost Hand",
         power: 2,
+        ability: "Name a creature. Creature(s) with the chosen name cannot block as long as this is in play",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2415,6 +2531,7 @@ const creatures = [
     {
         name: "Kitten Crewmate",
         power: 2,
+        ability: `When this would be defeated, evolve it to "One-Eye" Felix instead`,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2434,6 +2551,7 @@ const creatures = [
     {
         name: "One-Eye Felix",
         power: 7,
+        ability: "When this defeats an enemy creature, evolve to Silver Whiskers",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2453,6 +2571,7 @@ const creatures = [
     {
         name: "Silver Whiskers",
         power: 6,
+        ability: "You may gain control of an enemy creature with power 5 or less",
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2472,6 +2591,7 @@ const creatures = [
     {
         name: "Watts Dog",
         power: 5,
+        ability: "Cannot be blocked by creatures with 1 or more keywords",
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -3195,117 +3315,117 @@ $(creatures).each(function() {
     creatureNames.push(this.name);
 })
 
-function autocomplete(inp, arr) {
-    /*the autocomplete function takes two arguments,
-    the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
-    /*execute a function when someone writes in the text field:*/
-    inp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
-        /*close any already open lists of autocompleted values*/
-        closeAllLists();
-        if (!val) { return false;}
-        currentFocus = -1;
-        /*create a DIV element that will contain the items (values):*/
-        a = document.createElement("DIV");
-        a.setAttribute("id", this.id + "autocomplete-list");
-        a.setAttribute("class", "autocomplete-items");
-        /*append the DIV element as a child of the autocomplete container:*/
-        this.parentNode.appendChild(a);
-        /*for each item in the array...*/
-        for (i = 0; i < arr.length; i++) {
-          /*check if the item starts with the same letters as the text field value:*/
-          if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-            /*create a DIV element for each matching element:*/
-            b = document.createElement("DIV");
-            /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-            b.innerHTML += arr[i].substr(val.length);
-            /*insert a input field that will hold the current array item's value:*/
-            b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-            /*execute a function when someone clicks on the item value (DIV element):*/
-            b.addEventListener("click", function(e) {
-                /*insert the value for the autocomplete text field:*/
-                inp.value = this.getElementsByTagName("input")[0].value;
-                /*close the list of autocompleted values,
-                (or any other open lists of autocompleted values:*/
-                closeAllLists();
-            });
-            a.appendChild(b);
-          }
-        }
-    });
-    /*execute a function presses a key on the keyboard:*/
-    inp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
-        if (x) x = x.getElementsByTagName("div");
-        if (e.keyCode == 40) {
-          /*If the arrow DOWN key is pressed,
-          increase the currentFocus variable:*/
-          currentFocus++;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 38) { //up
-          /*If the arrow UP key is pressed,
-          decrease the currentFocus variable:*/
-          currentFocus--;
-          /*and and make the current item more visible:*/
-          addActive(x);
-        } else if (e.keyCode == 13) {
-          /*If the ENTER key is pressed, prevent the form from being submitted,*/
-          e.preventDefault();
-          if (currentFocus > -1) {
-            /*and simulate a click on the "active" item:*/
-            if (x) x[currentFocus].click();
-          }
-        }
-    });
-    function addActive(x) {
-      /*a function to classify an item as "active":*/
-      if (!x) return false;
-      /*start by removing the "active" class on all items:*/
-      removeActive(x);
-      if (currentFocus >= x.length) currentFocus = 0;
-      if (currentFocus < 0) currentFocus = (x.length - 1);
-      /*add class "autocomplete-active":*/
-      x[currentFocus].classList.add("autocomplete-active");
-    }
-    function removeActive(x) {
-      /*a function to remove the "active" class from all autocomplete items:*/
-      for (var i = 0; i < x.length; i++) {
-        x[i].classList.remove("autocomplete-active");
-      }
-    }
-    function closeAllLists(elmnt) {
-      /*close all autocomplete lists in the document,
-      except the one passed as an argument:*/
-      var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
-        if (elmnt != x[i] && elmnt != inp) {
-          x[i].parentNode.removeChild(x[i]);
-        }
-      }
-    }
-    /*execute a function when someone clicks in the document:*/
-    document.addEventListener("click", function (e) {
-        closeAllLists(e.target);
-    });
-}
+// function autocomplete(inp, arr) {
+//     /*the autocomplete function takes two arguments,
+//     the text field element and an array of possible autocompleted values:*/
+//     var currentFocus;
+//     /*execute a function when someone writes in the text field:*/
+//     inp.addEventListener("input", function(e) {
+//         var a, b, i, val = this.value;
+//         /*close any already open lists of autocompleted values*/
+//         closeAllLists();
+//         if (!val) { return false;}
+//         currentFocus = -1;
+//         /*create a DIV element that will contain the items (values):*/
+//         a = document.createElement("DIV");
+//         a.setAttribute("id", this.id + "autocomplete-list");
+//         a.setAttribute("class", "autocomplete-items");
+//         /*append the DIV element as a child of the autocomplete container:*/
+//         this.parentNode.appendChild(a);
+//         /*for each item in the array...*/
+//         for (i = 0; i < arr.length; i++) {
+//           /*check if the item starts with the same letters as the text field value:*/
+//           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+//             /*create a DIV element for each matching element:*/
+//             b = document.createElement("DIV");
+//             /*make the matching letters bold:*/
+//             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+//             b.innerHTML += arr[i].substr(val.length);
+//             /*insert a input field that will hold the current array item's value:*/
+//             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+//             /*execute a function when someone clicks on the item value (DIV element):*/
+//             b.addEventListener("click", function(e) {
+//                 /*insert the value for the autocomplete text field:*/
+//                 inp.value = this.getElementsByTagName("input")[0].value;
+//                 /*close the list of autocompleted values,
+//                 (or any other open lists of autocompleted values:*/
+//                 closeAllLists();
+//             });
+//             a.appendChild(b);
+//           }
+//         }
+//     });
+//     /*execute a function presses a key on the keyboard:*/
+//     inp.addEventListener("keydown", function(e) {
+//         var x = document.getElementById(this.id + "autocomplete-list");
+//         if (x) x = x.getElementsByTagName("div");
+//         if (e.keyCode == 40) {
+//           /*If the arrow DOWN key is pressed,
+//           increase the currentFocus variable:*/
+//           currentFocus++;
+//           /*and and make the current item more visible:*/
+//           addActive(x);
+//         } else if (e.keyCode == 38) { //up
+//           /*If the arrow UP key is pressed,
+//           decrease the currentFocus variable:*/
+//           currentFocus--;
+//           /*and and make the current item more visible:*/
+//           addActive(x);
+//         } else if (e.keyCode == 13) {
+//           /*If the ENTER key is pressed, prevent the form from being submitted,*/
+//           e.preventDefault();
+//           if (currentFocus > -1) {
+//             /*and simulate a click on the "active" item:*/
+//             if (x) x[currentFocus].click();
+//           }
+//         }
+//     });
+//     function addActive(x) {
+//       /*a function to classify an item as "active":*/
+//       if (!x) return false;
+//       /*start by removing the "active" class on all items:*/
+//       removeActive(x);
+//       if (currentFocus >= x.length) currentFocus = 0;
+//       if (currentFocus < 0) currentFocus = (x.length - 1);
+//       /*add class "autocomplete-active":*/
+//       x[currentFocus].classList.add("autocomplete-active");
+//     }
+//     function removeActive(x) {
+//       /*a function to remove the "active" class from all autocomplete items:*/
+//       for (var i = 0; i < x.length; i++) {
+//         x[i].classList.remove("autocomplete-active");
+//       }
+//     }
+//     function closeAllLists(elmnt) {
+//       /*close all autocomplete lists in the document,
+//       except the one passed as an argument:*/
+//       var x = document.getElementsByClassName("autocomplete-items");
+//       for (var i = 0; i < x.length; i++) {
+//         if (elmnt != x[i] && elmnt != inp) {
+//           x[i].parentNode.removeChild(x[i]);
+//         }
+//       }
+//     }
+//     /*execute a function when someone clicks in the document:*/
+//     document.addEventListener("click", function (e) {
+//         closeAllLists(e.target);
+//     });
+// }
 
-autocomplete(document.getElementById("myInput"), creatureNames);
+// autocomplete(document.getElementById("myInput"), creatureNames);
 
-$(".auto-fill-submit").click(function() {
-    let lonelyArray = []
-    let cardName = $("#myInput").val();
-    $(creatures).each(function() {
-        if (this.name == cardName) {
-            lonelyArray.push(this);
-            return;
-        }
-    })
-    prepareForCards(lonelyArray);
-    placeCards(lonelyArray);
-})
+// $(".auto-fill-submit").click(function() {
+//     let lonelyArray = []
+//     let cardName = $("#myInput").val();
+//     $(creatures).each(function() {
+//         if (this.name == cardName) {
+//             lonelyArray.push(this);
+//             return;
+//         }
+//     })
+//     prepareForCards(lonelyArray);
+//     placeCards(lonelyArray);
+// })
 
 $(".flip-switch").click(function() {
     switchModes();
@@ -3480,3 +3600,40 @@ function checkSets2() {
     }
     return [firstContact, addOn, eternity, evolution, promo];
 }
+
+$("#myInput").keyup(function(event) {
+    let inputVal = $("#myInput").val();
+    let name = false;
+    let ability = false;
+    if ($("#live-name").is(':checked')) {
+        console.log("name!");
+        name = true;
+    } else {
+        console.log("ability!");
+        ability = true;
+    }
+    liveSearch(inputVal, name, ability);
+ });
+
+ function liveSearch(inputVal, name, ability) {
+    let array = [];
+    if (name) {
+        $(creatures).each(function() {
+            let name = this.name.toLowerCase();
+            if (name.includes(inputVal)) {
+                array.push(this);
+            }
+        })
+    }
+    if (ability) {
+        $(creatures).each(function() {
+            if (!this.ability) return;
+            let ability = this.ability.toLowerCase();
+            if (ability.includes(inputVal)) {
+                array.push(this);
+            }
+        })
+    }
+    prepareForCards(array);
+    placeCards(array);
+ }
