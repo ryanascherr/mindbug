@@ -2626,6 +2626,12 @@ $(".order").click(function() {
     $(this).prop('checked', true);
 });
 
+$(".live").click(function() {
+    console.log("ehy")
+    $('.live').prop('checked', false);
+    $(this).prop('checked', true);
+});
+
 $('select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
@@ -3603,6 +3609,7 @@ function checkSets2() {
 
 $("#myInput").keyup(function(event) {
     let inputVal = $("#myInput").val();
+    inputVal = inputVal.toLowerCase();
     let name = false;
     let ability = false;
     if ($("#live-name").is(':checked')) {
