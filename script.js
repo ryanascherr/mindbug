@@ -1310,6 +1310,28 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
+        name: "Squirtoise Scout",
+        power: 2,
+        ability: "While 2 or more allied creatures have equal power, the opponent cannot block",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        evolved: false,
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
         name: "Tailbeak",
         power: 2,
         ability: "Play a card from the opponent's discard pile",
@@ -2627,7 +2649,6 @@ $(".order").click(function() {
 });
 
 $(".live").click(function() {
-    console.log("ehy")
     $('.live').prop('checked', false);
     $(this).prop('checked', true);
 });
@@ -2636,8 +2657,6 @@ $('select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
     let relatedInput = $(parent).children('input');
-    console.log(relatedInput);
-    console.log(power);
     if($(relatedInput).is(':checked')){
         getPowerCriteria(power);
     }
@@ -3223,7 +3242,6 @@ function prepareForCards(array) {
 }
 
 function placeCards(array, pageLoad) {
-    console.log(array);
     if (array.length > 0) {
         $(array).each(function() {
             let name = this.name;
@@ -3479,30 +3497,23 @@ function dealHand() {
                 howMany++;
             }
         })
-        console.log(randomNumber + " appeared " + howMany + " times");
         if (array[randomNumber].evolved == true) {
-            console.log(array[randomNumber].name + " is an evolution, abort!");
             addCardToHand();
             return;
         }
         if (howMany == 0) {
-            console.log("first time, all good!")
             usedNumbersArray.push(randomNumber);
             handOfCards.push(array[randomNumber]);
         } else if (howMany == 1) {
             if (!array[randomNumber].double) {
-                console.log(array[randomNumber].name + " is a single, abort!");
             } else {
-                console.log(array[randomNumber].name + " is a double, all good!");
                 usedNumbersArray.push(randomNumber);
                 handOfCards.push(array[randomNumber]);
             }
         } else if (howMany == 2) {
-            console.log(array[randomNumber].name + " is already here twice, abort!")
         }
         
         if (handOfCards.length >= 5) {
-            console.log(handOfCards);
             prepareForCards(handOfCards);
             placeCards(handOfCards);
         } else {
@@ -3536,7 +3547,6 @@ function highlightTab(tab) {
 }
 
 function openFilter() {
-    console.log("opening filter!");
     $(".auto-fill-parent-container").addClass("d-none");
     $(".deal-hand-container").addClass("d-none");
     $(".filter-container").removeClass("d-none");
@@ -3544,7 +3554,6 @@ function openFilter() {
 }
 
 function openName() {
-    console.log("opening name!");
     $(".filter-container").addClass("d-none");
     $(".deal-hand-container").addClass("d-none");
     $(".auto-fill-parent-container").removeClass("d-none");
@@ -3552,7 +3561,6 @@ function openName() {
 }
 
 function openHand() {
-    console.log("opening hand!");
     $(".filter-container").addClass("d-none");
     $(".auto-fill-parent-container").addClass("d-none");
     $(".deal-hand-container").removeClass("d-none");
@@ -3610,37 +3618,24 @@ function checkSets2() {
 $("#myInput").keyup(function(event) {
     let inputVal = $("#myInput").val();
     inputVal = inputVal.toLowerCase();
-    let name = false;
-    let ability = false;
-    if ($("#live-name").is(':checked')) {
-        console.log("name!");
-        name = true;
-    } else {
-        console.log("ability!");
-        ability = true;
-    }
-    liveSearch(inputVal, name, ability);
+    liveSearch(inputVal);
  });
 
- function liveSearch(inputVal, name, ability) {
+ function liveSearch(inputVal) {
     let array = [];
-    if (name) {
-        $(creatures).each(function() {
-            let name = this.name.toLowerCase();
-            if (name.includes(inputVal)) {
-                array.push(this);
-            }
-        })
-    }
-    if (ability) {
-        $(creatures).each(function() {
-            if (!this.ability) return;
-            let ability = this.ability.toLowerCase();
-            if (ability.includes(inputVal)) {
-                array.push(this);
-            }
-        })
-    }
+    $(creatures).each(function() {
+        let creature = this;
+        let name = creature.name.toLowerCase();
+        let ability;
+        if (creature.ability) {
+            ability = creature.ability.toLowerCase()
+        } else {
+            ability = "";
+        }
+        if (ability.includes(inputVal) || name.includes(inputVal)) {
+            array.push(this);
+        }
+    })
     prepareForCards(array);
     placeCards(array);
  }
