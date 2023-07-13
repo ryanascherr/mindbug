@@ -914,28 +914,6 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Blessed Pegasus",
-        power: 3,
-        ability: "When this card is put into your discard pile from anywhere, gain 1 life",
-        double: true,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: true,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            discard: true
-        },
-        evolved: false,
-        boost: false,
-        pack: "Beyond Eternity"
-    },
-    {
         name: "Blessed Shield Bugs",
         power: 6,
         ability: "Allied creatures have +1 power",
@@ -1090,6 +1068,28 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
+        name: "Ghostly Underdog",
+        power: 4,
+        ability: "Defeat all enemy creatures with less power than this",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false
+        },
+        evolved: false,
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
         name: "Goat Dragon",
         power: 7,
         ability: "Boost 1 to any creature. You may defeat a boosted creature",
@@ -1174,6 +1174,72 @@ const creatures = [
         },
         evolved: false,
         boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Madam Mystique",
+        power: 2,
+        ability: "Choose a keyword. Defeat all enemy creatures with the chosen keyword",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        evolved: false,
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Peacasus",
+        power: 3,
+        ability: "When this card is put into your discard pile from anywhere, gain 1 life",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            discard: true
+        },
+        evolved: false,
+        boost: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Pyro Salamancer",
+        power: 6,
+        ability: "Boost 1 to any creature. Defeat exactly 2 creatures with equal power",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        evolved: false,
+        boost: true,
         discard: false,
         pack: "Beyond Eternity"
     },
