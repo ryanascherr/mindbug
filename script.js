@@ -3321,7 +3321,7 @@ function placeCards(array, pageLoad) {
                 name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
             }
             if (this.pack == "First Contact") {
-                $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.png">`)
+                $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.jpg">`)
             } else if (this.pack == "First Contact: Add-On") {
                 $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
             } else if (this.pack == "Beyond Evolution") {
