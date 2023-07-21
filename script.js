@@ -1047,7 +1047,7 @@ const creatures = [
     },
     {
         name: "Fire Antler",
-        power: 9,
+        power: 8,
         ability: "The opponent loses 1 life",
         double: true,
         keywords: {
@@ -1487,7 +1487,7 @@ const creatures = [
     },
     {
         name: "Water Antler",
-        power: 9,
+        power: 8,
         ability: "Gain 1 life. Boost 1 to any creature",
         double: true,
         keywords: {
@@ -2714,79 +2714,40 @@ $(".order").click(function() {
     $(this).prop('checked', true);
 });
 
-$(".live").click(function() {
-    $('.live').prop('checked', false);
-    $(this).prop('checked', true);
-});
-
 $('select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
     let relatedInput = $(parent).children('input');
+
     if($(relatedInput).is(':checked')){
         getPowerCriteria(power);
     }
 });
 
-$(".power-c").click(function(e) {
-    let parent;
-    let numberChecked = 0;
-    if ($(".power-at-least").is(':checked')) {
-        $('.select-power-at-least').prop('disabled', false);
-        parent = $(".power-at-least").parent();
-        numberChecked++;
-    } 
-    if ($(".power-at-most").is(':checked')) {
-        $('.select-power-at-most').prop('disabled', false);
-        parent = $(".power-at-most").parent();
-        numberChecked++;
-    }
-    if ($(".power-exactly").is(':checked')) {
-        $('.select-power-exactly').prop('disabled', false);
-        parent = $(".power-exactly").parent();
-        numberChecked++;
-    }
-    if (numberChecked > 1) {
-        $('.power-c').prop('checked', false);
-        $(this).prop('checked', true);
-    }
-
-    if (!$(".power-at-least").is(':checked')) {
-        $('.select-power-at-least').prop('disabled', true);
-    }
-    if (!$(".power-at-most").is(':checked')) {
-        $('.select-power-at-most').prop('disabled', true);
-    }
-    if (!$(".power-exactly").is(':checked')) {
-        $('.select-power-exactly').prop('disabled', true);
-    }
-
-    let select = $(parent).children('select');
+$(".power-c").click(function() {
+    let parent = $(this).parent()[0];
+    let select = $(parent).children('select')[0];
+    let input = $(parent).children('input');
     let power = parseInt($(select).val());
+
+    if ($(input).is(':checked')) {
+        $('.power-c').prop('checked', false);
+        $(input).prop('checked', true);
+        $('.power-select').prop('disabled', true);
+        $(input).prop('disabled', false);
+        $(select).prop('disabled', false)
+    } else {
+        $(select).prop('disabled', true)
+    }
+
     getPowerCriteria(power);
 });
 
 $(".pack").click(function(e) {
-    let numberChecked = 0;
-    if ($(".first-contact").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".add-on").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".eternity").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".evolution").is(':checked')) {
-        numberChecked++;
-    }
-    if ($(".promo").is(':checked')) {
-        numberChecked++;
-    }
-    if (numberChecked == 0) {
-        e.preventDefault();
-    } else {
+    if ($(".pack").is(':checked')) {
         getPackCriteria();
+    } else {
+        e.preventDefault();
     }
 })
 
@@ -2802,35 +2763,23 @@ function updateCriteria(pageLoad) {
 }
 
 function getKeyWordCriteria() {
-    let poisonous;
-    let hunter;
-    let frenzy;
-    let tough;
-    let sneaky;
-    if($('.poisonous').is(':checked')){
-        poisonous = true;
-    }
-    if($('.hunter').is(':checked')){
-        hunter = true;
-    }
-    if($('.frenzy').is(':checked')){
-        frenzy = true;
-    }
-    if($('.tough').is(':checked')){
-        tough = true;
-    }
-    if($('.sneaky').is(':checked')){
-        sneaky = true;
-    }
+    let poisonous = $('.poisonous').is(':checked');
+    let hunter = $('.hunter').is(':checked');
+    let frenzy = $('.frenzy').is(':checked');
+    let tough = $('.tough').is(':checked')
+    let sneaky = $('.sneaky').is(':checked')
     let message = "";
     let notTheFirst = false;
+
     if (poisonous || hunter || frenzy || tough || sneaky) {
         message = "with the keyword(s) "
     }
+
     if (poisonous) {
         message += "Poisonous";
         notTheFirst = true;
     }
+
     if (hunter) {
         if (notTheFirst) {
             message += " & Hunter";
@@ -2839,6 +2788,7 @@ function getKeyWordCriteria() {
         }
         notTheFirst = true;
     }
+
     if (frenzy) {
         if (notTheFirst) {
             message += " & Frenzy";
@@ -2847,6 +2797,7 @@ function getKeyWordCriteria() {
         }
         notTheFirst = true;
     }
+
     if (tough) {
         if (notTheFirst) {
             message += " & Tough";
@@ -2855,6 +2806,7 @@ function getKeyWordCriteria() {
         }
         notTheFirst = true;
     }
+
     if (sneaky) {
         if (notTheFirst) {
             message += " & Sneaky";
@@ -2862,39 +2814,28 @@ function getKeyWordCriteria() {
             message += "Sneaky"
         }
     }
+
     $(".criteria-keywords").text(message);
 }
 
 function getTriggerCriteria() {
-    let play;
-    let attack;
-    let defeated;
-    let action;
-    let discard;
-    if($('.play').is(':checked')){
-        play = true;
-    }
-    if($('.attack').is(':checked')){
-        attack = true;
-    }
-    if($('.defeated').is(':checked')){
-        defeated = true;
-    }
-    if($('.action').is(':checked')){
-        action = true;
-    }
-    if($('.discard').is(':checked')){
-        discard = true;
-    }
+    let play = $('.play').is(':checked');
+    let attack = $('.attack').is(':checked');
+    let defeated = $('.defeated').is(':checked');
+    let action = $('.action').is(':checked');
+    let discard = $('.discard').is(':checked');
     let message = "";
     let notTheFirst = false;
+
     if (play || attack || defeated || action || discard) {
         message = "with the trigger(s) "
     }
+
     if (play) {
         message += "Play";
         notTheFirst = true;
     }
+
     if (attack) {
         if (notTheFirst) {
             message += " & Attack";
@@ -2903,6 +2844,7 @@ function getTriggerCriteria() {
         }
         notTheFirst = true;
     }
+
     if (defeated) {
         if (notTheFirst) {
             message += " & Defeated";
@@ -2911,6 +2853,7 @@ function getTriggerCriteria() {
         }
         notTheFirst = true;
     }
+
     if (action) {
         if (notTheFirst) {
             message += " & Action";
@@ -2919,6 +2862,7 @@ function getTriggerCriteria() {
         }
         notTheFirst = true;
     }
+
     if (discard) {
         if (notTheFirst) {
             message += " & In Discard Pile";
@@ -2926,41 +2870,30 @@ function getTriggerCriteria() {
             message += "In Discard Pile"
         }
     }
+
     $(".criteria-triggers").text(message);
 }
 
 function getPackCriteria() {
-    let firstContact;
-    let addOn;
-    let eternity;
-    let evolution;
-    let promo;
-    if($('.first-contact').is(':checked')){
-        firstContact = true;
-    }
-    if($('.add-on').is(':checked')){
-        addOn = true;
-    }
-    if($('.eternity').is(':checked')){
-        eternity = true;
-    }
-    if($('.evolution').is(':checked')){
-        evolution = true;
-    }
-    if($('.promo').is(':checked')){
-        promo = true;
-    }
+    let firstContact = $('.first-contact').is(':checked');
+    let addOn = $('.add-on').is(':checked');
+    let eternity = $('.eternity').is(':checked');
+    let evolution = $('.evolution').is(':checked');
+    let promo = $('.promo').is(':checked');
     let message = "";
     let notTheFirst = false;
+
     if (firstContact && addOn && eternity && evolution && promo) {
         message = "All Sets";
         $(".criteria-packs").text(message);
         return;
     }
+
     if (firstContact) {
         message += "First Contact";
         notTheFirst = true;
     }
+
     if (addOn) {
         if (notTheFirst) {
             message += " & First Contact: Add On";
@@ -2969,6 +2902,7 @@ function getPackCriteria() {
         }
         notTheFirst = true;
     }
+
     if (eternity) {
         if (notTheFirst) {
             message += " & Beyond Eternity";
@@ -2977,6 +2911,7 @@ function getPackCriteria() {
         }
         notTheFirst = true;
     }
+
     if (evolution) {
         if (notTheFirst) {
             message += " & Beyond Evolution";
@@ -2985,6 +2920,7 @@ function getPackCriteria() {
         }
         notTheFirst = true;
     }
+
     if (promo) {
         if (notTheFirst) {
             message += " & Promo";
@@ -2993,29 +2929,27 @@ function getPackCriteria() {
         }
         notTheFirst = true;
     }
+
     $(".criteria-packs").text(message);
 }
 
 function getOtherCriteria() {
-    let boost;
-    let evolved;
-    if($('.boost').is(':checked')){
-        boost = true;
-    }
-    if($('.evolved').is(':checked')){
-        evolved = true;
-    }
+    let boost = $('.boost').is(':checked');
+    let evolved = $('.evolved').is(':checked');
     let message = "";
     let notTheFirst = false;
+
     if (!boost && !evolved) {
         message = "";
         $(".criteria-others").text(message);
         return;
     }
+
     if (boost) {
         message += "that interact with Boost";
         notTheFirst = true;
     }
+
     if (evolved) {
         if (notTheFirst) {
             message += " & Evolution";
@@ -3023,21 +2957,16 @@ function getOtherCriteria() {
             message += "that interact with Evolution"
         }
     }
+
     $(".criteria-others").text(message);
 }
 
 function getOrderCriteria() {
-    let alph;
-    let power;
-    let revPower;
-    if($('.alph').is(':checked')){
-        alph = true;
-    } else if ($('.power').is(':checked')){
-        power = true;
-    } else if($('.rev-power').is(':checked')){
-        revPower = true;
-    }
+    let alph = $('.alph').is(':checked');
+    let power = $('.power').is(':checked');
+    let revPower = $('.rev-power').is(':checked');
     let message = "";
+
     if (alph) {
         message = "Name";
     } else if (power) {
@@ -3045,21 +2974,16 @@ function getOrderCriteria() {
     } else if (revPower) {
         message = "Reverse Power";
     }
+
     $(".criteria-order").text(message);
 }
 
 function getPowerCriteria(power) {
-    let atLeast;
-    let atMost;
-    let exactly;
-    if ($('.power-at-least').is(':checked')){
-        atLeast = true;
-    } else if ($('.power-at-most').is(':checked')){
-        atMost = true;
-    } else if($('.power-exactly').is(':checked')){
-        exactly = true;
-    }
+    let atLeast = $('.power-at-least').is(':checked');
+    let atMost = $('.power-at-most').is(':checked');
+    let exactly = $('.power-exactly').is(':checked');
     let message = "";
+
     if (atLeast) {
         message = `with at least ${power} Power`;
     } else if (atMost) {
@@ -3067,6 +2991,7 @@ function getPowerCriteria(power) {
     } else if (exactly) {
         message = `with exactly ${power} Power`;
     }
+
     $(".criteria-power").text(message);
 }
 
@@ -3092,122 +3017,67 @@ $(".filter-btn").click(function() {
 })
 
 function checkSets() {
-    let firstContact;
-    let addOn;
-    let eternity;
-    let evolution;
-    let promo;
-    if($('.first-contact').is(':checked')){
-        firstContact = true;
-    }
-    if($('.add-on').is(':checked')){
-        addOn = true;
-    }
-    if($('.eternity').is(':checked')){
-        eternity = true;
-    }
-    if($('.evolution').is(':checked')){
-        evolution = true;
-    }
-    if($('.promo').is(':checked')){
-        promo = true;
-    }
+    let firstContact = $('.first-contact').is(':checked');
+    let addOn = $('.add-on').is(':checked');
+    let eternity = $('.eternity').is(':checked');
+    let evolution = $('.evolution').is(':checked');
+    let promo = $('.promo').is(':checked');
+
     return [firstContact, addOn, eternity, evolution, promo];
 }
 
 function checkKeywords() {
-    let poisonous;
-    let hunter;
-    let frenzy;
-    let tough;
-    let sneaky;
-    if($('.poisonous').is(':checked')){
-        poisonous = true;
-    }
-    if($('.hunter').is(':checked')){
-        hunter = true;
-    }
-    if($('.frenzy').is(':checked')){
-        frenzy = true;
-    }
-    if($('.tough').is(':checked')){
-        tough = true;
-    }
-    if($('.sneaky').is(':checked')){
-        sneaky = true;
-    }
+    let poisonous = $('.poisonous').is(':checked');
+    let hunter = $('.hunter').is(':checked');
+    let frenzy = $('.frenzy').is(':checked');
+    let tough = $('.tough').is(':checked');
+    let sneaky = $('.sneaky').is(':checked');
+
     return [poisonous, hunter, frenzy, tough, sneaky];
 }
 
 function checkTriggers() {
-    let play;
-    let attack;
-    let defeated;
-    let action;
-    let discard;
-    if($('.play').is(':checked')){
-        play = true;
-    }
-    if($('.attack').is(':checked')){
-        attack = true;
-    }
-    if($('.defeated').is(':checked')){
-        defeated = true;
-    }
-    if($('.action').is(':checked')){
-        action = true;
-    }
-    if($('.discard').is(':checked')){
-        discard = true;
-    }
+    let play = $('.play').is(':checked');
+    let attack = $('.attack').is(':checked');
+    let defeated = $('.defeated').is(':checked');
+    let action = $('.action').is(':checked');
+    let discard = $('.discard').is(':checked');
+
     return [play, attack, defeated, action, discard];
 }
 
 function checkOther() {
-    let boost;
-    let evolved;
-    if($('.boost').is(':checked')){
-        boost = true;
-    }
-    if($('.evolved').is(':checked')){
-        evolved = true;
-    }
+    let boost = $('.boost').is(':checked');
+    let evolved = $('.evolved').is(':checked');
+
     return [boost, evolved];
 }
 
 function checkPower() {
-    let atLeast;
-    let atMost;
-    let exactly;
+    let atLeast = $('.power-at-least').is(':checked');
+    let atMost = $('.power-at-most').is(':checked');
+    let exactly = $('.power-exactly').is(':checked');
     let parent;
-    if($('.power-at-least').is(':checked')){
-        atLeast = true;
+
+    if (atLeast) {
         parent = $('.power-at-least').parent();
-    } else if($('.power-at-most').is(':checked')){
-        atMost = true;
+    } else if (atMost) {
         parent = $('.power-at-most').parent();
-    } else if($('.power-exactly').is(':checked')){
-        exactly = true;
+    } else if (exactly) {
         parent = $('.power-exactly').parent();
     }
+
     let select = $(parent).children('select');
     let powerNumber = parseInt($(select).val());
+
     return [atLeast, atMost, exactly, powerNumber];
 }
 
 function checkOrder() {
-    let alph;
-    let power;
-    let revPower;
-    if($('.alph').is(':checked')){
-        alph = true;
-    }
-    if($('.power').is(':checked')){
-        power = true;
-    }
-    if($('.rev-power').is(':checked')){
-        revPower = true;
-    }
+    let alph = $('.alph').is(':checked');
+    let power = $('.power').is(':checked');
+    let revPower = $('.rev-power').is(':checked');
+
     return [alph, power, revPower];
 }
 
@@ -3215,18 +3085,23 @@ function getPack(array, firstContact, addOn, eternity, evolution, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.pack != "First Contact");
     }
+
     if (!addOn) {
         array = array.filter(creature => creature.pack != "First Contact: Add-On");
     }
+
     if (!eternity) {
         array = array.filter(creature => creature.pack != "Beyond Eternity");
     }
+
     if (!evolution) {
         array = array.filter(creature => creature.pack != "Beyond Evolution");
     }
+
     if (!promo) {
         array = array.filter(creature => creature.pack != "Promo");
     }
+
     return array;
 }
 
@@ -3234,18 +3109,23 @@ function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
     if (poisonous) {
         array = array.filter(creature => creature.keywords.poisonous == true);
     }
+
     if (hunter) {
         array = array.filter(creature => creature.keywords.hunter == true);
     }
+
     if (frenzy) {
         array = array.filter(creature => creature.keywords.frenzy == true);
     }
+
     if (tough) {
         array = array.filter(creature => creature.keywords.tough == true);
     }
+
     if (sneaky) {
         array = array.filter(creature => creature.keywords.sneaky == true);
     }
+
     return array;
 }
 
@@ -3253,18 +3133,23 @@ function getTriggers(array, play, attack, defeated, action, discard) {
     if (play) {
         array = array.filter(creature => creature.triggers.play == true);
     }
+
     if (attack) {
         array = array.filter(creature => creature.triggers.attack == true);
     }
+
     if (defeated) {
         array = array.filter(creature => creature.triggers.defeated == true);
     }
+
     if (action) {
         array = array.filter(creature => creature.triggers.action == true);
     }
+
     if (discard) {
         array = array.filter(creature => creature.triggers.discard == true);
     }
+
     return array;
 }
 
@@ -3272,9 +3157,11 @@ function getOther(array, boost, evolved) {
     if (boost) {
         array = array.filter(creature => creature.boost == true);
     }
+
     if (evolved) {
         array = array.filter(creature => creature.evolution == true);
     }
+
     return array;
 }
 
@@ -3286,6 +3173,7 @@ function getPower(array, atLeast, atMost, exactly, powerNumber) {
     } else if (exactly) {
         array = array.filter(creature => creature.power == powerNumber);
     }
+
     return array;
 }
 
@@ -3299,6 +3187,7 @@ function getOrder(array, alph, power, revPower) {
     } else if (revPower) {
         array = array.sort((a, b) => a.power - b.power);
     }
+
     return array;
 }
 
@@ -3311,8 +3200,10 @@ function placeCards(array, pageLoad) {
     if (array.length > 0) {
         $(array).each(function() {
             let name = this.name;
+
             if (name == "") return;
             name = name.split(" ");
+
             if (name.length == 2) {
                 name = name[0] + "_" + name[1];
             } else if (name.length == 3) {
@@ -3320,6 +3211,7 @@ function placeCards(array, pageLoad) {
             } else if (name.length == 4) {
                 name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
             }
+
             if (this.pack == "First Contact") {
                 $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.jpg">`)
             } else if (this.pack == "First Contact: Add-On") {
@@ -3332,16 +3224,12 @@ function placeCards(array, pageLoad) {
                 $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
             }
         });
-        // if (isStacked) {
-        //     stackCards();
-        // }
-        // if ($(window).width() <= 400) {
-        //     $(".stack-container-parent").removeClass("d-none");
-        // }
     } else {
         $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
     }
+
     if (pageLoad == true) return;
+
     if (!$(".results").hasClass("d-none")) {
         scrollToResults();
     } else if (!$(".deal-hand-container").hasClass("d-none")) {
@@ -3355,206 +3243,30 @@ function placeCards(array, pageLoad) {
     }
 }
 
-// $(".stack").click(function() {
-//     if($('#stack-yes').is(':checked')) {
-//         stackCards();
-//     } else {
-//         unstackCards();
-//     }
-//     scrollToResults();
-// })
-
-function stackCards() {
-    let allCards = $(".card");
-    let fromTop = 0;
-    $(allCards).each(function() {
-        $(this).css({"position":"absolute", "top":`${fromTop}px`});
-        fromTop += 80;
-    })
-    isStacked = true;
-}
-
-function unstackCards() {
-    let allCards = $(".card");
-    $(allCards).each(function() {
-        $(this).css({"position":"relative", "top":`0`});
-    })
-    isStacked = false;
-}
-
-// $(window).on('resize', function(){
-//     if ($(window).width() <= 400) {
-//         $(".stack-container-parent").removeClass("d-none");
-//         if($('#stack-yes').is(':checked')) {
-//             stackCards();
-//         }
-//     } else {
-//         $(".stack-container-parent").addClass("d-none");
-//         unstackCards();
-//     }
-// });
-
 function scrollToResults() {
     $('html, body').animate({
         scrollTop: $(".results").offset().top
     });
 }
 
-let creatureNames = [];
-$(creatures).each(function() {
-    creatureNames.push(this.name);
-})
-
-// function autocomplete(inp, arr) {
-//     /*the autocomplete function takes two arguments,
-//     the text field element and an array of possible autocompleted values:*/
-//     var currentFocus;
-//     /*execute a function when someone writes in the text field:*/
-//     inp.addEventListener("input", function(e) {
-//         var a, b, i, val = this.value;
-//         /*close any already open lists of autocompleted values*/
-//         closeAllLists();
-//         if (!val) { return false;}
-//         currentFocus = -1;
-//         /*create a DIV element that will contain the items (values):*/
-//         a = document.createElement("DIV");
-//         a.setAttribute("id", this.id + "autocomplete-list");
-//         a.setAttribute("class", "autocomplete-items");
-//         /*append the DIV element as a child of the autocomplete container:*/
-//         this.parentNode.appendChild(a);
-//         /*for each item in the array...*/
-//         for (i = 0; i < arr.length; i++) {
-//           /*check if the item starts with the same letters as the text field value:*/
-//           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-//             /*create a DIV element for each matching element:*/
-//             b = document.createElement("DIV");
-//             /*make the matching letters bold:*/
-//             b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-//             b.innerHTML += arr[i].substr(val.length);
-//             /*insert a input field that will hold the current array item's value:*/
-//             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-//             /*execute a function when someone clicks on the item value (DIV element):*/
-//             b.addEventListener("click", function(e) {
-//                 /*insert the value for the autocomplete text field:*/
-//                 inp.value = this.getElementsByTagName("input")[0].value;
-//                 /*close the list of autocompleted values,
-//                 (or any other open lists of autocompleted values:*/
-//                 closeAllLists();
-//             });
-//             a.appendChild(b);
-//           }
-//         }
-//     });
-//     /*execute a function presses a key on the keyboard:*/
-//     inp.addEventListener("keydown", function(e) {
-//         var x = document.getElementById(this.id + "autocomplete-list");
-//         if (x) x = x.getElementsByTagName("div");
-//         if (e.keyCode == 40) {
-//           /*If the arrow DOWN key is pressed,
-//           increase the currentFocus variable:*/
-//           currentFocus++;
-//           /*and and make the current item more visible:*/
-//           addActive(x);
-//         } else if (e.keyCode == 38) { //up
-//           /*If the arrow UP key is pressed,
-//           decrease the currentFocus variable:*/
-//           currentFocus--;
-//           /*and and make the current item more visible:*/
-//           addActive(x);
-//         } else if (e.keyCode == 13) {
-//           /*If the ENTER key is pressed, prevent the form from being submitted,*/
-//           e.preventDefault();
-//           if (currentFocus > -1) {
-//             /*and simulate a click on the "active" item:*/
-//             if (x) x[currentFocus].click();
-//           }
-//         }
-//     });
-//     function addActive(x) {
-//       /*a function to classify an item as "active":*/
-//       if (!x) return false;
-//       /*start by removing the "active" class on all items:*/
-//       removeActive(x);
-//       if (currentFocus >= x.length) currentFocus = 0;
-//       if (currentFocus < 0) currentFocus = (x.length - 1);
-//       /*add class "autocomplete-active":*/
-//       x[currentFocus].classList.add("autocomplete-active");
-//     }
-//     function removeActive(x) {
-//       /*a function to remove the "active" class from all autocomplete items:*/
-//       for (var i = 0; i < x.length; i++) {
-//         x[i].classList.remove("autocomplete-active");
-//       }
-//     }
-//     function closeAllLists(elmnt) {
-//       /*close all autocomplete lists in the document,
-//       except the one passed as an argument:*/
-//       var x = document.getElementsByClassName("autocomplete-items");
-//       for (var i = 0; i < x.length; i++) {
-//         if (elmnt != x[i] && elmnt != inp) {
-//           x[i].parentNode.removeChild(x[i]);
-//         }
-//       }
-//     }
-//     /*execute a function when someone clicks in the document:*/
-//     document.addEventListener("click", function (e) {
-//         closeAllLists(e.target);
-//     });
-// }
-
-// autocomplete(document.getElementById("myInput"), creatureNames);
-
-// $(".auto-fill-submit").click(function() {
-//     let lonelyArray = []
-//     let cardName = $("#myInput").val();
-//     $(creatures).each(function() {
-//         if (this.name == cardName) {
-//             lonelyArray.push(this);
-//             return;
-//         }
-//     })
-//     prepareForCards(lonelyArray);
-//     placeCards(lonelyArray);
+// let creatureNames = [];
+// $(creatures).each(function() {
+//     creatureNames.push(this.name);
 // })
-
-$(".flip-switch").click(function() {
-    switchModes();
-})
-
-function switchModes() {
-    $(".auto-fill-container").toggle("slow");
-    $(".filter").toggle("slow");
-    if ($(".flip-switch").hasClass("name")) {
-        $(".auto-fill-container").removeClass("d-none");
-        $(".auto-fill-container").css({"display":"flex", "flex-direction":"column", "justify-content":"center", "align-items":"center"})
-        $(".flip-switch").text("Want to search using parameters instead?");
-        $(".flip-switch").removeClass("name");
-        $(".flip-switch").addClass("parameters");
-        $(".criteria").addClass("d-none");
-        $(".filter-btn-container").addClass("d-none");
-        $(".instructions").text(`Enter a creature name below, then click "Submit" to see your result!`)
-    } else {
-        $(".flip-switch").text("Want to search by name instead?");
-        $(".flip-switch").removeClass("parameters");
-        $(".flip-switch").addClass("name");
-        $(".criteria").removeClass("d-none");
-        $(".filter-btn-container").removeClass("d-none");
-        $(".instructions").text(`Select your search criteria below, then click "Search with Filters" to see your results!`)
-    }
-}
 
 $(".deal-hand").click(function() {
     dealHand();
 })
 
-//todo factor in cards that have doubles
 function dealHand() {
     let array = creatures;
     let [firstContact, addOn, eternity, evolution, promo] = checkSets2();
     array = getPack(array, firstContact, addOn, eternity, evolution, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
+
     addCardToHand();
+    
     function addCardToHand() {
         let randomNumber = Math.floor(Math.random()*(array.length));
         let howMany = 0;
