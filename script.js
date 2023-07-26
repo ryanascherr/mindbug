@@ -1215,7 +1215,7 @@ const creatures = [
             play: false,
             attack: false,
             defeated: false,
-            discard: true
+            discard: false
         },
         evolved: false,
         boost: false,
@@ -1266,9 +1266,9 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Rockswapper",
+        name: "Rockyphant",
         power: 8,
-        ability: "You may swap discard pile with the opponent",
+        ability: "When this card is put into your discard pile from anywhere, the opponent discards a card",
         double: false,
         keywords: {
             poisonous: false,
@@ -1333,8 +1333,8 @@ const creatures = [
     },
     {
         name: "Spirit Cheetah",
-        power: 6,
-        ability: "Boost this to any creature",
+        power: 5,
+        ability: "Take control of a creature with power 2 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -1349,7 +1349,7 @@ const creatures = [
             defeated: true
         },
         evolved: false,
-        boost: true,
+        boost: false,
         discard: false,
         pack: "Beyond Eternity"
     },
@@ -1398,7 +1398,7 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Tailbeak",
+        name: "Trash Flier",
         power: 2,
         ability: "Play a card from the opponent's discard pile",
         double: false,
@@ -1464,8 +1464,8 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Urchin Teacher",
-        power: 4,
+        name: "Porcupine Teacher",
+        power: 5,
         ability: "Other allied creatures have poisonous",
         double: false,
         keywords: {
@@ -1508,9 +1508,9 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Wingsnout",
+        name: "Trash Diver",
         power: 2,
-        ability: "Draw 2 cards from the opponent's discard pile",
+        ability: "Draw any 2 cards from the opponent's discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -2100,7 +2100,7 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Swiss Army Bug",
+        name: "Utility Bug",
         power: 4,
         ability: "You may copy the play effect of another creature",
         double: true,
@@ -2250,7 +2250,7 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "War Machine",
+        name: "Frosty Fortress",
         power: 10,
         ability: "The opponent discards their hand and draw pile",
         double: false,
@@ -2698,15 +2698,10 @@ const creatures = [
     }
 ]
 
-let cardsOut = false;
-let isStacked = false;
-let animationDuration = 3000;
-
 initialize();
 function initialize() {
-    let pageLoad = true;
-    getOrderCriteria(pageLoad);
-    getPackCriteria(pageLoad);
+    // getOrderCriteria();
+    // getPackCriteria();
 }
 
 $(".order").click(function() {
@@ -2755,11 +2750,11 @@ $(".criteria").click(function() {
     updateCriteria();
 });
 
-function updateCriteria(pageLoad) {
-    getKeyWordCriteria(pageLoad);
-    getTriggerCriteria(pageLoad);
-    getOtherCriteria(pageLoad);
-    getOrderCriteria(pageLoad);
+function updateCriteria() {
+    getKeyWordCriteria();
+    getTriggerCriteria();
+    getOtherCriteria();
+    getOrderCriteria();
 }
 
 function getKeyWordCriteria() {
@@ -3196,7 +3191,7 @@ function prepareForCards(array) {
     $(".results").text(`- ${array.length} results found -`);
 }
 
-function placeCards(array, pageLoad) {
+function placeCards(array) {
     if (array.length > 0) {
         $(array).each(function() {
             let name = this.name;
@@ -3215,9 +3210,9 @@ function placeCards(array, pageLoad) {
             if (this.pack == "First Contact") {
                 $(".card-container").append(`<img class="card" src="./img/first-contact/${name}.jpg">`)
             } else if (this.pack == "First Contact: Add-On") {
-                $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.png">`)
+                $(".card-container").append(`<img class="card" src="./img/first-contact-add-on/${name}.jpg">`)
             } else if (this.pack == "Beyond Evolution") {
-                $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.png">`)
+                $(".card-container").append(`<img class="card" src="./img/beyond-evolution/${name}.jpg">`)
             } else if (this.pack == "Beyond Eternity") {
                 $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
             } else if (this.pack == "Promo") {
@@ -3227,8 +3222,6 @@ function placeCards(array, pageLoad) {
     } else {
         $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
     }
-
-    if (pageLoad == true) return;
 
     if (!$(".results").hasClass("d-none")) {
         scrollToResults();
