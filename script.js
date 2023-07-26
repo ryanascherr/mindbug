@@ -3216,7 +3216,7 @@ function placeCards(array) {
             } else if (this.pack == "Beyond Eternity") {
                 $(".card-container").append(`<img class="card" src="./img/beyond-eternity/${name}.jpg">`)
             } else if (this.pack == "Promo") {
-                $(".card-container").append(`<img class="card" src="./img/promo/${name}.png">`)
+                $(".card-container").append(`<img class="card" src="./img/promo/${name}.jpg">`)
             }
         });
     } else {
