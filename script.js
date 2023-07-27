@@ -3392,7 +3392,7 @@ $("#myInput").keyup(function(event) {
     liveSearch(inputVal);
  });
 
- function liveSearch(inputVal) {
+function liveSearch(inputVal) {
     let array = [];
     $(creatures).each(function() {
         let creature = this;
@@ -3409,4 +3409,41 @@ $("#myInput").keyup(function(event) {
     })
     prepareForCards(array);
     placeCards(array);
- }
+}
+
+let modal = $(".modal-content");
+
+window.onclick = function(event) {
+    let clickTarget = $(event.target);
+    clickTarget = clickTarget[0];
+    if ($(clickTarget).hasClass("modal-content")) {
+        closeModal();
+    }
+};
+
+$('body').on('click', '.card', function () {
+    let src = $(this).attr('src');
+    openModal(src);
+});
+
+$('body').on('click', '.modal-img, .modal span', function () {
+    closeModal();
+});
+
+$('html').keyup(function(e){
+    if(e.keyCode == 8 && $(".modal").hasClass("open")){
+        closeModal();
+    }
+}) 
+
+function openModal(src) {
+    $(".modal").css("display","block");
+    $(".modal").addClass("open");
+    $(".modal img").attr("src",src);
+}
+
+function closeModal() {
+    $(".modal").css("display","none");
+    $(".modal img").attr("src","");
+    $(".modal").removeClass("open");
+}
