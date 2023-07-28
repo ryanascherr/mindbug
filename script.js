@@ -2572,7 +2572,7 @@ const creatures = [
         name: "Ram Hopper",
         power: 7,
         ability: "Other allied creatures have frenzy",
-        double: true,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
