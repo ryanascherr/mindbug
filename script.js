@@ -831,9 +831,9 @@ const creatures = [
     },
     {
         name: "Agile Rooster",
-        power: 5,
+        power: 6,
         ability: "Can only be blocked by creatures with power within 1 of this creature's power",
-        double: true,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -843,7 +843,7 @@ const creatures = [
         },
         triggers: {
             play: false,
-            attack: true,
+            attack: false,
             defeated: false
         },
         evolved: false,
@@ -852,7 +852,7 @@ const creatures = [
     {
         name: "Ant Zombie Horde",
         power: 7,
-        ability: "Boost 2 to this",
+        ability: "Boost 2 cards to this",
         double: true,
         keywords: {
             poisonous: false,
@@ -873,7 +873,7 @@ const creatures = [
     {
         name: "Berserker Rabbit",
         power: 6,
-        ability: "While your discard pile is empty, this has +3 power",
+        ability: "While your discard pile is empty, this has +4 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -1048,7 +1048,7 @@ const creatures = [
     {
         name: "Fire Antler",
         power: 8,
-        ability: "The opponent loses 1 life",
+        ability: "The opponent loses 1 life. Boost 1 card to a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1063,14 +1063,14 @@ const creatures = [
             defeated: true
         },
         evolved: false,
-        boost: false,
+        boost: true,
         discard: false,
         pack: "Beyond Eternity"
     },
     {
         name: "Ghostly Underdog",
         power: 4,
-        ability: "Defeat all enemy creatures with less power than this",
+        ability: "Defeat all enemy creatures with power lower than this",
         double: false,
         keywords: {
             poisonous: false,
@@ -1092,7 +1092,7 @@ const creatures = [
     {
         name: "Goat Dragon",
         power: 7,
-        ability: "Boost 1 to any creature. You may defeat a boosted creature",
+        ability: "Boost 1 card to a creature or defeat a boosted creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1114,7 +1114,7 @@ const creatures = [
     {
         name: "Hiss Holiness",
         power: 5,
-        ability: "Boost 4 to any creature(s)",
+        ability: "Boost 4 cards to 1 or more creatures",
         double: true,
         keywords: {
             poisonous: true,
@@ -1222,9 +1222,31 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
+        name: "Porcupine Teacher",
+        power: 5,
+        ability: "Other allied creatures have poisonous",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false
+        },
+        evolved: false,
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
         name: "Pyro Salamancer",
         power: 6,
-        ability: "Boost 1 to any creature. Defeat exactly 2 creatures with equal power",
+        ability: "Boost 1 card to a creature. Defeat exactly 2 creatures with equal power",
         double: true,
         keywords: {
             poisonous: false,
@@ -1278,7 +1300,7 @@ const creatures = [
             hunter: false
         },
         triggers: {
-            play: true,
+            play: false,
             attack: false,
             defeated: false
         },
@@ -1289,7 +1311,7 @@ const creatures = [
     },
     {
         name: "Sea-Rex",
-        ability: "Boost 1 to this",
+        ability: "Boost 1 card to this",
         power: 5,
         double: true,
         keywords: {
@@ -1312,7 +1334,7 @@ const creatures = [
     {
         name: "Soul Manipulator",
         power: 5,
-        ability: "Boost 1 to any creature or return a boost card to your hand",
+        ability: "Boost 1 card to a creature or return a boost card to your hand",
         double: true,
         keywords: {
             poisonous: false,
@@ -1356,14 +1378,14 @@ const creatures = [
     {
         name: "Spirit Maki",
         power: 3,
-        ability: "Boost this to any creature",
+        ability: "Take control of a creature with power 9 or more",
         double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
             tough: false,
             sneaky: true,
-            hunter: true
+            hunter: false
         },
         triggers: {
             play: false,
@@ -1371,7 +1393,7 @@ const creatures = [
             defeated: true
         },
         evolved: false,
-        boost: true,
+        boost: false,
         discard: false,
         pack: "Beyond Eternity"
     },
@@ -1391,28 +1413,6 @@ const creatures = [
             play: false,
             attack: false,
             defeated: false
-        },
-        evolved: false,
-        boost: false,
-        discard: false,
-        pack: "Beyond Eternity"
-    },
-    {
-        name: "Trash Flier",
-        power: 2,
-        ability: "Play a card from the opponent's discard pile",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: true,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: true
         },
         evolved: false,
         boost: false,
@@ -1444,7 +1444,7 @@ const creatures = [
     {
         name: "Tornado Dragon",
         power: 8,
-        ability: "Discard up to 2 cards. For each card discarded this way, defeat an enemy creature",
+        ability: "Discard up to 2 cards. For each card discarded this way, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1460,50 +1460,6 @@ const creatures = [
         },
         evolved: false,
         boost: false,
-        discard: false,
-        pack: "Beyond Eternity"
-    },
-    {
-        name: "Porcupine Teacher",
-        power: 5,
-        ability: "Other allied creatures have poisonous",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false
-        },
-        evolved: false,
-        boost: false,
-        discard: false,
-        pack: "Beyond Eternity"
-    },
-    {
-        name: "Water Antler",
-        power: 8,
-        ability: "Gain 1 life. Boost 1 to any creature",
-        double: true,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: true,
-            attack: false,
-            defeated: false
-        },
-        evolved: false,
-        boost: true,
         discard: false,
         pack: "Beyond Eternity"
     },
@@ -1526,6 +1482,50 @@ const creatures = [
         },
         evolved: false,
         boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Trash Flier",
+        power: 2,
+        ability: "Play a card from the opponent's discard pile",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true
+        },
+        evolved: false,
+        boost: false,
+        discard: false,
+        pack: "Beyond Eternity"
+    },
+    {
+        name: "Water Antler",
+        power: 8,
+        ability: "Gain 1 life. Boost 1 card to a creature",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false
+        },
+        evolved: false,
+        boost: true,
         discard: false,
         pack: "Beyond Eternity"
     },
