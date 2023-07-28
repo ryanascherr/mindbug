@@ -1547,7 +1547,6 @@ const creatures = [
             defeated: false,
             action: true
         },
-        evolved: false,
         evolution: true,
         evolved: true,
         pack: "Beyond Evolution"
@@ -1848,6 +1847,28 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
+        name: "Frosty Fortress",
+        power: 10,
+        ability: "The opponent discards their hand and draw pile",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Beyond Evolution"
+    },
+    {
         name: "Infernostrich",
         power: 6,
         ability: "Defeat an enemy creature with power 7 or more",
@@ -2100,27 +2121,6 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Utility Bug",
-        power: 4,
-        ability: "You may copy the play effect of another creature",
-        double: true,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: true
-        },
-        triggers: {
-            play: true,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Beyond Evolution"
-    },
-    {
         name: "The Experiment",
         power: 6,
         ability: "The opponent takes control of this. Take control of an enemy creature",
@@ -2207,9 +2207,30 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
+        name: "Utility Bug",
+        power: 4,
+        ability: "You may copy the play effect of another creature",
+        double: true,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
         name: "Veteran Penguin",
         power: 5,
-        ability: "The opponent discards a card. Evolve to War Machine",
+        ability: "The opponent discards a card. Evolve to Frosty Fortress",
         double: false,
         keywords: {
             poisonous: false,
@@ -2247,28 +2268,6 @@ const creatures = [
             action: true
         },
         evolution: true,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "Frosty Fortress",
-        power: 10,
-        ability: "The opponent discards their hand and draw pile",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -2335,10 +2334,33 @@ const creatures = [
         evolved: true,
         pack: "Beyond Evolution"
     },
+    // {
+    //     name: "Blessed Axolotl",
+    //     power: 6,
+    //     ability: `Allied creatures have "Attack: Gain 1 life"`,
+    //     double: false,
+    //     keywords: {
+    //         poisonous: true,
+    //         frenzy: false,
+    //         tough: false,
+    //         sneaky: false,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false,
+    //         discard: true
+    //     },
+    //     evolution: false,
+    //     pack: "Promo"
+    // },
     {
         name: "Boar-Zooka",
         power: 6,
         ability: "Cannot block. Defeat all enemy creatures",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2355,10 +2377,32 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
+    // {
+    //     name: "Bug Catcher",
+    //     power: 9,
+    //     ability: "Players cannot use Mindbugs",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: true,
+    //         tough: true,
+    //         sneaky: false,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: false,
+    //     pack: "Promo"
+    // },
     {
         name: "Chuck",
         power: 3,
-        ability: "Roll a 6-sided die. On 4 to 6 defeat an enemy creature and then repeat this effect",
+        ability: "Roll a 6-sided die. On 4 to 6, defeat an enemy creature and then repeat this effect",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2375,10 +2419,54 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
+    // {
+    //     name: "Cursed Werewolf",
+    //     power: 8,
+    //     ability: "Allied creatures with frenzy and/or hunter cannot attack",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: true,
+    //         tough: false,
+    //         sneaky: false,
+    //         hunter: true
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false,
+    //         discard: true
+    //     },
+    //     evolution: false,
+    //     pack: "Promo"
+    // },
+    // {
+    //     name: "Ghost Hand",
+    //     power: 2,
+    //     ability: "Name a creature. Creature(s) with the chosen name cannot block as long as this is in play",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: false,
+    //         tough: false,
+    //         sneaky: true,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: true,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: false,
+    //     pack: "Promo"
+    // },
     {
         name: "Jazz Dog",
         power: 5,
         ability: "At the end of your turn, if an enemy creature blocked this turn and is still in play, take control of it",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2395,10 +2483,32 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
+    // {
+    //     name: "Kitten Crewmate",
+    //     power: 2,
+    //     ability: `When this would be defeated, evolve it to "One-Eye" Felix instead`,
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: false,
+    //         tough: false,
+    //         sneaky: true,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: true,
+    //     pack: "Promo"
+    // },
     {
         name: "Macaw Dagon",
         power: 8,
         ability: "Swap hands with the opponent",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2419,6 +2529,7 @@ const creatures = [
         name: "Mindbug Bug",
         power: 7,
         ability: "When the opponent uses a Mindbug, they first lose 1 life point",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2435,10 +2546,33 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
+    // {
+    //     name: "One-Eye Felix",
+    //     power: 7,
+    //     ability: "When this defeats an enemy creature, evolve to Silver Whiskers",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: false,
+    //         tough: false,
+    //         sneaky: false,
+    //         hunter: true
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: true,
+    //     evolved: true,
+    //     pack: "Promo"
+    // },
     {
         name: "Ram Hopper",
         power: 7,
         ability: "Other allied creatures have frenzy",
+        double: true,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2459,6 +2593,7 @@ const creatures = [
         name: "Ratomancer",
         power: 2,
         ability: "Play any number of cards with power 4 or less from your discard pile without activating their play effects",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2475,10 +2610,33 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
+    // {
+    //     name: "Silver Whiskers",
+    //     power: 6,
+    //     ability: "You may gain control of an enemy creature with power 5 or less",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: false,
+    //         tough: true,
+    //         sneaky: false,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: true,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: true,
+    //     evolved: true,
+    //     pack: "Promo"
+    // },
     {
         name: "Slugapult",
         power: 5,
         ability: "You may defeat another allied creature. If you do, defeat an enemy creature",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2498,6 +2656,7 @@ const creatures = [
     {
         name: "Sluggernaut",
         power: 6,
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
@@ -2518,6 +2677,7 @@ const creatures = [
         name: "Unigon",
         power: 9,
         ability: "If your hand is empty, you win the game",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -2528,186 +2688,49 @@ const creatures = [
         triggers: {
             play: false,
             attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "Blessed Axolotl",
-        power: 6,
-        ability: `Allied creatures have "Attack: Gain 1 life"`,
-        keywords: {
-            poisonous: true,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false,
-            discard: true
-        },
-        evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "Bug Catcher",
-        power: 9,
-        ability: "Players cannot use Mindbugs",
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "Cursed Werewolf",
-        power: 8,
-        ability: "Allied creatures with frenzy and/or hunter cannot attack",
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: false,
-            sneaky: false,
-            hunter: true
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false,
-            discard: true
-        },
-        evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "Ghost Hand",
-        power: 2,
-        ability: "Name a creature. Creature(s) with the chosen name cannot block as long as this is in play",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: true,
-            hunter: false
-        },
-        triggers: {
-            play: true,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "Kitten Crewmate",
-        power: 2,
-        ability: `When this would be defeated, evolve it to "One-Eye" Felix instead`,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: true,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        pack: "Promo"
-    },
-    {
-        name: "One-Eye Felix",
-        power: 7,
-        ability: "When this defeats an enemy creature, evolve to Silver Whiskers",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: true
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        pack: "Promo"
-    },
-    {
-        name: "Silver Whiskers",
-        power: 6,
-        ability: "You may gain control of an enemy creature with power 5 or less",
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        pack: "Promo"
-    },
-    {
-        name: "Watts Dog",
-        power: 5,
-        ability: "Cannot be blocked by creatures with 1 or more keywords",
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
             defeated: false,
             action: false
         },
         evolution: false,
         pack: "Promo"
     }
+    // {
+    //     name: "Watts Dog",
+    //     power: 5,
+    //     ability: "Cannot be blocked by creatures with 1 or more keywords",
+    //     double: false,
+    //     keywords: {
+    //         poisonous: false,
+    //         frenzy: true,
+    //         tough: false,
+    //         sneaky: false,
+    //         hunter: false
+    //     },
+    //     triggers: {
+    //         play: false,
+    //         attack: false,
+    //         defeated: false,
+    //         action: false
+    //     },
+    //     evolution: false,
+    //     pack: "Promo"
+    // }
 ]
 
-initialize();
-function initialize() {
-    // getOrderCriteria();
-    // getPackCriteria();
-}
+updateCriteria();
 
 $(".order").click(function() {
     $('.order').prop('checked', false);
     $(this).prop('checked', true);
 });
+
+$(".number").click(function() {
+    if ($(this).hasClass("single")) {
+        $('.double').prop('checked', false);
+    } else {
+        $('.single').prop('checked', false);
+    }
+})
 
 $('select').on('change', function() {
     let power = parseInt($(this).val());
@@ -2755,6 +2778,7 @@ function updateCriteria() {
     getTriggerCriteria();
     getOtherCriteria();
     getOrderCriteria();
+    getPackCriteria();
 }
 
 function getKeyWordCriteria() {
@@ -2929,31 +2953,44 @@ function getPackCriteria() {
 }
 
 function getOtherCriteria() {
+    let single = $('.single').is(':checked');
+    let double = $('.double').is(':checked');
     let boost = $('.boost').is(':checked');
     let evolved = $('.evolved').is(':checked');
-    let message = "";
+    let message1 = "";
+    let message2 = "";
     let notTheFirst = false;
 
+    if (single) {
+        message2 = "that are Singles";
+    }
+
+    if (double) {
+        message2 = "that are Doubles";
+    }
+
+    $(".criteria-others-2").text(message2);
+
     if (!boost && !evolved) {
-        message = "";
-        $(".criteria-others").text(message);
+        message1 = "";
+        $(".criteria-others").text(message1);
         return;
     }
 
     if (boost) {
-        message += "that interact with Boost";
+        message1 += "that interact with Boost";
         notTheFirst = true;
     }
 
     if (evolved) {
         if (notTheFirst) {
-            message += " & Evolution";
+            message1 += " & Evolution";
         } else {
-            message += "that interact with Evolution"
+            message1 += "that interact with Evolution"
         }
     }
 
-    $(".criteria-others").text(message);
+    $(".criteria-others-1").text(message1);
 }
 
 function getOrderCriteria() {
@@ -2996,14 +3033,14 @@ $(".filter-btn").click(function() {
     let [firstContact, addOn, eternity, evolution, promo] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
     let [play, attack, defeated, action, discard] = checkTriggers();
-    let [boost, evolved] = checkOther();
+    let [boost, evolved, single, double] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
     array = getPack(array, firstContact, addOn, eternity, evolution, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
-    array = getOther(array, boost, evolved);
+    array = getOther(array, boost, evolved, single, double);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower);
 
@@ -3044,8 +3081,10 @@ function checkTriggers() {
 function checkOther() {
     let boost = $('.boost').is(':checked');
     let evolved = $('.evolved').is(':checked');
+    let single = $('.single').is(':checked');
+    let double = $('.double').is(':checked');
 
-    return [boost, evolved];
+    return [boost, evolved, single, double];
 }
 
 function checkPower() {
@@ -3148,7 +3187,15 @@ function getTriggers(array, play, attack, defeated, action, discard) {
     return array;
 }
 
-function getOther(array, boost, evolved) {
+function getOther(array, boost, evolved, single, double) {
+    if (single) {
+        array = array.filter(creature => creature.double == false);
+    }
+
+    if (double) {
+        array = array.filter(creature => creature.double == true);
+    }
+
     if (boost) {
         array = array.filter(creature => creature.boost == true);
     }
