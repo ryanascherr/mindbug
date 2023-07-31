@@ -97,7 +97,7 @@ const creatures = [
     {
         name: "Deathweaver",
         power: 2,
-        ability: "Poisonous - Play: The opponent cannot activate play effects",
+        ability: "Poisonous - The opponent cannot activate play effects",
         double: false,
         keywords: {
             poisonous: true,
