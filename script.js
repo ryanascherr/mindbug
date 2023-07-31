@@ -3278,14 +3278,6 @@ function placeCards(array) {
 
     if (!$(".results").hasClass("d-none")) {
         scrollToResults();
-    } else if (!$(".deal-hand-container").hasClass("d-none")) {
-        $('html, body').animate({
-            scrollTop: $(".test").offset().top
-        });
-    } else if (!$(".auto-fill-parent-container").hasClass("d-none")) {
-        $('html, body').animate({
-            scrollTop: $(".auto-fill-container").offset().top
-        });
     }
 }
 
