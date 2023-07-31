@@ -2,7 +2,7 @@ const creatures = [
     {
         name: "Axolotl Healer",
         power: 4,
-        ability: "Gain 2 life points",
+        ability: "Poisonous - Play: Gain 2 life points",
         double: true,
         keywords: {
             poisonous: true,
@@ -40,7 +40,7 @@ const creatures = [
     {
         name: "Brain Fly",
         power: 4,
-        ability: "Take control of a creature with power 6 or more",
+        ability: "Play: Take control of a creature with power 6 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -59,7 +59,7 @@ const creatures = [
     {
         name: "Chameleon Sniper",
         power: 1,
-        ability: "The opponent loses a life point",
+        ability: "Sneaky - Attack: The opponent loses a life point",
         double: false,
         keywords: {
             poisonous: false,
@@ -78,7 +78,7 @@ const creatures = [
     {
         name: "Compost Dragon",
         power: 3,
-        ability: "Play a card from your discard pile",
+        ability: "Hunter - Play: Play a card from your discard pile",
         double: true,
         keywords: {
             poisonous: false,
@@ -97,7 +97,7 @@ const creatures = [
     {
         name: "Deathweaver",
         power: 2,
-        ability: "The opponent cannot activate play effects",
+        ability: "Poisonous - Play: The opponent cannot activate play effects",
         double: false,
         keywords: {
             poisonous: true,
@@ -116,7 +116,7 @@ const creatures = [
     {
         name: "Elephantopus",
         power: 7,
-        ability: "The opponent cannot block with creatures with power 4 or less",
+        ability: "Tough - The opponent cannot block with creatures with power 4 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -135,7 +135,7 @@ const creatures = [
     {
         name: "Explosive Toad",
         power: 5,
-        ability: "Defeat a creature",
+        ability: "Frenzy - Defeated: Defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -154,7 +154,7 @@ const creatures = [
     {
         name: "Ferret Bomber",
         power: 2,
-        ability: "The opponent discards 2 cards",
+        ability: "Sneaky - Play: The opponent discards 2 cards",
         double: true,
         keywords: {
             poisonous: false,
@@ -173,7 +173,7 @@ const creatures = [
     {
         name: "Giraffodile",
         power: 7,
-        ability: "Draw your entire discard pile",
+        ability: "Play: Draw your entire discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -192,7 +192,7 @@ const creatures = [
     {
         name: "Goblin Werewolf",
         power: 2,
-        ability: "Has +6 power while it is your turn",
+        ability: "Hunter - Has +6 power while it is your turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -229,7 +229,7 @@ const creatures = [
     {
         name: "Grave Robber",
         power: 7,
-        ability: "Play a card from the opponent's discard pile",
+        ability: "Tough - Play: Play a card from the opponent's discard pile",
         double: true,
         keywords: {
             poisonous: false,
@@ -248,7 +248,7 @@ const creatures = [
     {
         name: "Harpy Mother",
         power: 5,
-        ability: "Take control of up to 2 creatures with power 5 or less",
+        ability: "Defeated: Take control of up to 2 creatures with power 5 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -267,7 +267,7 @@ const creatures = [
     {
         name: "Kangasaurus Rex",
         power: 7,
-        ability: "Defeat all enemy creatures with power 4 or less",
+        ability: "Play: Defeat all enemy creatures with power 4 or less",
         double: true,
         keywords: {
             poisonous: false,
@@ -286,7 +286,7 @@ const creatures = [
     {
         name: "Killer Bee",
         power: 5,
-        ability: "The opponent loses a life point",
+        ability: "Hunter - Play: The opponent loses a life point",
         double: true,
         keywords: {
             poisonous: false,
@@ -305,7 +305,7 @@ const creatures = [
     {
         name: "Lone Yeti",
         power: 5,
-        ability: "While this is your only allied creature, it has +5 power and frenzy",
+        ability: "Tough - While this is your only allied creature, it has +5 power and frenzy",
         double: false,
         keywords: {
             poisonous: false,
@@ -324,6 +324,7 @@ const creatures = [
     {
         name: "Luchataur",
         power: 9,
+        ability: "Frenzy",
         double: true,
         keywords: {
             poisonous: false,
@@ -342,7 +343,7 @@ const creatures = [
     {
         name: "Mysterious Mermaid",
         power: 7,
-        ability: "Set your life points equal to the opponent's",
+        ability: "Play: Set your life points equal to the opponent's",
         double: false,
         keywords: {
             poisonous: false,
@@ -361,6 +362,7 @@ const creatures = [
     {
         name: "Plated Scorpion",
         power: 2,
+        ability: "Tough Poisonous",
         double: true,
         keywords: {
             poisonous: true,
@@ -379,6 +381,7 @@ const creatures = [
     {
         name: "Rhino Turtle",
         power: 8,
+        ability: "Frenzy Tough",
         double: true,
         keywords: {
             poisonous: false,
@@ -397,7 +400,7 @@ const creatures = [
     {
         name: "Shark Dog",
         power: 4,
-        ability: "Defeat an enemy creature with power 6 or more",
+        ability: "Hunter - Attack: Defeat an enemy creature with power 6 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -435,7 +438,7 @@ const creatures = [
     {
         name: "Shield Bugs",
         power: 4,
-        ability: "Other allied creatures have +1 power",
+        ability: "Tough - Other allied creatures have +1 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -454,7 +457,7 @@ const creatures = [
     {
         name: "Snail Hydra",
         power: 9,
-        ability: "If you control fewer creatures than the opponent, defeat a creature",
+        ability: "Attack: If you control fewer creatures than the opponent, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -473,7 +476,7 @@ const creatures = [
     {
         name: "Snail Thrower",
         power: 1,
-        ability: "Other allied creatures with power 4 or less have hunter and poisonous",
+        ability: "Poisonous - Other allied creatures with power 4 or less have hunter and poisonous",
         double: false,
         keywords: {
             poisonous: true,
@@ -492,6 +495,7 @@ const creatures = [
     {
         name: "Spider Owl",
         power: 3,
+        ability: "Sneaky Poisonous",
         double: true,
         keywords: {
             poisonous: true,
@@ -510,7 +514,7 @@ const creatures = [
     {
         name: "Strange Barrel",
         power: 6,
-        ability: "Steal 2 random cards from the opponent's hand",
+        ability: "Defeated: Steal 2 random cards from the opponent's hand",
         double: false,
         keywords: {
             poisonous: false,
@@ -529,7 +533,7 @@ const creatures = [
     {
         name: "Tiger Squirrel",
         power: 3,
-        ability: "Defeat an enemy creature with power 7 or more",
+        ability: "Sneaky - Play: Defeat an enemy creature with power 7 or more",
         double: true,
         keywords: {
             poisonous: false,
@@ -548,7 +552,7 @@ const creatures = [
     {
         name: "Turbo Bug",
         power: 4,
-        ability: "The opponent loses all life points except one",
+        ability: "Attack: The opponent loses all life points except one",
         double: false,
         keywords: {
             poisonous: false,
@@ -567,7 +571,7 @@ const creatures = [
     {
         name: "Tusked Extorter",
         power: 8,
-        ability: "The opponent discards a card",
+        ability: "Attack: The opponent discards a card",
         double: true,
         keywords: {
             poisonous: false,
@@ -586,7 +590,7 @@ const creatures = [
     {
         name: "Urchin Hurler",
         power: 5,
-        ability: "Other allied creatures have +2 power while it is your turn",
+        ability: "Hunter - Other allied creatures have +2 power while it is your turn",
         double: false,
         keywords: {
             poisonous: false,
@@ -605,7 +609,7 @@ const creatures = [
     {
         name: "Bugserker",
         power: 3,
-        ability: "Has +8 power while you have 1 life point left",
+        ability: "Tough - Has +8 power while you have 1 life point left",
         double: true,
         keywords: {
             poisonous: false,
@@ -624,7 +628,7 @@ const creatures = [
     {
         name: "Count Draculeech",
         power: 7,
-        ability: "You lose 1 life point. Defeat a creature",
+        ability: "Attack: You lose 1 life point. Defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -643,7 +647,7 @@ const creatures = [
     {
         name: "Creep From The Deep",
         power: 4,
-        double: true,
+        ability: "Poisonous, Hunter",
         keywords: {
             poisonous: true,
             frenzy: false,
@@ -680,7 +684,7 @@ const creatures = [
     {
         name: "Froblin Instigator",
         power: 1,
-        ability: "Has +2 power for each other allied creature",
+        ability: "Hunter: Has +2 power for each other allied creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -699,7 +703,7 @@ const creatures = [
     {
         name: "Goreagle Alpha",
         power: 6,
-        ability: "You lose 1 life point",
+        ability: "Frenzy Hunter Tough - Play: You lose 1 life point",
         double: true,
         keywords: {
             poisonous: false,
@@ -718,7 +722,7 @@ const creatures = [
     {
         name: "Hamster Lion",
         power: 8,
-        ability: "The enemy creature(s) with the lowest power can't attack",
+        ability: "Frenzy - The enemy creature(s) with the lowest power can't attack",
         double: true,
         keywords: {
             poisonous: false,
@@ -737,7 +741,7 @@ const creatures = [
     {
         name: "Hungry Hungry Hamster",
         power: 2,
-        ability: "The opponent gives you a card from their hand. Play it or put it into your hand",
+        ability: "Sneaky - Play: The opponent gives you a card from their hand. Play it or put it into your hand",
         double: true,
         keywords: {
             poisonous: false,
@@ -756,7 +760,7 @@ const creatures = [
     {
         name: "Hyenix",
         power: 7,
-        ability: "When you lose 1 or more life points while this is in your discard pile, you may play this",
+        ability: "Frenzy - When you lose 1 or more life points while this is in your discard pile, you may play this",
         double: true,
         keywords: {
             poisonous: false,
@@ -775,7 +779,7 @@ const creatures = [
     {
         name: "Majestic Manticore",
         power: 6,
-        ability: "Defeat the creature(s) with the lowest power",
+        ability: "Poisonous - Attack: Defeat the creature(s) with the lowest power",
         double: true,
         keywords: {
             poisonous: true,
@@ -794,7 +798,7 @@ const creatures = [
     {
         name: "The Lurker",
         power: 4,
-        ability: "If you control more creatures than the opponent, this has sneaky this turn",
+        ability: "Tough - Attack: If you control more creatures than the opponent, this has sneaky this turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -813,7 +817,7 @@ const creatures = [
     {
         name: "Turf The Surfer",
         power: 8,
-        ability: "Choose a creature. It cannot block this turn",
+        ability: "Attack: Choose a creature. It cannot block this turn",
         double: true,
         keywords: {
             poisonous: false,
@@ -832,7 +836,7 @@ const creatures = [
     {
         name: "Agile Rooster",
         power: 6,
-        ability: "Can only be blocked by creatures with power within 1 of this creature's power",
+        ability: "Frenzy - Can only be blocked by creatures with power within 1 of this creature's power",
         double: false,
         keywords: {
             poisonous: false,
@@ -852,7 +856,7 @@ const creatures = [
     {
         name: "Ant Zombie Horde",
         power: 7,
-        ability: "Boost 2 cards to this",
+        ability: "Tough - Attack: Boost 2 cards to this",
         double: true,
         keywords: {
             poisonous: false,
@@ -873,7 +877,7 @@ const creatures = [
     {
         name: "Berserker Rabbit",
         power: 6,
-        ability: "While your discard pile is empty, this has +4 power",
+        ability: "Frenzy Tough - While your discard pile is empty, this has +4 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -894,7 +898,7 @@ const creatures = [
     {
         name: "Blessed Killer Bee",
         power: 5,
-        ability: "When the opponent loses life, they lose 2 additional life",
+        ability: "Hunter - In Discard Pile: When the opponent loses life, they lose 2 additional life",
         double: false,
         keywords: {
             poisonous: false,
@@ -916,7 +920,7 @@ const creatures = [
     {
         name: "Blessed Shield Bugs",
         power: 6,
-        ability: "Allied creatures have +1 power",
+        ability: "Tough - In Discard Pile: Allied creatures have +1 power",
         double: false,
         keywords: {
             poisonous: false,
@@ -938,7 +942,7 @@ const creatures = [
     {
         name: "Blessed Tiger Squirrel",
         power: 3,
-        ability: "Enemy creatures with power 7 or more cannot attack and/or block",
+        ability: "Sneaky - In Discard Pile: Enemy creatures with power 7 or more cannot attack and/or block",
         double: false,
         keywords: {
             poisonous: false,
@@ -960,7 +964,7 @@ const creatures = [
     {
         name: "Catalisk",
         power: 2,
-        ability: "The opponent discards their draw pile",
+        ability: "Poisonous - Attack: The opponent discards their draw pile",
         double: false,
         keywords: {
             poisonous: true,
@@ -982,7 +986,7 @@ const creatures = [
     {
         name: "Cave Lizard",
         power: 10,
-        ability: "Cannot attack",
+        ability: "Tough Sneaky - Cannot attack",
         double: false,
         keywords: {
             poisonous: false,
@@ -1004,7 +1008,7 @@ const creatures = [
     {
         name: "Cursed Gorillion",
         power: 10,
-        ability: "Allied creatures have -2 power (to a minimum of 1)",
+        ability: "Frenzy Tough - In Discard Pile: Allied creatures have -2 power (to a minimum of 1)",
         double: false,
         keywords: {
             poisonous: false,
@@ -1026,7 +1030,7 @@ const creatures = [
     {
         name: "Duckdra",
         power: 5,
-        ability: "You may defeat a creature with poisonous",
+        ability: "Hunter - Attack: You may defeat a creature with poisonous",
         double: true,
         keywords: {
             poisonous: false,
@@ -1048,7 +1052,7 @@ const creatures = [
     {
         name: "Fire Antler",
         power: 8,
-        ability: "The opponent loses 1 life. Boost 1 card to a creature",
+        ability: "Defeated: The opponent loses 1 life. Boost 1 card to a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1070,7 +1074,7 @@ const creatures = [
     {
         name: "Ghostly Underdog",
         power: 4,
-        ability: "Defeat all enemy creatures with power lower than this",
+        ability: "Attack: Defeat all enemy creatures with power lower than this",
         double: false,
         keywords: {
             poisonous: false,
@@ -1092,7 +1096,7 @@ const creatures = [
     {
         name: "Goat Dragon",
         power: 7,
-        ability: "Boost 1 card to a creature or defeat a boosted creature",
+        ability: "Play/Attack: Boost 1 card to a creature or defeat a boosted creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1114,7 +1118,7 @@ const creatures = [
     {
         name: "Hiss Holiness",
         power: 5,
-        ability: "Boost 4 cards to 1 or more creatures",
+        ability: "Frenzy Poisonous - Play: Boost 4 cards to 1 or more creatures",
         double: true,
         keywords: {
             poisonous: true,
@@ -1135,9 +1139,9 @@ const creatures = [
     },
     {
         name: "Hypnotic Mouse",
-        double: false,
-        ability: "While 2 or more creatures have equal power, they cannot attack",
         power: 1,
+        ability: "Sneaky - While 2 or more creatures have equal power, they cannot attack",
+        double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
@@ -1158,7 +1162,7 @@ const creatures = [
     {
         name: "Koibra",
         power: 2,
-        ability: "Reveal a random card from the opponent's hand. Put it into any player's discard pile",
+        ability: "Poisonous - Play/Attack: Reveal a random card from the opponent's hand. Put it into any player's discard pile",
         double: true,
         keywords: {
             poisonous: true,
@@ -1180,7 +1184,7 @@ const creatures = [
     {
         name: "Madam Mystique",
         power: 2,
-        ability: "Choose a keyword. Defeat all enemy creatures with the chosen keyword",
+        ability: "Defeated: Choose a keyword. Defeat all enemy creatures with the chosen keyword",
         double: true,
         keywords: {
             poisonous: false,
@@ -1202,7 +1206,7 @@ const creatures = [
     {
         name: "Peacasus",
         power: 3,
-        ability: "When this card is put into your discard pile from anywhere, gain 1 life",
+        ability: "Sneaky - When this card is put into your discard pile from anywhere, gain 1 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -1246,7 +1250,7 @@ const creatures = [
     {
         name: "Pyro Salamancer",
         power: 6,
-        ability: "Boost 1 card to a creature. Defeat exactly 2 creatures with equal power",
+        ability: "Play: Boost 1 card to a creature. Defeat exactly 2 creatures with equal power",
         double: true,
         keywords: {
             poisonous: false,
@@ -1268,7 +1272,7 @@ const creatures = [
     {
         name: "Radioactive Pest",
         power: 1,
-        ability: "Defeat an enemy creature with power 7 or more",
+        ability: "Poisonous - Attack: Defeat an enemy creature with power 7 or more",
         double: true,
         keywords: {
             poisonous: true,
@@ -1290,7 +1294,7 @@ const creatures = [
     {
         name: "Rockyphant",
         power: 8,
-        ability: "When this card is put into your discard pile from anywhere, the opponent discards a card",
+        ability: "Tough - When this card is put into your discard pile from anywhere, the opponent discards a card",
         double: false,
         keywords: {
             poisonous: false,
@@ -1311,7 +1315,7 @@ const creatures = [
     },
     {
         name: "Sea-Rex",
-        ability: "Boost 1 card to this",
+        ability: "Hunter - Attack: Boost 1 card to this",
         power: 5,
         double: true,
         keywords: {
@@ -1334,7 +1338,7 @@ const creatures = [
     {
         name: "Soul Manipulator",
         power: 5,
-        ability: "Boost 1 card to a creature or return a boost card to your hand",
+        ability: "Tough - Play/Attack: Boost 1 card to a creature or return a boost card to your hand",
         double: true,
         keywords: {
             poisonous: false,
@@ -1356,7 +1360,7 @@ const creatures = [
     {
         name: "Spirit Cheetah",
         power: 5,
-        ability: "Take control of a creature with power 2 or less",
+        ability: "Hunter - Defeated: Take control of a creature with power 2 or less",
         double: false,
         keywords: {
             poisonous: false,
@@ -1378,7 +1382,7 @@ const creatures = [
     {
         name: "Spirit Maki",
         power: 3,
-        ability: "Take control of a creature with power 9 or more",
+        ability: "Sneaky - Defeated: Take control of a creature with power 9 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -1400,7 +1404,7 @@ const creatures = [
     {
         name: "Squirtoise Scout",
         power: 2,
-        ability: "While 2 or more allied creatures have equal power, the opponent cannot block",
+        ability: "Tough - While 2 or more allied creatures have equal power, the opponent cannot block",
         double: true,
         keywords: {
             poisonous: false,
@@ -1422,7 +1426,7 @@ const creatures = [
     {
         name: "Tiger Wasp",
         power: 3,
-        ability: "Discard a random card",
+        ability: "Frenzy Sneaky - Play: Discard a random card",
         double: false,
         keywords: {
             poisonous: false,
@@ -1444,7 +1448,7 @@ const creatures = [
     {
         name: "Tornado Dragon",
         power: 8,
-        ability: "Discard up to 2 cards. For each card discarded this way, defeat a creature",
+        ability: "Play: Discard up to 2 cards. For each card discarded this way, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1466,7 +1470,7 @@ const creatures = [
     {
         name: "Trash Diver",
         power: 2,
-        ability: "Draw any 2 cards from the opponent's discard pile",
+        ability: "Sneaky - Attack: Draw any 2 cards from the opponent's discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -1488,7 +1492,7 @@ const creatures = [
     {
         name: "Trash Flier",
         power: 2,
-        ability: "Play a card from the opponent's discard pile",
+        ability: "Sneaky - Defeated: Play a card from the opponent's discard pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -1510,7 +1514,7 @@ const creatures = [
     {
         name: "Water Antler",
         power: 8,
-        ability: "Gain 1 life. Boost 1 card to a creature",
+        ability: "Play: Gain 1 life. Boost 1 card to a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1532,7 +1536,7 @@ const creatures = [
     {
         name: "Bigroot",
         power: 4,
-        ability: "Play a card from your discard pile. Evolve to Oakenmaster",
+        ability: "Action: Play a card from your discard pile. Evolve to Oakenmaster",
         double: false,
         keywords: {
             poisonous: false,
@@ -1554,7 +1558,7 @@ const creatures = [
     {
         name: "Blastfish",
         power: 1,
-        ability: "This cannot be defeated this turn",
+        ability: "Poisonous - Attack: This cannot be defeated this turn",
         double: false,
         keywords: {
             poisonous: true,
@@ -1575,7 +1579,7 @@ const creatures = [
     {
         name: "Bullet Train",
         power: 9,
-        ability: "Defeat an enemy creature with power 3 or less",
+        ability: "Attack: Defeat an enemy creature with power 3 or less",
         double: true,
         keywords: {
             poisonous: false,
@@ -1596,7 +1600,7 @@ const creatures = [
     {
         name: "Cake Trickster",
         power: 6,
-        ability: "Choose an enemy creature. The opponent attacks with it if able",
+        ability: "Poisonous - Action: Choose an enemy creature. The opponent attacks with it if able",
         double: true,
         keywords: {
             poisonous: true,
@@ -1617,7 +1621,7 @@ const creatures = [
     {
         name: "Captain Hippo",
         power: 7,
-        ability: "During the opponent's turn, they must always attack this with a creature with hunter if able",
+        ability: "Frenzy - During the opponent's turn, they must always attack this with a creature with hunter if able",
         double: false,
         keywords: {
             poisonous: false,
@@ -1638,7 +1642,7 @@ const creatures = [
     {
         name: "Cheeky Chimpborg",
         power: 5,
-        ability: "The opponent discards a card for each creature they control",
+        ability: "Hunter - Play: The opponent discards a card for each creature they control",
         double: false,
         keywords: {
             poisonous: false,
@@ -1659,7 +1663,7 @@ const creatures = [
     {
         name: "Cheery Chimpborg",
         power: 5,
-        ability: "While there are 3 or more enemy creatures, this has +5 power",
+        ability: "Hunter - While there are 3 or more enemy creatures, this has +5 power",
         double: false,
         keywords: {
             poisonous: false,
@@ -1680,7 +1684,7 @@ const creatures = [
     {
         name: "Chuckling Chimpborg",
         power: 5,
-        ability: "The opponent loses 1 life for each mindbug they have",
+        ability: "Hunter - Play: The opponent loses 1 life for each mindbug they have",
         double: false,
         keywords: {
             poisonous: false,
@@ -1701,7 +1705,7 @@ const creatures = [
     {
         name: "Cloud Lady",
         power: 4,
-        ability: "Defeat an enemy creature with power 4 or less. Evolve to Typhoon Princess",
+        ability: "Action: Defeat an enemy creature with power 4 or less. Evolve to Typhoon Princess",
         double: false,
         keywords: {
             poisonous: false,
@@ -1743,7 +1747,7 @@ const creatures = [
     {
         name: "Curious Tadpole",
         power: 1,
-        ability: "Gain 1 life. Evolve to Frog Prophet",
+        ability: "Poisonous - Action: Gain 1 life. Evolve to Frog Prophet",
         double: false,
         keywords: {
             poisonous: true,
@@ -1764,7 +1768,7 @@ const creatures = [
     {
         name: "Dr Orange U Tan",
         power: 6,
-        ability: "You may lose 1 life. If you do, return all enemy creatures to the opponent's hand",
+        ability: "Play: You may lose 1 life. If you do, return all enemy creatures to the opponent's hand",
         double: false,
         keywords: {
             poisonous: false,
@@ -1785,7 +1789,7 @@ const creatures = [
     {
         name: "Dragon Inn",
         power: 3,
-        ability: "If you control fewer creatures than the opponent, they lose 1 life",
+        ability: "Tough - Action: If you control fewer creatures than the opponent, they lose 1 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -1806,7 +1810,7 @@ const creatures = [
     {
         name: "Earwig Assassin",
         power: 1,
-        ability: "You may discard a card. If you do, defeat a creature",
+        ability: "Snaeky - Play: You may discard a card. If you do, defeat a creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -1827,7 +1831,7 @@ const creatures = [
     {
         name: "Frog Prophet",
         power: 3,
-        ability: "Gain 1 life. Evolve to World Eater",
+        ability: "Poisoinous Tough - Action: Gain 1 life. Evolve to World Eater",
         double: false,
         keywords: {
             poisonous: true,
@@ -1849,7 +1853,7 @@ const creatures = [
     {
         name: "Frosty Fortress",
         power: 10,
-        ability: "The opponent discards their hand and draw pile",
+        ability: "Tough - Attack: The opponent discards their hand and draw pile",
         double: false,
         keywords: {
             poisonous: false,
@@ -1871,7 +1875,7 @@ const creatures = [
     {
         name: "Infernostrich",
         power: 6,
-        ability: "Defeat an enemy creature with power 7 or more",
+        ability: "Action: Defeat an enemy creature with power 7 or more",
         double: false,
         keywords: {
             poisonous: false,
@@ -1913,7 +1917,7 @@ const creatures = [
     {
         name: "Mole Machine",
         power: 5,
-        ability: "The opponent cannot block with creatures with power 7 or more",
+        ability: "Tough - The opponent cannot block with creatures with power 7 or more",
         double: true,
         keywords: {
             poisonous: false,
@@ -1956,7 +1960,7 @@ const creatures = [
     {
         name: "Octocopter",
         power: 5,
-        ability: "Defeat this. Take control of an enemy creature",
+        ability: "Action: Defeat this. Take control of an enemy creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -1977,7 +1981,7 @@ const creatures = [
     {
         name: "Puffermech",
         power: 2,
-        ability: "Defeat all enemy creatures with power 8 or more",
+        ability: "Poisonous - Defeated: Defeat all enemy creatures with power 8 or more",
         double: true,
         keywords: {
             poisonous: true,
@@ -1998,7 +2002,7 @@ const creatures = [
     {
         name: "Radioactive Rabbit",
         power: 3,
-        ability: "The opponent takes control of this. Defeat all other allied creatures",
+        ability: "Frenzy - Play: The opponent takes control of this. Defeated: Defeat all other allied creatures",
         double: false,
         keywords: {
             poisonous: false,
@@ -2019,6 +2023,7 @@ const creatures = [
     {
         name: "Robopup",
         power: 1,
+        ability: "Sneaky Tough",
         double: true,
         keywords: {
             poisonous: false,
@@ -2039,7 +2044,7 @@ const creatures = [
     {
         name: "Sawn",
         power: 5,
-        ability: "When this fights, the creature with the highest power is defeated instead of the lowest",
+        ability: "Tough - When this fights, the creature with the highest power is defeated instead of the lowest",
         double: true,
         keywords: {
             poisonous: false,
@@ -2060,7 +2065,7 @@ const creatures = [
     {
         name: "Spiky Shinobi",
         power: 3,
-        ability: "When you have no Mindbugs, this has +5 power",
+        ability: "Sneaky - When you have no Mindbugs, this has +5 power",
         double: true,
         keywords: {
             poisonous: false,
@@ -2081,7 +2086,7 @@ const creatures = [
     {
         name: "Steelhorn",
         power: 7,
-        ability: "The opponent discards 3 cards",
+        ability: "Defeated: The opponent discards 3 cards",
         double: false,
         keywords: {
             poisonous: false,
@@ -2102,7 +2107,7 @@ const creatures = [
     {
         name: "Sweet Fighter",
         power: 9,
-        ability: "Gain 2 life",
+        ability: "Defeated: Gain 2 life",
         double: true,
         keywords: {
             poisonous: false,
@@ -2123,7 +2128,7 @@ const creatures = [
     {
         name: "The Experiment",
         power: 6,
-        ability: "The opponent takes control of this. Take control of an enemy creature",
+        ability: "Poisonous - Play: The opponent takes control of this. Take control of an enemy creature",
         double: false,
         keywords: {
             poisonous: true,
@@ -2144,7 +2149,7 @@ const creatures = [
     {
         name: "Thunder Queen",
         power: 9,
-        ability: "Defeat an enemy creature",
+        ability: "Attack: Defeat an enemy creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -2166,7 +2171,7 @@ const creatures = [
     {
         name: "Turtle Toaster",
         power: 4,
-        ability: "Defeat up to 2 enemy creatures with power 4-6",
+        ability: "Tough - Play: Defeat up to 2 enemy creatures with power 4-6",
         double: true,
         keywords: {
             poisonous: false,
@@ -2187,7 +2192,7 @@ const creatures = [
     {
         name: "Typhoon Princess",
         power: 6,
-        ability: "Defeat an enemy creature with power 6 or less. Evolve to Thunder Queen",
+        ability: "Action: Defeat an enemy creature with power 6 or less. Evolve to Thunder Queen",
         double: false,
         keywords: {
             poisonous: false,
@@ -2209,7 +2214,7 @@ const creatures = [
     {
         name: "Utility Bug",
         power: 4,
-        ability: "You may copy the play effect of another creature",
+        ability: "Hunter Tough - Play: You may copy the play effect of another creature",
         double: true,
         keywords: {
             poisonous: false,
@@ -2230,7 +2235,7 @@ const creatures = [
     {
         name: "Veteran Penguin",
         power: 5,
-        ability: "The opponent discards a card. Evolve to Frosty Fortress",
+        ability: "Tough - Action: The opponent discards a card. Evolve to Frosty Fortress",
         double: false,
         keywords: {
             poisonous: false,
@@ -2252,7 +2257,7 @@ const creatures = [
     {
         name: "Waddling Recruit",
         power: 3,
-        ability: "The opponent discards a card. Evolve to Veteran Penguin",
+        ability: "Action: The opponent discards a card. Evolve to Veteran Penguin",
         double: false,
         keywords: {
             poisonous: false,
@@ -2273,7 +2278,7 @@ const creatures = [
     {
         name: "Westside Monster",
         power: 8,
-        ability: "Enemy creatures with sneaky cannot attack and/or block",
+        ability: "Frenzy - Enemy creatures with sneaky cannot attack and/or block",
         double: true,
         keywords: {
             poisonous: false,
@@ -2294,7 +2299,7 @@ const creatures = [
     {
         name: "Wildsprout",
         power: 1,
-        ability: "Play a card from your discard pile. Evolve to Bigroot",
+        ability: "Action: Play a card from your discard pile. Evolve to Bigroot",
         double: false,
         keywords: {
             poisonous: false,
@@ -2315,7 +2320,7 @@ const creatures = [
     {
         name: "World Eater",
         power: 8,
-        ability: "The opponent loses 1 life",
+        ability: "Poisonous Tough - Attack: The opponent loses 1 life",
         double: false,
         keywords: {
             poisonous: true,
@@ -2359,7 +2364,7 @@ const creatures = [
     {
         name: "Boar-Zooka",
         power: 6,
-        ability: "Cannot block. Defeat all enemy creatures",
+        ability: "Cannot block. Defeated: Defeat all enemy creatures",
         double: false,
         keywords: {
             poisonous: false,
@@ -2401,7 +2406,7 @@ const creatures = [
     {
         name: "Chuck",
         power: 3,
-        ability: "Roll a 6-sided die. On 4 to 6, defeat an enemy creature and then repeat this effect",
+        ability: "Tough - Play: Roll a 6-sided die. On 4 to 6, defeat an enemy creature and then repeat this effect",
         double: false,
         keywords: {
             poisonous: false,
@@ -2507,7 +2512,7 @@ const creatures = [
     {
         name: "Macaw Dagon",
         power: 8,
-        ability: "Swap hands with the opponent",
+        ability: "Attack: Swap hands with the opponent",
         double: false,
         keywords: {
             poisonous: false,
@@ -2528,7 +2533,7 @@ const creatures = [
     {
         name: "Mindbug Bug",
         power: 7,
-        ability: "When the opponent uses a Mindbug, they first lose 1 life point",
+        ability: "Tough - When the opponent uses a Mindbug, they first lose 1 life point",
         double: false,
         keywords: {
             poisonous: false,
@@ -2571,7 +2576,7 @@ const creatures = [
     {
         name: "Ram Hopper",
         power: 7,
-        ability: "Other allied creatures have frenzy",
+        ability: "Frenzy - Other allied creatures have frenzy",
         double: false,
         keywords: {
             poisonous: false,
@@ -2592,7 +2597,7 @@ const creatures = [
     {
         name: "Ratomancer",
         power: 2,
-        ability: "Play any number of cards with power 4 or less from your discard pile without activating their play effects",
+        ability: "Play: Play any number of cards with power 4 or less from your discard pile without activating their play effects",
         double: false,
         keywords: {
             poisonous: false,
@@ -2635,7 +2640,7 @@ const creatures = [
     {
         name: "Slugapult",
         power: 5,
-        ability: "You may defeat another allied creature. If you do, defeat an enemy creature",
+        ability: "Tough Frenzy - Attack: You may defeat another allied creature. If you do, defeat an enemy creature",
         double: false,
         keywords: {
             poisonous: false,
@@ -2656,6 +2661,7 @@ const creatures = [
     {
         name: "Sluggernaut",
         power: 6,
+        ability: "Tough Hunter Frenzy",
         double: false,
         keywords: {
             poisonous: false,
@@ -2676,7 +2682,7 @@ const creatures = [
     {
         name: "Unigon",
         power: 9,
-        ability: "If your hand is empty, you win the game",
+        ability: "Attack: If your hand is empty, you win the game",
         double: false,
         keywords: {
             poisonous: false,
