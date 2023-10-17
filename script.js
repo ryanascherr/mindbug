@@ -648,6 +648,7 @@ const creatures = [
         name: "Creep From The Deep",
         power: 4,
         ability: "Poisonous, Hunter",
+        double: true,
         keywords: {
             poisonous: true,
             frenzy: false,
