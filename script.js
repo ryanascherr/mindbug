@@ -3262,15 +3262,15 @@ function placeCards(array) {
             }
 
             if (this.pack == "First Contact") {
-                $(".card-container").append(`<img loading="lazy" class="card" src="./img/first-contact/${name}.jpg">`)
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/first-contact/${name}.jpg">`)
             } else if (this.pack == "First Contact: Add-On") {
-                $(".card-container").append(`<img loading="lazy" class="card" src="./img/first-contact-add-on/${name}.jpg">`)
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/first-contact-add-on/${name}.jpg">`)
             } else if (this.pack == "Beyond Evolution") {
-                $(".card-container").append(`<img loading="lazy" class="card" src="./img/beyond-evolution/${name}.jpg">`)
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/beyond-evolution/${name}.jpg">`)
             } else if (this.pack == "Beyond Eternity") {
-                $(".card-container").append(`<img loading="lazy" class="card" src="./img/beyond-eternity/${name}.jpg">`)
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/beyond-eternity/${name}.jpg">`)
             } else if (this.pack == "Promo") {
-                $(".card-container").append(`<img loading="lazy" class="card" src="./img/promo/${name}.jpg">`)
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/promo/${name}.jpg">`)
             }
         });
     } else {
