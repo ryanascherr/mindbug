@@ -3247,6 +3247,7 @@ function prepareForCards(array) {
 
 function placeCards(array) {
     if (array.length > 0) {
+        $(".card-container").removeClass("grid-one-column");
         $(array).each(function() {
             let name = this.name;
 
@@ -3275,6 +3276,7 @@ function placeCards(array) {
         });
     } else {
         $(".card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
+        $(".card-container").addClass("grid-one-column");
     }
 
     if (!$(".results").hasClass("d-none")) {
