@@ -2922,9 +2922,9 @@ function getPackCriteria() {
 
     if (addOn) {
         if (notTheFirst) {
-            message += " & First Contact: Add On";
+            message += " & New Servants";
         } else {
-            message += "First Contact: Add On"
+            message += "New Servants"
         }
         notTheFirst = true;
     }
