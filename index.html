@@ -20,6 +20,7 @@
             <div class="tab open open-filter">Filters</div>
             <div class="tab open open-name">Live Search</div>
             <div class="tab open open-hand">Starting Hand</div>
+            <div class="tab open open-custom-deck">Custom Deck</div>
         </div>
     </nav>
     <main>
@@ -236,6 +237,9 @@
                 <button class="deal-hand">Deal 5 random cards</button>
             </div>
         </div>
+        <div class="custom-deck-container d-none">
+            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Click "add" to add creatures to your custom deck</h3>
+        </div>
         <div class="results d-none"></div>
         <div class="stack-container-parent d-none">
             <div class="stack-container">
@@ -250,7 +254,15 @@
                 </div>
             </div>
         </div>
-        <div class="card-container"></div>
+        <div class="double-card-container">
+            <div class="card-container"></div>
+            <div class="custom-deck-thing">
+                <p>Cards in your custom deck are below. You can choose if they appear in your custom deck once or twice. When you're happy with your deck, click "Finish Deck and Create Link".</p>
+                <button class="finish-deck-create-link-btn">Finish Deck and Create Link</button>
+                <a class="custom-deck-link-display" href="" target="_blank"></a>
+                <div class="custom-deck-holder"></div>
+            </div>
+        </div>
         <div class="modal">
             <span>X</span>
             <div class="modal-content">
