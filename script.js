@@ -2341,6 +2341,28 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
+        name: "Alien Brain",
+        power: 3,
+        ability: `Poisonous - The opponent cannot put cards into their hand`,
+        double: false,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
         name: "Blessed Axolotl Healer",
         power: 6,
         ability: `Poisonous - In Discard Pile: Allied creatures have "Attack: Gain 1 life"`,
@@ -2448,6 +2470,28 @@ const creatures = [
         pack: "Promo"
     },
     {
+        name: "Future Eric",
+        power: 3,
+        ability: "Sneaky - Play: Put 2 random cards from outside the game on the bottom of your draw pile without looking at them",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
         name: "Ghost Hand",
         power: 2,
         ability: "Sneaky - Play: Boost 1 card to a creature. Boosted creatures cannot block.",
@@ -2532,6 +2576,50 @@ const creatures = [
         pack: "Promo"
     },
     {
+        name: "One-Eye Felix",
+        power: 7,
+        ability: "Hunter - At the end of turn, if this defeated an enemy creature this turn, evolve to Silver Whiskers",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Promo"
+    },
+    {
+        name: "Silver Whiskers",
+        power: 6,
+        ability: "Tough - Attack: Take control of a creature with power 5 or less",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Promo"
+    },
+    {
         name: "Macaw Dagon",
         power: 8,
         ability: "Attack: Swap hands with the opponent",
@@ -2571,28 +2659,6 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
-    },
-    {
-        name: "One-Eye Felix",
-        power: 7,
-        ability: "Hunter - At the end of turn, if this defeated an enemy creature this turn, evolve to Silver Whiskers",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: true
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        evolved: true,
         pack: "Promo"
     },
     {
@@ -2637,28 +2703,6 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
-    // {
-    //     name: "Silver Whiskers",
-    //     power: 6,
-    //     ability: "You may gain control of an enemy creature with power 5 or less",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: false,
-    //         tough: true,
-    //         sneaky: false,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: true,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: true,
-    //     evolved: true,
-    //     pack: "Promo"
-    // },
     {
         name: "Slugapult",
         power: 5,
@@ -2723,6 +2767,27 @@ const creatures = [
         pack: "Promo"
     },
     {
+        name: "Suspicious Gift",
+        power: 1,
+        ability: "Play: The opponent takes control of this. Defeated: You lose 2 life",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: true,
+            defeated: true,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
         name: "Tuckbox Mimic",
         power: 2,
         ability: "Action: Boost 1 card to this. Evolve to Deckbox Mimic",
@@ -2766,6 +2831,28 @@ const creatures = [
         pack: "Promo"
     },
     {
+        name: "Big Box Mimic",
+        power: 6,
+        ability: "Frenzy - Defeated: Play any number of boost cards from this without activating their Play effects",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: true,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Promo"
+    },
+    {
         name: "Unigon",
         power: 9,
         ability: "Attack: If your hand is empty, you win the game",
@@ -2785,28 +2872,28 @@ const creatures = [
         },
         evolution: false,
         pack: "Promo"
+    },
+    {
+        name: "Watts Dog",
+        power: 5,
+        ability: "Frenzy - Cannot be blocked by creatures with 1 or more keywords",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
     }
-    // {
-    //     name: "Watts Dog",
-    //     power: 5,
-    //     ability: "Cannot be blocked by creatures with 1 or more keywords",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: true,
-    //         tough: false,
-    //         sneaky: false,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: false,
-    //     pack: "Promo"
-    // }
 ]
 
 updateCriteria();
