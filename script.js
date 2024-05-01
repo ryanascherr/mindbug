@@ -2340,28 +2340,28 @@ const creatures = [
         evolved: true,
         pack: "Beyond Evolution"
     },
-    // {
-    //     name: "Blessed Axolotl",
-    //     power: 6,
-    //     ability: `Allied creatures have "Attack: Gain 1 life"`,
-    //     double: false,
-    //     keywords: {
-    //         poisonous: true,
-    //         frenzy: false,
-    //         tough: false,
-    //         sneaky: false,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false,
-    //         discard: true
-    //     },
-    //     evolution: false,
-    //     pack: "Promo"
-    // },
+    {
+        name: "Blessed Axolotl Healer",
+        power: 6,
+        ability: `Poisonous - In Discard Pile: Allied creatures have "Attack: Gain 1 life"`,
+        double: false,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: true
+        },
+        evolution: false,
+        pack: "Promo"
+    },
     {
         name: "Boar-Zooka",
         power: 6,
@@ -2383,27 +2383,27 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
-    // {
-    //     name: "Bug Catcher",
-    //     power: 9,
-    //     ability: "Players cannot use Mindbugs",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: true,
-    //         tough: true,
-    //         sneaky: false,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: false,
-    //     pack: "Promo"
-    // },
+    {
+        name: "Bug Catcher",
+        power: 9,
+        ability: "Frenzy Tough - Players cannot use Mindbugs",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
     {
         name: "Chuck",
         power: 3,
@@ -2425,49 +2425,49 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
-    // {
-    //     name: "Cursed Werewolf",
-    //     power: 8,
-    //     ability: "Allied creatures with frenzy and/or hunter cannot attack",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: true,
-    //         tough: false,
-    //         sneaky: false,
-    //         hunter: true
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false,
-    //         discard: true
-    //     },
-    //     evolution: false,
-    //     pack: "Promo"
-    // },
-    // {
-    //     name: "Ghost Hand",
-    //     power: 2,
-    //     ability: "Name a creature. Creature(s) with the chosen name cannot block as long as this is in play",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: false,
-    //         tough: false,
-    //         sneaky: true,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: true,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: false,
-    //     pack: "Promo"
-    // },
+    {
+        name: "Cursed Goblin Werewolf",
+        power: 8,
+        ability: "Frenzy Hunter - In Discard Pile: Allied creatures with frenzy and/or hunter cannot attack",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: true
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Ghost Hand",
+        power: 2,
+        ability: "Sneaky - Play: Boost 1 card to a creature. Boosted creatures cannot block.",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
     {
         name: "Jazz Dog",
         power: 5,
@@ -2489,27 +2489,48 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
-    // {
-    //     name: "Kitten Crewmate",
-    //     power: 2,
-    //     ability: `When this would be defeated, evolve it to "One-Eye" Felix instead`,
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: false,
-    //         tough: false,
-    //         sneaky: true,
-    //         hunter: false
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: true,
-    //     pack: "Promo"
-    // },
+    {
+        name: "Jean-Claw_Pandamme",
+        power: 5,
+        ability: 'Enemy creatures have "Attack: Discard a card"',
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Kitten Crewmate",
+        power: 2,
+        ability: `Sneaky - If this would be defeated, evolve to "One-Eye" Felix instead`,
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: true,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        pack: "Promo"
+    },
     {
         name: "Macaw Dagon",
         power: 8,
@@ -2552,28 +2573,28 @@ const creatures = [
         evolution: false,
         pack: "Promo"
     },
-    // {
-    //     name: "One-Eye Felix",
-    //     power: 7,
-    //     ability: "When this defeats an enemy creature, evolve to Silver Whiskers",
-    //     double: false,
-    //     keywords: {
-    //         poisonous: false,
-    //         frenzy: false,
-    //         tough: false,
-    //         sneaky: false,
-    //         hunter: true
-    //     },
-    //     triggers: {
-    //         play: false,
-    //         attack: false,
-    //         defeated: false,
-    //         action: false
-    //     },
-    //     evolution: true,
-    //     evolved: true,
-    //     pack: "Promo"
-    // },
+    {
+        name: "One-Eye Felix",
+        power: 7,
+        ability: "Hunter - At the end of turn, if this defeated an enemy creature this turn, evolve to Silver Whiskers",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: true
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Promo"
+    },
     {
         name: "Ram Hopper",
         power: 7,
@@ -2678,6 +2699,70 @@ const creatures = [
             action: false
         },
         evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Solar Bear",
+        power: 5,
+        ability: "Tough - Attack: Boost 1 card to a creature or take control of a boosted creature",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo"
+    },
+    {
+        name: "Tuckbox Mimic",
+        power: 2,
+        ability: "Action: Boost 1 card to this. Evolve to Deckbox Mimic",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        pack: "Promo"
+    },
+    {
+        name: "Deckbox Mimic",
+        power: 5,
+        ability: "Action: Boost 1 card to this. You may evolve to Big Box Mimic",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        evolved: true,
         pack: "Promo"
     },
     {
