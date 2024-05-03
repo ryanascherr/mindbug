@@ -3644,6 +3644,7 @@ $(document).on('click','.add-to-deck-btn',function(e){
     let creatureIndex = parseInt($(this).attr('data-index'));
     addToCustomDeck(creatureIndex);
     $(this).parent().css({'pointer-events':'none','opacity':'50%'});
+    $(".custom-deck-link-display").text("");
 });
 
 $(document).on('click','.remove-from-deck-btn',function(e){
@@ -3651,6 +3652,15 @@ $(document).on('click','.remove-from-deck-btn',function(e){
     $(this).parent().remove();
     let cardOnLeft = $(".card-container").find(`[data-index='${index}']`);
     $(cardOnLeft).parent().css({'pointer-events':'all','opacity':'100%'});
+    $(".custom-deck-link-display").text("");
+});
+
+$(document).on('click','.card-to-be-added-container input',function(e){
+    $(".custom-deck-link-display").text("");
+});
+
+$(document).on('click','.card-to-be-added-container label',function(e){
+    $(".custom-deck-link-display").text("");
 });
 
 function addToCustomDeck(creatureIndex) {
@@ -3751,7 +3761,3 @@ $(".finish-deck-create-link-btn").click(function(e) {
     $(".custom-deck-link-display").attr('href', customURL);
     $(".custom-deck-link-display").text('Click here to see your deck!');
 });
-
-function resetCustomDeck() {
-    // $("custom")
-}
