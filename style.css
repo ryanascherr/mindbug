@@ -569,7 +569,7 @@ select:hover {
     align-items: center;
 }
 
-.add-to-deck-btn, .remove-from-deck-btn {
+.add-to-deck-btn, .remove-from-deck-btn, .finish-deck-create-link-btn, .copy-deck-btn {
     padding: 5px;
     background-color: #411928;
     color: white;
@@ -579,11 +579,11 @@ select:hover {
     margin-top: 10px;
 }
 
-.remove-from-deck-btn {
+.remove-from-deck-btn, .finish-deck-create-link-btn, .copy-deck-btn {
     margin-top: 5px;
 }
 
-.add-to-deck-btn:hover, .remove-from-deck-btn:hover {
+.add-to-deck-btn:hover, .remove-from-deck-btn:hover, .finish-deck-create-link-btn:hover, .copy-deck-btn:hover {
     color: #411928;
     background-color: white;
     cursor: pointer;
@@ -605,4 +605,27 @@ input[type=radio] {
 
 .custom-deck-card {
     margin-bottom: 10px;
+}
+
+.change-card-amount-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-card-amount-btns button:hover {
+    cursor: pointer;
+}
+
+.change-card-amount-btns div {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: white;
+    color: #411928;
+    font-weight: bold;
+}
+
+.disabled {
+    opacity: 50%;
+    pointer-events: none;
 }
