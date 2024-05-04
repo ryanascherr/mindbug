@@ -2349,35 +2349,76 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Alien Brain",
-        power: 3,
-        ability: `Poisonous - The opponent cannot put cards into their hand`,
+        name: "Slugapult",
+        power: 5,
+        ability: "Tough Frenzy - Attack: You may defeat another allied creature. If you do, defeat an enemy creature",
         double: false,
         keywords: {
-            poisonous: true,
-            frenzy: false,
-            tough: false,
+            poisonous: false,
+            frenzy: true,
+            tough: true,
             sneaky: false,
             hunter: false
         },
         triggers: {
             play: false,
-            attack: false,
+            attack: true,
             defeated: false,
-            action: false,
-            discard: false
+            action: false
         },
         evolution: false,
-        pack: "Promo 2023"
+        pack: "Promo 2022"
     },
     {
-        name: "Blessed Axolotl Healer",
-        power: 6,
-        ability: `Poisonous - In Discard Pile: Allied creatures have "Attack: Gain 1 life"`,
+        name: "Mindbug Bug",
+        power: 7,
+        ability: "Tough - When the opponent uses a Mindbug, they first lose 1 life point",
         double: false,
         keywords: {
-            poisonous: true,
+            poisonous: false,
             frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2022"
+    },
+    {
+        name: "Ratomancer",
+        power: 2,
+        ability: "Play: Play any number of cards with power 4 or less from your discard pile without activating their play effects",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2022"
+    },
+    {
+        name: "Ram Hopper",
+        power: 7,
+        ability: "Frenzy - Other allied creatures have frenzy",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
             tough: false,
             sneaky: false,
             hunter: false
@@ -2386,11 +2427,10 @@ const creatures = [
             play: false,
             attack: false,
             defeated: false,
-            action: false,
-            discard: true
+            action: false
         },
         evolution: false,
-        pack: "Promo 2023"
+        pack: "Promo 2022"
     },
     {
         name: "Boar-Zooka",
@@ -2414,16 +2454,16 @@ const creatures = [
         pack: "Promo 2022"
     },
     {
-        name: "Bug Catcher",
-        power: 9,
-        ability: "Frenzy Tough - Players cannot use Mindbugs",
+        name: "Sluggernaut",
+        power: 6,
+        ability: "Tough Hunter Frenzy",
         double: false,
         keywords: {
             poisonous: false,
             frenzy: true,
             tough: true,
             sneaky: false,
-            hunter: false
+            hunter: true
         },
         triggers: {
             play: false,
@@ -2432,7 +2472,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo 2023"
+        pack: "Promo 2022"
     },
     {
         name: "Chuck",
@@ -2456,23 +2496,85 @@ const creatures = [
         pack: "Promo 2022"
     },
     {
-        name: "Cursed Goblin Werewolf",
-        power: 8,
-        ability: "Frenzy Hunter - In Discard Pile: Allied creatures with frenzy and/or hunter cannot attack",
+        name: "Jazz Dog",
+        power: 5,
+        ability: "At the end of your turn, if an enemy creature blocked this turn and is still in play, take control of it",
         double: false,
         keywords: {
             poisonous: false,
-            frenzy: true,
+            frenzy: false,
             tough: false,
             sneaky: false,
-            hunter: true
+            hunter: false
         },
         triggers: {
             play: false,
             attack: false,
             defeated: false,
-            action: false,
-            discard: true
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2022"
+    },
+    {
+        name: "Macaw Dagon",
+        power: 8,
+        ability: "Attack: Swap hands with the opponent",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2022"
+    },
+    {
+        name: "Unigon",
+        power: 9,
+        ability: "Attack: If your hand is empty, you win the game",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2022"
+    },
+    {
+        name: "Suspicious Gift",
+        power: 1,
+        ability: "Play: The opponent takes control of this. Defeated: You lose 2 life",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: true,
+            attack: true,
+            defeated: true,
+            action: false
         },
         evolution: false,
         pack: "Promo 2023"
@@ -2500,19 +2602,41 @@ const creatures = [
         pack: "Promo 2023"
     },
     {
-        name: "Ghost Hand",
-        power: 2,
-        ability: "Sneaky - Play: Boost 1 card to a creature. Boosted creatures cannot block.",
+        name: "Alien Brain",
+        power: 3,
+        ability: `Poisonous - The opponent cannot put cards into their hand`,
         double: false,
         keywords: {
-            poisonous: false,
+            poisonous: true,
             frenzy: false,
             tough: false,
-            sneaky: true,
+            sneaky: false,
             hunter: false
         },
         triggers: {
-            play: true,
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false,
+            discard: false
+        },
+        evolution: false,
+        pack: "Promo 2023"
+    },
+    {
+        name: "Watts Dog",
+        power: 5,
+        ability: "Frenzy - Cannot be blocked by creatures with 1 or more keywords",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
             attack: false,
             defeated: false,
             action: false
@@ -2521,12 +2645,12 @@ const creatures = [
         pack: "Promo 2023"
     },
     {
-        name: "Jazz Dog",
-        power: 5,
-        ability: "At the end of your turn, if an enemy creature blocked this turn and is still in play, take control of it",
+        name: "Blessed Axolotl Healer",
+        power: 6,
+        ability: `Poisonous - In Discard Pile: Allied creatures have "Attack: Gain 1 life"`,
         double: false,
         keywords: {
-            poisonous: false,
+            poisonous: true,
             frenzy: false,
             tough: false,
             sneaky: false,
@@ -2536,28 +2660,30 @@ const creatures = [
             play: false,
             attack: false,
             defeated: false,
-            action: false
+            action: false,
+            discard: true
         },
         evolution: false,
-        pack: "Promo 2022"
+        pack: "Promo 2023"
     },
     {
-        name: "Jean-Claw_Pandamme",
-        power: 5,
-        ability: 'Enemy creatures have "Attack: Discard a card"',
+        name: "Cursed Goblin Werewolf",
+        power: 8,
+        ability: "Frenzy Hunter - In Discard Pile: Allied creatures with frenzy and/or hunter cannot attack",
         double: false,
         keywords: {
             poisonous: false,
-            frenzy: false,
+            frenzy: true,
             tough: false,
             sneaky: false,
-            hunter: false
+            hunter: true
         },
         triggers: {
             play: false,
             attack: false,
             defeated: false,
-            action: false
+            action: false,
+            discard: true
         },
         evolution: false,
         pack: "Promo 2023"
@@ -2630,78 +2756,15 @@ const creatures = [
         pack: "Promo 2023"
     },
     {
-        name: "Macaw Dagon",
-        power: 8,
-        ability: "Attack: Swap hands with the opponent",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Mindbug Bug",
-        power: 7,
-        ability: "Tough - When the opponent uses a Mindbug, they first lose 1 life point",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Ram Hopper",
-        power: 7,
-        ability: "Frenzy - Other allied creatures have frenzy",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Ratomancer",
+        name: "Ghost Hand",
         power: 2,
-        ability: "Play: Play any number of cards with power 4 or less from your discard pile without activating their play effects",
+        ability: "Sneaky - Play: Boost 1 card to a creature. Boosted creatures cannot block.",
         double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
             tough: false,
-            sneaky: false,
+            sneaky: true,
             hunter: false
         },
         triggers: {
@@ -2711,49 +2774,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Slugapult",
-        power: 5,
-        ability: "Tough Frenzy - Attack: You may defeat another allied creature. If you do, defeat an enemy creature",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Sluggernaut",
-        power: 6,
-        ability: "Tough Hunter Frenzy",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: true,
-            sneaky: false,
-            hunter: true
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
+        pack: "Promo 2023"
     },
     {
         name: "Solar Bear",
@@ -2777,9 +2798,9 @@ const creatures = [
         pack: "Promo 2023"
     },
     {
-        name: "Suspicious Gift",
-        power: 1,
-        ability: "Play: The opponent takes control of this. Defeated: You lose 2 life",
+        name: "Jean-Claw_Pandamme",
+        power: 5,
+        ability: 'Enemy creatures have "Attack: Discard a card"',
         double: false,
         keywords: {
             poisonous: false,
@@ -2789,9 +2810,30 @@ const creatures = [
             hunter: false
         },
         triggers: {
-            play: true,
-            attack: true,
-            defeated: true,
+            play: false,
+            attack: false,
+            defeated: false,
+            action: false
+        },
+        evolution: false,
+        pack: "Promo 2023"
+    },
+    {
+        name: "Bug Catcher",
+        power: 9,
+        ability: "Frenzy Tough - Players cannot use Mindbugs",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: true,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
             action: false
         },
         evolution: false,
@@ -2866,48 +2908,6 @@ const creatures = [
         evolved: true,
         pack: "Promo 2023"
     },
-    {
-        name: "Unigon",
-        power: 9,
-        ability: "Attack: If your hand is empty, you win the game",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2022"
-    },
-    {
-        name: "Watts Dog",
-        power: 5,
-        ability: "Frenzy - Cannot be blocked by creatures with 1 or more keywords",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: true,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: false,
-        pack: "Promo 2023"
-    }
 ]
 
 updateCriteria();
