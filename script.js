@@ -2368,7 +2368,7 @@ const creatures = [
             discard: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Blessed Axolotl Healer",
@@ -2390,7 +2390,7 @@ const creatures = [
             discard: true
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Boar-Zooka",
@@ -2411,7 +2411,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Bug Catcher",
@@ -2432,7 +2432,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Chuck",
@@ -2453,7 +2453,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Cursed Goblin Werewolf",
@@ -2475,7 +2475,7 @@ const creatures = [
             discard: true
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Future Eric",
@@ -2497,7 +2497,7 @@ const creatures = [
             discard: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Ghost Hand",
@@ -2518,7 +2518,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Jazz Dog",
@@ -2539,7 +2539,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Jean-Claw_Pandamme",
@@ -2560,7 +2560,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Kitten Crewmate",
@@ -2583,7 +2583,7 @@ const creatures = [
         evolution: true,
         secondEvolution: 'One-Eye Felix',
         thirdEvolution: 'Silver Whiskers',
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "One-Eye Felix",
@@ -2605,7 +2605,7 @@ const creatures = [
         },
         evolution: true,
         evolved: true,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Silver Whiskers",
@@ -2627,7 +2627,7 @@ const creatures = [
         },
         evolution: true,
         evolved: true,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Macaw Dagon",
@@ -2648,7 +2648,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Mindbug Bug",
@@ -2669,7 +2669,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Ram Hopper",
@@ -2690,7 +2690,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Ratomancer",
@@ -2711,7 +2711,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Slugapult",
@@ -2732,7 +2732,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Sluggernaut",
@@ -2753,7 +2753,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Solar Bear",
@@ -2774,7 +2774,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Suspicious Gift",
@@ -2795,7 +2795,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Tuckbox Mimic",
@@ -2816,9 +2816,10 @@ const creatures = [
             action: true
         },
         evolution: true,
+        boost: true,
         secondEvolution: 'Deckbox Mimic',
         thirdEvolution: 'Big Box Mimic',
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Deckbox Mimic",
@@ -2840,7 +2841,8 @@ const creatures = [
         },
         evolution: true,
         evolved: true,
-        pack: "Promo"
+        boost: true,
+        pack: "Promo 2023"
     },
     {
         name: "Big Box Mimic",
@@ -2862,7 +2864,7 @@ const creatures = [
         },
         evolution: true,
         evolved: true,
-        pack: "Promo"
+        pack: "Promo 2023"
     },
     {
         name: "Unigon",
@@ -2883,7 +2885,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2022"
     },
     {
         name: "Watts Dog",
@@ -2904,7 +2906,7 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Promo"
+        pack: "Promo 2023"
     }
 ]
 
@@ -3089,11 +3091,12 @@ function getPackCriteria() {
     let addOn = $('.add-on').is(':checked');
     let eternity = $('.eternity').is(':checked');
     let evolution = $('.evolution').is(':checked');
-    let promo = $('.promo').is(':checked');
+    let promo22 = $('.promo-22').is(':checked');
+    let promo23 = $('.promo-23').is(':checked');
     let message = "";
     let notTheFirst = false;
 
-    if (firstContact && addOn && eternity && evolution && promo) {
+    if (firstContact && addOn && eternity && evolution && promo22 & promo23) {
         message = "All Sets";
         $(".criteria-packs").text(message);
         return;
@@ -3131,11 +3134,20 @@ function getPackCriteria() {
         notTheFirst = true;
     }
 
-    if (promo) {
+    if (promo22) {
         if (notTheFirst) {
-            message += " & Promo";
+            message += " & Promo Pack 2022";
         } else {
-            message += "Promo"
+            message += "Promo Pack 2022"
+        }
+        notTheFirst = true;
+    }
+
+    if (promo23) {
+        if (notTheFirst) {
+            message += " & Promo Pack 2023";
+        } else {
+            message += "Promo Pack 2023"
         }
         notTheFirst = true;
     }
@@ -3221,14 +3233,14 @@ function getPowerCriteria(power) {
 $(".filter-btn").click(function() {
     let array = creatures;
 
-    let [firstContact, addOn, eternity, evolution, promo] = checkSets();
+    let [firstContact, addOn, eternity, evolution, promo22, promo23] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
     let [play, attack, defeated, action, discard] = checkTriggers();
     let [boost, evolved, single, double] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
-    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
+    array = getPack(array, firstContact, addOn, eternity, evolution, promo22, promo23);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
     array = getOther(array, boost, evolved, single, double);
@@ -3244,9 +3256,10 @@ function checkSets() {
     let addOn = $('.add-on').is(':checked');
     let eternity = $('.eternity').is(':checked');
     let evolution = $('.evolution').is(':checked');
-    let promo = $('.promo').is(':checked');
+    let promo22 = $('.promo-22').is(':checked');
+    let promo23 = $('.promo-23').is(':checked');
 
-    return [firstContact, addOn, eternity, evolution, promo];
+    return [firstContact, addOn, eternity, evolution, promo22, promo23];
 }
 
 function checkKeywords() {
@@ -3306,7 +3319,7 @@ function checkOrder() {
     return [alph, power, revPower];
 }
 
-function getPack(array, firstContact, addOn, eternity, evolution, promo) {
+function getPack(array, firstContact, addOn, eternity, evolution, promo22, promo23) {
     if (!firstContact) {
         array = array.filter(creature => creature.pack != "First Contact");
     }
@@ -3323,8 +3336,12 @@ function getPack(array, firstContact, addOn, eternity, evolution, promo) {
         array = array.filter(creature => creature.pack != "Beyond Evolution");
     }
 
-    if (!promo) {
-        array = array.filter(creature => creature.pack != "Promo");
+    if (!promo22) {
+        array = array.filter(creature => creature.pack != "Promo 2022");
+    }
+
+    if (!promo23) {
+        array = array.filter(creature => creature.pack != "Promo 2023");
     }
 
     return array;
