@@ -556,6 +556,8 @@ select:hover {
     color: white;
 }
 
+/* CUSTOM DECK */
+
 .custom-deck-thing {
     padding: 15px;
     width: 50%;
@@ -569,6 +571,10 @@ select:hover {
     align-items: center;
 }
 
+.custom-deck-holder {
+    padding: 15px;
+}
+
 .add-to-deck-btn, .remove-from-deck-btn, .finish-deck-create-link-btn, .copy-deck-btn {
     padding: 5px;
     background-color: #411928;
@@ -579,7 +585,11 @@ select:hover {
     margin-top: 10px;
 }
 
-.remove-from-deck-btn, .finish-deck-create-link-btn, .copy-deck-btn {
+.finish-deck-create-link-btn, .copy-deck-btn {
+    margin-top: 0;
+}
+
+.remove-from-deck-btn {
     margin-top: 5px;
 }
 
