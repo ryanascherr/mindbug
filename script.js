@@ -2774,6 +2774,7 @@ const creatures = [
             action: false
         },
         evolution: false,
+        boost: true,
         pack: "Promo 2023"
     },
     {
@@ -2795,6 +2796,7 @@ const creatures = [
             action: false
         },
         evolution: false,
+        boost: true,
         pack: "Promo 2023"
     },
     {
