@@ -1535,28 +1535,6 @@ const creatures = [
         pack: "Beyond Eternity"
     },
     {
-        name: "Bigroot",
-        power: 4,
-        ability: "Action: Play a card from your discard pile. Evolve to Oakenmaster",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: true
-        },
-        evolution: true,
-        evolved: true,
-        pack: "Beyond Evolution"
-    },
-    {
         name: "Blastfish",
         power: 1,
         ability: "Poisonous - Attack: This cannot be defeated this turn",
@@ -1706,7 +1684,7 @@ const creatures = [
     {
         name: "Cloud Lady",
         power: 4,
-        ability: "Action: Defeat an enemy creature with power 4 or less. Evolve to Typhoon Princess",
+        ability: "Action: Defeat an enemy creature with power 4 or less. Evolve to Typhoon Princess - Thunder Queen",
         double: false,
         keywords: {
             poisonous: false,
@@ -1722,6 +1700,52 @@ const creatures = [
             action: true
         },
         evolution: true,
+        secondEvolution: "Typhoon Princess",
+        thirdEvolution: "Thunder Queen",
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Typhoon Princess",
+        power: 6,
+        ability: "Action: Defeat an enemy creature with power 6 or less. Evolve to Thunder Queen",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Thunder Queen",
+        power: 9,
+        ability: "Attack: Defeat an enemy creature",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1748,7 +1772,7 @@ const creatures = [
     {
         name: "Curious Tadpole",
         power: 1,
-        ability: "Poisonous - Action: Gain 1 life. Evolve to Frog Prophet",
+        ability: "Poisonous - Action: Gain 1 life. Evolve to Frog Prophet - World Eater",
         double: false,
         keywords: {
             poisonous: true,
@@ -1764,6 +1788,52 @@ const creatures = [
             action: true
         },
         evolution: true,
+        secondEvolution: "Frog Prophet",
+        thirdEvolution: "World Eater",
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Frog Prophet",
+        power: 3,
+        ability: "Poisoinous Tough - Action: Gain 1 life. Evolve to World Eater",
+        double: false,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "World Eater",
+        power: 8,
+        ability: "Poisonous Tough - Attack: The opponent loses 1 life",
+        double: false,
+        keywords: {
+            poisonous: true,
+            frenzy: false,
+            tough: true,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: true,
+            defeated: false,
+            action: false
+        },
+        evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -1830,50 +1900,6 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Frog Prophet",
-        power: 3,
-        ability: "Poisoinous Tough - Action: Gain 1 life. Evolve to World Eater",
-        double: false,
-        keywords: {
-            poisonous: true,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: true
-        },
-        evolution: true,
-        evolved: true,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "Frosty Fortress",
-        power: 10,
-        ability: "Tough - Attack: The opponent discards their hand and draw pile",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: true,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        evolved: true,
-        pack: "Beyond Evolution"
-    },
-    {
         name: "Infernostrich",
         power: 6,
         ability: "Action: Defeat an enemy creature with power 7 or more",
@@ -1934,28 +1960,6 @@ const creatures = [
             action: false
         },
         evolution: false,
-        pack: "Beyond Evolution"
-    },
-    {
-        name: "Oakenmaster",
-        power: 7,
-        ability: "Other allied creatures have +5 power",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -2148,28 +2152,6 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Thunder Queen",
-        power: 9,
-        ability: "Attack: Defeat an enemy creature",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: true,
-            defeated: false,
-            action: false
-        },
-        evolution: true,
-        evolved: true,
-        pack: "Beyond Evolution"
-    },
-    {
         name: "Turtle Toaster",
         power: 4,
         ability: "Tough - Play: Defeat up to 2 enemy creatures with power 4-6",
@@ -2191,28 +2173,6 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Typhoon Princess",
-        power: 6,
-        ability: "Action: Defeat an enemy creature with power 6 or less. Evolve to Thunder Queen",
-        double: false,
-        keywords: {
-            poisonous: false,
-            frenzy: false,
-            tough: false,
-            sneaky: false,
-            hunter: false
-        },
-        triggers: {
-            play: false,
-            attack: false,
-            defeated: false,
-            action: true
-        },
-        evolution: true,
-        evolved: true,
-        pack: "Beyond Evolution"
-    },
-    {
         name: "Utility Bug",
         power: 4,
         ability: "Hunter Tough - Play: You may copy the play effect of another creature",
@@ -2231,6 +2191,29 @@ const creatures = [
             action: false
         },
         evolution: false,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Waddling Recruit",
+        power: 3,
+        ability: "Action: The opponent discards a card. Evolve to Veteran Penguin - Frosty Fortress",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        secondEvolution: 'Veteran Penguin',
+        thirdEvolution: 'Frosty Fortress',
         pack: "Beyond Evolution"
     },
     {
@@ -2256,24 +2239,25 @@ const creatures = [
         pack: "Beyond Evolution"
     },
     {
-        name: "Waddling Recruit",
-        power: 3,
-        ability: "Action: The opponent discards a card. Evolve to Veteran Penguin",
+        name: "Frosty Fortress",
+        power: 10,
+        ability: "Tough - Attack: The opponent discards their hand and draw pile",
         double: false,
         keywords: {
             poisonous: false,
             frenzy: false,
-            tough: false,
+            tough: true,
             sneaky: false,
             hunter: false
         },
         triggers: {
             play: false,
-            attack: false,
+            attack: true,
             defeated: false,
-            action: true
+            action: false
         },
         evolution: true,
+        evolved: true,
         pack: "Beyond Evolution"
     },
     {
@@ -2300,7 +2284,7 @@ const creatures = [
     {
         name: "Wildsprout",
         power: 1,
-        ability: "Action: Play a card from your discard pile. Evolve to Bigroot",
+        ability: "Action: Play a card from your discard pile. Evolve to Bigroot - Oakenmaster",
         double: false,
         keywords: {
             poisonous: false,
@@ -2316,23 +2300,47 @@ const creatures = [
             action: true
         },
         evolution: true,
+        secondEvolution: 'Bigroot',
+        thirdEvolution: 'Oakenmaster',
         pack: "Beyond Evolution"
     },
     {
-        name: "World Eater",
-        power: 8,
-        ability: "Poisonous Tough - Attack: The opponent loses 1 life",
+        name: "Bigroot",
+        power: 4,
+        ability: "Action: Play a card from your discard pile. Evolve to Oakenmaster",
         double: false,
         keywords: {
-            poisonous: true,
+            poisonous: false,
             frenzy: false,
-            tough: true,
+            tough: false,
             sneaky: false,
             hunter: false
         },
         triggers: {
             play: false,
-            attack: true,
+            attack: false,
+            defeated: false,
+            action: true
+        },
+        evolution: true,
+        evolved: true,
+        pack: "Beyond Evolution"
+    },
+    {
+        name: "Oakenmaster",
+        power: 7,
+        ability: "Other allied creatures have +5 power",
+        double: false,
+        keywords: {
+            poisonous: false,
+            frenzy: false,
+            tough: false,
+            sneaky: false,
+            hunter: false
+        },
+        triggers: {
+            play: false,
+            attack: false,
             defeated: false,
             action: false
         },
@@ -2557,7 +2565,7 @@ const creatures = [
     {
         name: "Kitten Crewmate",
         power: 2,
-        ability: `Sneaky - If this would be defeated, evolve to "One-Eye" Felix instead`,
+        ability: `Sneaky - If this would be defeated, evolve to "One-Eye" Felix instead - Silver Whiskers`,
         double: false,
         keywords: {
             poisonous: false,
@@ -2573,6 +2581,8 @@ const creatures = [
             action: false
         },
         evolution: true,
+        secondEvolution: 'One-Eye Felix',
+        thirdEvolution: 'Silver Whiskers',
         pack: "Promo"
     },
     {
@@ -2790,7 +2800,7 @@ const creatures = [
     {
         name: "Tuckbox Mimic",
         power: 2,
-        ability: "Action: Boost 1 card to this. Evolve to Deckbox Mimic",
+        ability: "Action: Boost 1 card to this. Evolve to Deckbox Mimic - Big Box Mimic",
         double: false,
         keywords: {
             poisonous: false,
@@ -2806,6 +2816,8 @@ const creatures = [
             action: true
         },
         evolution: true,
+        secondEvolution: 'Deckbox Mimic',
+        thirdEvolution: 'Big Box Mimic',
         pack: "Promo"
     },
     {
@@ -3417,33 +3429,40 @@ function prepareForCards(array) {
     $(".results").text(`- ${array.length} results found -`);
 }
 
-function placeCards(array) {
+function placeCards(array, allowEvolutions) {
     if (array.length > 0) {
         $(".card-container").removeClass("grid-one-column");
         $(array).each(function() {
-            let name = this.name;
 
-            if (name == "") return;
-            name = name.split(" ");
+            let name = getImageName(this);
 
-            if (name.length == 2) {
-                name = name[0] + "_" + name[1];
-            } else if (name.length == 3) {
-                name = name[0] + "_" + name[1] + "_" + name[2];
-            } else if (name.length == 4) {
-                name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-            }
+            if (this.evolved) return;
 
-            if (this.pack == "First Contact") {
-                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/first-contact/${name}.jpg">`)
-            } else if (this.pack == "First Contact: Add-On") {
-                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/first-contact-add-on/${name}.jpg">`)
-            } else if (this.pack == "Beyond Evolution") {
-                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/beyond-evolution/${name}.jpg">`)
-            } else if (this.pack == "Beyond Eternity") {
-                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/beyond-eternity/${name}.jpg">`)
-            } else if (this.pack == "Promo") {
-                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/promo/${name}.jpg">`)
+            $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
+
+            if (this.secondEvolution && allowEvolutions != false) {
+                let secondEvolutionName = this.secondEvolution;
+                let thirdEvolutionName = this.thirdEvolution;
+
+                let secondCreature;
+                let thirdCreature;
+
+                $(creatures).each(function() {
+                    if (this.name == secondEvolutionName) {
+                        secondCreature = this;
+                    }
+                    if (this.name == thirdEvolutionName) {
+                        thirdCreature = this;
+                    } 
+                })
+
+                let name = getImageName(secondCreature);
+
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
+
+                name = getImageName(thirdCreature);
+
+                $(".card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
             }
         });
     } else {
@@ -3454,6 +3473,22 @@ function placeCards(array) {
     if (!$(".results").hasClass("d-none")) {
         scrollToResults();
     }
+}
+
+function getImageName(card) {
+    let name = card.name;
+
+    if (name == "") return;
+    name = name.split(" ");
+
+    if (name.length == 2) {
+        name = name[0] + "_" + name[1];
+    } else if (name.length == 3) {
+        name = name[0] + "_" + name[1] + "_" + name[2];
+    } else if (name.length == 4) {
+        name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+    }
+    return name;
 }
 
 function scrollToResults() {
@@ -3506,7 +3541,8 @@ function dealHand() {
         
         if (handOfCards.length >= 5) {
             prepareForCards(handOfCards);
-            placeCards(handOfCards);
+            let allowEvolutions = false;
+            placeCards(handOfCards, allowEvolutions);
         } else {
             addCardToHand();
         }
