@@ -3582,6 +3582,10 @@ $(".open").click(function(e) {
     } else if ($(this).hasClass("open-hand")) {
         highlightTab(this);
         openHand();
+    } else if ($(this).hasClass("open-custom-deck")) {
+        highlightTab(this);
+        openCustomDeck();
+        showAllCards();
     }
 })
 
@@ -3597,6 +3601,10 @@ function openFilter() {
     $(".deal-hand-container").addClass("d-none");
     $(".filter-container").removeClass("d-none");
     $(".results").removeClass("d-none");
+    $(".custom-deck-container").addClass("d-none");
+    $(".card-container").css({'width':'100%','margin':'0 auto'});
+    $(".custom-deck-thing").css({'display':'none'});
+    $(".double-card-container").css({'display':'block'});
 }
 
 function openName() {
@@ -3604,6 +3612,10 @@ function openName() {
     $(".deal-hand-container").addClass("d-none");
     $(".auto-fill-parent-container").removeClass("d-none");
     $(".results").addClass("d-none");
+    $(".custom-deck-container").addClass("d-none");
+    $(".card-container").css({'width':'100%','margin':'0 auto'});
+    $(".custom-deck-thing").css({'display':'none'});
+    $(".double-card-container").css({'display':'block'});
 }
 
 function openHand() {
@@ -3611,6 +3623,10 @@ function openHand() {
     $(".auto-fill-parent-container").addClass("d-none");
     $(".deal-hand-container").removeClass("d-none");
     $(".results").addClass("d-none");
+    $(".custom-deck-container").addClass("d-none");
+    $(".card-container").css({'width':'100%','margin':'0 auto'});
+    $(".custom-deck-thing").css({'display':'none'});
+    $(".double-card-container").css({'display':'block'});
 }
 
 $(".pack2").click(function(e) {
@@ -3722,3 +3738,225 @@ function closeModal() {
     $(".modal img").attr("src","");
     $(".modal").removeClass("open");
 }
+
+// CUSTOM DECK FUNCTIONALITY
+
+function openCustomDeck() {
+    $(".filter-container").addClass("d-none");
+    $(".auto-fill-parent-container").addClass("d-none");
+    $(".deal-hand-container").addClass("d-none");
+    $(".custom-deck-container").removeClass("d-none");
+    $(".results").addClass("d-none");
+    $(".card-container").css({'width':'50%','margin':'0'});
+    $(".custom-deck-thing").css({'display':'block'});
+    $(".double-card-container").css({'display':'flex'});
+}
+
+function showAllCards() {
+    $(".card-container").empty();
+    let resetCreatures = creatures;
+    $(resetCreatures).each(function(index) {
+
+        if (this.evolved) return;
+
+        let name = this.name;
+        if (name == "") return;
+        name = name.split(" ");
+
+        if (name.length == 2) {
+            name = name[0] + "_" + name[1];
+        } else if (name.length == 3) {
+            name = name[0] + "_" + name[1] + "_" + name[2];
+        } else if (name.length == 4) {
+            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+        }
+
+        if (this.pack == "First Contact") {
+            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/first-contact/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
+        } else if (this.pack == "First Contact: Add-On") {
+            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/first-contact-add-on/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
+        } else if (this.pack == "Beyond Evolution") {
+            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/beyond-evolution/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
+        } else if (this.pack == "Beyond Eternity") {
+            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/beyond-eternity/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
+        } else if (this.pack == "Promo") {
+            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/promo/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
+        }
+    });
+}
+
+$(document).on('click','.add-to-deck-btn',function(e){
+    let creatureIndex = parseInt($(this).attr('data-index'));
+    addToCustomDeck(creatureIndex);
+    $(this).parent().css({'pointer-events':'none','opacity':'50%'});
+    $(".custom-deck-link-display").text("");
+});
+
+$(document).on('click','.remove-from-deck-btn',function(e){
+    let index = $(this).attr('data-index');
+    $(this).parent().remove();
+    let cardOnLeft = $(".card-container").find(`[data-index='${index}']`);
+    $(cardOnLeft).parent().css({'pointer-events':'all','opacity':'100%'});
+    $(".custom-deck-link-display").text("");
+    updateCustomDeckCardCounter();
+    resetCustomDeckLink();
+});
+
+function addToCustomDeck(creatureIndex) {
+    let creature = creatures[creatureIndex];
+    let name = creature.name;
+    if (name == "") return;
+    name = name.split(" ");
+
+    if (name.length == 2) {
+        name = name[0] + "_" + name[1];
+    } else if (name.length == 3) {
+        name = name[0] + "_" + name[1] + "_" + name[2];
+    } else if (name.length == 4) {
+        name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
+    };
+    if (creature.pack == "First Contact") {
+        $(".custom-deck-holder").append(`
+        <div class="card-to-be-added-container">
+            <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/first-contact/${name}.jpg">
+            <div class="change-card-amount-btns">
+                <button class="custom-subtract-btn">-</button>
+                <div>1</div>
+                <button class="custom-add-btn">+</button>
+            </div>
+            <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+        </div>`)
+    } else if (creature.pack == "First Contact: Add-On") {
+        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
+        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/first-contact-add-on/${name}.jpg">
+        <div>
+            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
+            <label for="${creatureIndex}-once">Once</label><br>
+            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
+            <label for="${creatureIndex}-twice">Twice</label><br>
+        </div>
+        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+    </div>`)
+    } else if (creature.pack == "Beyond Evolution") {
+        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
+        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/beyond-evolution/${name}.jpg">
+        <div>
+            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
+            <label for="${creatureIndex}-once">Once</label><br>
+            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
+            <label for="${creatureIndex}-twice">Twice</label><br>
+        </div>
+        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+    </div>`)
+    } else if (creature.pack == "Beyond Eternity") {
+        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
+        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/beyond-eternity/${name}.jpg">
+        <div>
+            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
+            <label for="${creatureIndex}-once">Once</label><br>
+            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
+            <label for="${creatureIndex}-twice">Twice</label><br>
+        </div>
+        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+    </div>`)
+    } else if (this.pack == "Promo") {
+        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
+        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/promo/${name}.jpg">
+        <div>
+            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
+            <label for="${creatureIndex}-once">Once</label><br>
+            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
+            <label for="${creatureIndex}-twice">Twice</label><br>
+        </div>
+        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+    </div>`)
+    }
+    updateCustomDeckCardCounter();
+}
+
+$(".finish-deck-create-link-btn").click(function(e) {
+    let customDeckCards = $(".custom-deck-card");
+    let arrayOfIndexes = [];
+    let arrayOfLetters = [];
+    let cardContainers = $(".card-to-be-added-container");
+    $(customDeckCards).each(function(index) {
+        let indexOfCard = $(this).attr('data-index');
+        arrayOfIndexes.push(indexOfCard);
+    })
+
+    $(cardContainers).each(function() {
+        let number = $(this).children("div").children("div");
+        number = number[0];
+        number = parseInt($(number).text());
+        letter = String.fromCharCode(96 + number);
+        arrayOfLetters.push(letter);
+    })
+
+    let customURL = "https://ryanascherr.github.io/mindbug-deck/?";
+    for (let i = 0; i < arrayOfIndexes.length; i++) {
+        if (i == 0) {
+            customURL += arrayOfIndexes[i] + arrayOfLetters[i];
+        } else {
+            customURL += "-" + arrayOfIndexes[i] + arrayOfLetters[i];
+        }
+    }
+
+    $(".copy-deck-btn").attr('data-url', customURL);
+
+    $(".deck-link").val(customURL);
+
+    $(".copy-deck-btn").removeClass("disabled");
+    $(".deck-link-container").removeClass("d-none");
+});
+
+function updateCustomDeckCardCounter() {
+    let numberOfCardsInDeck = 0;
+    let cardsInDeck = $(".card-to-be-added-container");
+    cardsInDeck.each(function() {
+        let numberDiv = $(this).children("div").children("div");
+        numberDiv = numberDiv[0];
+        let currentNumber = parseInt($(numberDiv).text());
+        numberOfCardsInDeck += currentNumber;
+    });
+    $(".custom-deck-card-counter").text(numberOfCardsInDeck);
+    if ($(".custom-deck-card-counter").text() == "0") {
+        $(".finish-deck-create-link-btn").addClass("d-none");
+        $(".copy-deck-btn").addClass("d-none");
+    } else {
+        $(".finish-deck-create-link-btn").removeClass("d-none");
+        $(".copy-deck-btn").removeClass("d-none");
+    }
+};
+
+$(document).on('click','.custom-add-btn',function(e){
+    let numberDiv = $(this).parent().children("div");
+    numberDiv = numberDiv[0];
+    let currentNumber = parseInt($(numberDiv).text());
+    if (currentNumber == 26) return;
+    let newNumber = currentNumber+1;
+    $(numberDiv).text(newNumber);
+    updateCustomDeckCardCounter();
+    resetCustomDeckLink();
+});
+
+$(document).on('click','.custom-subtract-btn',function(e){
+    let numberDiv = $(this).parent().children("div");
+    numberDiv = numberDiv[0];
+    let currentNumber = parseInt($(numberDiv).text());
+    if (currentNumber == 1) return;
+    let newNumber = currentNumber-1;
+    $(numberDiv).text(newNumber);
+    updateCustomDeckCardCounter();
+    resetCustomDeckLink();
+});
+
+function resetCustomDeckLink() {
+    $(".custom-deck-link-display").text("");
+    $(".copy-deck-btn").addClass("disabled");
+}
+
+$(".copy-deck-btn").click(function() {
+    let abc = $(this).attr("data-url");
+    console.log(this);
+    navigator.clipboard.writeText($(this).attr("data-url"));
+})

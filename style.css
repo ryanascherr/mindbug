@@ -102,7 +102,7 @@ nav ul > * {
     position: relative;
 } */
 
-.card-container {
+.card-container, .custom-deck-holder {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 30px;
@@ -200,7 +200,7 @@ nav ul > * {
         width: 22%;
         max-width: none;
     } */
-    .card-container {
+    .card-container, .custom-deck-holder {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
@@ -210,7 +210,7 @@ nav ul > * {
         width: 28%;
         max-width: none;
     } */
-    .card-container {
+    .card-container, .custom-deck-holder {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
@@ -226,7 +226,7 @@ nav ul > * {
         width: 40%;
         max-width: none;
     } */
-    .card-container {
+    .card-container, .custom-deck-holder {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -243,7 +243,7 @@ nav ul > * {
         width: 80%;
         max-width: none;
     } */
-    .card-container {
+    .card-container, .custom-deck-holder {
         grid-template-columns: 1fr;
     }
 }
@@ -554,4 +554,88 @@ select:hover {
 .modal span:hover {
     background-color: black;
     color: white;
+}
+
+/* CUSTOM DECK */
+
+.custom-deck-thing {
+    padding: 15px;
+    width: 50%;
+    display: none;
+    border-left: 2px solid #411928;
+}
+
+.custom-card-btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-deck-holder {
+    padding: 15px;
+}
+
+.add-to-deck-btn, .remove-from-deck-btn, .finish-deck-create-link-btn, .copy-deck-btn {
+    padding: 5px;
+    background-color: #411928;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #411928;
+    transition: all .35s;
+    margin-top: 10px;
+}
+
+.finish-deck-create-link-btn, .copy-deck-btn {
+    margin-top: 0;
+}
+
+.remove-from-deck-btn {
+    margin-top: 5px;
+}
+
+.add-to-deck-btn:hover, .remove-from-deck-btn:hover, .finish-deck-create-link-btn:hover, .copy-deck-btn:hover {
+    color: #411928;
+    background-color: white;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    margin: 5px 0;
+}
+
+.custom-deck-holder label {
+    padding: 5px 0;
+}
+
+.card-to-be-added-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-deck-card {
+    margin-bottom: 10px;
+}
+
+.change-card-amount-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-card-amount-btns button:hover {
+    cursor: pointer;
+}
+
+.change-card-amount-btns div {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: white;
+    color: #411928;
+    font-weight: bold;
+}
+
+.disabled {
+    opacity: 50%;
+    pointer-events: none;
 }
