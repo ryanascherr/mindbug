@@ -3771,17 +3771,8 @@ function showAllCards() {
             name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
         }
 
-        if (this.pack == "First Contact") {
-            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/first-contact/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
-        } else if (this.pack == "First Contact: Add-On") {
-            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/first-contact-add-on/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
-        } else if (this.pack == "Beyond Evolution") {
-            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/beyond-evolution/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
-        } else if (this.pack == "Beyond Eternity") {
-            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/beyond-eternity/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
-        } else if (this.pack == "Promo") {
-            $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/promo/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`)
-        }
+        $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/cards/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`);
+
     });
 }
 
@@ -3815,10 +3806,10 @@ function addToCustomDeck(creatureIndex) {
     } else if (name.length == 4) {
         name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
     };
-    if (creature.pack == "First Contact") {
-        $(".custom-deck-holder").append(`
+
+    $(".custom-deck-holder").append(`
         <div class="card-to-be-added-container">
-            <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/first-contact/${name}.jpg">
+            <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/cards/${name}.jpg">
             <div class="change-card-amount-btns">
                 <button class="custom-subtract-btn">-</button>
                 <div>1</div>
@@ -3826,51 +3817,7 @@ function addToCustomDeck(creatureIndex) {
             </div>
             <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
         </div>`)
-    } else if (creature.pack == "First Contact: Add-On") {
-        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
-        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/first-contact-add-on/${name}.jpg">
-        <div>
-            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
-            <label for="${creatureIndex}-once">Once</label><br>
-            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
-            <label for="${creatureIndex}-twice">Twice</label><br>
-        </div>
-        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
-    </div>`)
-    } else if (creature.pack == "Beyond Evolution") {
-        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
-        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/beyond-evolution/${name}.jpg">
-        <div>
-            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
-            <label for="${creatureIndex}-once">Once</label><br>
-            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
-            <label for="${creatureIndex}-twice">Twice</label><br>
-        </div>
-        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
-    </div>`)
-    } else if (creature.pack == "Beyond Eternity") {
-        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
-        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/beyond-eternity/${name}.jpg">
-        <div>
-            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
-            <label for="${creatureIndex}-once">Once</label><br>
-            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
-            <label for="${creatureIndex}-twice">Twice</label><br>
-        </div>
-        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
-    </div>`)
-    } else if (this.pack == "Promo") {
-        $(".custom-deck-holder").append(`<div class="card-to-be-added-container">
-        <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/promo/${name}.jpg">
-        <div>
-            <input type="radio" id="${creatureIndex}-once" name="${creatureIndex}-number" value="once" data-index="${creatureIndex}" checked="checked">
-            <label for="${creatureIndex}-once">Once</label><br>
-            <input type="radio" id="${creatureIndex}-twice" name="${creatureIndex}-number" value="twice">
-            <label for="${creatureIndex}-twice">Twice</label><br>
-        </div>
-        <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
-    </div>`)
-    }
+
     updateCustomDeckCardCounter();
 }
 
