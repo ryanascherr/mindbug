@@ -3,6 +3,8 @@ import { placeCards } from './placeCards.js';
 import { updateCriteria, getKeyWordCriteria, getOrderCriteria, getOtherCriteria, getPackCriteria, getTriggerCriteria, getPowerCriteria } from './updateFilterCriteria.js';
 import { checkKeywords, checkOrder, checkOther, checkPower, checkSets, checkTriggers, getKeywords, getOrder, getOther, getPack, getPower, getTriggers } from './checkAndGetSets.js';
 import { dealHand } from './dealHand.js';
+import { highlightTab, openFilter, openHand, openName } from './openTabs.js';
+import { liveSearch } from './liveSearch.js';
 
 const creatures = creaturesArray.creatures;
 
@@ -118,46 +120,6 @@ $(".open").click(function(e) {
     }
 })
 
-function highlightTab(tab) {
-    $(".open").removeClass("gray");
-    $(".open").addClass("dark-gray");
-    $(tab).removeClass("dark-gray")
-    $(tab).addClass("gray")
-}
-
-function openFilter() {
-    $(".auto-fill-parent-container").addClass("d-none");
-    $(".deal-hand-container").addClass("d-none");
-    $(".filter-container").removeClass("d-none");
-    $(".results").removeClass("d-none");
-    $(".custom-deck-container").addClass("d-none");
-    $(".card-container").css({'width':'100%','margin':'0 auto'});
-    $(".custom-deck-thing").css({'display':'none'});
-    $(".double-card-container").css({'display':'block'});
-}
-
-function openName() {
-    $(".filter-container").addClass("d-none");
-    $(".deal-hand-container").addClass("d-none");
-    $(".auto-fill-parent-container").removeClass("d-none");
-    $(".results").addClass("d-none");
-    $(".custom-deck-container").addClass("d-none");
-    $(".card-container").css({'width':'100%','margin':'0 auto'});
-    $(".custom-deck-thing").css({'display':'none'});
-    $(".double-card-container").css({'display':'block'});
-}
-
-function openHand() {
-    $(".filter-container").addClass("d-none");
-    $(".auto-fill-parent-container").addClass("d-none");
-    $(".deal-hand-container").removeClass("d-none");
-    $(".results").addClass("d-none");
-    $(".custom-deck-container").addClass("d-none");
-    $(".card-container").css({'width':'100%','margin':'0 auto'});
-    $(".custom-deck-thing").css({'display':'none'});
-    $(".double-card-container").css({'display':'block'});
-}
-
 $(".pack2").click(function(e) {
     let numberChecked = 0;
     if ($(".first-contact2").is(':checked')) {
@@ -185,27 +147,8 @@ $(".pack2").click(function(e) {
 $("#myInput").keyup(function(event) {
     let inputVal = $("#myInput").val();
     inputVal = inputVal.toLowerCase();
-    liveSearch(inputVal);
+    liveSearch(inputVal, creatures);
  });
-
-function liveSearch(inputVal) {
-    let array = [];
-    $(creatures).each(function() {
-        let creature = this;
-        let name = creature.name.toLowerCase();
-        let ability;
-        if (creature.ability) {
-            ability = creature.ability.toLowerCase()
-        } else {
-            ability = "";
-        }
-        if (ability.includes(inputVal) || name.includes(inputVal)) {
-            array.push(this);
-        }
-    })
-    prepareForCards(array);
-    placeCards(array, creatures);
-}
 
 let modal = $(".modal-content");
 
