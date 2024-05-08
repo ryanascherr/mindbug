@@ -25,7 +25,7 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
     }
 }
 
-function getImageName(card) {
+export function getImageName(card) {
     let name = card.name;
     if (name == "") return;
     name = name.split(" ");

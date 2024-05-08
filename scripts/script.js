@@ -1,14 +1,13 @@
 import * as creaturesArray from './creatures.js';
-import { placeCards } from './placeCards.js';
+import { placeCards, getImageName } from './placeCards.js';
 import { updateCriteria, getKeyWordCriteria, getOrderCriteria, getOtherCriteria, getPackCriteria, getTriggerCriteria, getPowerCriteria } from './updateFilterCriteria.js';
 import { checkKeywords, checkOrder, checkOther, checkPower, checkSets, checkTriggers, getKeywords, getOrder, getOther, getPack, getPower, getTriggers } from './checkAndGetSets.js';
 import { dealHand } from './dealHand.js';
-import { highlightTab, openFilter, openHand, openName } from './openTabs.js';
+import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './openTabs.js';
 import { liveSearch } from './liveSearch.js';
+import { openModal, closeModal } from './modalControl.js';
 
 const creatures = creaturesArray.creatures;
-
-// updateCriteria();
 
 $(".order").click(function() {
     $('.order').prop('checked', false);
@@ -175,30 +174,7 @@ $('html').keyup(function(e){
     }
 }) 
 
-function openModal(src) {
-    $(".modal").css("display","block");
-    $(".modal").addClass("open");
-    $(".modal img").attr("src",src);
-}
-
-function closeModal() {
-    $(".modal").css("display","none");
-    $(".modal img").attr("src","");
-    $(".modal").removeClass("open");
-}
-
 // CUSTOM DECK FUNCTIONALITY
-
-function openCustomDeck() {
-    $(".filter-container").addClass("d-none");
-    $(".auto-fill-parent-container").addClass("d-none");
-    $(".deal-hand-container").addClass("d-none");
-    $(".custom-deck-container").removeClass("d-none");
-    $(".results").addClass("d-none");
-    $(".card-container").css({'width':'50%','margin':'0'});
-    $(".custom-deck-thing").css({'display':'block'});
-    $(".double-card-container").css({'display':'flex'});
-}
 
 function showAllCards() {
     $(".card-container").empty();
@@ -207,17 +183,7 @@ function showAllCards() {
 
         if (this.evolved) return;
 
-        let name = this.name;
-        if (name == "") return;
-        name = name.split(" ");
-
-        if (name.length == 2) {
-            name = name[0] + "_" + name[1];
-        } else if (name.length == 3) {
-            name = name[0] + "_" + name[1] + "_" + name[2];
-        } else if (name.length == 4) {
-            name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-        }
+        let name = getImageName(this);
 
         $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/cards/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`);
 
