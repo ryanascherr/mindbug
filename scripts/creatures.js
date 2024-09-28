@@ -2572,7 +2572,7 @@ const creatures = [
         },
         triggers: {
             play: true,
-            attack: true,
+            attack: false,
             defeated: true,
             action: false
         },

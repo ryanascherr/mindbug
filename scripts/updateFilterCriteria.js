@@ -7,11 +7,11 @@ export function updateCriteria() {
 }
 
 export function getKeyWordCriteria() {
-    let poisonous = $('.poisonous').is(':checked');
-    let hunter = $('.hunter').is(':checked');
-    let frenzy = $('.frenzy').is(':checked');
-    let tough = $('.tough').is(':checked')
-    let sneaky = $('.sneaky').is(':checked')
+    let poisonous = $('.js_poisonous').is(':checked');
+    let hunter = $('.js_hunter').is(':checked');
+    let frenzy = $('.js_frenzy').is(':checked');
+    let tough = $('.js_tough').is(':checked')
+    let sneaky = $('.js_sneaky').is(':checked')
     let message = "";
     let notTheFirst = false;
 
@@ -59,15 +59,15 @@ export function getKeyWordCriteria() {
         }
     }
 
-    $(".criteria-keywords").text(message);
+    $(".js_criteria-keywords").text(message);
 }
 
 export function getTriggerCriteria() {
-    let play = $('.play').is(':checked');
-    let attack = $('.attack').is(':checked');
-    let defeated = $('.defeated').is(':checked');
-    let action = $('.action').is(':checked');
-    let discard = $('.discard').is(':checked');
+    let play = $('.js_play').is(':checked');
+    let attack = $('.js_attack').is(':checked');
+    let defeated = $('.js_defeated').is(':checked');
+    let action = $('.js_action').is(':checked');
+    let discard = $('.js_discard').is(':checked');
     let message = "";
     let notTheFirst = false;
 
@@ -115,22 +115,22 @@ export function getTriggerCriteria() {
         }
     }
 
-    $(".criteria-triggers").text(message);
+    $(".js_criteria-triggers").text(message);
 }
 
 export function getPackCriteria() {
-    let firstContact = $('.first-contact').is(':checked');
-    let addOn = $('.add-on').is(':checked');
-    let eternity = $('.eternity').is(':checked');
-    let evolution = $('.evolution').is(':checked');
-    let promo22 = $('.promo-22').is(':checked');
-    let promo23 = $('.promo-23').is(':checked');
+    let firstContact = $('.js_first-contact').is(':checked');
+    let addOn = $('.js_add-on').is(':checked');
+    let eternity = $('.js_eternity').is(':checked');
+    let evolution = $('.js_evolution').is(':checked');
+    let promo22 = $('.js_promo-22').is(':checked');
+    let promo23 = $('.js_promo-23').is(':checked');
     let message = "";
     let notTheFirst = false;
 
     if (firstContact && addOn && eternity && evolution && promo22 & promo23) {
         message = "All Sets";
-        $(".criteria-packs").text(message);
+        $(".js_criteria-packs").text(message);
         return;
     }
 
@@ -184,14 +184,14 @@ export function getPackCriteria() {
         notTheFirst = true;
     }
 
-    $(".criteria-packs").text(message);
+    $(".js_criteria-packs").text(message);
 }
 
 export function getOtherCriteria() {
-    let single = $('.single').is(':checked');
-    let double = $('.double').is(':checked');
-    let boost = $('.boost').is(':checked');
-    let evolved = $('.evolved').is(':checked');
+    let single = $('.js_single').is(':checked');
+    let double = $('.js_double').is(':checked');
+    let boost = $('.js_boost').is(':checked');
+    let evolved = $('.js_evolved').is(':checked');
     let message1 = "";
     let message2 = "";
     let notTheFirst = false;
@@ -204,11 +204,11 @@ export function getOtherCriteria() {
         message2 = "that are Doubles";
     }
 
-    $(".criteria-others-2").text(message2);
+    $(".js_criteria-others-2").text(message2);
 
     if (!boost && !evolved) {
         message1 = "";
-        $(".criteria-others").text(message1);
+        $(".js_criteria-others").text(message1);
         return;
     }
 
@@ -225,13 +225,13 @@ export function getOtherCriteria() {
         }
     }
 
-    $(".criteria-others-1").text(message1);
+    $(".js_criteria-others-1").text(message1);
 }
 
 export function getOrderCriteria() {
-    let alph = $('.alph').is(':checked');
-    let power = $('.power').is(':checked');
-    let revPower = $('.rev-power').is(':checked');
+    let alph = $('.js_alph').is(':checked');
+    let power = $('.js_power').is(':checked');
+    let revPower = $('.js_rev-power').is(':checked');
     let message = "";
 
     if (alph) {
@@ -242,13 +242,13 @@ export function getOrderCriteria() {
         message = "Reverse Power";
     }
 
-    $(".criteria-order").text(message);
+    $(".js_criteria-order").text(message);
 }
 
 export function getPowerCriteria(power) {
-    let atLeast = $('.power-at-least').is(':checked');
-    let atMost = $('.power-at-most').is(':checked');
-    let exactly = $('.power-exactly').is(':checked');
+    let atLeast = $('.js_power-at-least').is(':checked');
+    let atMost = $('.js_power-at-most').is(':checked');
+    let exactly = $('.js_power-exactly').is(':checked');
     let message = "";
 
     if (atLeast) {
@@ -259,5 +259,5 @@ export function getPowerCriteria(power) {
         message = `with exactly ${power} Power`;
     }
 
-    $(".criteria-power").text(message);
+    $(".js_criteria-power").text(message);
 }

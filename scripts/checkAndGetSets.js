@@ -1,55 +1,55 @@
 export function checkSets() {
-    let firstContact = $('.first-contact').is(':checked');
-    let addOn = $('.add-on').is(':checked');
-    let eternity = $('.eternity').is(':checked');
-    let evolution = $('.evolution').is(':checked');
-    let promo22 = $('.promo-22').is(':checked');
-    let promo23 = $('.promo-23').is(':checked');
+    let firstContact = $('.js_first-contact').is(':checked');
+    let addOn = $('.js_add-on').is(':checked');
+    let eternity = $('.js_eternity').is(':checked');
+    let evolution = $('.js_evolution').is(':checked');
+    let promo22 = $('.js_promo-22').is(':checked');
+    let promo23 = $('.js_promo-23').is(':checked');
 
     return [firstContact, addOn, eternity, evolution, promo22, promo23];
 }
 
 export function checkKeywords() {
-    let poisonous = $('.poisonous').is(':checked');
-    let hunter = $('.hunter').is(':checked');
-    let frenzy = $('.frenzy').is(':checked');
-    let tough = $('.tough').is(':checked');
-    let sneaky = $('.sneaky').is(':checked');
+    let poisonous = $('.js_poisonous').is(':checked');
+    let hunter = $('.js_hunter').is(':checked');
+    let frenzy = $('.js_frenzy').is(':checked');
+    let tough = $('.js_tough').is(':checked');
+    let sneaky = $('.js_sneaky').is(':checked');
 
     return [poisonous, hunter, frenzy, tough, sneaky];
 }
 
 export function checkTriggers() {
-    let play = $('.play').is(':checked');
-    let attack = $('.attack').is(':checked');
-    let defeated = $('.defeated').is(':checked');
-    let action = $('.action').is(':checked');
-    let discard = $('.discard').is(':checked');
+    let play = $('.js_play').is(':checked');
+    let attack = $('.js_attack').is(':checked');
+    let defeated = $('.js_defeated').is(':checked');
+    let action = $('.js_action').is(':checked');
+    let discard = $('.js_discard').is(':checked');
 
     return [play, attack, defeated, action, discard];
 }
 
 export function checkOther() {
-    let boost = $('.boost').is(':checked');
-    let evolved = $('.evolved').is(':checked');
-    let single = $('.single').is(':checked');
-    let double = $('.double').is(':checked');
+    let boost = $('.js_boost').is(':checked');
+    let evolved = $('.js_evolved').is(':checked');
+    let single = $('.js_single').is(':checked');
+    let double = $('.js_double').is(':checked');
 
     return [boost, evolved, single, double];
 }
 
 export function checkPower() {
-    let atLeast = $('.power-at-least').is(':checked');
-    let atMost = $('.power-at-most').is(':checked');
-    let exactly = $('.power-exactly').is(':checked');
+    let atLeast = $('.js_power-at-least').is(':checked');
+    let atMost = $('.js_power-at-most').is(':checked');
+    let exactly = $('.js_power-exactly').is(':checked');
     let parent;
 
     if (atLeast) {
-        parent = $('.power-at-least').parent();
+        parent = $('.js_power-at-least').parent();
     } else if (atMost) {
-        parent = $('.power-at-most').parent();
+        parent = $('.js_power-at-most').parent();
     } else if (exactly) {
-        parent = $('.power-exactly').parent();
+        parent = $('.js_power-exactly').parent();
     }
 
     let select = $(parent).children('select');
@@ -59,9 +59,9 @@ export function checkPower() {
 }
 
 export function checkOrder() {
-    let alph = $('.alph').is(':checked');
-    let power = $('.power').is(':checked');
-    let revPower = $('.rev-power').is(':checked');
+    let alph = $('.js_alph').is(':checked');
+    let power = $('.js_power').is(':checked');
+    let revPower = $('.js_rev-power').is(':checked');
 
     return [alph, power, revPower];
 }

@@ -9,77 +9,78 @@
     <title>Mindbug</title>
 </head>
 <body>
-    <header>
-        <div class="img-container">
-            <a href="#content"><img src="./img/wallpaper/mindbug-wp-2.jpeg" alt="several mindbug creatures"></a>
+    <header class="header">
+        <div class="header__img-container">
+            <a href="#content">
+                <img class="header__img" src="./img/wallpaper/mindbug-wp-2.jpeg" alt="several mindbug creatures"></a>
         </div>
     </header>
-    <nav id="content">
-        <h3 style="margin-bottom: 30px;">Choose a tab below to search for cards using filters, search using live search, be dealt a starting hand of 5 cards, or create a custom deck to share</h3>
-        <div class="tab-container">
-            <div class="tab open open-filter">Filters</div>
-            <div class="tab open open-name">Live Search</div>
-            <div class="tab open open-hand">Starting Hand</div>
-            <div class="tab open open-custom-deck">Custom Deck (Beta - Desktop)</div>
+    <nav class="nav" id="content">
+        <h3 class="nav__text">Choose a tab below to search for cards using filters, search using live search, be dealt a starting hand of 5 cards, or create a custom deck to share</h3>
+        <div class="nav__tab-container">
+            <div class="nav__tab js_tab js_tab-filter">Filters</div>
+            <div class="nav__tab js_tab js_tab-name">Live Search</div>
+            <div class="nav__tab js_tab js_tab-hand">Starting Hand</div>
+            <div class="nav__tab js_tab js_tab-custom-deck">Custom Deck (Beta - Desktop)</div>
         </div>
     </nav>
     <main>
-        <div class="filter-container d-none">
-            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Select your search criteria below, then click "Search with Filters" to see your results!</h3>
-            <div class="filter">
-                <div>
-                    <h2>Order</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria order alph" checked type="checkbox" id="alph" name="checkbox" value="1">
-                            <label for="alph">Name</label>
+        <div class="action-container js_filter-container">
+            <h3 class="action-container__instructions">Select your search criteria below, then click "Search with Filters" to see your results!</h3>
+            <div class="filters action-container__filters">
+                <div class="filters__filter">
+                    <h2 class="filters__title">Order</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_alph" checked type="checkbox" id="alph" name="checkbox" value="1">
+                            <label class="filters__label" for="alph">Name</label>
                         </li>
-                        <li>
-                            <input class="criteria order power" type="checkbox" id="power" name="checkbox" value="1">
-                            <label for="power">Power</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_power" type="checkbox" id="power" name="checkbox" value="1">
+                            <label class="filters__label" for="power">Power</label>
                         </li>
-                        <li>
-                            <input class="criteria order rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
-                            <label for="rev-power">Reverse Power</label>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Sets</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria pack first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
-                            <label for="first-contact">First Contact</label>
-                        </li>
-                        <li>
-                            <input class="criteria pack add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
-                            <label for="add-on">New Servants</label>
-                        </li>
-                        <li>
-                            <input class="criteria pack eternity" checked type="checkbox" id="eternity" name="checkbox" value="1">
-                            <label for="eternity">Beyond Eternity</label>
-                        </li>
-                        <li>
-                            <input class="criteria pack evolution" checked type="checkbox" id="evolution" name="checkbox" value="1">
-                            <label for="evolution">Beyond Evolution</label>
-                        </li>
-                        <li>
-                            <input class="criteria pack promo-22" checked type="checkbox" id="promo-22" name="checkbox" value="1">
-                            <label for="promo-22">Promo Pack 2022</label>
-                        </li>
-                        <li>
-                            <input class="criteria pack promo-23" checked type="checkbox" id="promo-23" name="checkbox" value="1">
-                            <label for="promo-23">Promo Pack 2023</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
+                            <label class="filters__label" for="rev-power">Reverse Power</label>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h2>Power</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria power-c power-at-least" type="checkbox" id="power-at-least" name="checkbox" value="1">
-                            <label for="power-at-least">Power At Least</label>
-                            <select class="select-power-at-least power-select" disabled>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Sets</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_first-contact" checked type="checkbox" id="first-contact" name="checkbox" value="1">
+                            <label class="filters__label" for="first-contact">First Contact</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_add-on" checked type="checkbox" id="add-on" name="checkbox" value="1">
+                            <label class="filters__label" for="add-on">New Servants</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_eternity" checked type="checkbox" id="eternity" name="checkbox" value="1">
+                            <label class="filters__label" for="eternity">Beyond Eternity</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_evolution" checked type="checkbox" id="evolution" name="checkbox" value="1">
+                            <label class="filters__label" for="evolution">Beyond Evolution</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_promo-22" checked type="checkbox" id="promo-22" name="checkbox" value="1">
+                            <label class="filters__label" for="promo-22">Promo Pack 2022</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_pack js_promo-23" checked type="checkbox" id="promo-23" name="checkbox" value="1">
+                            <label class="filters__label" for="promo-23">Promo Pack 2023</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Power</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_power-c js_power-at-least" type="checkbox" id="power-at-least" name="checkbox" value="1">
+                            <label class="filters__label" for="power-at-least">Power At Least</label>
+                            <select class="filters__select js_select js_select-power-at-least js_power-select" disabled>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -92,10 +93,10 @@
                                 <option value="10">10</option>
                             </select>
                         </li>
-                        <li>
-                            <input class="criteria power-c power-at-most" type="checkbox" id="power-at-most" name="checkbox" value="1">
-                            <label for="power-at-most">Power At Most</label>
-                            <select class="select-power-at-most power-select" disabled>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_power-c js_power-at-most" type="checkbox" id="power-at-most" name="checkbox" value="1">
+                            <label class="filters__label" for="power-at-most">Power At Most</label>
+                            <select class="filters__select js_select js_select-power-at-most js_power-select" disabled>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -108,10 +109,10 @@
                                 <option value="10">10</option>
                             </select>
                         </li>
-                        <li>
-                            <input class="criteria power-c power-exactly" type="checkbox" id="power-exactly" name="checkbox" value="1">
-                            <label for="power-exactly">Power Exactly</label>
-                            <select class="select-power-exactly power-select" disabled>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_power-c js_power-exactly" type="checkbox" id="power-exactly" name="checkbox" value="1">
+                            <label class="filters__label" for="power-exactly">Power Exactly</label>
+                            <select class="filters__select js_select js_select-power-exactly js_power-select" disabled>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -126,155 +127,140 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h2>Keywords</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria keyword poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
-                            <label for="poisonous">Poisonous</label>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Keywords</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
+                            <label class="filters__label" for="poisonous">Poisonous</label>
                         </li>
-                        <li>
-                            <input class="criteria keyword hunter" type="checkbox" id="hunter" name="checkbox" value="1">
-                            <label for="hunter">Hunter</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_hunter" type="checkbox" id="hunter" name="checkbox" value="1">
+                            <label class="filters__label" for="hunter">Hunter</label>
                         </li>
-                        <li>
-                            <input class="criteria keyword frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
-                            <label for="frenzy">Frenzy</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
+                            <label class="filters__label" for="frenzy">Frenzy</label>
                         </li>
-                        <li>
-                            <input class="criteria keyword tough" type="checkbox" id="tough" name="checkbox" value="1">
-                            <label for="tough">Tough</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_tough" type="checkbox" id="tough" name="checkbox" value="1">
+                            <label class="filters__label" for="tough">Tough</label>
                         </li>
-                        <li>
-                            <input class="criteria keyword sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
-                            <label for="sneaky">Sneaky</label>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2>Triggers</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria trigger play" type="checkbox" id="play" name="checkbox" value="1">
-                            <label for="play">Play</label>
-                        </li>
-                        <li>
-                            <input class="criteria trigger attack" type="checkbox" id="attack" name="checkbox" value="1">
-                            <label for="attack">Attack</label>
-                        </li>
-                        <li>
-                            <input class="criteria trigger defeated" type="checkbox" id="defeated" name="checkbox" value="1">
-                            <label for="defeated">Defeated</label>
-                        </li>
-                        <li>
-                            <input class="criteria trigger action" type="checkbox" id="action" name="checkbox" value="1">
-                            <label for="action">Action</label>
-                        </li>
-                        <li>
-                            <input class="criteria trigger discard" type="checkbox" id="discard" name="checkbox" value="1">
-                            <label for="discard">In Discard Pile</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
+                            <label class="filters__label" for="sneaky">Sneaky</label>
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h2>Other</h2>
-                    <ul>
-                        <li>
-                            <input class="criteria other number single" type="checkbox" id="single" name="checkbox" value="1">
-                            <label for="single">Single</label>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Triggers</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_play" type="checkbox" id="play" name="checkbox" value="1">
+                            <label class="filters__label" for="play">Play</label>
                         </li>
-                        <li>
-                            <input class="criteria other number double" type="checkbox" id="double" name="checkbox" value="1">
-                            <label for="double">Double</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_attack" type="checkbox" id="attack" name="checkbox" value="1">
+                            <label class="filters__label" for="attack">Attack</label>
                         </li>
-                        <li>
-                            <input class="criteria other boost" type="checkbox" id="boost" name="checkbox" value="1">
-                            <label for="boost">Boost</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_defeated" type="checkbox" id="defeated" name="checkbox" value="1">
+                            <label class="filters__label" for="defeated">Defeated</label>
                         </li>
-                        <li>
-                            <input class="criteria other evolved" type="checkbox" id="evolved" name="checkbox" value="1">
-                            <label for="evolved">Evolution</label>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_action" type="checkbox" id="action" name="checkbox" value="1">
+                            <label class="filters__label" for="action">Action</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_discard" type="checkbox" id="discard" name="checkbox" value="1">
+                            <label class="filters__label" for="discard">In Discard Pile</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Other</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_number js_single" type="checkbox" id="single" name="checkbox" value="1">
+                            <label class="filters__label" for="single">Single</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_number js_double" type="checkbox" id="double" name="checkbox" value="1">
+                            <label class="filters__label" for="double">Double</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_boost" type="checkbox" id="boost" name="checkbox" value="1">
+                            <label class="filters__label" for="boost">Boost</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_evolved" type="checkbox" id="evolved" name="checkbox" value="1">
+                            <label class="filters__label" for="evolved">Evolution</label>
                         </li>
                     </ul>
                 </div>
             </div>
-            <h3 style="margin: 15px 10px 30px 10px;" class="criteria">Your search will show cards from <span class="criteria-packs"></span> <span class="criteria-keywords"></span> <span class="criteria-triggers"></span> <span class="criteria-others-1"></span> <span class="criteria-others-2"></span> <span class="criteria-power"></span> sorted by <span class="criteria-order"></span></h3>
-            <div class="filter-btn-container">
-                <button class="filter-btn">Search with Filters</button>
-            </div>
-        </div>
-        <div class="auto-fill-parent-container d-none">
-            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Begin typing to find cards that match your search!</h3>
-            <div class="auto-fill-container">
-                <div class="autocomplete">
-                    <input id="myInput" type="text" name="myCreature" placeholder="Type here">
-                </div>
+            <h3 class="action-container__criteria">Your search will show cards from <span class="js_criteria-packs"></span> <span class="js_criteria-keywords"></span> <span class="js_criteria-triggers"></span> <span class="js_criteria-others-1"></span> <span class="js_criteria-others-2"></span> <span class="js_criteria-power"></span> sorted by <span class="js_criteria-order"></span></h3>
+            <div class="action-container__btn-container">
+                <button class="btn js_filter-btn">Search with Filters</button>
             </div>
         </div>
-        <div class="deal-hand-container d-none">
-            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Choose what card sets you want to include, then click below to get a starting hand!</h3>
-            <div>
-                <ul>
-                    <li>
-                        <input class="criteria2 pack2 first-contact2" checked type="checkbox" id="first-contact2" name="checkbox" value="1">
-                        <label for="first-contact2">First Contact</label>
+        <div class="action-container js_auto-fill-container">
+            <h3 class="action-container__instructions">Begin typing to find cards that match your search!</h3>
+            <div class="autocomplete action-container__autocomplete">
+                <input id="autocomplete" class="autocomplete__input js_autocomplete" type="text" name="autocomplete" placeholder="Type here">
+            </div>
+        </div>
+        <div class="action-container js_deal-hand-container">
+            <h3 class="action-container__instructions">Choose what card sets you want to include, then click below to get a starting hand!</h3>
+            <div class="filters">
+                <ul class="filters__list filters__list--horizontal">
+                    <li class="filters__list-item">
+                        <input class="filters__input js_hand js_hand-first-contact" checked type="checkbox" id="hand-first-contact" name="checkbox" value="1">
+                        <label class="filters__label" for="hand-first-contact">First Contact</label>
                     </li>
-                    <li>
-                        <input class="criteria2 pack2 add-on2" checked type="checkbox" id="add-on2" name="checkbox" value="1">
-                        <label for="add-on2">New Servants</label>
+                    <li class="filters__list-item">
+                        <input class="filters__input js_starting-hand js_hand-add-on" checked type="checkbox" id="hand-add-on" name="checkbox" value="1">
+                        <label class="filters__label" for="hand-add-on">New Servants</label>
                     </li>
-                    <li>
-                        <input class="criteria2 pack2 eternity2" checked type="checkbox" id="eternity2" name="checkbox" value="1">
-                        <label for="eternity2">Beyond Eternity</label>
+                    <li class="filters__list-item">
+                        <input class="filters__input js_starting-hand js_hand-eternity" checked type="checkbox" id="hand-eternity" name="checkbox" value="1">
+                        <label class="filters__label" for="hand-eternity">Beyond Eternity</label>
                     </li>
-                    <li>
-                        <input class="criteria2 pack2 evolution2" checked type="checkbox" id="evolution2" name="checkbox" value="1">
-                        <label for="evolution2">Beyond Evolution</label>
+                    <li class="filters__list-item">
+                        <input class="filters__input js_starting-hand js_hand-evolution" checked type="checkbox" id="hand-evolution" name="checkbox" value="1">
+                        <label class="filters__label" for="hand-evolution">Beyond Evolution</label>
                     </li>
-                    <li>
-                        <input class="criteria2 pack2 promo2" checked type="checkbox" id="promo2" name="checkbox" value="1">
-                        <label for="promo2">Promo</label>
+                    <li class="filters__list-item">
+                        <input class="filters__input js_starting-hand js_hand-promo" checked type="checkbox" id="hand-promo" name="checkbox" value="1">
+                        <label class="filters__label" for="hand-promo">Promo</label>
                     </li>
                 </ul>
             </div>
-            <div class="test" style="display: flex; justify-content: center; align-items: center; margin: 0; border: none; padding: 0; border-radius: 0;">
-                <button class="deal-hand">Deal 5 random cards</button>
+            <div class="action-container__btn-container">
+                <button class="btn js_deal-hand-btn">Deal 5 random cards</button>
             </div>
         </div>
-        <div class="custom-deck-container d-none">
-            <h3 class="instructions" style="margin: 30px 10px 15px 10px;">Click "add" to add creatures to your custom deck</h3>
-        </div>
-        <div class="results d-none"></div>
-        <div class="stack-container-parent d-none">
-            <div class="stack-container">
-                <h3>Stacked View?</h3>
-                <div style="margin-right: 5px;">
-                    <input class="stack" checked type="radio" id="stack-no" name="stack" value="No">
-                    <label for="stack-no">No</label>
-                </div>
-                <div>
-                    <input class="stack" type="radio" id="stack-yes" name="stack" value="Yes">
-                    <label for="stack-yes">Yes</label>
+        <div class="action-container js_custom-deck-container">
+            <h3 class="action-container__instructions">Click "add" to add creatures to your custom deck</h3>
+            <div class="custom-deck">
+                <div class="card-container js_custom-deck-card-options"></div>
+                <div class="custom-deck__display">
+                    <p>Cards in your custom deck are below. You can choose how many times each card appears in your custom deck. When you're happy with your deck, click "Finish Deck and Create Link".</p>
+                    <p>Number of Cards In Deck: <span class="custom-deck__card-counter js_custom-deck-card-counter">0</span></p>
+                    <button class="btn btn--hidden js_custom-deck-create-link-btn">Finish Deck and Create Link</button>
+                    <button class="btn btn--hidden custom-deck__copy-deck-btn js_custom-deck-copy-deck-btn disabled">Copy Link</button>
+                    <br>
+                    <input class="custom-deck__deck-link hidden js_custom-deck-link" type="text">
+                    <div class="custom-deck-holder"></div>
                 </div>
             </div>
         </div>
-        <div class="double-card-container">
-            <div class="card-container"></div>
-            <div class="custom-deck-thing">
-                <p>Cards in your custom deck are below. You can choose how many times each card appears in your custom deck. When you're happy with your deck, click "Finish Deck and Create Link".</p>
-                <p>Number of Cards In Deck: <span class="custom-deck-card-counter">0</span></p>
-                <button class="finish-deck-create-link-btn d-none">Finish Deck and Create Link</button>
-                <button class="copy-deck-btn d-none disabled" style="margin-left: 10px;">Copy Link</button>
-                <div class="d-flex justify-content-center deck-link-container d-none" style="margin: 15px 0 0 0;">
-                    <input class="deck-link" type="text">
-                </div>
-                <div class="custom-deck-holder"></div>
-            </div>
-        </div>
+        <div class="results results--hidden js_results"></div>
+        <div class="card-container card-container--hidden js_card-container"></div>
         <div class="modal">
-            <span>X</span>
-            <div class="modal-content">
-                <img class="modal-img" src="" alt="">
+            <span class="modal__close-btn">X</span>
+            <div class="modal__content">
+                <img class="modal__img" src="" alt="">
             </div>
         </div>
     </main>

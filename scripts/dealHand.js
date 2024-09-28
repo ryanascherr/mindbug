@@ -3,7 +3,7 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, addOn, eternity, evolution, promo] = checkSets2();
+    let [firstContact, addOn, eternity, evolution, promo] = checkSetsHand();
     array = getPack(array, firstContact, addOn, eternity, evolution, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
@@ -69,25 +69,25 @@ export function getPack(array, firstContact, addOn, eternity, evolution, promo) 
     return array;
 }
 
-function checkSets2() {
+function checkSetsHand() {
     let firstContact;
     let addOn;
     let eternity;
     let evolution;
     let promo;
-    if($('.first-contact2').is(':checked')){
+    if($('.js_hand-first-contact').is(':checked')){
         firstContact = true;
     }
-    if($('.add-on2').is(':checked')){
+    if($('.js_hand-add-on').is(':checked')){
         addOn = true;
     }
-    if($('.eternity2').is(':checked')){
+    if($('.js_hand-eternity').is(':checked')){
         eternity = true;
     }
-    if($('.evolution2').is(':checked')){
+    if($('.js_hand-evolution').is(':checked')){
         evolution = true;
     }
-    if($('.promo2').is(':checked')){
+    if($('.js_hand-promo').is(':checked')){
         promo = true;
     }
     return [firstContact, addOn, eternity, evolution, promo];

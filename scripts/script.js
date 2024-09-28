@@ -9,20 +9,20 @@ import { openModal, closeModal } from './modalControl.js';
 
 const creatures = creaturesArray.creatures;
 
-$(".order").click(function() {
-    $('.order').prop('checked', false);
+$(".js_order").click(function() {
+    $('.js_order').prop('checked', false);
     $(this).prop('checked', true);
 });
 
-$(".number").click(function() {
-    if ($(this).hasClass("single")) {
-        $('.double').prop('checked', false);
+$(".js_number").click(function() {
+    if ($(this).hasClass("js_single")) {
+        $('.js_double').prop('checked', false);
     } else {
-        $('.single').prop('checked', false);
+        $('.js_single').prop('checked', false);
     }
 })
 
-$('select').on('change', function() {
+$('js_select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
     let relatedInput = $(parent).children('input');
@@ -32,16 +32,16 @@ $('select').on('change', function() {
     }
 });
 
-$(".power-c").click(function() {
+$(".js_power-c").click(function() {
     let parent = $(this).parent()[0];
     let select = $(parent).children('select')[0];
     let input = $(parent).children('input');
     let power = parseInt($(select).val());
 
     if ($(input).is(':checked')) {
-        $('.power-c').prop('checked', false);
+        $('.js_power-c').prop('checked', false);
         $(input).prop('checked', true);
-        $('.power-select').prop('disabled', true);
+        $('.js_power-select').prop('disabled', true);
         $(input).prop('disabled', false);
         $(select).prop('disabled', false)
     } else {
@@ -51,19 +51,19 @@ $(".power-c").click(function() {
     getPowerCriteria(power);
 });
 
-$(".pack").click(function(e) {
-    if ($(".pack").is(':checked')) {
+$(".js_pack").click(function(e) {
+    if ($(".js_pack").is(':checked')) {
         getPackCriteria();
     } else {
         e.preventDefault();
     }
 })
 
-$(".criteria").click(function() {
+$(".js_criteria").click(function() {
     updateCriteria();
 });
 
-$(".filter-btn").click(function() {
+$(".js_filter-btn").click(function() {
     let array = creatures;
 
     let [firstContact, addOn, eternity, evolution, promo22, promo23] = checkSets();
@@ -85,7 +85,7 @@ $(".filter-btn").click(function() {
 })
 
 export function prepareForCards(array) {
-    $(".card-container").empty();
+    $(".js_card-container").empty();
     $(".results").text(`- ${array.length} results found -`);
 }
 
@@ -95,45 +95,45 @@ export function scrollToResults() {
     });
 }
 
-$(".deal-hand").click(function() {
+$(".js_deal-hand-btn").click(function() {
     dealHand(creatures);
 })
 
-$(".open").click(function(e) {
+$(".js_tab").click(function(e) {
     e.preventDefault();
-    $(".card-container").empty();
+    $(".js_card-container").empty();
     $(".results").text(``);
-    if ($(this).hasClass("open-filter")) {
+    if ($(this).hasClass("js_tab-filter")) {
         highlightTab(this);
         openFilter();
-    } else if ($(this).hasClass("open-name")) {
+    } else if ($(this).hasClass("js_tab-name")) {
         highlightTab(this);
         openName();
-    } else if ($(this).hasClass("open-hand")) {
+    } else if ($(this).hasClass("js_tab-hand")) {
         highlightTab(this);
         openHand();
-    } else if ($(this).hasClass("open-custom-deck")) {
+    } else if ($(this).hasClass("js_tab-custom-deck")) {
         highlightTab(this);
         openCustomDeck();
         showAllCards();
     }
 })
 
-$(".pack2").click(function(e) {
+$(".js_hand").click(function(e) {
     let numberChecked = 0;
-    if ($(".first-contact2").is(':checked')) {
+    if ($(".js_hand-first-contact").is(':checked')) {
         numberChecked++;
     }
-    if ($(".add-on2").is(':checked')) {
+    if ($(".js_hand-add-on").is(':checked')) {
         numberChecked++;
     }
-    if ($(".eternity2").is(':checked')) {
+    if ($(".js_hand-eternity").is(':checked')) {
         numberChecked++;
     }
-    if ($(".evolution2").is(':checked')) {
+    if ($(".js_hand-evolution").is(':checked')) {
         numberChecked++;
     }
-    if ($(".promo2").is(':checked')) {
+    if ($(".js_hand-promo").is(':checked')) {
         numberChecked++;
     }
     if (numberChecked == 0) {
@@ -143,8 +143,8 @@ $(".pack2").click(function(e) {
     }
 })
 
-$("#myInput").keyup(function(event) {
-    let inputVal = $("#myInput").val();
+$(".js_autocomplete").keyup(function(event) {
+    let inputVal = $(".js_autocomplete").val();
     inputVal = inputVal.toLowerCase();
     liveSearch(inputVal, creatures);
  });
@@ -177,7 +177,7 @@ $('html').keyup(function(e){
 // CUSTOM DECK FUNCTIONALITY
 
 function showAllCards() {
-    $(".card-container").empty();
+    $(".js_custom-deck-card-options").empty();
     let resetCreatures = creatures;
     $(resetCreatures).each(function(index) {
 
@@ -185,7 +185,7 @@ function showAllCards() {
 
         let name = getImageName(this);
 
-        $(".card-container").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/cards/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`);
+        $(".js_custom-deck-card-options").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/cards/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`);
 
     });
 }
@@ -235,7 +235,7 @@ function addToCustomDeck(creatureIndex) {
     updateCustomDeckCardCounter();
 }
 
-$(".finish-deck-create-link-btn").click(function(e) {
+$(".js_custom-deck-create-link-btn").click(function(e) {
     let customDeckCards = $(".custom-deck-card");
     let arrayOfIndexes = [];
     let arrayOfLetters = [];
@@ -262,12 +262,12 @@ $(".finish-deck-create-link-btn").click(function(e) {
         }
     }
 
-    $(".copy-deck-btn").attr('data-url', customURL);
+    $(".js_custom-deck-copy-deck-btn").attr('data-url', customURL);
 
-    $(".deck-link").val(customURL);
+    $(".js_custom-deck-link").val(customURL);
 
-    $(".copy-deck-btn").removeClass("disabled");
-    $(".deck-link-container").removeClass("d-none");
+    $(".js_custom-deck-copy-deck-btn").removeClass("disabled");
+    $(".js_custom-deck-link").removeClass("hidden");
 });
 
 function updateCustomDeckCardCounter() {
@@ -279,13 +279,14 @@ function updateCustomDeckCardCounter() {
         let currentNumber = parseInt($(numberDiv).text());
         numberOfCardsInDeck += currentNumber;
     });
-    $(".custom-deck-card-counter").text(numberOfCardsInDeck);
-    if ($(".custom-deck-card-counter").text() == "0") {
-        $(".finish-deck-create-link-btn").addClass("d-none");
-        $(".copy-deck-btn").addClass("d-none");
+    $(".js_custom-deck-card-counter").text(numberOfCardsInDeck);
+    if ($(".js_custom-deck-card-counter").text() == "0") {
+        $(".js_custom-deck-create-link-btn").addClass("btn--hidden");
+        $(".js_custom-deck-copy-deck-btn").addClass("btn--hidden");
+        $(".js_custom-deck-link").addClass("hidden");
     } else {
-        $(".finish-deck-create-link-btn").removeClass("d-none");
-        $(".copy-deck-btn").removeClass("d-none");
+        $(".js_custom-deck-create-link-btn").removeClass("btn--hidden");
+        $(".js_custom-deck-copy-deck-btn").removeClass("btn--hidden");
     }
 };
 
@@ -313,9 +314,9 @@ $(document).on('click','.custom-subtract-btn',function(e){
 
 function resetCustomDeckLink() {
     $(".custom-deck-link-display").text("");
-    $(".copy-deck-btn").addClass("disabled");
+    $(".js_custom-deck-copy-deck-btn").addClass("disabled");
 }
 
-$(".copy-deck-btn").click(function() {
+$(".js_custom-deck-copy-deck-btn").click(function() {
     navigator.clipboard.writeText($(this).attr("data-url"));
 })
