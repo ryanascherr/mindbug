@@ -22,7 +22,7 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
         $(".js_card-container").addClass("grid-one-column");
     }
 
-    if (!$(".results").hasClass("d-none")) {
+    if (!$(".results").hasClass("results--hidden")) {
         scrollToResults();
     }
 }

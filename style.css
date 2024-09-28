@@ -23,8 +23,10 @@ h2, h3, h4 {
 }
 
 main {
-    border: 2px solid gray;
-    margin: 0 30px 30px 30px;
+    border-right: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+    /* margin: 0 30px 30px 30px; */
 }
 
 label {
@@ -95,7 +97,8 @@ ul {
 /* BEGIN NAV */
 
 .nav {
-    padding: 30px 30px 0 30px;
+    /* padding: 30px 30px 0 30px; */
+    position: relative;
 }
 
 .nav__text {
@@ -113,9 +116,15 @@ ul {
     border-left: 2px solid gray;
 }
 
+.nav__img {
+    width: 100px;
+    padding: 15px;
+}
+
 .nav__tab {
     padding: 15px;
     background-color: darkgray;
+    text-align: center;
 }
 .nav__tab:hover {
     cursor: pointer;
@@ -123,7 +132,8 @@ ul {
     color: white;
 }
 .nav__tab--open {
-    background-color: gray;
+    background-color: lightgray;
+    color:#411928;
 }
 
 /* END NAV */
@@ -137,7 +147,8 @@ ul {
 }
 
 .action-container__instructions {
-    margin: 30px 10px 15px 10px;
+    padding: 30px 15px 15px 15px;
+    /* margin: 30px 10px 15px 10px; */
 }
 
 .action-container__filters {
@@ -155,7 +166,7 @@ ul {
 }
 
 .action-container__autocomplete {
-    margin: 15px;
+    margin: 0 15px 15px 15px;
 }
 
 /* END ACTION CONTAINER */
@@ -204,7 +215,7 @@ ul {
 .filters__filter {
     margin: 10px;
     border: 2px solid #411928;
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
 }
 

@@ -7,6 +7,11 @@ import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './
 import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 
+//filter tab
+    //text criteria display properly on tab open
+
+//do not scroll on non-filter pages
+
 const creatures = creaturesArray.creatures;
 
 $(".js_order").click(function() {
@@ -58,6 +63,9 @@ $(".js_pack").click(function(e) {
         e.preventDefault();
     }
 })
+
+openFilter()
+updateCriteria();
 
 $(".js_criteria").click(function() {
     updateCriteria();
