@@ -5,7 +5,7 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
     $(".js_card-container").removeClass("card-container--hidden");
     
     if (arrayOfCardsToPlace.length > 0) {
-        $(".js_card-container").removeClass("grid-one-column");
+        // $(".js_card-container").removeClass("grid-one-column");
         $(arrayOfCardsToPlace).each(function() {
             if (this.evolved) return;
 
@@ -18,8 +18,12 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
             }
         });
     } else {
-        $(".js_card-container").append(`<div><h2 style="padding: 15px;">Sorry human, no results were found with your search criteria. Try again!</h2><div style="display: flex; justify-content: center;"><img style="max-width: 100%;" src="./img/wallpaper/mindbug.png"></div></div>`);
-        $(".js_card-container").addClass("grid-one-column");
+        $(".js_card-container").append(`
+            <div class="no-results">
+                <p class="no-results__text">Sorry human, no results were found with your search criteria. Try again!</p>
+                <img class="no-results__img" style="max-width: 100%;" src="./img/wallpaper/mindbug.png">
+            </div>`);
+        // $(".js_card-container").addClass("grid-one-column");
     }
 
     if (!$(".results").hasClass("results--hidden")) {

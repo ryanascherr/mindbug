@@ -193,24 +193,27 @@ function showAllCards() {
 
         let name = getImageName(this);
 
-        $(".js_custom-deck-card-options").append(`<div class="custom-card-btn-container"><img alt="${this.name}. ${this.ability}" loading="lazy" class="card card-deck-option" data-index="${index}" src="./img/cards/${name}.jpg"><button class="add-to-deck-btn" data-index="${index}">Add</button></div>`);
-
+        $(".js_custom-deck-card-options").append(`
+            <div class="custom-deck-items">
+                <img alt="${this.name}. ${this.ability}" loading="lazy" class="card" data-index="${index}" src="./img/cards/${name}.jpg">
+                <button class="btn btn--size-sm js_add-to-deck-btn" data-index="${index}">Add</button>
+            </div>`);
     });
 }
 
-$(document).on('click','.add-to-deck-btn',function(e){
+$(document).on('click','.js_add-to-deck-btn',function(e){
     let creatureIndex = parseInt($(this).attr('data-index'));
     addToCustomDeck(creatureIndex);
     $(this).parent().css({'pointer-events':'none','opacity':'50%'});
     $(".custom-deck-link-display").text("");
 });
 
-$(document).on('click','.remove-from-deck-btn',function(e){
+$(document).on('click','.js_custom-deck-remove',function(e){
     let index = $(this).attr('data-index');
     $(this).parent().remove();
     let cardOnLeft = $(".card-container").find(`[data-index='${index}']`);
     $(cardOnLeft).parent().css({'pointer-events':'all','opacity':'100%'});
-    $(".custom-deck-link-display").text("");
+    $(".js_custom-deck-link").text("");
     updateCustomDeckCardCounter();
     resetCustomDeckLink();
 });
@@ -230,24 +233,24 @@ function addToCustomDeck(creatureIndex) {
     };
 
     $(".custom-deck-holder").append(`
-        <div class="card-to-be-added-container">
-            <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-card" data-index="${creatureIndex}" src="./img/cards/${name}.jpg">
-            <div class="change-card-amount-btns">
-                <button class="custom-subtract-btn">-</button>
-                <div>1</div>
-                <button class="custom-add-btn">+</button>
+        <div class="custom-deck-holder__item js_custom-deck-holder-item">
+            <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-holder__card js_custom-deck-card" data-index="${creatureIndex}" src="./img/cards/${name}.jpg">
+            <div class="custom-card-controls change-card-amount-btns">
+                <button class="custom-card-controls__btn js_custom-card-subtract custom-subtract-btn">-</button>
+                <div class="custom-card-controls__number js_custom-card-number">1</div>
+                <button class="custom-card-controls__btn js_custom-card-add custom-add-btn">+</button>
             </div>
-            <button class="remove-from-deck-btn" data-index="${creatureIndex}">Remove</button> 
+            <button class="btn btn--size-sm custom-deck-holder__remove-btn js_custom-deck-remove" data-index="${creatureIndex}">Remove</button> 
         </div>`)
 
     updateCustomDeckCardCounter();
 }
 
 $(".js_custom-deck-create-link-btn").click(function(e) {
-    let customDeckCards = $(".custom-deck-card");
+    let customDeckCards = $(".js_custom-deck-card");
     let arrayOfIndexes = [];
     let arrayOfLetters = [];
-    let cardContainers = $(".card-to-be-added-container");
+    let cardContainers = $(".js_custom-deck-holder-item");
     $(customDeckCards).each(function(index) {
         let indexOfCard = $(this).attr('data-index');
         arrayOfIndexes.push(indexOfCard);
@@ -280,9 +283,9 @@ $(".js_custom-deck-create-link-btn").click(function(e) {
 
 function updateCustomDeckCardCounter() {
     let numberOfCardsInDeck = 0;
-    let cardsInDeck = $(".card-to-be-added-container");
+    let cardsInDeck = $(".js_custom-deck-holder-item");
     cardsInDeck.each(function() {
-        let numberDiv = $(this).children("div").children("div");
+        let numberDiv = $(this).find(".js_custom-card-number");
         numberDiv = numberDiv[0];
         let currentNumber = parseInt($(numberDiv).text());
         numberOfCardsInDeck += currentNumber;
@@ -298,7 +301,7 @@ function updateCustomDeckCardCounter() {
     }
 };
 
-$(document).on('click','.custom-add-btn',function(e){
+$(document).on('click','.js_custom-card-add',function(e){
     let numberDiv = $(this).parent().children("div");
     numberDiv = numberDiv[0];
     let currentNumber = parseInt($(numberDiv).text());
@@ -309,7 +312,7 @@ $(document).on('click','.custom-add-btn',function(e){
     resetCustomDeckLink();
 });
 
-$(document).on('click','.custom-subtract-btn',function(e){
+$(document).on('click','.js_custom-card-subtract',function(e){
     let numberDiv = $(this).parent().children("div");
     numberDiv = numberDiv[0];
     let currentNumber = parseInt($(numberDiv).text());
