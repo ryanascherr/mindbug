@@ -27,7 +27,7 @@ $(".js_number").click(function() {
     }
 })
 
-$('js_select').on('change', function() {
+$('.js_select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
     let relatedInput = $(parent).children('input');

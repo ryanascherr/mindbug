@@ -26,7 +26,6 @@ main {
     border-right: 2px solid gray;
     border-left: 2px solid gray;
     border-bottom: 2px solid gray;
-    /* margin: 0 30px 30px 30px; */
 }
 
 label {
@@ -146,11 +145,13 @@ ul {
     align-items: center;
     justify-content: center;
 }
+
 .nav__tab:hover {
     cursor: pointer;
     background-color: gray;
     color: white;
 }
+
 .nav__tab--open {
     background-color: lightgray;
     color:#411928;
@@ -168,7 +169,6 @@ ul {
 
 .action-container__instructions {
     padding: 30px 15px 15px 15px;
-    /* margin: 30px 10px 15px 10px; */
 }
 
 .action-container__filters {
