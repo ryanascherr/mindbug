@@ -159,20 +159,12 @@ $(".js_autocomplete").keyup(function(event) {
 
 let modal = $(".modal-content");
 
-window.onclick = function(event) {
-    let clickTarget = $(event.target);
-    clickTarget = clickTarget[0];
-    if ($(clickTarget).hasClass("modal-content")) {
-        closeModal();
-    }
-};
-
 $('body').on('click', '.card', function () {
     let src = $(this).attr('src');
     openModal(src);
 });
 
-$('body').on('click', '.modal-img, .modal span', function () {
+$('body').on('click', '.modal', function () {
     closeModal();
 });
 

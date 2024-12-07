@@ -309,9 +309,12 @@ ul {
     top: 25px;
     right: 20px;
     cursor: pointer;
-    background-color: white;
-    padding: 5px 10px;
+    background-color: #411928;
+    color: white;
+    padding: 10px 15px;
     border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .modal__close-btn:hover {
