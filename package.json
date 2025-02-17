@@ -1,0 +1,20 @@
+{
+	"name": "mindbug",
+	"version": "1.0.0",
+	"description": "## What is Mindbug? Taken from the [game's website](https://mindbug.me/):",
+	"scripts": {
+		"dev": "browser-sync --server --files 'style.css' --files 'scripts/*' --no-open"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/ryanascherr/mindbug.git"
+	},
+	"author": "Ryan Scherr",
+	"bugs": {
+		"url": "https://github.com/ryanascherr/mindbug/issues"
+	},
+	"homepage": "https://github.com/ryanascherr/mindbug#readme",
+	"devDependencies": {
+		"browser-sync": "^3.0.3"
+	}
+}
