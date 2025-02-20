@@ -7,6 +7,7 @@ import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './
 import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 
+
 //filter tab
     //text criteria display properly on tab open
 
@@ -213,16 +214,10 @@ $(document).on('click','.js_custom-deck-remove',function(e){
 function addToCustomDeck(creatureIndex) {
     let creature = creatures[creatureIndex];
     let name = creature.name;
-    if (name == "") return;
-    name = name.split(" ");
 
-    if (name.length == 2) {
-        name = name[0] + "_" + name[1];
-    } else if (name.length == 3) {
-        name = name[0] + "_" + name[1] + "_" + name[2];
-    } else if (name.length == 4) {
-        name = name[0] + "_" + name[1] + "_" + name[2] + "_" + name[3];
-    };
+    if (name == "") return;
+    
+    name = name.replace(/ /g,"_");
 
     $(".custom-deck-holder").append(`
         <div class="custom-deck-holder__item js_custom-deck-holder-item">
