@@ -1,6 +1,7 @@
 import { placeCards, getImageName } from './placeCards.js';
-import { updateCriteria, getKeyWordCriteria, getOrderCriteria, getOtherCriteria, getPackCriteria, getTriggerCriteria, getPowerCriteria } from './updateFilterCriteria.js';
-import { checkKeywords, checkOrder, checkOther, checkPower, checkSets, checkTriggers, getKeywords, getOrder, getOther, getPack, getPower, getTriggers } from './checkAndGetSets.js';
+import { updateCriteria, getSetCriteria, getPowerCriteria } from './updateFilterCriteria.js';
+import { checkSets, checkKeywords, checkTriggers, checkOther, checkPower, checkOrder } from './checkFilters.js';
+import { getSets, getKeywords, getTriggers, getOther, getPower, getOrder } from './getFilteredCards.js';
 import { dealHand } from './dealHand.js';
 import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './openTabs.js';
 import { liveSearch } from './liveSearch.js';
@@ -28,6 +29,13 @@ const { data, error } = await supabaseData.from('creatures').select(`
 `)
 .order('id', { ascending: true });
 const creatures = data;
+let modal = $(".modal-content");
+
+initiate();
+function initiate() {
+    openFilter()
+    updateCriteria();
+}
 
 $(".js_order").click(function() {
     $('.js_order').prop('checked', false);
@@ -71,16 +79,13 @@ $(".js_power-c").click(function() {
     getPowerCriteria(power);
 });
 
-$(".js_pack").click(function(e) {
-    if ($(".js_pack").is(':checked')) {
-        getPackCriteria();
+$(".js_set").click(function(e) {
+    if ($(".js_set").is(':checked')) {
+        getSetCriteria();
     } else {
         e.preventDefault();
     }
 })
-
-openFilter()
-updateCriteria();
 
 $(".js_criteria").click(function() {
     updateCriteria();
@@ -96,7 +101,7 @@ $(".js_filter-btn").click(function() {
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
-    array = getPack(array, firstContact, newServants, eternity, evolution, promo22, promo23);
+    array = getSets(array, firstContact, newServants, eternity, evolution, promo22, promo23);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
     array = getOther(array, boost, evolved, single, double);
@@ -109,13 +114,8 @@ $(".js_filter-btn").click(function() {
 
 export function prepareForCards(array) {
     $(".js_card-container").empty();
+    $(".js_card-container").removeClass("card-container--hidden");
     $(".results").text(`- ${array.length} results found -`);
-}
-
-export function scrollToResults() {
-    $('html, body').animate({
-        scrollTop: $(".results").offset().top
-    });
 }
 
 $(".js_deal-hand-btn").click(function() {
@@ -171,8 +171,6 @@ $(".js_autocomplete").keyup(function(event) {
     inputVal = inputVal.toLowerCase();
     liveSearch(inputVal, creatures);
  });
-
-let modal = $(".modal-content");
 
 $('body').on('click', '.card', function () {
     let src = $(this).attr('src');

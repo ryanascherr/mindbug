@@ -1,9 +1,78 @@
 export function updateCriteria() {
+    getSetCriteria();
     getKeyWordCriteria();
     getTriggerCriteria();
     getOtherCriteria();
     getOrderCriteria();
-    getPackCriteria();
+}
+
+export function getSetCriteria() {
+    let firstContact = $('.js_first-contact').is(':checked');
+    let newServants = $('.js_new-servants').is(':checked');
+    let eternity = $('.js_eternity').is(':checked');
+    let evolution = $('.js_evolution').is(':checked');
+    let promo22 = $('.js_promo-22').is(':checked');
+    let promo23 = $('.js_promo-23').is(':checked');
+    let message = "";
+    let notTheFirst = false;
+
+    if (firstContact && newServants && eternity && evolution && promo22 & promo23) {
+        message = "All Sets";
+        $(".js_criteria-sets").text(message);
+        return;
+    }
+
+    if (firstContact) {
+        message += "First Contact";
+        notTheFirst = true;
+    }
+
+    if (newServants) {
+        if (notTheFirst) {
+            message += " & New Servants";
+        } else {
+            message += "New Servants"
+        }
+        notTheFirst = true;
+    }
+
+    if (eternity) {
+        if (notTheFirst) {
+            message += " & Beyond Eternity";
+        } else {
+            message += "Beyond Eternity"
+        }
+        notTheFirst = true;
+    }
+
+    if (evolution) {
+        if (notTheFirst) {
+            message += " & Beyond Evolution";
+        } else {
+            message += "Beyond Evolution"
+        }
+        notTheFirst = true;
+    }
+
+    if (promo22) {
+        if (notTheFirst) {
+            message += " & Promo Pack 2022";
+        } else {
+            message += "Promo Pack 2022"
+        }
+        notTheFirst = true;
+    }
+
+    if (promo23) {
+        if (notTheFirst) {
+            message += " & Promo Pack 2023";
+        } else {
+            message += "Promo Pack 2023"
+        }
+        notTheFirst = true;
+    }
+
+    $(".js_criteria-sets").text(message);
 }
 
 export function getKeyWordCriteria() {
@@ -118,75 +187,6 @@ export function getTriggerCriteria() {
     $(".js_criteria-triggers").text(message);
 }
 
-export function getPackCriteria() {
-    let firstContact = $('.js_first-contact').is(':checked');
-    let newServants = $('.js_new-servants').is(':checked');
-    let eternity = $('.js_eternity').is(':checked');
-    let evolution = $('.js_evolution').is(':checked');
-    let promo22 = $('.js_promo-22').is(':checked');
-    let promo23 = $('.js_promo-23').is(':checked');
-    let message = "";
-    let notTheFirst = false;
-
-    if (firstContact && newServants && eternity && evolution && promo22 & promo23) {
-        message = "All Sets";
-        $(".js_criteria-packs").text(message);
-        return;
-    }
-
-    if (firstContact) {
-        message += "First Contact";
-        notTheFirst = true;
-    }
-
-    if (newServants) {
-        if (notTheFirst) {
-            message += " & New Servants";
-        } else {
-            message += "New Servants"
-        }
-        notTheFirst = true;
-    }
-
-    if (eternity) {
-        if (notTheFirst) {
-            message += " & Beyond Eternity";
-        } else {
-            message += "Beyond Eternity"
-        }
-        notTheFirst = true;
-    }
-
-    if (evolution) {
-        if (notTheFirst) {
-            message += " & Beyond Evolution";
-        } else {
-            message += "Beyond Evolution"
-        }
-        notTheFirst = true;
-    }
-
-    if (promo22) {
-        if (notTheFirst) {
-            message += " & Promo Pack 2022";
-        } else {
-            message += "Promo Pack 2022"
-        }
-        notTheFirst = true;
-    }
-
-    if (promo23) {
-        if (notTheFirst) {
-            message += " & Promo Pack 2023";
-        } else {
-            message += "Promo Pack 2023"
-        }
-        notTheFirst = true;
-    }
-
-    $(".js_criteria-packs").text(message);
-}
-
 export function getOtherCriteria() {
     let single = $('.js_single').is(':checked');
     let double = $('.js_double').is(':checked');
@@ -212,7 +212,6 @@ export function getOtherCriteria() {
     if (!boost && !evolved) {
         message1 = "";
         $(".js_criteria-others").text(message1);
-        return;
     }
 
     if (boost) {

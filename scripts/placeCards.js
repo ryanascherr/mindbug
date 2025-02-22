@@ -1,21 +1,10 @@
-import { scrollToResults } from "./script.js";
-
-export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolutions) {
-
-    $(".js_card-container").removeClass("card-container--hidden");
+export function placeCards(arrayOfCardsToPlace) {
     
     if (arrayOfCardsToPlace.length > 0) {
-        // $(".js_card-container").removeClass("grid-one-column");
         $(arrayOfCardsToPlace).each(function() {
-            // if (this.evolution && this.secondEvolution == null) return;
-
             let name = getImageName(this);
 
             $(".js_card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
-
-            // if (this.secondEvolution && allowEvolutions != false) {
-            //     placeEvolvedCards(this, arrayOfAllCreatures);
-            // }
         });
     } else {
         $(".js_card-container").append(`
@@ -23,12 +12,17 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
                 <p class="no-results__text">Sorry human, no results were found with your search criteria. Try again!</p>
                 <img class="no-results__img" style="max-width: 100%;" src="./img/wallpaper/mindbug.png">
             </div>`);
-        // $(".js_card-container").addClass("grid-one-column");
     }
 
     if (!$(".results").hasClass("results--hidden")) {
         scrollToResults();
     }
+}
+
+function scrollToResults() {
+    $('html, body').animate({
+        scrollTop: $(".results").offset().top
+    });
 }
 
 export function getImageName(card) {
@@ -39,30 +33,27 @@ export function getImageName(card) {
     return name;
 }
 
-function placeEvolvedCards(creature, arrayOfAllCreatures) {
-    let secondEvolutionName = creature.secondEvolution;
-    console.log(secondEvolutionName);
-    let thirdEvolutionName = creature.thirdEvolution;
-    console.log(thirdEvolutionName);
+// function placeEvolvedCards(creature, arrayOfAllCreatures) {
+//     let secondEvolutionName = creature.secondEvolution;
+//     let thirdEvolutionName = creature.thirdEvolution;
 
-    let secondCreature;
-    let thirdCreature;
+//     let secondCreature;
+//     let thirdCreature;
 
-    $(arrayOfAllCreatures).each(function() {
-        if (this.name == secondEvolutionName) {
-            secondCreature = this;
-        }
-        if (this.name == thirdEvolutionName) {
-            thirdCreature = this;
-        } 
-    })
+//     $(arrayOfAllCreatures).each(function() {
+//         if (this.name == secondEvolutionName) {
+//             secondCreature = this;
+//         }
+//         if (this.name == thirdEvolutionName) {
+//             thirdCreature = this;
+//         } 
+//     })
 
-    let name = getImageName(secondCreature);
-    console.log(name);
+//     let name = getImageName(secondCreature);
 
-    $(".card-container").append(`<img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
+//     $(".card-container").append(`<img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
 
-    name = getImageName(thirdCreature);
+//     name = getImageName(thirdCreature);
 
-    $(".card-container").append(`<img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
-}
+//     $(".card-container").append(`<img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
+// }
