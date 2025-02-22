@@ -10,6 +10,8 @@ export function dealHand(creatures) {
 
     addCardToHand();
 
+    //TODO Fix evolution code
+
     function addCardToHand() {
         let randomNumber = Math.floor(Math.random()*(array.length));
         let howMany = 0;
@@ -18,15 +20,19 @@ export function dealHand(creatures) {
                 howMany++;
             }
         })
-        if (array[randomNumber].evolved == true) {
-            addCardToHand();
-            return;
+        if (array[randomNumber].evolution == true) {
+            let creature = array[randomNumber];
+            let name = creature.name;
+            if (name != "Cloud Lady" && name != "Curious Tadpole" && name != "Kitten Crewmate" && name != "Tuckbox Mimic" && name != "Waddling Recruit" && name != "Wildsprout") {
+                addCardToHand();
+                return;
+            }
         }
         if (howMany == 0) {
             usedNumbersArray.push(randomNumber);
             handOfCards.push(array[randomNumber]);
         } else if (howMany == 1) {
-            if (!array[randomNumber].double) {
+            if (array[randomNumber].amount == 1) {
             } else {
                 usedNumbersArray.push(randomNumber);
                 handOfCards.push(array[randomNumber]);
@@ -46,24 +52,24 @@ export function dealHand(creatures) {
 
 export function getPack(array, firstContact, addOn, eternity, evolution, promo) {
     if (!firstContact) {
-        array = array.filter(creature => creature.pack != "First Contact");
+        array = array.filter(creature => creature.set.name != "First Contact");
     }
 
     if (!addOn) {
-        array = array.filter(creature => creature.pack != "First Contact: Add-On");
+        array = array.filter(creature => creature.set.name != "New Servants");
     }
 
     if (!eternity) {
-        array = array.filter(creature => creature.pack != "Beyond Eternity");
+        array = array.filter(creature => creature.set.name != "Beyond Eternity");
     }
 
     if (!evolution) {
-        array = array.filter(creature => creature.pack != "Beyond Evolution");
+        array = array.filter(creature => creature.set.name != "Beyond Evolution");
     }
 
     if (!promo) {
-        array = array.filter(creature => creature.pack != "Promo 2022");
-        array = array.filter(creature => creature.pack != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Promo 2022");
+        array = array.filter(creature => creature.set.name != "Promo 2023");
     }
 
     return array;

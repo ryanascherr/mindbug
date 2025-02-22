@@ -196,6 +196,9 @@ export function getOtherCriteria() {
     let message2 = "";
     let notTheFirst = false;
 
+    //TODO Fix display for clicking and then unclicking boost and evolved
+    //TODO Fix display for clicking and then unclicking set
+
     if (single) {
         message2 = "that are Singles";
     }

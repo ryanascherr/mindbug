@@ -1,12 +1,12 @@
 export function checkSets() {
     let firstContact = $('.js_first-contact').is(':checked');
-    let addOn = $('.js_add-on').is(':checked');
+    let newServants = $('.js_add-on').is(':checked');
     let eternity = $('.js_eternity').is(':checked');
     let evolution = $('.js_evolution').is(':checked');
     let promo22 = $('.js_promo-22').is(':checked');
     let promo23 = $('.js_promo-23').is(':checked');
 
-    return [firstContact, addOn, eternity, evolution, promo22, promo23];
+    return [firstContact, newServants, eternity, evolution, promo22, promo23];
 }
 
 export function checkKeywords() {
@@ -66,77 +66,111 @@ export function checkOrder() {
     return [alph, power, revPower];
 }
 
-export function getPack(array, firstContact, addOn, eternity, evolution, promo22, promo23) {
+export function getPack(array, firstContact, newServants, eternity, evolution, promo22, promo23) {
     if (!firstContact) {
-        array = array.filter(creature => creature.pack != "First Contact");
+        array = array.filter(creature => creature.set.name != "First Contact");
     }
 
-    if (!addOn) {
-        array = array.filter(creature => creature.pack != "First Contact: Add-On");
+    if (!newServants) {
+        array = array.filter(creature => creature.set.name != "New Servants");
     }
 
     if (!eternity) {
-        array = array.filter(creature => creature.pack != "Beyond Eternity");
+        array = array.filter(creature => creature.set.name != "Beyond Eternity");
     }
 
     if (!evolution) {
-        array = array.filter(creature => creature.pack != "Beyond Evolution");
+        array = array.filter(creature => creature.set.name != "Beyond Evolution");
     }
 
     if (!promo22) {
-        array = array.filter(creature => creature.pack != "Promo 2022");
+        array = array.filter(creature => creature.set.name != "Promo 2022");
     }
 
     if (!promo23) {
-        array = array.filter(creature => creature.pack != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Promo 2023");
     }
 
     return array;
 }
 
 export function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
+
+    function getCurrentKeyword(creature, keyword) {
+        let isKeywordHere = false;
+            let numberOfKeywords = creature.keywords.length;
+            if (numberOfKeywords == 0) return;
+
+            for (let i = 0; i < numberOfKeywords; i++) {
+                let currentKeyword = creature.keywords[i];
+                currentKeyword = currentKeyword.name;
+                if (currentKeyword == keyword) {
+                    isKeywordHere = true;
+                };
+            }
+
+            if (isKeywordHere == true) return true;
+    }
+
     if (poisonous) {
-        array = array.filter(creature => creature.keywords.poisonous == true);
+        array = array.filter(creature => getCurrentKeyword(creature, "Poisonous"));
     }
 
     if (hunter) {
-        array = array.filter(creature => creature.keywords.hunter == true);
+        array = array.filter(creature => getCurrentKeyword(creature, "Hunter"));
     }
 
     if (frenzy) {
-        array = array.filter(creature => creature.keywords.frenzy == true);
+        array = array.filter(creature => getCurrentKeyword(creature, "Frenzy"));
     }
 
     if (tough) {
-        array = array.filter(creature => creature.keywords.tough == true);
+        array = array.filter(creature => getCurrentKeyword(creature, "Tough"));
     }
 
     if (sneaky) {
-        array = array.filter(creature => creature.keywords.sneaky == true);
+        array = array.filter(creature => getCurrentKeyword(creature, "Sneaky"));
     }
 
     return array;
 }
 
 export function getTriggers(array, play, attack, defeated, action, discard) {
+
+    function getCurrentTrigger(creature, trigger) {
+        let isTriggerHere = false;
+            let numberOfTriggers = creature.triggers.length;
+            if (numberOfTriggers == 0) return;
+
+            for (let i = 0; i < numberOfTriggers; i++) {
+                let currentTrigger = creature.triggers[i];
+                currentTrigger = currentTrigger.name;
+                if (currentTrigger == trigger) {
+                    isTriggerHere = true;
+                };
+            }
+
+            if (isTriggerHere == true) return true;
+    }
+
     if (play) {
-        array = array.filter(creature => creature.triggers.play == true);
+        array = array.filter(creature => getCurrentTrigger(creature, "Play"));
     }
 
     if (attack) {
-        array = array.filter(creature => creature.triggers.attack == true);
+        array = array.filter(creature => getCurrentTrigger(creature, "Attack"));
     }
 
     if (defeated) {
-        array = array.filter(creature => creature.triggers.defeated == true);
+        array = array.filter(creature => getCurrentTrigger(creature, "Defeated"));
     }
 
     if (action) {
-        array = array.filter(creature => creature.triggers.action == true);
+        array = array.filter(creature => getCurrentTrigger(creature, "Action"));
     }
 
     if (discard) {
-        array = array.filter(creature => creature.triggers.discard == true);
+        array = array.filter(creature => getCurrentTrigger(creature, "Discard"));
     }
 
     return array;
@@ -144,11 +178,11 @@ export function getTriggers(array, play, attack, defeated, action, discard) {
 
 export function getOther(array, boost, evolved, single, double) {
     if (single) {
-        array = array.filter(creature => creature.double == false);
+        array = array.filter(creature => creature.amount == 1);
     }
 
     if (double) {
-        array = array.filter(creature => creature.double == true);
+        array = array.filter(creature => creature.amount == 2);
     }
 
     if (boost) {
