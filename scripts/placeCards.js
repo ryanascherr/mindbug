@@ -7,15 +7,15 @@ export function placeCards(arrayOfCardsToPlace, arrayOfAllCreatures, allowEvolut
     if (arrayOfCardsToPlace.length > 0) {
         // $(".js_card-container").removeClass("grid-one-column");
         $(arrayOfCardsToPlace).each(function() {
-            if (this.evolved) return;
+            // if (this.evolution && this.secondEvolution == null) return;
 
             let name = getImageName(this);
 
             $(".js_card-container").append(`<img alt="${this.name}. ${this.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
 
-            if (this.secondEvolution && allowEvolutions != false) {
-                placeEvolvedCards(this, arrayOfAllCreatures);
-            }
+            // if (this.secondEvolution && allowEvolutions != false) {
+            //     placeEvolvedCards(this, arrayOfAllCreatures);
+            // }
         });
     } else {
         $(".js_card-container").append(`
@@ -39,14 +39,16 @@ export function getImageName(card) {
     return name;
 }
 
-function placeEvolvedCards(creature, arrayOfAllCreaturesres) {
+function placeEvolvedCards(creature, arrayOfAllCreatures) {
     let secondEvolutionName = creature.secondEvolution;
+    console.log(secondEvolutionName);
     let thirdEvolutionName = creature.thirdEvolution;
+    console.log(thirdEvolutionName);
 
     let secondCreature;
     let thirdCreature;
 
-    $(arrayOfAllCreaturesres).each(function() {
+    $(arrayOfAllCreatures).each(function() {
         if (this.name == secondEvolutionName) {
             secondCreature = this;
         }
@@ -56,6 +58,7 @@ function placeEvolvedCards(creature, arrayOfAllCreaturesres) {
     })
 
     let name = getImageName(secondCreature);
+    console.log(name);
 
     $(".card-container").append(`<img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card" src="./img/cards/${name}.jpg">`);
 
