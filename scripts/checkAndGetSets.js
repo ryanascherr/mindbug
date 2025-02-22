@@ -1,6 +1,6 @@
 export function checkSets() {
     let firstContact = $('.js_first-contact').is(':checked');
-    let newServants = $('.js_add-on').is(':checked');
+    let newServants = $('.js_new-servants').is(':checked');
     let eternity = $('.js_eternity').is(':checked');
     let evolution = $('.js_evolution').is(':checked');
     let promo22 = $('.js_promo-22').is(':checked');

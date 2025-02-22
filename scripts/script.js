@@ -147,7 +147,7 @@ $(".js_hand").click(function(e) {
     if ($(".js_hand-first-contact").is(':checked')) {
         numberChecked++;
     }
-    if ($(".js_hand-add-on").is(':checked')) {
+    if ($(".js_hand-new-servants").is(':checked')) {
         numberChecked++;
     }
     if ($(".js_hand-eternity").is(':checked')) {

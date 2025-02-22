@@ -3,8 +3,8 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, addOn, eternity, evolution, promo] = checkSetsHand();
-    array = getPack(array, firstContact, addOn, eternity, evolution, promo);
+    let [firstContact, newServants, eternity, evolution, promo] = checkSetsHand();
+    array = getPack(array, firstContact, newServants, eternity, evolution, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
 
@@ -50,12 +50,12 @@ export function dealHand(creatures) {
     }
 }
 
-export function getPack(array, firstContact, addOn, eternity, evolution, promo) {
+export function getPack(array, firstContact, newServants, eternity, evolution, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
 
-    if (!addOn) {
+    if (!newServants) {
         array = array.filter(creature => creature.set.name != "New Servants");
     }
 
@@ -77,15 +77,15 @@ export function getPack(array, firstContact, addOn, eternity, evolution, promo) 
 
 function checkSetsHand() {
     let firstContact;
-    let addOn;
+    let newServants;
     let eternity;
     let evolution;
     let promo;
     if($('.js_hand-first-contact').is(':checked')){
         firstContact = true;
     }
-    if($('.js_hand-add-on').is(':checked')){
-        addOn = true;
+    if($('.js_hand-new-servants').is(':checked')){
+        newServants = true;
     }
     if($('.js_hand-eternity').is(':checked')){
         eternity = true;
@@ -96,5 +96,5 @@ function checkSetsHand() {
     if($('.js_hand-promo').is(':checked')){
         promo = true;
     }
-    return [firstContact, addOn, eternity, evolution, promo];
+    return [firstContact, newServants, eternity, evolution, promo];
 }

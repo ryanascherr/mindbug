@@ -120,7 +120,7 @@ export function getTriggerCriteria() {
 
 export function getPackCriteria() {
     let firstContact = $('.js_first-contact').is(':checked');
-    let addOn = $('.js_add-on').is(':checked');
+    let newServants = $('.js_new-servants').is(':checked');
     let eternity = $('.js_eternity').is(':checked');
     let evolution = $('.js_evolution').is(':checked');
     let promo22 = $('.js_promo-22').is(':checked');
@@ -128,7 +128,7 @@ export function getPackCriteria() {
     let message = "";
     let notTheFirst = false;
 
-    if (firstContact && addOn && eternity && evolution && promo22 & promo23) {
+    if (firstContact && newServants && eternity && evolution && promo22 & promo23) {
         message = "All Sets";
         $(".js_criteria-packs").text(message);
         return;
@@ -139,7 +139,7 @@ export function getPackCriteria() {
         notTheFirst = true;
     }
 
-    if (addOn) {
+    if (newServants) {
         if (notTheFirst) {
             message += " & New Servants";
         } else {
