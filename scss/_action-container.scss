@@ -1,0 +1,31 @@
+.action-container {
+    display: none;
+
+    &--open {
+        display: block;
+    }
+
+    &__instructions {
+        padding: 30px 15px 15px 15px;
+    }
+
+    &__filters {
+        margin: 0 auto;
+    }
+
+    &__criteria {
+        margin: 15px 10px 30px 10px;
+    }
+
+    &__btn-container {
+        display: flex;
+        justify-content: center;
+        margin: 15px;
+    }
+
+    &__autocomplete {
+        margin: 0 15px 15px 15px;
+    }
+}
+
+/* END ACTION CONTAINER */

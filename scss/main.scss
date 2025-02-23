@@ -1,0 +1,82 @@
+@import "_action-container";
+@import "_autocomplete";
+@import "_button";
+@import "_card";
+@import "_card-container";
+@import "_custom-deck";
+@import "_filters";
+@import "_header";
+@import "_modal";
+@import "_nav";
+@import "_no-results";
+@import "_results";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: #411928;
+    font-family: sans-serif;
+    min-height: 1500px;
+    background-color: lightgray;
+    font: 16px Arial;  
+}
+
+h2, h3, h4 {
+    text-align: center;
+    margin: 0;
+}
+
+main {
+    border-right: 2px solid gray;
+    border-left: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+label {
+    padding: 5px;
+}
+
+input {
+    border: 1px solid transparent;
+    background-color: #f1f1f1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type=text] {
+    background-color: #f1f1f1;
+}
+
+input[type=submit] {
+    background-color: DodgerBlue;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    margin: 5px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    opacity: 50%;
+    pointer-events: none;
+}
+
+.d-none {
+    display: none;
+}

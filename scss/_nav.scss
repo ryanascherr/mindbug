@@ -1,0 +1,42 @@
+.nav {
+    position: relative;
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__tab-container {
+        display: flex;
+        justify-content: center;
+        background-color: darkgray;
+        color: white;
+        border-top: 2px solid gray;
+        border-right: 2px solid gray;
+        border-left: 2px solid gray;
+    }
+
+    &__img {
+        width: 100px;
+        padding: 15px;
+    }
+
+    &__tab {
+        padding: 15px;
+        background-color: darkgray;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: gray;
+            color: white;
+        }
+    }
+
+    &__tab--open {
+        background-color: lightgray;
+        color:#411928;
+    }
+}

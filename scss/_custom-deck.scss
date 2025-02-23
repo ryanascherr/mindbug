@@ -1,0 +1,100 @@
+.custom-deck {
+    display: flex;
+
+    &__display {
+        padding: 15px;
+        width: 50%;
+        border-left: 2px solid #411928;
+    }
+
+    &__copy-deck-btn {
+        margin-left: 10px;
+    }
+
+    &__deck-link {
+        margin: 15px auto 0 auto;
+        width: 100%;
+    }
+}
+
+.custom-deck-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-deck-holder {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px;
+    position: relative;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__remove-btn {
+        margin-top: 5px;
+    }
+
+    label {
+        padding: 5px 0;
+    }
+
+    &__card {
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 1200px){
+        & {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+    
+    @media only screen and (max-width: 999px){
+        & {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+    
+    @media only screen and (max-width: 700px){
+        & {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media only screen and (max-width: 400px){
+        & {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+.custom-card-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__number {
+        padding: 5px 10px;
+        margin: 5px;
+        background-color: white;
+        color: #411928;
+        font-weight: bold;
+    }
+
+    &__btn:hover {
+        cursor: pointer;
+    }
+}

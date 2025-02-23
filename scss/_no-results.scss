@@ -1,0 +1,14 @@
+.no-results {
+    grid-column-start: 1;
+    grid-column-end: span 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+        font-weight: bold;
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+    }
+}

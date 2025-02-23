@@ -1,0 +1,9 @@
+.results {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 15px;
+
+    &--hidden {
+        display: none;
+    }
+}

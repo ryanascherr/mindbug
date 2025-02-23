@@ -1,0 +1,10 @@
+.card {
+    transition: all .35s;
+    border-radius: 15px;
+    width: 100%;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+    }
+}

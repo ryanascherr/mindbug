@@ -1,0 +1,26 @@
+.btn {
+    padding: 10px;
+    background-color: #411928;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #411928;
+    transition: all .35s;
+    font-weight: bold;
+
+    &--size-sm {
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    &--hidden {
+        display: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        color: #411928;
+        background-color: white;
+    }
+}
+
+
