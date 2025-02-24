@@ -23,6 +23,27 @@
 .action-container__autocomplete {
   margin-bottom: 2rem;
 }
+.action-container__subtext {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.action-container__subtext p {
+  margin-top: 0;
+  max-width: 800px;
+}
+.action-container__subtext input {
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.action-container__subtext button {
+  margin-bottom: 2rem;
+}
 
 .autocomplete {
   display: flex;
@@ -106,7 +127,9 @@
   display: flex;
 }
 .custom-deck__display {
-  padding: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-right: 15px;
   width: 50%;
   border-left: 2px solid #411928;
 }
@@ -117,11 +140,18 @@
   margin: 15px auto 0 auto;
   width: 100%;
 }
+.custom-deck__instructions {
+  margin-top: 0;
+}
 
 .custom-deck-items {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.custom-deck-items--unavailable {
+  pointer-events: none;
+  opacity: 50%;
 }
 
 .custom-deck-holder {

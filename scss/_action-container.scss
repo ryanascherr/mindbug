@@ -28,4 +28,29 @@
     &__autocomplete {
         margin-bottom: 2rem;
     }
+
+    &__subtext {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        p {
+            margin-top: 0;
+            max-width: 800px;
+        }
+
+        input {
+            max-width: 500px;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        button {
+            margin-bottom: 2rem;
+        }
+    }
 }

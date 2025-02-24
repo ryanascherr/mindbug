@@ -246,11 +246,16 @@
             </div>
         </div>
         <div class="action-container js_custom-deck-container">
-            <h3 class="action-container__instructions">Click "add" to add creatures to your custom deck</h3>
+            <h3 class="action-container__instructions action-container__instructions--small-bottom-margin">Click "add" to add creatures to your custom deck</h3>
+            <div class="action-container__subtext">
+                <p class="action-container__subtext-instructions">Already made a deck? Paste the link below to upload it. The link will start with "https://ryanascherr.github.io/mindbug-deck/?" followed by a series of numbers and letters.</p>
+                <input class="js_upload-deck-input" type="text" placeholder="https://ryanascherr.github.io/mindbug-deck/?0b-1a-2a-3a-4b-5a-6a-7b-8b-9a-10b-11a-12b-13a-14b-15b-16a-17b-18a-19b-20b-21a-22a-23b-24b-25a-26b-27a-28b-29a-30b-31a"></input>
+                <button class="btn js_upload-deck-btn">Upload</button>
+            </div>
             <div class="custom-deck">
                 <div class="card-container js_custom-deck-card-options"></div>
                 <div class="custom-deck__display">
-                    <p>Cards in your custom deck are below. You can choose how many times each card appears in your custom deck. When you're happy with your deck, click "Finish Deck and Create Link".</p>
+                    <p class="custom-deck__instructions">Cards in your custom deck are below. You can choose how many times each card appears in your custom deck. When you're happy with your deck, click "Finish Deck and Create Link".</p>
                     <p>Number of Cards In Deck: <span class="custom-deck__card-counter js_custom-deck-card-counter">0</span></p>
                     <button class="btn btn--hidden js_custom-deck-create-link-btn">Finish Deck and Create Link</button>
                     <button class="btn btn--hidden custom-deck__copy-deck-btn js_custom-deck-copy-deck-btn disabled">Copy Link</button>
