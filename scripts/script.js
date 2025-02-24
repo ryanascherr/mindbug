@@ -7,11 +7,6 @@ import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './
 import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 
-//filter tab
-    //text criteria display properly on tab open
-
-//do not scroll on non-filter pages
-
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
 const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);

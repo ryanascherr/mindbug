@@ -30,23 +30,6 @@
             <h3 class="action-container__instructions">Select your search criteria below, then click "Search with Filters" to see your results!</h3>
             <div class="filters action-container__filters">
                 <div class="filters__filter">
-                    <h2 class="filters__title">Order</h2>
-                    <ul class="filters__list">
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_alph" checked type="checkbox" id="alph" name="checkbox" value="1">
-                            <label class="filters__label" for="alph">Name</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_power" type="checkbox" id="power" name="checkbox" value="1">
-                            <label class="filters__label" for="power">Power</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
-                            <label class="filters__label" for="rev-power">Reverse Power</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="filters__filter">
                     <h2 class="filters__title">Sets</h2>
                     <ul class="filters__list">
                         <li class="filters__list-item">
@@ -66,12 +49,62 @@
                             <label class="filters__label" for="evolution">Beyond Evolution</label>
                         </li>
                         <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_set js_promo-22" checked type="checkbox" id="promo-22" name="checkbox" value="1">
+                            <input class="filters__input js_criteria js_set js_promo-22" type="checkbox" id="promo-22" name="checkbox" value="1">
                             <label class="filters__label" for="promo-22">Promo Set 2022</label>
                         </li>
                         <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_set js_promo-23" checked type="checkbox" id="promo-23" name="checkbox" value="1">
+                            <input class="filters__input js_criteria js_set js_promo-23" type="checkbox" id="promo-23" name="checkbox" value="1">
                             <label class="filters__label" for="promo-23">Promo Set 2023</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Keywords</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
+                            <label class="filters__label" for="frenzy">Frenzy</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_hunter" type="checkbox" id="hunter" name="checkbox" value="1">
+                            <label class="filters__label" for="hunter">Hunter</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
+                            <label class="filters__label" for="poisonous">Poisonous</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
+                            <label class="filters__label" for="sneaky">Sneaky</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_keyword js_tough" type="checkbox" id="tough" name="checkbox" value="1">
+                            <label class="filters__label" for="tough">Tough</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Triggers</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_play" type="checkbox" id="play" name="checkbox" value="1">
+                            <label class="filters__label" for="play">Play</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_attack" type="checkbox" id="attack" name="checkbox" value="1">
+                            <label class="filters__label" for="attack">Attack</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_defeated" type="checkbox" id="defeated" name="checkbox" value="1">
+                            <label class="filters__label" for="defeated">Defeated</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_action" type="checkbox" id="action" name="checkbox" value="1">
+                            <label class="filters__label" for="action">Action</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_trigger js_discard" type="checkbox" id="discard" name="checkbox" value="1">
+                            <label class="filters__label" for="discard">In Discard Pile</label>
                         </li>
                     </ul>
                 </div>
@@ -129,56 +162,6 @@
                     </ul>
                 </div>
                 <div class="filters__filter">
-                    <h2 class="filters__title">Keywords</h2>
-                    <ul class="filters__list">
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_keyword js_poisonous" type="checkbox" id="poisonous" name="checkbox" value="1">
-                            <label class="filters__label" for="poisonous">Poisonous</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_keyword js_hunter" type="checkbox" id="hunter" name="checkbox" value="1">
-                            <label class="filters__label" for="hunter">Hunter</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_keyword js_frenzy" type="checkbox" id="frenzy" name="checkbox" value="1">
-                            <label class="filters__label" for="frenzy">Frenzy</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_keyword js_tough" type="checkbox" id="tough" name="checkbox" value="1">
-                            <label class="filters__label" for="tough">Tough</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_keyword js_sneaky" type="checkbox" id="sneaky" name="checkbox" value="1">
-                            <label class="filters__label" for="sneaky">Sneaky</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="filters__filter">
-                    <h2 class="filters__title">Triggers</h2>
-                    <ul class="filters__list">
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_play" type="checkbox" id="play" name="checkbox" value="1">
-                            <label class="filters__label" for="play">Play</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_attack" type="checkbox" id="attack" name="checkbox" value="1">
-                            <label class="filters__label" for="attack">Attack</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_defeated" type="checkbox" id="defeated" name="checkbox" value="1">
-                            <label class="filters__label" for="defeated">Defeated</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_action" type="checkbox" id="action" name="checkbox" value="1">
-                            <label class="filters__label" for="action">Action</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_discard" type="checkbox" id="discard" name="checkbox" value="1">
-                            <label class="filters__label" for="discard">In Discard Pile</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="filters__filter">
                     <h2 class="filters__title">Other</h2>
                     <ul class="filters__list">
                         <li class="filters__list-item">
@@ -199,6 +182,27 @@
                         </li>
                     </ul>
                 </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Order</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_order-set" checked type="checkbox" id="order-set" name="checkbox" value="1">
+                            <label class="filters__label" for="order-set">Set</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
+                            <label class="filters__label" for="rev-power">Increasing Power</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_power" type="checkbox" id="power" name="checkbox" value="1">
+                            <label class="filters__label" for="power">Decreasing Power</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_alph" type="checkbox" id="alph" name="checkbox" value="1">
+                            <label class="filters__label" for="alph">Name</label>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <h3 class="action-container__criteria">Your search will show cards from <span class="js_criteria-sets"></span> <span class="js_criteria-keywords"></span> <span class="js_criteria-triggers"></span> <span class="js_criteria-others-1"></span> <span class="js_criteria-others-2"></span> <span class="js_criteria-power"></span> sorted by <span class="js_criteria-order"></span></h3>
             <div class="action-container__btn-container">
@@ -213,7 +217,7 @@
         </div>
         <div class="action-container js_deal-hand-container">
             <h3 class="action-container__instructions">Choose what card sets you want to include, then click below to get a starting hand!</h3>
-            <div class="filters">
+            <div class="filters filters--one-column">
                 <ul class="filters__list filters__list--horizontal">
                     <li class="filters__list-item">
                         <input class="filters__input js_hand js_hand-first-contact" checked type="checkbox" id="hand-first-contact" name="checkbox" value="1">

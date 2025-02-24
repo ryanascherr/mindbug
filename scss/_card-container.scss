@@ -1,12 +1,14 @@
 .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 2rem;
     justify-content: center;
     max-width: 1500px;
     width: 100%;
     margin: 0 auto;
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
     position: relative;
 
     &--hidden {

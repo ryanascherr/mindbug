@@ -187,6 +187,23 @@ export function getTriggerCriteria() {
     $(".js_criteria-triggers").text(message);
 }
 
+export function getPowerCriteria(power) {
+    let atLeast = $('.js_power-at-least').is(':checked');
+    let atMost = $('.js_power-at-most').is(':checked');
+    let exactly = $('.js_power-exactly').is(':checked');
+    let message = "";
+
+    if (atLeast) {
+        message = `with at least ${power} Power`;
+    } else if (atMost) {
+        message = `with at most ${power} Power`;
+    } else if (exactly) {
+        message = `with exactly ${power} Power`;
+    }
+
+    $(".js_criteria-power").text(message);
+}
+
 export function getOtherCriteria() {
     let single = $('.js_single').is(':checked');
     let double = $('.js_double').is(':checked');
@@ -195,9 +212,6 @@ export function getOtherCriteria() {
     let message1 = "";
     let message2 = "";
     let notTheFirst = false;
-
-    //TODO Fix display for clicking and then unclicking boost and evolved
-    //TODO Fix display for clicking and then unclicking set
 
     if (single) {
         message2 = "that are Singles";
@@ -231,35 +245,21 @@ export function getOtherCriteria() {
 }
 
 export function getOrderCriteria() {
+    let set = $('.js_order-set').is(':checked');
     let alph = $('.js_alph').is(':checked');
     let power = $('.js_power').is(':checked');
     let revPower = $('.js_rev-power').is(':checked');
     let message = "";
 
-    if (alph) {
+    if (set) {
+        message = "Set";
+    } else if (alph) {
         message = "Name";
     } else if (power) {
-        message = "Power";
+        message = "Decreasing Power";
     } else if (revPower) {
-        message = "Reverse Power";
+        message = "Increasing Power";
     }
 
     $(".js_criteria-order").text(message);
-}
-
-export function getPowerCriteria(power) {
-    let atLeast = $('.js_power-at-least').is(':checked');
-    let atMost = $('.js_power-at-most').is(':checked');
-    let exactly = $('.js_power-exactly').is(':checked');
-    let message = "";
-
-    if (atLeast) {
-        message = `with at least ${power} Power`;
-    } else if (atMost) {
-        message = `with at most ${power} Power`;
-    } else if (exactly) {
-        message = `with exactly ${power} Power`;
-    }
-
-    $(".js_criteria-power").text(message);
 }
