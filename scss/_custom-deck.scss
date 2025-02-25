@@ -28,9 +28,10 @@
     flex-direction: column;
     align-items: center;
 
-    &--unavailable {
-        pointer-events: none;
-        opacity: 50%;
+    &--border {
+        img {
+            outline: 3px solid #411928;
+        }
     }
 }
 

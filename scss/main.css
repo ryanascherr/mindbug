@@ -77,7 +77,7 @@
 }
 
 .card {
-  transition: all 0.35s;
+  transition: transform 0.35s;
   border-radius: 15px;
   width: 100%;
 }
@@ -149,9 +149,8 @@
   flex-direction: column;
   align-items: center;
 }
-.custom-deck-items--unavailable {
-  pointer-events: none;
-  opacity: 50%;
+.custom-deck-items--border img {
+  outline: 3px solid #411928;
 }
 
 .custom-deck-holder {

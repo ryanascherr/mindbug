@@ -2,6 +2,7 @@ import { getImageName } from "./placeCards.js";
 import { creatures } from "./script.js";
 
 //TODO Fix when change tabs
+//TODO Fix evolution conditional
 
 export function showAllCards() {
     $(".js_custom-deck-card-options").empty();
@@ -25,17 +26,38 @@ export function showAllCards() {
 }
 
 $(document).on('click','.js_add-to-deck-btn',function(e){
+
     let creatureIndex = parseInt($(this).attr('data-index'));
-    addToCustomDeck(creatureIndex);
-    $(this).parent().addClass("custom-deck-items--unavailable");
-    $(".custom-deck-link-display").text("");
+    let isAlreadyThere = false;
+
+    checkIfAlreadyThere(creatureIndex);
+    function checkIfAlreadyThere(creatureIndex) {
+        if ($(`.js_custom-card-number[data-index='${creatureIndex}']`).length != 0) {
+            isAlreadyThere = true;
+        };
+    }
+
+    if (isAlreadyThere) {
+        
+        let numberDiv = $(`.js_custom-card-number[data-index='${creatureIndex}']`);
+        let currentNumber = parseInt($(`.js_custom-card-number[data-index='${creatureIndex}']`).text());
+        if (currentNumber == 26) return;
+        let newNumber = currentNumber+1;
+        $(numberDiv).text(newNumber);
+        updateCustomDeckCardCounter();
+        resetCustomDeckLink();
+    } else {
+        addToCustomDeck(creatureIndex);
+        $(this).parent().addClass("custom-deck-items--border");
+        $(".custom-deck-link-display").text("");
+    }
 });
 
 $(document).on('click','.js_custom-deck-remove',function(e){
     let index = $(this).attr('data-index');
     $(this).parent().remove();
     let cardOnLeft = $(".card-container").find(`[data-index='${index}']`);
-    $(cardOnLeft).parent().removeClass("custom-deck-items--unavailable");
+    $(cardOnLeft).parent().removeClass("custom-deck-items--border");
     $(".js_custom-deck-link").text("");
     updateCustomDeckCardCounter();
     resetCustomDeckLink();
@@ -54,7 +76,7 @@ function addToCustomDeck(creatureIndex) {
             <img alt="${creature.name}. ${creature.ability}" loading="lazy" class="card custom-deck-holder__card js_custom-deck-card" data-index="${creatureIndex}" src="./img/cards/${name}.jpg">
             <div class="custom-card-controls change-card-amount-btns">
                 <button class="custom-card-controls__btn js_custom-card-subtract custom-subtract-btn">-</button>
-                <div class="custom-card-controls__number js_custom-card-number">1</div>
+                <div class="custom-card-controls__number js_custom-card-number" data-index="${creatureIndex}">1</div>
                 <button class="custom-card-controls__btn js_custom-card-add custom-add-btn">+</button>
             </div>
             <button class="btn btn--size-sm custom-deck-holder__remove-btn js_custom-deck-remove" data-index="${creatureIndex}">Remove</button> 
@@ -111,7 +133,7 @@ function updateCustomDeckCardCounter() {
     if ($(".js_custom-deck-card-counter").text() == "0") {
         $(".js_custom-deck-create-link-btn").addClass("btn--hidden");
         $(".js_custom-deck-copy-deck-btn").addClass("btn--hidden");
-        // $(".js_custom-deck-link").addClass("hidden");
+        $(".js_custom-deck-link").addClass("hidden");
     } else {
         $(".js_custom-deck-create-link-btn").removeClass("btn--hidden");
         $(".js_custom-deck-copy-deck-btn").removeClass("btn--hidden");
@@ -195,7 +217,7 @@ function placeUploadedCards() {
                 let ability = this.ability;
 
 
-                makeCardUnavailable(index);
+                markCardAsSelected(index);
 
                 let howManyOfThisCard = listOfCardLetters[indexOfArray];
                 howManyOfThisCard = howManyOfThisCard.charCodeAt(0) - 96;
@@ -224,13 +246,13 @@ function resetCardAvailability() {
     let allCards = $(".custom-deck-items");
     $(allCards).each(function( index ) {
         let card = $(this)[0];
-        $(card).removeClass("custom-deck-items--unavailable");
+        $(card).removeClass("custom-deck-items--border");
     });
     $(".custom-deck-holder").empty();
 }
 
-function makeCardUnavailable(index) {
+function markCardAsSelected(index) {
     let card = $(`.custom-deck-items img[data-index='${index}']`);
-    $(card).parent().addClass("custom-deck-items--unavailable");
+    $(card).parent().addClass("custom-deck-items--border");
 }
 
