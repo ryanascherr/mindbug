@@ -21,6 +21,20 @@
     &__instructions {
         margin-top: 0;
     }
+
+    @media only screen and (max-width: 768px){
+        &__btn-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                margin: 5px;
+            }
+
+        }
+    }
 }
 
 .custom-deck-items {
@@ -109,4 +123,5 @@
     &__btn:hover {
         cursor: pointer;
     }
+
 }

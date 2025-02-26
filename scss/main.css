@@ -143,6 +143,17 @@
 .custom-deck__instructions {
   margin-top: 0;
 }
+@media only screen and (max-width: 768px) {
+  .custom-deck__btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .custom-deck__btn-container button {
+    margin: 5px;
+  }
+}
 
 .custom-deck-items {
   display: flex;
