@@ -55,8 +55,18 @@
     }
 
     &__list-item {
-        margin: 5px;
+        margin: 7.5px;
         width: fit-content;
+        display: flex;
+        align-items: center;
+    }
+
+    &__label {
+        margin-left: 2.5px;
+    }
+
+    &__select {
+        margin-left: 5px;
     }
 
     &__list-item:hover,

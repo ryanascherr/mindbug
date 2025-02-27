@@ -278,9 +278,17 @@
   }
 }
 .filters__list-item {
-  margin: 5px;
+  margin: 7.5px;
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.filters__label {
+  margin-left: 2.5px;
+}
+.filters__select {
+  margin-left: 5px;
 }
 .filters__list-item:hover, .filters__input:hover, .filters__label:hover, .filters__select:hover {
   cursor: pointer;
