@@ -1,24 +1,25 @@
-export function getSets(array, firstContact, newServants, eternity, evolution, promo22, promo23) {
+export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
-
     if (!newServants) {
         array = array.filter(creature => creature.set.name != "New Servants");
     }
-
     if (!eternity) {
         array = array.filter(creature => creature.set.name != "Beyond Eternity");
     }
-
     if (!evolution) {
         array = array.filter(creature => creature.set.name != "Beyond Evolution");
     }
-
+    if (!kingdom) {
+        array = array.filter(creature => creature.set.name != "Battlefruit Kingdom");
+    }
+    if (!galaxy) {
+        array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
+    }
     if (!promo22) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
     }
-
     if (!promo23) {
         array = array.filter(creature => creature.set.name != "Promo 2023");
     }

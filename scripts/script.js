@@ -90,14 +90,14 @@ $(".js_criteria").click(function() {
 $(".js_filter-btn").click(function() {
     let array = creatures;
 
-    let [firstContact, newServants, eternity, evolution, promo22, promo23] = checkSets();
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
     let [play, attack, defeated, action, discard] = checkTriggers();
     let [boost, evolved, single, double] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
-    array = getSets(array, firstContact, newServants, eternity, evolution, promo22, promo23);
+    array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
     array = getTriggers(array, play, attack, defeated, action, discard);
     array = getOther(array, boost, evolved, single, double);
