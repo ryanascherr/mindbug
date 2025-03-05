@@ -5,9 +5,7 @@ export function checkSets() {
     let evolution = $('.js_evolution').is(':checked');
     let kingdom = $('.js_kingdom').is(':checked');
     let galaxy = $('.js_galaxy').is(':checked');
-    let promo = $('.js_promo-22').is(':checked');
-    // let promo22 = $('.js_promo-22').is(':checked');
-    // let promo23 = $('.js_promo-23').is(':checked');
+    let promo = $('.js_promo').is(':checked');
 
     return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo];
 }

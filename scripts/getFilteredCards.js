@@ -18,14 +18,9 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
     }
     if (!promo) {
-        array = array.filter(creature => creature.set.name != "Promo 2022" || creature.set.name != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Promo 2022");
+        array = array.filter(creature => creature.set.name != "Promo 2023");
     }
-    // if (!promo22) {
-    //     array = array.filter(creature => creature.set.name != "Promo 2022");
-    // }
-    // if (!promo23) {
-    //     array = array.filter(creature => creature.set.name != "Promo 2023");
-    // }
 
     return array;
 }
