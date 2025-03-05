@@ -12,12 +12,13 @@ export function getSetCriteria() {
     let eternity = $('.js_eternity').is(':checked');
     let evolution = $('.js_evolution').is(':checked');
     let kingdom = $('.js_kingdom').is(':checked');
+    let galaxy = $('.js_galaxy').is(':checked');
     let promo22 = $('.js_promo-22').is(':checked');
     let promo23 = $('.js_promo-23').is(':checked');
     let message = "";
     let notTheFirst = false;
 
-    if (firstContact && newServants && eternity && evolution && kingdom && promo22 & promo23) {
+    if (firstContact && newServants && eternity && evolution && kingdom ** galaxy && promo22 & promo23) {
         message = "All Sets";
         $(".js_criteria-sets").text(message);
         return;
@@ -60,6 +61,15 @@ export function getSetCriteria() {
             message += " & Battlefruit Kingdom";
         } else {
             message += "Battlefruit Kingdom"
+        }
+        notTheFirst = true;
+    }
+
+    if (galaxy) {
+        if (notTheFirst) {
+            message += " & Battlefruit Galaxy";
+        } else {
+            message += "Battlefruit Galaxy"
         }
         notTheFirst = true;
     }
