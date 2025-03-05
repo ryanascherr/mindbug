@@ -27,7 +27,7 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     return array;
 }
 
-export function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
+export function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast) {
 
     function getCurrentKeyword(creature, keyword) {
         let isKeywordHere = false;
@@ -65,10 +65,14 @@ export function getKeywords(array, poisonous, hunter, frenzy, tough, sneaky) {
         array = array.filter(creature => getCurrentKeyword(creature, "Sneaky"));
     }
 
+    if (fast) {
+        array = array.filter(creature => getCurrentKeyword(creature, "Fast"));
+    }
+
     return array;
 }
 
-export function getTriggers(array, play, attack, defeated, action, discard) {
+export function getTriggers(array, play, attack, defeated, action, discard, harvest) {
 
     function getCurrentTrigger(creature, trigger) {
         let isTriggerHere = false;
@@ -104,6 +108,10 @@ export function getTriggers(array, play, attack, defeated, action, discard) {
 
     if (discard) {
         array = array.filter(creature => getCurrentTrigger(creature, "Discard"));
+    }
+
+    if (harvest) {
+        array = array.filter(creature => getCurrentTrigger(creature, "Harvest"));
     }
 
     return array;

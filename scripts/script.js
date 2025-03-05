@@ -8,6 +8,8 @@ import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 import { showAllCards } from './customDeck.js';
 
+//TODO: Update result text for battlefruit filters
+
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
 const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);
@@ -91,15 +93,15 @@ $(".js_filter-btn").click(function() {
     let array = creatures;
 
     let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23] = checkSets();
-    let [poisonous, hunter, frenzy, tough, sneaky] = checkKeywords();
-    let [play, attack, defeated, action, discard] = checkTriggers();
+    let [poisonous, hunter, frenzy, tough, sneaky, fast] = checkKeywords();
+    let [play, attack, defeated, action, discard, harvest] = checkTriggers();
     let [boost, evolved, single, double] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
     array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23);
-    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky);
-    array = getTriggers(array, play, attack, defeated, action, discard);
+    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast);
+    array = getTriggers(array, play, attack, defeated, action, discard, harvest);
     array = getOther(array, boost, evolved, single, double);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower);

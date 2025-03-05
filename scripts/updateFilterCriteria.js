@@ -11,12 +11,13 @@ export function getSetCriteria() {
     let newServants = $('.js_new-servants').is(':checked');
     let eternity = $('.js_eternity').is(':checked');
     let evolution = $('.js_evolution').is(':checked');
+    let kingdom = $('.js_kingdom').is(':checked');
     let promo22 = $('.js_promo-22').is(':checked');
     let promo23 = $('.js_promo-23').is(':checked');
     let message = "";
     let notTheFirst = false;
 
-    if (firstContact && newServants && eternity && evolution && promo22 & promo23) {
+    if (firstContact && newServants && eternity && evolution && kingdom && promo22 & promo23) {
         message = "All Sets";
         $(".js_criteria-sets").text(message);
         return;
@@ -54,6 +55,15 @@ export function getSetCriteria() {
         notTheFirst = true;
     }
 
+    if (kingdom) {
+        if (notTheFirst) {
+            message += " & Battlefruit Kingdom";
+        } else {
+            message += "Battlefruit Kingdom"
+        }
+        notTheFirst = true;
+    }
+
     if (promo22) {
         if (notTheFirst) {
             message += " & Promo Pack 2022";
@@ -79,12 +89,13 @@ export function getKeyWordCriteria() {
     let poisonous = $('.js_poisonous').is(':checked');
     let hunter = $('.js_hunter').is(':checked');
     let frenzy = $('.js_frenzy').is(':checked');
-    let tough = $('.js_tough').is(':checked')
-    let sneaky = $('.js_sneaky').is(':checked')
+    let tough = $('.js_tough').is(':checked');
+    let sneaky = $('.js_sneaky').is(':checked');
+    let fast = $('.js_fast').is(':checked')
     let message = "";
     let notTheFirst = false;
 
-    if (poisonous || hunter || frenzy || tough || sneaky) {
+    if (poisonous || hunter || frenzy || tough || sneaky || fast) {
         message = "with the keyword(s) "
     }
 
@@ -128,6 +139,14 @@ export function getKeyWordCriteria() {
         }
     }
 
+    if (fast) {
+        if (notTheFirst) {
+            message += " & Fast";
+        } else {
+            message += "Fast"
+        }
+    }
+
     $(".js_criteria-keywords").text(message);
 }
 
@@ -137,10 +156,11 @@ export function getTriggerCriteria() {
     let defeated = $('.js_defeated').is(':checked');
     let action = $('.js_action').is(':checked');
     let discard = $('.js_discard').is(':checked');
+    let harvest = $('.js_harvest').is(':checked');
     let message = "";
     let notTheFirst = false;
 
-    if (play || attack || defeated || action || discard) {
+    if (play || attack || defeated || action || discard || harvest) {
         message = "with the trigger(s) "
     }
 
@@ -181,6 +201,13 @@ export function getTriggerCriteria() {
             message += " & In Discard Pile";
         } else {
             message += "In Discard Pile"
+        }
+    }
+    if (harvest) {
+        if (notTheFirst) {
+            message += " & Harvest";
+        } else {
+            message += "Harvest"
         }
     }
 
