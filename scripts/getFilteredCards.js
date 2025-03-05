@@ -1,4 +1,4 @@
-export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23) {
+export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -17,12 +17,15 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     if (!galaxy) {
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
     }
-    if (!promo22) {
-        array = array.filter(creature => creature.set.name != "Promo 2022");
+    if (!promo) {
+        array = array.filter(creature => creature.set.name != "Promo 2022" || creature.set.name != "Promo 2023");
     }
-    if (!promo23) {
-        array = array.filter(creature => creature.set.name != "Promo 2023");
-    }
+    // if (!promo22) {
+    //     array = array.filter(creature => creature.set.name != "Promo 2022");
+    // }
+    // if (!promo23) {
+    //     array = array.filter(creature => creature.set.name != "Promo 2023");
+    // }
 
     return array;
 }
@@ -117,7 +120,7 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     return array;
 }
 
-export function getOther(array, boost, evolved, single, double) {
+export function getOther(array, boost, evolved, single, double, octonite, noAbility) {
     if (single) {
         array = array.filter(creature => creature.amount == 1);
     }
@@ -132,6 +135,14 @@ export function getOther(array, boost, evolved, single, double) {
 
     if (evolved) {
         array = array.filter(creature => creature.evolution == true);
+    }
+
+    if (octonite) {
+        array = array.filter(creature => creature.place_octonite == true);
+    }
+
+    if (noAbility) {
+        array = array.filter(creature => creature.ability == null);
     }
 
     return array;

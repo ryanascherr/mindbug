@@ -14,7 +14,7 @@ const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
 const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);
 const { data, error } = await supabaseData.from('creatures').select(`
-    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution,
+    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution, place_octonite,
     set (
         name
     ),
@@ -92,17 +92,17 @@ $(".js_criteria").click(function() {
 $(".js_filter-btn").click(function() {
     let array = creatures;
 
-    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23] = checkSets();
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky, fast] = checkKeywords();
     let [play, attack, defeated, action, discard, harvest] = checkTriggers();
-    let [boost, evolved, single, double] = checkOther();
+    let [boost, evolved, single, double, octonite, noAbility] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower] = checkOrder();
     
-    array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23);
+    array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast);
     array = getTriggers(array, play, attack, defeated, action, discard, harvest);
-    array = getOther(array, boost, evolved, single, double);
+    array = getOther(array, boost, evolved, single, double, octonite, noAbility);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower);
 

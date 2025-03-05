@@ -51,12 +51,37 @@
                             <label class="filters__label" for="galaxy">Battlefruit Galaxy</label>
                         </li>
                         <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_set js_promo" type="checkbox" id="promo" name="checkbox" value="1">
+                            <label class="filters__label" for="promo">Promo</label>
+                        </li>
+                        <!-- <li class="filters__list-item">
                             <input class="filters__input js_criteria js_set js_promo-22" type="checkbox" id="promo-22" name="checkbox" value="1">
                             <label class="filters__label" for="promo-22">Promo 2022</label>
                         </li>
                         <li class="filters__list-item">
                             <input class="filters__input js_criteria js_set js_promo-23" type="checkbox" id="promo-23" name="checkbox" value="1">
                             <label class="filters__label" for="promo-23">Promo 2023</label>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="filters__filter">
+                    <h2 class="filters__title">Order By</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_order-set" checked type="checkbox" id="order-set" name="checkbox" value="1">
+                            <label class="filters__label" for="order-set">Set</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_alph" type="checkbox" id="alph" name="checkbox" value="1">
+                            <label class="filters__label" for="alph">Name</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
+                            <label class="filters__label" for="rev-power">Increasing Power</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_order js_power" type="checkbox" id="power" name="checkbox" value="1">
+                            <label class="filters__label" for="power">Decreasing Power</label>
                         </li>
                     </ul>
                 </div>
@@ -190,31 +215,18 @@
                             <input class="filters__input js_criteria js_other js_evolved" type="checkbox" id="evolved" name="checkbox" value="1">
                             <label class="filters__label" for="evolved">Evolution</label>
                         </li>
-                    </ul>
-                </div>
-                <div class="filters__filter">
-                    <h2 class="filters__title">Order</h2>
-                    <ul class="filters__list">
                         <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_order-set" checked type="checkbox" id="order-set" name="checkbox" value="1">
-                            <label class="filters__label" for="order-set">Set</label>
+                            <input class="filters__input js_criteria js_other js_octonite" type="checkbox" id="octonite" name="checkbox" value="1">
+                            <label class="filters__label" for="octonite">Place Octonite</label>
                         </li>
                         <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_rev-power" type="checkbox" id="rev-power" name="checkbox" value="1">
-                            <label class="filters__label" for="rev-power">Increasing Power</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_power" type="checkbox" id="power" name="checkbox" value="1">
-                            <label class="filters__label" for="power">Decreasing Power</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_order js_alph" type="checkbox" id="alph" name="checkbox" value="1">
-                            <label class="filters__label" for="alph">Name</label>
+                            <input class="filters__input js_criteria js_other js_no-ability" type="checkbox" id="no-ability" name="checkbox" value="1">
+                            <label class="filters__label" for="no-ability">No Ability</label>
                         </li>
                     </ul>
                 </div>
             </div>
-            <h3 class="action-container__criteria">Your search will show cards from <span class="js_criteria-sets"></span> <span class="js_criteria-keywords"></span> <span class="js_criteria-triggers"></span> <span class="js_criteria-others-1"></span> <span class="js_criteria-others-2"></span> <span class="js_criteria-power"></span> sorted by <span class="js_criteria-order"></span></h3>
+            <!-- <h3 class="action-container__criteria">Your search will show cards from <span class="js_criteria-sets"></span> <span class="js_criteria-keywords"></span> <span class="js_criteria-triggers"></span> <span class="js_criteria-others-1"></span> <span class="js_criteria-others-2"></span> <span class="js_criteria-power"></span> sorted by <span class="js_criteria-order"></span></h3> -->
             <div class="action-container__btn-container">
                 <button class="btn js_filter-btn">Search with Filters</button>
             </div>

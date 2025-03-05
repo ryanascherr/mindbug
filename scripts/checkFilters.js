@@ -5,10 +5,11 @@ export function checkSets() {
     let evolution = $('.js_evolution').is(':checked');
     let kingdom = $('.js_kingdom').is(':checked');
     let galaxy = $('.js_galaxy').is(':checked');
-    let promo22 = $('.js_promo-22').is(':checked');
-    let promo23 = $('.js_promo-23').is(':checked');
+    let promo = $('.js_promo-22').is(':checked');
+    // let promo22 = $('.js_promo-22').is(':checked');
+    // let promo23 = $('.js_promo-23').is(':checked');
 
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo22, promo23];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo];
 }
 
 export function checkKeywords() {
@@ -38,8 +39,10 @@ export function checkOther() {
     let evolved = $('.js_evolved').is(':checked');
     let single = $('.js_single').is(':checked');
     let double = $('.js_double').is(':checked');
+    let octonite = $('.js_octonite').is(':checked');
+    let noAbilty = $('.js_no-ability').is(':checked');
 
-    return [boost, evolved, single, double];
+    return [boost, evolved, single, double, octonite, noAbilty];
 }
 
 export function checkPower() {
