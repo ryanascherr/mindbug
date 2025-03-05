@@ -3,8 +3,8 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, newServants, eternity, evolution, promo] = checkSetsHand();
-    array = getPack(array, firstContact, newServants, eternity, evolution, promo);
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo] = checkSetsHand();
+    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
 
@@ -50,7 +50,7 @@ export function dealHand(creatures) {
     }
 }
 
-export function getPack(array, firstContact, newServants, eternity, evolution, promo) {
+export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -67,6 +67,14 @@ export function getPack(array, firstContact, newServants, eternity, evolution, p
         array = array.filter(creature => creature.set.name != "Beyond Evolution");
     }
 
+    if (!kingdom) {
+        array = array.filter(creature => creature.set.name != "Battlefruit Kingdom");
+    }
+
+    if (!galaxy) {
+        array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
+    }
+
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
         array = array.filter(creature => creature.set.name != "Promo 2023");
@@ -80,7 +88,10 @@ function checkSetsHand() {
     let newServants;
     let eternity;
     let evolution;
+    let kingdom;
+    let galaxy;
     let promo;
+
     if($('.js_hand-first-contact').is(':checked')){
         firstContact = true;
     }
@@ -93,8 +104,14 @@ function checkSetsHand() {
     if($('.js_hand-evolution').is(':checked')){
         evolution = true;
     }
+    if($('.js_hand-kingdom').is(':checked')){
+        kingdom = true;
+    }
+    if($('.js_hand-galaxy').is(':checked')){
+        galaxy = true;
+    }
     if($('.js_hand-promo').is(':checked')){
         promo = true;
     }
-    return [firstContact, newServants, eternity, evolution, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo];
 }

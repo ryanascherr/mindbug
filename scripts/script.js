@@ -154,6 +154,12 @@ $(".js_hand").click(function(e) {
     if ($(".js_hand-evolution").is(':checked')) {
         numberChecked++;
     }
+    if ($(".js_hand-kingdom").is(':checked')) {
+        numberChecked++;
+    }
+    if ($(".js_hand-galaxy").is(':checked')) {
+        numberChecked++;
+    }
     if ($(".js_hand-promo").is(':checked')) {
         numberChecked++;
     }
