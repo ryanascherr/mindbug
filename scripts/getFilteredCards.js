@@ -1,4 +1,4 @@
-export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo) {
+export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -16,6 +16,9 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     }
     if (!galaxy) {
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
+    }
+    if (!tagTeam) {
+        array = array.filter(creature => creature.set.name != "Tag Team");
     }
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
@@ -155,7 +158,7 @@ export function getPower(array, atLeast, atMost, exactly, powerNumber) {
     return array;
 }
 
-export function getOrder(array, alph, power, revPower) {
+export function getOrder(array, alph, power, revPower, set) {
     if (alph) {
         array = array.sort(function(a, b) {
             return a === b ? 0 : a.name < b.name ? -1 : 1;
@@ -164,6 +167,8 @@ export function getOrder(array, alph, power, revPower) {
         array = array.sort((a, b) => b.power - a.power);
     } else if (revPower) {
         array = array.sort((a, b) => a.power - b.power);
+    } else if (set) {
+        array = array.sort((a, b) => a.id - b.id);
     }
 
     return array;

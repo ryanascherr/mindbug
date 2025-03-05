@@ -5,9 +5,10 @@ export function checkSets() {
     let evolution = $('.js_evolution').is(':checked');
     let kingdom = $('.js_kingdom').is(':checked');
     let galaxy = $('.js_galaxy').is(':checked');
+    let tagTeam = $('.js_tag-team').is(':checked');
     let promo = $('.js_promo').is(':checked');
 
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
 }
 
 export function checkKeywords() {
@@ -67,6 +68,7 @@ export function checkOrder() {
     let alph = $('.js_alph').is(':checked');
     let power = $('.js_power').is(':checked');
     let revPower = $('.js_rev-power').is(':checked');
+    let set = $('.js_order-set').is(':checked');
 
-    return [alph, power, revPower];
+    return [alph, power, revPower, set];
 }
