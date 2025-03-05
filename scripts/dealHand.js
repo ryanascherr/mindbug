@@ -3,8 +3,8 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo] = checkSetsHand();
-    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo);
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSetsHand();
+    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
 
@@ -50,7 +50,7 @@ export function dealHand(creatures) {
     }
 }
 
-export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, promo) {
+export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -75,6 +75,10 @@ export function getSet(array, firstContact, newServants, eternity, evolution, ki
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
     }
 
+    if (!tagTeam) {
+        array = array.filter(creature => creature.set.name != "Tag Team");
+    }
+
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
         array = array.filter(creature => creature.set.name != "Promo 2023");
@@ -90,6 +94,7 @@ function checkSetsHand() {
     let evolution;
     let kingdom;
     let galaxy;
+    let tagTeam;
     let promo;
 
     if($('.js_hand-first-contact').is(':checked')){
@@ -110,8 +115,11 @@ function checkSetsHand() {
     if($('.js_hand-galaxy').is(':checked')){
         galaxy = true;
     }
+    if($('.js_hand-tag-team').is(':checked')){
+        tagTeam = true;
+    }
     if($('.js_hand-promo').is(':checked')){
         promo = true;
     }
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
 }
