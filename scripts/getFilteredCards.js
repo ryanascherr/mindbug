@@ -119,7 +119,7 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     return array;
 }
 
-export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, noAbility) {
+export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility) {
     if (single) {
         array = array.filter(creature => creature.amount == 1);
     }
@@ -142,6 +142,10 @@ export function getOther(array, boost, evolved, single, double, octonite, otherT
 
     if (otherTagTeam) {
         array = array.filter(creature => creature.tag_team == true);
+    }
+
+    if (harmfulAbility) {
+        array = array.filter(creature => creature.harmful_ability == true);
     }
 
     if (noAbility) {
@@ -173,7 +177,65 @@ export function getOrder(array, alph, power, revPower, set) {
     } else if (revPower) {
         array = array.sort((a, b) => a.power - b.power);
     } else if (set) {
-        array = array.sort((a, b) => a.id - b.id);
+        // array = array.sort((a, b) => a.id - b.id);
+        let setArray = [];
+        $(array).each(function( index ) {
+            if (this.set.name == "First Contact") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "New Servants") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Beyond Eternity") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Beyond Evolution") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Battlefruit Kingdom") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Battlefruit Galaxy") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Tag Team") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Battlefruit Add-On") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Promo 2022") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Promo 2023") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
+            if (this.set.name == "Promo 2024") {
+                setArray.push(this);
+            }
+        });
+        
+        array = setArray;
     }
 
     return array;

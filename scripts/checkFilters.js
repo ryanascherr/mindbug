@@ -40,9 +40,10 @@ export function checkOther() {
     let double = $('.js_double').is(':checked');
     let octonite = $('.js_octonite').is(':checked');
     let otherTagTeam = $('.js_other-tag-team').is(':checked');
+    let harmfulAbility = $('.js_harmful-ability').is(':checked');
     let noAbilty = $('.js_no-ability').is(':checked');
 
-    return [boost, evolved, single, double, octonite, otherTagTeam, noAbilty];
+    return [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbilty];
 }
 
 export function checkPower() {
