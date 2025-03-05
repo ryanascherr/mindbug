@@ -23,7 +23,7 @@ export function dealHand(creatures) {
         if (array[randomNumber].evolution == true) {
             let creature = array[randomNumber];
             let name = creature.name;
-            if (name != "Cloud Lady" && name != "Curious Tadpole" && name != "Kitten Crewmate" && name != "Tuckbox Mimic" && name != "Waddling Recruit" && name != "Wildsprout") {
+            if (name != "Cloud Lady" && name != "Curious Tadpole" && name != "Kitten Crewmate" && name != "Tuckbox Mimic" && name != "Waddling Recruit" && name != "Wildsprout" && name != "Cutecat") {
                 addCardToHand();
                 return;
             }
@@ -82,6 +82,7 @@ export function getSet(array, firstContact, newServants, eternity, evolution, ki
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
         array = array.filter(creature => creature.set.name != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Battlefruit Add-On");
     }
 
     return array;

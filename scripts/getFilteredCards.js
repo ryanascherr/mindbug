@@ -23,6 +23,7 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
         array = array.filter(creature => creature.set.name != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Battlefruit Add-On");
     }
 
     return array;
@@ -118,7 +119,7 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     return array;
 }
 
-export function getOther(array, boost, evolved, single, double, octonite, noAbility) {
+export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, noAbility) {
     if (single) {
         array = array.filter(creature => creature.amount == 1);
     }
@@ -137,6 +138,10 @@ export function getOther(array, boost, evolved, single, double, octonite, noAbil
 
     if (octonite) {
         array = array.filter(creature => creature.place_octonite == true);
+    }
+
+    if (otherTagTeam) {
+        array = array.filter(creature => creature.tag_team == true);
     }
 
     if (noAbility) {

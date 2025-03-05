@@ -93,14 +93,14 @@ $(".js_filter-btn").click(function() {
     let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky, fast] = checkKeywords();
     let [play, attack, defeated, action, discard, harvest] = checkTriggers();
-    let [boost, evolved, single, double, octonite, noAbility] = checkOther();
+    let [boost, evolved, single, double, octonite, otherTagTeam, noAbility] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower, set] = checkOrder();
     
     array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast);
     array = getTriggers(array, play, attack, defeated, action, discard, harvest);
-    array = getOther(array, boost, evolved, single, double, octonite, noAbility);
+    array = getOther(array, boost, evolved, single, double, octonite, otherTagTeam, noAbility);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower, set);
 

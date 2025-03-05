@@ -10,7 +10,7 @@ export function showAllCards() {
     $(resetCreatures).each(function(index) {
 
         if (this.evolution) {
-            if (this.name != "Cloud Lady" && this.name != "Curious Tadpole" && this.name != "Kitten Crewmate" && this.name != "Tuckbox Mimic" && this.name != "Waddling Recruit" && this.name != "Wildsprout") {
+            if (this.name != "Cloud Lady" && this.name != "Curious Tadpole" && this.name != "Kitten Crewmate" && this.name != "Tuckbox Mimic" && this.name != "Waddling Recruit" && this.name != "Wildsprout" && this.name != "Cutecat") {
                 return;
             }
         }
