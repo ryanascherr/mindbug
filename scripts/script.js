@@ -12,7 +12,7 @@ const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
 const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);
 const { data, error } = await supabaseData.from('creatures').select(`
-    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution, place_octonite, tag_team, harmful_ability, change_control,
+    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution, place_octonite, tag_team, harmful_ability, change_control, change_power, get_from_discard_pile, cannot_attack, cannot_block,
     set (
         name
     ),
@@ -93,14 +93,14 @@ $(".js_filter-btn").click(function() {
     let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSets();
     let [poisonous, hunter, frenzy, tough, sneaky, fast] = checkKeywords();
     let [play, attack, defeated, action, discard, harvest] = checkTriggers();
-    let [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control] = checkOther();
+    let [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower, set] = checkOrder();
     
     array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast);
     array = getTriggers(array, play, attack, defeated, action, discard, harvest);
-    array = getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control);
+    array = getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower, set);
 

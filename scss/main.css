@@ -242,11 +242,6 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-@media only screen and (min-width: 1200px) {
-  .filters {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 .filters--one-column {
   grid-template-columns: 1fr;
   place-items: center;

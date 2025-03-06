@@ -119,7 +119,7 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     return array;
 }
 
-export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control) {
+export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock) {
     if (single) {
         array = array.filter(creature => creature.amount == 1);
     }
@@ -154,6 +154,18 @@ export function getOther(array, boost, evolved, single, double, octonite, otherT
 
     if (control) {
         array = array.filter(creature => creature.change_control == true);
+    }
+
+    if (changePower) {
+        array = array.filter(creature => creature.change_power == true);
+    }
+
+    if (fromDiscard) {
+        array = array.filter(creature => creature.get_from_discard_pile == true);
+    }
+
+    if (attackBlock) {
+        array = array.filter(creature => creature.cannot_attack == true || creature.cannot_block == true);
     }
 
     return array;
