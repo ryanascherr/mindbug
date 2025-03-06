@@ -46,8 +46,12 @@ export function checkOther() {
     let changePower = $('.js_change-power').is(':checked');
     let fromDiscard = $('.js_pd-discard').is(':checked');
     let attackBlock = $('.js_attack-block').is(':checked');
+    let canGainLife = $('.js_heal').is(':checked');
+    let canDamage = $('.js_damage').is(':checked');
+    let winCondition = $('.js_win').is(':checked');
+    let canDiscard = $('.js_can-discard').is(':checked');
 
-    return [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbilty, control, changePower, fromDiscard, attackBlock];
+    return [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbilty, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard];
 }
 
 export function checkPower() {
