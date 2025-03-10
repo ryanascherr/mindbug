@@ -69,6 +69,17 @@
         margin-left: 5px;
     }
 
+    &__btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        button {
+            margin: 10px;
+        }
+    }
+
     &__list-item:hover,
     &__input:hover,
     &__label:hover,

@@ -25,7 +25,7 @@ const { data, error } = await supabaseData.from('creatures').select(`
 `)
 .order('id', { ascending: true });
 export const creatures = data;
-let modal = $(".modal-content");
+// let modal = $(".modal-content");
 
 initiate();
 function initiate() {
@@ -76,11 +76,18 @@ $(".js_power-c").click(function() {
 });
 
 $(".js_set").click(function(e) {
-    if ($(".js_set").is(':checked')) {
-        getSetCriteria();
-    } else {
-        e.preventDefault();
-    }
+    // if ($(".js_set").is(':checked')) {
+    //     getSetCriteria();
+    // } else {
+    //     e.preventDefault();
+    // }
+})
+
+$(".js_clear-set").click(function() {
+    $(".js_set").prop('checked', false);
+})
+$(".js_check-set").click(function() {
+    $(".js_set").prop('checked', true);
 })
 
 $(".js_criteria").click(function() {

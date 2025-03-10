@@ -285,6 +285,15 @@
 .filters__select {
   margin-left: 5px;
 }
+.filters__btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.filters__btn-container button {
+  margin: 10px;
+}
 .filters__list-item:hover, .filters__input:hover, .filters__label:hover, .filters__select:hover {
   cursor: pointer;
 }
