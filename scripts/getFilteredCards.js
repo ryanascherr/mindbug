@@ -23,6 +23,7 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     if (!promo) {
         array = array.filter(creature => creature.set.name != "Promo 2022");
         array = array.filter(creature => creature.set.name != "Promo 2023");
+        array = array.filter(creature => creature.set.name != "Promo 2024");
         array = array.filter(creature => creature.set.name != "Battlefruit Add-On");
     }
 
