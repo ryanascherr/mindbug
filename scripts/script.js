@@ -25,7 +25,6 @@ const { data, error } = await supabaseData.from('creatures').select(`
 `)
 .order('id', { ascending: true });
 export const creatures = data;
-// let modal = $(".modal-content");
 
 initiate();
 function initiate() {
@@ -43,6 +42,34 @@ $(".js_number").click(function() {
         $('.js_double').prop('checked', false);
     } else {
         $('.js_single').prop('checked', false);
+    }
+})
+$(".js_keyword").click(function() {
+    if ($(this).hasClass("js_no-keywords")) {
+        let keepNoKeywordsChecked = false;
+        if ($(this).is(':checked')) {
+            keepNoKeywordsChecked = true;
+        }
+        $('.js_keyword').prop('checked', false);
+        if (keepNoKeywordsChecked) {
+            $(this).prop('checked', true);
+        }
+    } else {
+        $('.js_no-keywords').prop('checked', false);
+    }
+})
+$(".js_trigger").click(function() {
+    if ($(this).hasClass("js_no-triggers")) {
+        let keepNoTriggersChecked = false;
+        if ($(this).is(':checked')) {
+            keepNoTriggersChecked = true;
+        }
+        $('.js_trigger').prop('checked', false);
+        if (keepNoTriggersChecked) {
+            $(this).prop('checked', true);
+        }
+    } else {
+        $('.js_no-triggers').prop('checked', false);
     }
 })
 
@@ -75,14 +102,6 @@ $(".js_power-c").click(function() {
     getPowerCriteria(power);
 });
 
-$(".js_set").click(function(e) {
-    // if ($(".js_set").is(':checked')) {
-    //     getSetCriteria();
-    // } else {
-    //     e.preventDefault();
-    // }
-})
-
 $(".js_clear-set").click(function() {
     $(".js_set").prop('checked', false);
 })
@@ -98,15 +117,15 @@ $(".js_filter-btn").click(function() {
     let array = creatures;
 
     let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSets();
-    let [poisonous, hunter, frenzy, tough, sneaky, fast] = checkKeywords();
-    let [play, attack, defeated, action, discard, harvest] = checkTriggers();
+    let [poisonous, hunter, frenzy, tough, sneaky, fast, noKeywords] = checkKeywords();
+    let [play, attack, defeated, action, discard, harvest, noTriggers] = checkTriggers();
     let [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard] = checkOther();
     let [atLeast, atMost, exactly, powerNumber] = checkPower();
     let [alph, power, revPower, set] = checkOrder();
     
     array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
-    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast);
-    array = getTriggers(array, play, attack, defeated, action, discard, harvest);
+    array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast, noKeywords);
+    array = getTriggers(array, play, attack, defeated, action, discard, harvest, noTriggers);
     array = getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard);
     array = getPower(array, atLeast, atMost, exactly, powerNumber);
     array = getOrder(array, alph, power, revPower, set);

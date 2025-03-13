@@ -18,8 +18,9 @@ export function checkKeywords() {
     let tough = $('.js_tough').is(':checked');
     let sneaky = $('.js_sneaky').is(':checked');
     let fast = $('.js_fast').is(':checked');
+    let noKeywords = $('.js_no-keywords').is(':checked');
 
-    return [poisonous, hunter, frenzy, tough, sneaky, fast];
+    return [poisonous, hunter, frenzy, tough, sneaky, fast, noKeywords];
 }
 
 export function checkTriggers() {
@@ -29,8 +30,9 @@ export function checkTriggers() {
     let action = $('.js_action').is(':checked');
     let discard = $('.js_discard').is(':checked');
     let harvest = $('.js_harvest').is(':checked');
+    let noTriggers = $('.js_no-triggers').is(':checked');
 
-    return [play, attack, defeated, action, discard, harvest];
+    return [play, attack, defeated, action, discard, harvest, noTriggers];
 }
 
 export function checkOther() {
