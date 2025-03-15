@@ -122,7 +122,6 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     }
 
     if (noTriggers) {
-        console.log(noTriggers)
         array = array.filter(creature => creature.triggers.length == 0);
     }
 

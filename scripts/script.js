@@ -1,5 +1,4 @@
 import { placeCards, getImageName } from './placeCards.js';
-import { updateCriteria, getSetCriteria, getPowerCriteria } from './updateFilterCriteria.js';
 import { checkSets, checkKeywords, checkTriggers, checkOther, checkPower, checkOrder } from './checkFilters.js';
 import { getSets, getKeywords, getTriggers, getOther, getPower, getOrder } from './getFilteredCards.js';
 import { dealHand } from './dealHand.js';
@@ -7,6 +6,7 @@ import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './
 import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 import { showAllCards } from './customDeck.js';
+// import { checkAndUncheckInputs } from './inpputCommand.js';
 
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
@@ -29,7 +29,6 @@ export const creatures = data;
 initiate();
 function initiate() {
     openFilter()
-    updateCriteria();
 }
 
 $(".js_order").click(function() {
@@ -77,10 +76,6 @@ $('.js_select').on('change', function() {
     let power = parseInt($(this).val());
     let parent = $(this).parent();
     let relatedInput = $(parent).children('input');
-
-    if($(relatedInput).is(':checked')){
-        getPowerCriteria(power);
-    }
 });
 
 $(".js_power-c").click(function() {
@@ -98,8 +93,6 @@ $(".js_power-c").click(function() {
     } else {
         $(select).prop('disabled', true)
     }
-
-    getPowerCriteria(power);
 });
 
 $(".js_clear-set").click(function() {
@@ -109,11 +102,13 @@ $(".js_check-set").click(function() {
     $(".js_set").prop('checked', true);
 })
 
-$(".js_criteria").click(function() {
-    updateCriteria();
-});
+// $(".js_criteria").click(function() {
+//     let clickedInput = this;
+//     checkAndUncheckInputs(clickedInput);
+// });
 
 $(".js_filter-btn").click(function() {
+    // getCards();
     let array = creatures;
 
     let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSets();
@@ -192,8 +187,6 @@ $(".js_hand").click(function(e) {
     }
     if (numberChecked == 0) {
         e.preventDefault();
-    } else {
-        getSetCriteria();
     }
 })
 
