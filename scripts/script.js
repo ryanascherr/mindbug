@@ -85,13 +85,20 @@ $(".js_power-c").click(function() {
     let power = parseInt($(select).val());
 
     if ($(input).is(':checked')) {
-        $('.js_power-c').prop('checked', false);
         $(input).prop('checked', true);
-        $('.js_power-select').prop('disabled', true);
+        if ($(input).hasClass("js_power-at-least") || $(input).hasClass("js_power-at-most")) {
+            $(".js_power-exactly").prop('checked', false);
+            $(".js_select-power-exactly").prop('disabled', true);
+        } else {
+            $(".js_power-at-least").prop('checked', false);
+            $(".js_select-power-at-least").prop('disabled', true);
+            $(".js_power-at-most").prop('checked', false);
+            $(".js_select-power-at-most").prop('disabled', true);
+        }
         $(input).prop('disabled', false);
-        $(select).prop('disabled', false)
+        $(select).prop('disabled', false);
     } else {
-        $(select).prop('disabled', true)
+        $(select).prop('disabled', true);
     }
 });
 
@@ -115,14 +122,14 @@ $(".js_filter-btn").click(function() {
     let [poisonous, hunter, frenzy, tough, sneaky, fast, noKeywords] = checkKeywords();
     let [play, attack, defeated, action, discard, harvest, noTriggers] = checkTriggers();
     let [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard, giveKeywords] = checkOther();
-    let [atLeast, atMost, exactly, powerNumber] = checkPower();
+    let [atLeast, atMost, exactly, powerNumber, powerNumberTwo] = checkPower();
     let [alph, power, revPower, set] = checkOrder();
     
     array = getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
     array = getKeywords(array, poisonous, hunter, frenzy, tough, sneaky, fast, noKeywords);
     array = getTriggers(array, play, attack, defeated, action, discard, harvest, noTriggers);
     array = getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard, giveKeywords);
-    array = getPower(array, atLeast, atMost, exactly, powerNumber);
+    array = getPower(array, atLeast, atMost, exactly, powerNumber, powerNumberTwo);
     array = getOrder(array, alph, power, revPower, set);
 
     prepareForCards(array);

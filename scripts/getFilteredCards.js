@@ -200,8 +200,10 @@ export function getOther(array, boost, evolved, single, double, octonite, otherT
     return array;
 }
 
-export function getPower(array, atLeast, atMost, exactly, powerNumber) {
-    if (atLeast) {
+export function getPower(array, atLeast, atMost, exactly, powerNumber, powerNumberTwo) {
+    if (atLeast && atMost) {
+        array = array.filter(creature => creature.power >= powerNumber && creature.power <= powerNumberTwo);
+    } else if (atLeast) {
         array = array.filter(creature => creature.power >= powerNumber);
     } else if (atMost) {
         array = array.filter(creature => creature.power <= powerNumber);

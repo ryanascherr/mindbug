@@ -62,8 +62,13 @@ export function checkPower() {
     let atMost = $('.js_power-at-most').is(':checked');
     let exactly = $('.js_power-exactly').is(':checked');
     let parent;
+    let parentTwo;
 
-    if (atLeast) {
+
+    if (atLeast && atMost) {
+        parent = $('.js_power-at-least').parent();
+        parentTwo = $('.js_power-at-most').parent();
+    } else if (atLeast) {
         parent = $('.js_power-at-least').parent();
     } else if (atMost) {
         parent = $('.js_power-at-most').parent();
@@ -73,8 +78,14 @@ export function checkPower() {
 
     let select = $(parent).children('select');
     let powerNumber = parseInt($(select).val());
+    let selectTwo;
+    let powerNumberTwo;
+    if (atLeast && atMost) {
+        selectTwo = $(parentTwo).children('select');
+        powerNumberTwo = parseInt($(selectTwo).val());
+    }
 
-    return [atLeast, atMost, exactly, powerNumber];
+    return [atLeast, atMost, exactly, powerNumber, powerNumberTwo];
 }
 
 export function checkOrder() {
