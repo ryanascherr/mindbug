@@ -203,88 +203,6 @@
                         </li>
                     </ul>
                 </div>
-                <!-- <div class="filters__filter">
-                    <h2 class="filters__title">Triggers</h2>
-                    <ul class="filters__list">
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_play" type="checkbox" id="play" name="checkbox" value="1">
-                            <label class="filters__label" for="play">Play</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_attack" type="checkbox" id="attack" name="checkbox" value="1">
-                            <label class="filters__label" for="attack">Attack</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_defeated" type="checkbox" id="defeated" name="checkbox" value="1">
-                            <label class="filters__label" for="defeated">Defeated</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_action" type="checkbox" id="action" name="checkbox" value="1">
-                            <label class="filters__label" for="action">Action</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_discard" type="checkbox" id="discard" name="checkbox" value="1">
-                            <label class="filters__label" for="discard">In Discard Pile</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_trigger js_harvest" type="checkbox" id="harvest" name="checkbox" value="1">
-                            <label class="filters__label" for="harvest">Harvest</label>
-                        </li>
-                    </ul>
-                </div> -->
-                <!-- <div class="filters__filter">
-                    <h2 class="filters__title">Power</h2>
-                    <ul class="filters__list">
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_power-c js_power-at-least" type="checkbox" id="power-at-least" name="checkbox" value="1">
-                            <label class="filters__label" for="power-at-least">At Least</label>
-                            <select class="filters__select js_select js_select-power-at-least js_power-select" disabled>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option selected value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_power-c js_power-at-most" type="checkbox" id="power-at-most" name="checkbox" value="1">
-                            <label class="filters__label" for="power-at-most">At Most</label>
-                            <select class="filters__select js_select js_select-power-at-most js_power-select" disabled>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option selected value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_power-c js_power-exactly" type="checkbox" id="power-exactly" name="checkbox" value="1">
-                            <label class="filters__label" for="power-exactly">Exactly</label>
-                            <select class="filters__select js_select js_select-power-exactly js_power-select" disabled>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option selected value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div> -->
                 <div class="filters__filter">
                     <h2 class="filters__title">Other</h2>
                     <ul class="filters__list">
@@ -321,6 +239,22 @@
                             <label class="filters__label" for="no-ability">No Ability</label>
                         </li>
                         <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_win" type="checkbox" id="win" name="checkbox" value="1">
+                            <label class="filters__label" for="win">Has Win Condition</label>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h2>Ability Can...</h2>
+                    <ul class="filters__list">
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_heal" type="checkbox" id="heal" name="checkbox" value="1">
+                            <label class="filters__label" for="heal">Gain Life</label>
+                        </li>
+                        <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_damage" type="checkbox" id="damage" name="checkbox" value="1">
+                            <label class="filters__label" for="damage">Damage</label>
+                        </li>
+                        <li class="filters__list-item">
                             <input class="filters__input js_criteria js_other js_control" type="checkbox" id="control" name="checkbox" value="1">
                             <label class="filters__label" for="control">Change Control</label>
                         </li>
@@ -329,28 +263,16 @@
                             <label class="filters__label" for="change-power">Change Power</label>
                         </li>
                         <li class="filters__list-item">
+                            <input class="filters__input js_criteria js_other js_can-discard" type="checkbox" id="can-discard" name="checkbox" value="1">
+                            <label class="filters__label" for="can-discard">Discard Cards</label>
+                        </li>
+                        <li class="filters__list-item">
                             <input class="filters__input js_criteria js_other js_pd-discard" type="checkbox" id="pd-discard" name="checkbox" value="1">
-                            <label class="filters__label" for="pd-discard">Play/Draw from Discard Pile</label>
+                            <label class="filters__label" for="pd-discard">Draw/Play from Discard Pile</label>
                         </li>
                         <li class="filters__list-item">
                             <input class="filters__input js_criteria js_other js_attack-block" type="checkbox" id="attack-block" name="checkbox" value="1">
-                            <label class="filters__label" for="attack-block">Cannot Attack/Block</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_other js_heal" type="checkbox" id="heal" name="checkbox" value="1">
-                            <label class="filters__label" for="heal">Ability Can Gain Life</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_other js_damage" type="checkbox" id="damage" name="checkbox" value="1">
-                            <label class="filters__label" for="damage">Ability Can Damage</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_other js_can-discard" type="checkbox" id="can-discard" name="checkbox" value="1">
-                            <label class="filters__label" for="can-discard">Ability Can Discard</label>
-                        </li>
-                        <li class="filters__list-item">
-                            <input class="filters__input js_criteria js_other js_win" type="checkbox" id="win" name="checkbox" value="1">
-                            <label class="filters__label" for="win">Has Win Condition</label>
+                            <label class="filters__label" for="attack-block">Prevent Attack/Block</label>
                         </li>
                     </ul>
                 </div>
