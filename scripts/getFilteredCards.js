@@ -128,7 +128,7 @@ export function getTriggers(array, play, attack, defeated, action, discard, harv
     return array;
 }
 
-export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard) {
+export function getOther(array, boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbility, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard, giveKeywords) {
     if (single) {
         array = array.filter(creature => creature.amount == 1);
     }
@@ -191,6 +191,10 @@ export function getOther(array, boost, evolved, single, double, octonite, otherT
 
     if (canDiscard) {
         array = array.filter(creature => creature.ability_can_discard == true);
+    }
+
+    if (giveKeywords) {
+        array = array.filter(creature => creature.give_keywords == true);
     }
 
     return array;
