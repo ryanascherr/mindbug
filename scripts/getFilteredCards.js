@@ -224,7 +224,7 @@ export function getOrder(array, alph, power, revPower, set) {
     } else if (revPower) {
         array = array.sort((a, b) => a.power - b.power);
     } else if (set) {
-        // array = array.sort((a, b) => a.id - b.id);
+        array = array.sort((a, b) => a.id - b.id);
         let setArray = [];
         $(array).each(function( index ) {
             if (this.set.name == "First Contact") {
