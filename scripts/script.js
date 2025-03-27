@@ -28,7 +28,6 @@ export const creatures = data;
 initiate();
 function initiate() {
     openFilter();
-    placeCards();
 }
 
 // When an input or related button is clicked, check/uncheck all relevant input checkboxes
