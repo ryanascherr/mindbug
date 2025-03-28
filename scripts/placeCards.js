@@ -19,7 +19,7 @@ export function placeCards(arrayOfCardsToPlace) {
     }
 }
 
-function scrollToResults() {
+export function scrollToResults() {
     $('html, body').animate({
         scrollTop: $(".results").offset().top
     });

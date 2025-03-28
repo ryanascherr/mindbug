@@ -6,6 +6,7 @@ import { openModal, closeModal } from './modalControl.js';
 import { showAllCards } from './customDeck.js';
 import { checkAndUncheckInputs } from './inputCommand.js';
 import { getCards } from './getCards.js';
+import { placeMindbugs } from './placeMindbugs.js';
 
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
@@ -37,9 +38,13 @@ $(".js_criteria").click(function() {
 });
 
 $(".js_filter-btn").click(function() {
-    let array = getCards();
-    prepareForCards(array);
-    placeCards(array, creatures);
+    if ($(".js_mindbug").is(':checked')) {
+        placeMindbugs();
+    } else {
+        let array = getCards();
+        prepareForCards(array);
+        placeCards(array, creatures);
+    }
 })
 
 $(".js_hand").click(function(e) {
@@ -104,6 +109,7 @@ $('html').keyup(function(e){
 
 export function prepareForCards(array) {
     $(".js_card-container").empty();
+    $(".js_results").css("opacity", "1");
     $(".js_card-container").removeClass("card-container--hidden");
     $(".results").text(`- ${array.length} results found -`);
 }

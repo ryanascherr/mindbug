@@ -21,6 +21,14 @@ export function checkAndUncheckInputs(clickedInput) {
     if (clickedInput.classList.contains("js_check-set")) {
         checkSetCheckboxes();
     }
+    if (clickedInput.classList.contains("js_mindbug")) {
+        if ($(clickedInput).is(':checked')) {
+            uncheckAllCheckboxes();
+            $(clickedInput).prop('checked', true);
+        }
+    } else {
+        $(".js_mindbug").prop('checked', false);
+    }
 }
 
 function setOrderCheckboxes(clickedInput) {
@@ -95,4 +103,8 @@ function clearSetCheckboxes() {
 
 function checkSetCheckboxes() {
     $(".js_set").prop('checked', true);
+}
+
+function uncheckAllCheckboxes() {
+    $(".js_criteria").prop('checked', false);
 }
