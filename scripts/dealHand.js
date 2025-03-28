@@ -8,36 +8,32 @@ export function dealHand(creatures) {
     let handOfCards = [];
     let usedNumbersArray = [];
 
-    addCardToHand();
+    createHand();
 
-    //TODO Fix evolution code
-
-    function addCardToHand() {
+    function createHand() {
         let randomNumber = Math.floor(Math.random()*(array.length));
-        let howMany = 0;
+        let howManyInHand = 0;
+    
         $(usedNumbersArray).each(function() {
             if (this == randomNumber) {
-                howMany++;
+                howManyInHand++;
             }
         })
-        if (array[randomNumber].evolution == true) {
-            let creature = array[randomNumber];
-            let name = creature.name;
-            if (name != "Cloud Lady" && name != "Curious Tadpole" && name != "Kitten Crewmate" && name != "Tuckbox Mimic" && name != "Waddling Recruit" && name != "Wildsprout" && name != "Cutecat") {
-                addCardToHand();
-                return;
-            }
+    
+        // If creature is a second or third evolution, do not add to hand and start again
+        if (array[randomNumber].evolution == true && array[randomNumber].secondEvolution == null) {
+            createHand();
+            return;
         }
-        if (howMany == 0) {
+        
+        // If this card isn't already in hand, add it to hand
+        // If this card is already in hand, but there are two copies of the card, add it to hand
+        if (howManyInHand == 0) {
             usedNumbersArray.push(randomNumber);
             handOfCards.push(array[randomNumber]);
-        } else if (howMany == 1) {
-            if (array[randomNumber].amount == 1) {
-            } else {
-                usedNumbersArray.push(randomNumber);
-                handOfCards.push(array[randomNumber]);
-            }
-        } else if (howMany == 2) {
+        } else if (howManyInHand == 1 && array[randomNumber].amount == 2) {
+            usedNumbersArray.push(randomNumber);
+            handOfCards.push(array[randomNumber]);
         }
         
         if (handOfCards.length >= 5) {
@@ -45,9 +41,46 @@ export function dealHand(creatures) {
             let allowEvolutions = false;
             placeCards(handOfCards, creatures, allowEvolutions);
         } else {
-            addCardToHand();
+            createHand();
         }
     }
+}
+
+function checkSetsHand() {
+    let firstContact;
+    let newServants;
+    let eternity;
+    let evolution;
+    let kingdom;
+    let galaxy;
+    let tagTeam;
+    let promo;
+
+    if($('.js_hand-first-contact').is(':checked')){
+        firstContact = true;
+    }
+    if($('.js_hand-new-servants').is(':checked')){
+        newServants = true;
+    }
+    if($('.js_hand-eternity').is(':checked')){
+        eternity = true;
+    }
+    if($('.js_hand-evolution').is(':checked')){
+        evolution = true;
+    }
+    if($('.js_hand-kingdom').is(':checked')){
+        kingdom = true;
+    }
+    if($('.js_hand-galaxy').is(':checked')){
+        galaxy = true;
+    }
+    if($('.js_hand-tag-team').is(':checked')){
+        tagTeam = true;
+    }
+    if($('.js_hand-promo').is(':checked')){
+        promo = true;
+    }
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
 }
 
 export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo) {
@@ -87,41 +120,4 @@ export function getSet(array, firstContact, newServants, eternity, evolution, ki
     }
 
     return array;
-}
-
-function checkSetsHand() {
-    let firstContact;
-    let newServants;
-    let eternity;
-    let evolution;
-    let kingdom;
-    let galaxy;
-    let tagTeam;
-    let promo;
-
-    if($('.js_hand-first-contact').is(':checked')){
-        firstContact = true;
-    }
-    if($('.js_hand-new-servants').is(':checked')){
-        newServants = true;
-    }
-    if($('.js_hand-eternity').is(':checked')){
-        eternity = true;
-    }
-    if($('.js_hand-evolution').is(':checked')){
-        evolution = true;
-    }
-    if($('.js_hand-kingdom').is(':checked')){
-        kingdom = true;
-    }
-    if($('.js_hand-galaxy').is(':checked')){
-        galaxy = true;
-    }
-    if($('.js_hand-tag-team').is(':checked')){
-        tagTeam = true;
-    }
-    if($('.js_hand-promo').is(':checked')){
-        promo = true;
-    }
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
 }
