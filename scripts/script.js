@@ -6,7 +6,7 @@ import { openModal, closeModal } from './modalControl.js';
 import { showAllCards } from './customDeck.js';
 import { checkAndUncheckInputs } from './inputCommand.js';
 import { getCards } from './getCards.js';
-import { placeMindbugs } from './placeMindbugs.js';
+import { placeOtherCards } from './placeOtherCards.js';
 
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
@@ -38,8 +38,8 @@ $(".js_criteria").click(function() {
 });
 
 $(".js_filter-btn").click(function() {
-    if ($(".js_mindbug").is(':checked')) {
-        placeMindbugs();
+    if ($(".js_mindbug").is(':checked') || $(".js_alternate").is(':checked')) {
+        placeOtherCards();
     } else {
         let array = getCards();
         prepareForCards(array);

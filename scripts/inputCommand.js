@@ -21,13 +21,14 @@ export function checkAndUncheckInputs(clickedInput) {
     if (clickedInput.classList.contains("js_check-set")) {
         checkSetCheckboxes();
     }
-    if (clickedInput.classList.contains("js_mindbug")) {
+    if (clickedInput.classList.contains("js_mindbug") || clickedInput.classList.contains("js_alternate")) {
         if ($(clickedInput).is(':checked')) {
             uncheckAllCheckboxes();
             $(clickedInput).prop('checked', true);
         }
     } else {
         $(".js_mindbug").prop('checked', false);
+        $(".js_alternate").prop('checked', false);
     }
 }
 
