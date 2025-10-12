@@ -30,6 +30,13 @@ export function openHand() {
     // $(".custom-deck-thing").css({'display':'none'});
 }
 
+export function openAscension() {
+    $(".action-container").removeClass("action-container--open");
+    $(".js_ascension-container").addClass("action-container--open");
+    $(".js_results").addClass("results--hidden");
+    $(".js_card-container").addClass("card-container--hidden");
+}
+
 export function openCustomDeck() {
     $(".action-container").removeClass("action-container--open");
     $(".js_custom-deck-container").addClass("action-container--open");

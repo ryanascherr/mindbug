@@ -1,0 +1,75 @@
+.ascension-container {
+    padding: 1rem;
+
+    h3 {
+        margin-top: 1rem;
+    }
+}
+
+.aura-container,
+.token-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &__aura {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.token-box {
+    border-radius: 15px;
+    padding: 2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+
+    h4 {
+        margin-top: 2rem;
+    }
+
+    .img-container {
+        position: relative;
+        width: 132px;
+        height: 132px;
+    }
+
+    .token,
+    .border {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .token {
+        padding: 1.25rem;
+    }
+}
+
+.js_token-container--common .token-box {
+    background-color: #514b46;
+}
+.js_token-container--rare .token-box {
+    background-color: #0E263E;
+}
+.js_token-container--legendary .token-box {
+    background-color: #56205E;
+}
+
+.common {
+    color: #514b46;
+}
+
+.rare {
+    color: #0E263E;
+}
+
+.legendary {
+    color: #56205E;
+}

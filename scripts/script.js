@@ -1,12 +1,13 @@
 import { placeCards } from './placeCards.js';
 import { dealHand } from './dealHand.js';
-import { highlightTab, openFilter, openHand, openName, openCustomDeck } from './openTabs.js';
+import { highlightTab, openFilter, openHand, openName, openAscension, openCustomDeck } from './openTabs.js';
 import { liveSearch } from './liveSearch.js';
 import { openModal, closeModal } from './modalControl.js';
 import { showAllCards } from './customDeck.js';
 import { checkAndUncheckInputs } from './inputCommand.js';
 import { getCards } from './getCards.js';
 import { placeOtherCards } from './placeOtherCards.js';
+import { tokens } from './tokens.js';
 
 const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
@@ -79,6 +80,9 @@ $(".js_tab").click(function(e) {
     } else if ($(this).hasClass("js_tab-hand")) {
         highlightTab(this);
         openHand();
+    } else if ($(this).hasClass("js_tab-ascension")) {
+        highlightTab(this);
+        openAscension();
     } else if ($(this).hasClass("js_tab-custom-deck")) {
         highlightTab(this);
         openCustomDeck();
@@ -112,4 +116,46 @@ export function prepareForCards(array) {
     $(".js_results").css("opacity", "1");
     $(".js_card-container").removeClass("card-container--hidden");
     $(".results").text(`- ${array.length} results found -`);
+}
+
+populateTokens();
+function populateTokens() {
+
+    tokens.sort((a, b) => {
+        const nameA = a.name
+        const nameB = b.name
+        if (nameA < nameB) {
+            return -1; // nameA comes before nameB
+        }
+        if (nameA > nameB) {
+            return 1; // nameA comes after nameB
+        }
+        return 0; // names are equal
+    });
+
+    tokens.forEach(function(token) {
+        let name = token.name.toLowerCase().replace(/ /g, "-").replace("'", "");
+        let src = `./img/ascension/tokens/token_${token.rarity.toLowerCase()}_${name}.png`;
+        let borderSrc = `./img/ascension/backgrounds/token_bg_${token.rarity.toLowerCase()}.png`;
+        let div = document.createElement('div');
+        div.classList.add("token-box");
+        div.innerHTML = `
+            <div class="img-container">
+                <img class="border" src="${borderSrc}" alt="">
+                <img class="token" src="${src}" alt="">
+            </div>
+            <h4>${token.name}</h4>
+            <p>${token.ability}</p>
+        `;
+
+        if (token.rarity === "Common") {
+            document.querySelector(".js_token-container--common").appendChild(div);
+        }
+        if (token.rarity === "Rare") {
+            document.querySelector(".js_token-container--rare").appendChild(div);
+        }
+        if (token.rarity === "Legendary") {
+            document.querySelector(".js_token-container--legendary").appendChild(div);
+        }
+    })
 }
