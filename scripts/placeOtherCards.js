@@ -12,14 +12,15 @@ export function placeOtherCards() {
     if ($(".js_alternate").is(':checked')) {
         placeAlternate();
     }
-
-    
+    if ($(".js_power-cards").is(':checked')) {
+        placePowerCards();
+    }
 
     scrollToResults();
 }
 
 function placeMindbugs() {
-    let numberOfMindbugs = 12;
+    let numberOfMindbugs = 14;
     let numberOfMindfrogs = 2;
 
     for (let i = 1; i < numberOfMindbugs + 1; i++) {
@@ -36,5 +37,14 @@ function placeAlternate() {
 
     for (let i = 1; i < numberOfAlternate + 1; i++) {
         $(".js_card-container").append(`<img alt="Alternate Art ${i}" loading="lazy" class="card" src="./img/alternate/alternate_${i}.jpg">`);
+    }
+}
+
+function placePowerCards() {
+    console.log("here");
+    let numberOfPower = 16;
+
+    for (let i = 1; i < numberOfPower + 1; i++) {
+        $(".js_card-container").append(`<img alt="Power Card ${i}" loading="lazy" class="card" src="./img/power/power_${i}.jpg">`);
     }
 }

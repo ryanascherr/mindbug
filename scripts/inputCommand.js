@@ -21,7 +21,7 @@ export function checkAndUncheckInputs(clickedInput) {
     if (clickedInput.classList.contains("js_check-set")) {
         checkSetCheckboxes();
     }
-    if (clickedInput.classList.contains("js_mindbug") || clickedInput.classList.contains("js_alternate")) {
+    if (clickedInput.classList.contains("js_mindbug") || clickedInput.classList.contains("js_alternate") || clickedInput.classList.contains("js_power-cards")) {
         if ($(clickedInput).is(':checked')) {
             uncheckAllCheckboxes();
             $(clickedInput).prop('checked', true);
@@ -29,6 +29,7 @@ export function checkAndUncheckInputs(clickedInput) {
     } else {
         $(".js_mindbug").prop('checked', false);
         $(".js_alternate").prop('checked', false);
+        $(".js_power-cards").prop('checked', false);
     }
 }
 

@@ -39,7 +39,7 @@ $(".js_criteria").click(function() {
 });
 
 $(".js_filter-btn").click(function() {
-    if ($(".js_mindbug").is(':checked') || $(".js_alternate").is(':checked')) {
+    if ($(".js_mindbug").is(':checked') || $(".js_alternate").is(':checked') || $(".js_power-cards").is(':checked')) {
         placeOtherCards();
     } else {
         let array = getCards();
