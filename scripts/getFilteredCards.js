@@ -1,4 +1,4 @@
-export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo) {
+export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -16,6 +16,9 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     }
     if (!galaxy) {
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
+    }
+    if (!kot) {
+        array = array.filter(creature => creature.set.name != "King of Tokyo");
     }
     if (!tagTeam) {
         array = array.filter(creature => creature.set.name != "Tag Team");

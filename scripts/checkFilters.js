@@ -5,10 +5,11 @@ export function checkSets() {
     let evolution = $('.js_evolution').is(':checked');
     let kingdom = $('.js_kingdom').is(':checked');
     let galaxy = $('.js_galaxy').is(':checked');
+    let kot = $('.js_kot').is(':checked');
     let tagTeam = $('.js_tag-team').is(':checked');
     let promo = $('.js_promo').is(':checked');
 
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo];
 }
 
 export function checkKeywords() {
