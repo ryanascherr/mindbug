@@ -27,11 +27,6 @@ const { data, error } = await supabaseData.from('creatures').select(`
 .order('id', { ascending: true });
 export const creatures = data;
 
-console.log(creatures);
-creatures.forEach(function(creature) {
-    console.log(creature.set);
-})
-
 initiate();
 function initiate() {
     openFilter();

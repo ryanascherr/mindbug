@@ -3,8 +3,8 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo] = checkSetsHand();
-    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo);
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo] = checkSetsHand();
+    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo);
     let handOfCards = [];
     let usedNumbersArray = [];
 
@@ -53,6 +53,7 @@ function checkSetsHand() {
     let evolution;
     let kingdom;
     let galaxy;
+    let kot;
     let tagTeam;
     let promo;
 
@@ -74,16 +75,19 @@ function checkSetsHand() {
     if($('.js_hand-galaxy').is(':checked')){
         galaxy = true;
     }
+    if($('.js_hand-kot').is(':checked')){
+        kot = true;
+    }
     if($('.js_hand-tag-team').is(':checked')){
         tagTeam = true;
     }
     if($('.js_hand-promo').is(':checked')){
         promo = true;
     }
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo];
 }
 
-export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, tagTeam, promo) {
+export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -106,6 +110,10 @@ export function getSet(array, firstContact, newServants, eternity, evolution, ki
 
     if (!galaxy) {
         array = array.filter(creature => creature.set.name != "Battlefruit Galaxy");
+    }
+
+    if (!kot) {
+        array = array.filter(creature => creature.set.name != "King of Tokyo");
     }
 
     if (!tagTeam) {

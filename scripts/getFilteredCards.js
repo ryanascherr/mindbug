@@ -260,6 +260,11 @@ export function getOrder(array, alph, power, revPower, set) {
             }
         });
         $(array).each(function( index ) {
+            if (this.set.name == "King of Tokyo") {
+                setArray.push(this);
+            }
+        });
+        $(array).each(function( index ) {
             if (this.set.name == "Tag Team") {
                 setArray.push(this);
             }
