@@ -13,7 +13,7 @@ const supabaseURL = 'https://nvjgjpbkcoiifhnybhap.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im52amdqcGJrY29paWZobnliaGFwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDAwMTMxMTUsImV4cCI6MjA1NTU4OTExNX0.9muL9PqLj6rbVCS_7gblPp1wvVyAlNo4pikVqVXclMo';
 const supabaseData = window.supabase.createClient(supabaseURL, supabaseKey);
 const { data, error } = await supabaseData.from('creatures').select(`
-    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution, place_octonite, tag_team, harmful_ability, change_control, change_power, get_from_discard_pile, cannot_attack, cannot_block, ability_can_gain_life, ability_can_damage, win_condition, ability_can_discard, give_keywords,
+    id, name, power, ability, amount, boost, evolution, secondEvolution, thirdEvolution, place_octonite, tag_team, harmful_ability, change_control, change_power, get_from_discard_pile, cannot_attack, cannot_block, ability_can_gain_life, ability_can_damage, win_condition, ability_can_discard, give_keywords, roll_die, energy,
     set (
         name
     ),

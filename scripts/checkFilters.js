@@ -54,8 +54,10 @@ export function checkOther() {
     let winCondition = $('.js_win').is(':checked');
     let canDiscard = $('.js_can-discard').is(':checked');
     let giveKeywords = $('.js_give-keywords').is(':checked');
+    let rollDie = $('.js_roll').is(':checked');
+    let energy = $('.js_energy').is(':checked');
 
-    return [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbilty, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard, giveKeywords];
+    return [boost, evolved, single, double, octonite, otherTagTeam, harmfulAbility, noAbilty, control, changePower, fromDiscard, attackBlock, canGainLife, canDamage, winCondition, canDiscard, giveKeywords, rollDie, energy];
 }
 
 export function checkPower() {
