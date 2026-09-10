@@ -1,6 +1,9 @@
 import { getImageName } from "./placeCards.js";
 import { creatures } from "./script.js";
 
+let customURL = "https://ryanascherr.github.io/mindbug-deck/?";
+let indexOfArray = 0;
+
 //TODO Fix when change tabs
 //TODO Fix evolution conditional
 
@@ -103,7 +106,7 @@ $(".js_custom-deck-create-link-btn").click(function(e) {
         arrayOfLetters.push(letter);
     })
 
-    let customURL = "https://ryanascherr.github.io/mindbug-deck/?";
+    customURL = "https://ryanascherr.github.io/mindbug-deck/?";
     for (let i = 0; i < arrayOfIndexes.length; i++) {
         if (i == 0) {
             customURL += arrayOfIndexes[i] + arrayOfLetters[i];
@@ -117,7 +120,10 @@ $(".js_custom-deck-create-link-btn").click(function(e) {
     $(".js_custom-deck-link").val(customURL);
 
     $(".js_custom-deck-copy-deck-btn").removeClass("disabled");
+    $(".js_custom-deck-save-deck-btn").removeClass("disabled");
     $(".js_custom-deck-link").removeClass("hidden");
+
+
 });
 
 function updateCustomDeckCardCounter() {
@@ -133,10 +139,12 @@ function updateCustomDeckCardCounter() {
     if ($(".js_custom-deck-card-counter").text() == "0") {
         $(".js_custom-deck-create-link-btn").addClass("btn--hidden");
         $(".js_custom-deck-copy-deck-btn").addClass("btn--hidden");
+        $(".js_custom-deck-save-deck-btn").addClass("btn--hidden");
         $(".js_custom-deck-link").addClass("hidden");
     } else {
         $(".js_custom-deck-create-link-btn").removeClass("btn--hidden");
         $(".js_custom-deck-copy-deck-btn").removeClass("btn--hidden");
+        $(".js_custom-deck-save-deck-btn").removeClass("btn--hidden");
     }
     $(".js_custom-deck-link").addClass("hidden");
 };
@@ -166,6 +174,7 @@ $(document).on('click','.js_custom-card-subtract',function(e){
 function resetCustomDeckLink() {
     $(".custom-deck-link-display").text("");
     $(".js_custom-deck-copy-deck-btn").addClass("disabled");
+    $(".js_custom-deck-save-deck-btn").addClass("disabled");
 }
 
 $(".js_custom-deck-copy-deck-btn").click(function() {
@@ -205,7 +214,7 @@ function resetCards() {
 function placeUploadedCards() {
     resetCardAvailability();
 
-    let indexOfArray = 0;
+    indexOfArray = 0;
     $(listOfCardNumbers).each(function( index ) {
         let currentCardNumber = parseInt(this);
         $(creatures).each(function( index ) {
@@ -254,5 +263,63 @@ function resetCardAvailability() {
 function markCardAsSelected(index) {
     let card = $(`.custom-deck-items img[data-index='${index}']`);
     $(card).parent().addClass("custom-deck-items--border");
+}
+
+$(".js_custom-deck-save-deck-btn").click(function(e) {
+    getURL();
+    nextStep();
+})
+
+let exportString = "";
+let url = "";
+
+function getURL() {
+    exportString = "";
+    url = customURL;
+
+    if (!url.includes("?")) return;
+    url = url.split("?");
+    url = url[1];
+    listOfCardNumbers = url.split("-");
+    $(listOfCardNumbers).each(function( index ) {
+        let letter = this[this.length-1];
+        listOfCardLetters.push(letter);
+    })
+}
+
+function nextStep() {
+    $(listOfCardNumbers).each(function( index ) {
+        let currentCardNumber = parseInt(this);
+        $(creatures).each(function( index ) {
+            if (currentCardNumber == index) {
+
+                // let name = this.name;
+                // name = name.replace(/ /g,"_");
+
+                let howManyOfThisCard = listOfCardLetters[indexOfArray];
+                howManyOfThisCard = howManyOfThisCard.charCodeAt(0) - 96;
+                numberOfCards = numberOfCards + howManyOfThisCard;
+
+                if (this.app_id) {
+                    addToExportString(this.app_id, howManyOfThisCard);
+                }
+            };
+        });
+        indexOfArray++; 
+    });
+    finalizeExportString();
+}
+
+function addToExportString(id, number) {
+    for (let i = 0; i < number; i++) {
+        exportString += id + ",";
+    }
+}
+
+function finalizeExportString() {
+    if (exportString.charAt(exportString.length - 1) == ",") {
+        exportString = exportString.slice(0, -1);
+    }
+    navigator.clipboard.writeText(exportString);
 }
 
