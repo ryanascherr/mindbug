@@ -1,4 +1,4 @@
-export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo) {
+export function getSets(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -23,11 +23,17 @@ export function getSets(array, firstContact, newServants, eternity, evolution, k
     if (!tagTeam) {
         array = array.filter(creature => creature.set.name != "Tag Team");
     }
-    if (!promo) {
-        array = array.filter(creature => creature.set.name != "Promo 2022");
-        array = array.filter(creature => creature.set.name != "Promo 2023");
-        array = array.filter(creature => creature.set.name != "Promo 2024");
+    if (!battlefruitAddOn) {
         array = array.filter(creature => creature.set.name != "Battlefruit Add-On");
+    }
+    if (!promo2022) {
+        array = array.filter(creature => creature.set.name != "Promo 2022");
+    }
+    if (!promo2023) {
+        array = array.filter(creature => creature.set.name != "Promo 2023");
+    }
+    if (!promo2024) {
+        array = array.filter(creature => creature.set.name != "Promo 2024");
     }
 
     return array;

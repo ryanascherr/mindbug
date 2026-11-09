@@ -7,9 +7,12 @@ export function checkSets() {
     let galaxy = $('.js_galaxy').is(':checked');
     let kot = $('.js_kot').is(':checked');
     let tagTeam = $('.js_tag-team').is(':checked');
-    let promo = $('.js_promo').is(':checked');
+    let battlefruitAddOn = $('.js_battlefruit-add-on').is(':checked');
+    let promo2022 = $('.js_promo-2022').is(':checked');
+    let promo2023 = $('.js_promo-2023').is(':checked');
+    let promo2024 = $('.js_promo-2024').is(':checked');
 
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo];
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024];
 }
 
 export function checkKeywords() {
