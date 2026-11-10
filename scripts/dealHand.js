@@ -3,8 +3,8 @@ import { placeCards } from "./placeCards.js";
 
 export function dealHand(creatures) {
     let array = creatures;
-    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo] = checkSetsHand();
-    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo);
+    let [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024] = checkSetsHand();
+    array = getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024);
     let handOfCards = [];
     let usedNumbersArray = [];
 
@@ -55,7 +55,10 @@ function checkSetsHand() {
     let galaxy;
     let kot;
     let tagTeam;
-    let promo;
+    let battlefruitAddOn;
+    let promo2022;
+    let promo2023;
+    let promo2024;
 
     if($('.js_hand-first-contact').is(':checked')){
         firstContact = true;
@@ -81,13 +84,22 @@ function checkSetsHand() {
     if($('.js_hand-tag-team').is(':checked')){
         tagTeam = true;
     }
-    if($('.js_hand-promo').is(':checked')){
-        promo = true;
+    if($('.js_hand-battlefruit-add-on').is(':checked')){
+        battlefruitAddOn = true;
     }
-    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo];
+    if($('.js_hand-promo-2022').is(':checked')){
+        promo2022 = true;
+    }
+    if($('.js_hand-promo-2023').is(':checked')){
+        promo2023 = true;
+    }
+    if($('.js_hand-promo-2024').is(':checked')){
+        promo2024 = true;
+    }
+    return [firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024];
 }
 
-export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, promo) {
+export function getSet(array, firstContact, newServants, eternity, evolution, kingdom, galaxy, kot, tagTeam, battlefruitAddOn, promo2022, promo2023, promo2024) {
     if (!firstContact) {
         array = array.filter(creature => creature.set.name != "First Contact");
     }
@@ -120,11 +132,20 @@ export function getSet(array, firstContact, newServants, eternity, evolution, ki
         array = array.filter(creature => creature.set.name != "Tag Team");
     }
 
-    if (!promo) {
-        array = array.filter(creature => creature.set.name != "Promo 2022");
-        array = array.filter(creature => creature.set.name != "Promo 2023");
-        array = array.filter(creature => creature.set.name != "Promo 2024");
+    if (!battlefruitAddOn) {
         array = array.filter(creature => creature.set.name != "Battlefruit Add-On");
+    }
+
+    if (!promo2022) {
+        array = array.filter(creature => creature.set.name != "Promo 2022");
+    }
+
+    if (!promo2023) {
+        array = array.filter(creature => creature.set.name != "Promo 2023");
+    }
+
+    if (!promo2024) {
+        array = array.filter(creature => creature.set.name != "Promo 2024");
     }
 
     return array;
